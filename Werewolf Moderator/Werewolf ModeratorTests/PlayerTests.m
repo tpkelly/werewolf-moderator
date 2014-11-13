@@ -278,6 +278,17 @@
     XCTAssertFalse(player.temporaryProtection);
 }
 
+-(void)testThatMinionPlayerIsAliveAndUnprotected
+{
+    //Given
+    Player *player = [[Player alloc] initWithName:@"Player" role:Minion];
+    
+    //Then
+    XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.permanentProtection);
+    XCTAssertFalse(player.temporaryProtection);
+}
+
 -(void)testThatIgorPlayerIsAliveAndUnprotected
 {
     //Given

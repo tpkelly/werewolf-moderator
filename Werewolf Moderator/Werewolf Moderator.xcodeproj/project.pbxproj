@@ -18,6 +18,8 @@
 		47B4C1261A14270D00D30338 /* RoleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C1251A14270D00D30338 /* RoleTests.m */; };
 		47B4C12B1A153AAC00D30338 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C12A1A153AAC00D30338 /* Player.m */; };
 		47B4C12D1A153E2200D30338 /* PlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C12C1A153E2200D30338 /* PlayerTests.m */; };
+		47B4C1301A154EF500D30338 /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C12F1A154EF500D30338 /* GameState.m */; };
+		47B4C1331A15514A00D30338 /* GameStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C1321A15514A00D30338 /* GameStateTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		47B4C1291A153AAC00D30338 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		47B4C12A1A153AAC00D30338 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		47B4C12C1A153E2200D30338 /* PlayerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerTests.m; sourceTree = "<group>"; };
+		47B4C12E1A154EF500D30338 /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
+		47B4C12F1A154EF500D30338 /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameState.m; sourceTree = "<group>"; };
+		47B4C1311A154FA900D30338 /* NewsFromTheInn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsFromTheInn.h; sourceTree = "<group>"; };
+		47B4C1321A15514A00D30338 /* GameStateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStateTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,7 @@
 				47B4C1141A13E25900D30338 /* Supporting Files */,
 				47B4C1251A14270D00D30338 /* RoleTests.m */,
 				47B4C12C1A153E2200D30338 /* PlayerTests.m */,
+				47B4C1321A15514A00D30338 /* GameStateTests.m */,
 			);
 			path = "Werewolf ModeratorTests";
 			sourceTree = "<group>";
@@ -145,6 +152,9 @@
 				47B4C1281A1533CC00D30338 /* Faction.h */,
 				47B4C1291A153AAC00D30338 /* Player.h */,
 				47B4C12A1A153AAC00D30338 /* Player.m */,
+				47B4C12E1A154EF500D30338 /* GameState.h */,
+				47B4C12F1A154EF500D30338 /* GameState.m */,
+				47B4C1311A154FA900D30338 /* NewsFromTheInn.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -255,6 +265,7 @@
 				47B4C1001A13E25900D30338 /* FirstViewController.m in Sources */,
 				47B4C12B1A153AAC00D30338 /* Player.m in Sources */,
 				47B4C0FA1A13E25900D30338 /* main.m in Sources */,
+				47B4C1301A154EF500D30338 /* GameState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +275,7 @@
 			files = (
 				47B4C12D1A153E2200D30338 /* PlayerTests.m in Sources */,
 				47B4C1261A14270D00D30338 /* RoleTests.m in Sources */,
+				47B4C1331A15514A00D30338 /* GameStateTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
