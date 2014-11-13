@@ -14,6 +14,8 @@
 
 -(instancetype)initWithRole:(RoleType)roleType;
 
+-(NSString*)name;
+
 @property (nonatomic, readonly) BOOL isMystic;
 @property (nonatomic, readonly) BOOL isCorrupt;
 @property (nonatomic, readonly) Faction faction;

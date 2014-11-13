@@ -26,6 +26,38 @@
     return self;
 }
 
+-(NSString *)name
+{
+    switch (self.underlyingRole)
+    {
+        case AlphaWolf: return @"Alpha Wolf";
+        case PackWolf: return @"Pack Wolf";
+        case WolfPup: return @"Wolf Pup";
+        case Defector: return @"Defector";
+        case Clairvoyant: return @"Clairvoyant";
+        case Medium: return @"Medium";
+        case Wizard: return @"Wizard";
+        case Witch: return @"Witch";
+        case Healer: return @"Healer";
+        case Farmer: return @"Farmer";
+        case Hermit: return @"Hermit";
+        case Bard: return @"Bard";
+        case Innkeeper: return @"Innkeeper";
+        case Monk: return @"Monk";
+        case Priest: return @"Priest";
+        case Sinner: return @"Sinner";
+        case Seducer: return @"Seducer";
+        case Madman: return @"Madman";
+        case Jester: return @"Jester";
+        case Juliet: return @"Juliet";
+        case GuardianAngel: return @"Guardian Angel";
+        case Vampire: return @"Vampire";
+        case Minion: return @"Minion";
+        case Igor: return @"Igor";
+        case VampireHunter: return @"Vampire Hunter";
+    }
+}
+
 -(BOOL)isCorrupt
 {
     switch (self.underlyingRole)
