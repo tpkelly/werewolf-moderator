@@ -46,6 +46,8 @@
 		47B4C1221A13E2ED00D30338 /* Role.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Role.h; sourceTree = "<group>"; };
 		47B4C1231A13E2ED00D30338 /* Role.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Role.m; sourceTree = "<group>"; };
 		47B4C1251A14270D00D30338 /* RoleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoleTests.m; sourceTree = "<group>"; };
+		47B4C1271A15337400D30338 /* RoleType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoleType.h; sourceTree = "<group>"; };
+		47B4C1281A1533CC00D30338 /* Faction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Faction.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,8 @@
 			children = (
 				47B4C1221A13E2ED00D30338 /* Role.h */,
 				47B4C1231A13E2ED00D30338 /* Role.m */,
+				47B4C1271A15337400D30338 /* RoleType.h */,
+				47B4C1281A1533CC00D30338 /* Faction.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
