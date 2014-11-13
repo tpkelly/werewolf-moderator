@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47B4C0FA1A13E25900D30338 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C0F91A13E25900D30338 /* main.m */; };
+		47B4C0FD1A13E25900D30338 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C0FC1A13E25900D30338 /* AppDelegate.m */; };
+		47B4C1001A13E25900D30338 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C0FF1A13E25900D30338 /* FirstViewController.m */; };
+		47B4C1031A13E25900D30338 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C1021A13E25900D30338 /* SecondViewController.m */; };
+		47B4C1061A13E25900D30338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B4C1041A13E25900D30338 /* Main.storyboard */; };
+		47B4C1081A13E25900D30338 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B4C1071A13E25900D30338 /* Images.xcassets */; };
+		47B4C10B1A13E25900D30338 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47B4C1091A13E25900D30338 /* LaunchScreen.xib */; };
+		47B4C1241A13E2ED00D30338 /* Role.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C1231A13E2ED00D30338 /* Role.m */; };
+		47B4C1261A14270D00D30338 /* RoleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C1251A14270D00D30338 /* RoleTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		47B4C1111A13E25900D30338 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47B4C0EC1A13E25900D30338 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47B4C0F31A13E25900D30338;
+			remoteInfo = "Werewolf Moderator";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		47B4C0F41A13E25900D30338 /* Werewolf Moderator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Werewolf Moderator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47B4C0F81A13E25900D30338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47B4C0F91A13E25900D30338 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		47B4C0FB1A13E25900D30338 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		47B4C0FC1A13E25900D30338 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		47B4C0FE1A13E25900D30338 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		47B4C0FF1A13E25900D30338 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		47B4C1011A13E25900D30338 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		47B4C1021A13E25900D30338 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		47B4C1051A13E25900D30338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		47B4C1071A13E25900D30338 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		47B4C10A1A13E25900D30338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		47B4C1101A13E25900D30338 /* Werewolf ModeratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Werewolf ModeratorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47B4C1151A13E25900D30338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47B4C1221A13E2ED00D30338 /* Role.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Role.h; sourceTree = "<group>"; };
+		47B4C1231A13E2ED00D30338 /* Role.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Role.m; sourceTree = "<group>"; };
+		47B4C1251A14270D00D30338 /* RoleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoleTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		47B4C0F11A13E25900D30338 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47B4C10D1A13E25900D30338 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47B4C0EB1A13E25900D30338 = {
+			isa = PBXGroup;
+			children = (
+				47B4C0F61A13E25900D30338 /* Werewolf Moderator */,
+				47B4C1131A13E25900D30338 /* Werewolf ModeratorTests */,
+				47B4C0F51A13E25900D30338 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		47B4C0F51A13E25900D30338 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47B4C0F41A13E25900D30338 /* Werewolf Moderator.app */,
+				47B4C1101A13E25900D30338 /* Werewolf ModeratorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		47B4C0F61A13E25900D30338 /* Werewolf Moderator */ = {
+			isa = PBXGroup;
+			children = (
+				47B4C1201A13E26A00D30338 /* Models */,
+				47B4C0FB1A13E25900D30338 /* AppDelegate.h */,
+				47B4C0FC1A13E25900D30338 /* AppDelegate.m */,
+				47B4C0FE1A13E25900D30338 /* FirstViewController.h */,
+				47B4C0FF1A13E25900D30338 /* FirstViewController.m */,
+				47B4C1011A13E25900D30338 /* SecondViewController.h */,
+				47B4C1021A13E25900D30338 /* SecondViewController.m */,
+				47B4C1041A13E25900D30338 /* Main.storyboard */,
+				47B4C1071A13E25900D30338 /* Images.xcassets */,
+				47B4C1091A13E25900D30338 /* LaunchScreen.xib */,
+				47B4C0F71A13E25900D30338 /* Supporting Files */,
+			);
+			path = "Werewolf Moderator";
+			sourceTree = "<group>";
+		};
+		47B4C0F71A13E25900D30338 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				47B4C0F81A13E25900D30338 /* Info.plist */,
+				47B4C0F91A13E25900D30338 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		47B4C1131A13E25900D30338 /* Werewolf ModeratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				47B4C1141A13E25900D30338 /* Supporting Files */,
+				47B4C1251A14270D00D30338 /* RoleTests.m */,
+			);
+			path = "Werewolf ModeratorTests";
+			sourceTree = "<group>";
+		};
+		47B4C1141A13E25900D30338 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				47B4C1151A13E25900D30338 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		47B4C1201A13E26A00D30338 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				47B4C1221A13E2ED00D30338 /* Role.h */,
+				47B4C1231A13E2ED00D30338 /* Role.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		47B4C0F31A13E25900D30338 /* Werewolf Moderator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47B4C11A1A13E25900D30338 /* Build configuration list for PBXNativeTarget "Werewolf Moderator" */;
+			buildPhases = (
+				47B4C0F01A13E25900D30338 /* Sources */,
+				47B4C0F11A13E25900D30338 /* Frameworks */,
+				47B4C0F21A13E25900D30338 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Werewolf Moderator";
+			productName = "Werewolf Moderator";
+			productReference = 47B4C0F41A13E25900D30338 /* Werewolf Moderator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		47B4C10F1A13E25900D30338 /* Werewolf ModeratorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47B4C11D1A13E25900D30338 /* Build configuration list for PBXNativeTarget "Werewolf ModeratorTests" */;
+			buildPhases = (
+				47B4C10C1A13E25900D30338 /* Sources */,
+				47B4C10D1A13E25900D30338 /* Frameworks */,
+				47B4C10E1A13E25900D30338 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47B4C1121A13E25900D30338 /* PBXTargetDependency */,
+			);
+			name = "Werewolf ModeratorTests";
+			productName = "Werewolf ModeratorTests";
+			productReference = 47B4C1101A13E25900D30338 /* Werewolf ModeratorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		47B4C0EC1A13E25900D30338 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = TKGames;
+				TargetAttributes = {
+					47B4C0F31A13E25900D30338 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					47B4C10F1A13E25900D30338 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 47B4C0F31A13E25900D30338;
+					};
+				};
+			};
+			buildConfigurationList = 47B4C0EF1A13E25900D30338 /* Build configuration list for PBXProject "Werewolf Moderator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 47B4C0EB1A13E25900D30338;
+			productRefGroup = 47B4C0F51A13E25900D30338 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				47B4C0F31A13E25900D30338 /* Werewolf Moderator */,
+				47B4C10F1A13E25900D30338 /* Werewolf ModeratorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		47B4C0F21A13E25900D30338 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47B4C1061A13E25900D30338 /* Main.storyboard in Resources */,
+				47B4C10B1A13E25900D30338 /* LaunchScreen.xib in Resources */,
+				47B4C1081A13E25900D30338 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47B4C10E1A13E25900D30338 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		47B4C0F01A13E25900D30338 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47B4C1241A13E2ED00D30338 /* Role.m in Sources */,
+				47B4C1031A13E25900D30338 /* SecondViewController.m in Sources */,
+				47B4C0FD1A13E25900D30338 /* AppDelegate.m in Sources */,
+				47B4C1001A13E25900D30338 /* FirstViewController.m in Sources */,
+				47B4C0FA1A13E25900D30338 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47B4C10C1A13E25900D30338 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47B4C1261A14270D00D30338 /* RoleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		47B4C1121A13E25900D30338 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47B4C0F31A13E25900D30338 /* Werewolf Moderator */;
+			targetProxy = 47B4C1111A13E25900D30338 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		47B4C1041A13E25900D30338 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47B4C1051A13E25900D30338 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		47B4C1091A13E25900D30338 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47B4C10A1A13E25900D30338 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		47B4C1181A13E25900D30338 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		47B4C1191A13E25900D30338 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		47B4C11B1A13E25900D30338 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Werewolf Moderator/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		47B4C11C1A13E25900D30338 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Werewolf Moderator/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		47B4C11E1A13E25900D30338 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Werewolf ModeratorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Werewolf Moderator.app/Werewolf Moderator";
+			};
+			name = Debug;
+		};
+		47B4C11F1A13E25900D30338 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Werewolf ModeratorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Werewolf Moderator.app/Werewolf Moderator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47B4C0EF1A13E25900D30338 /* Build configuration list for PBXProject "Werewolf Moderator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47B4C1181A13E25900D30338 /* Debug */,
+				47B4C1191A13E25900D30338 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47B4C11A1A13E25900D30338 /* Build configuration list for PBXNativeTarget "Werewolf Moderator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47B4C11B1A13E25900D30338 /* Debug */,
+				47B4C11C1A13E25900D30338 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		47B4C11D1A13E25900D30338 /* Build configuration list for PBXNativeTarget "Werewolf ModeratorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47B4C11E1A13E25900D30338 /* Debug */,
+				47B4C11F1A13E25900D30338 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 47B4C0EC1A13E25900D30338 /* Project object */;
+}
