@@ -63,6 +63,84 @@
 - (void)testThatGameStartsWithAllRolesUnassigned {
     // Given
     NSSet *allRoles = [NSCountedSet setWithArray:@[@(AlphaWolf), @(PackWolf), @(WolfPup), @(Defector), @(Clairvoyant), @(Medium), @(Wizard), @(Witch), @(Healer), @(Farmer), @(Farmer), @(Hermit), @(Bard), @(Innkeeper), @(Monk), @(Priest), @(Sinner), @(Seducer), @(Madman), @(Jester), @(Juliet), @(GuardianAngel), @(Vampire), @(Igor), @(VampireHunter)]];
+    
+    // Then
     XCTAssertEqualObjects(allRoles, self.gameState.unassignedRoles);
 }
+
+#pragma mark - Add Player
+
+-(void)testThatAddingPlayerAddsToLiveList
+{
+    // Given
+    Player *newPlayer = [[Player alloc] initWithName:@"Bob" role:Farmer];
+    
+    // When
+    [self.gameState addPlayer:newPlayer];
+    
+    // Then
+    NSArray *expectedPlayers = @[newPlayer];
+    XCTAssertEqualObjects(expectedPlayers, self.gameState.playersAlive);
+}
+
+-(void)testThatAddingPlayerDoesNotAffectTheDeadList
+{
+    // Given
+    Player *newPlayer = [[Player alloc] initWithName:@"Bob" role:Farmer];
+    
+    // When
+    [self.gameState addPlayer:newPlayer];
+    
+    // Then
+    XCTAssertEqualObjects(@[], self.gameState.playersDead);
+}
+
+-(void)testThatNewlyAddedPlayerIsNotImmediatelyDestinedToDie
+{
+    // Given
+    Player *newPlayer = [[Player alloc] initWithName:@"Bob" role:Farmer];
+    
+    // When
+    [self.gameState addPlayer:newPlayer];
+    
+    // Then
+    XCTAssertEqualObjects(@[], self.gameState.destinedToDie);
+}
+
+-(void)testThatAddingPlayerRemovesFromTheUnassignedRoles
+{
+    // Given
+    Player *newPlayer = [[Player alloc] initWithName:@"Bob" role:Monk];
+    NSSet *allRolesMinusMonk = [NSCountedSet setWithArray:@[@(AlphaWolf), @(PackWolf), @(WolfPup), @(Defector), @(Clairvoyant), @(Medium), @(Wizard), @(Witch), @(Healer), @(Farmer), @(Farmer), @(Hermit), @(Bard), @(Innkeeper), @(Priest), @(Sinner), @(Seducer), @(Madman), @(Jester), @(Juliet), @(GuardianAngel), @(Vampire), @(Igor), @(VampireHunter)]];
+    
+    // When
+    [self.gameState addPlayer:newPlayer];
+    
+    // Then
+    XCTAssertEqualObjects(allRolesMinusMonk, self.gameState.unassignedRoles);
+}
+
+-(void)testThatAddingFarmerPlayerOnlyRemovesASingleFarmer
+{
+    // Given
+    Player *newPlayer = [[Player alloc] initWithName:@"Bob" role:Farmer];
+    NSSet *allRolesMinusFarmer = [NSCountedSet setWithArray:@[@(AlphaWolf), @(PackWolf), @(WolfPup), @(Defector), @(Clairvoyant), @(Medium), @(Wizard), @(Witch), @(Healer), @(Farmer), @(Monk), @(Hermit), @(Bard), @(Innkeeper), @(Priest), @(Sinner), @(Seducer), @(Madman), @(Jester), @(Juliet), @(GuardianAngel), @(Vampire), @(Igor), @(VampireHunter)]];
+    
+    // When
+    [self.gameState addPlayer:newPlayer];
+    
+    // Then
+    XCTAssertEqualObjects(allRolesMinusFarmer, self.gameState.unassignedRoles);
+}
+
+-(void)testThatAddingMinionPlayerIsInvalid
+{
+    // Given
+    Player *newPlayer = [[Player alloc] initWithName:@"Bob" role:Minion];
+    
+    // Then
+    XCTAssertThrowsSpecificNamed([self.gameState addPlayer:newPlayer], NSException, @"NoSuchRoleAvailable");
+    XCTAssertEqualObjects(@[], self.gameState.playersAlive);
+}
+
 @end

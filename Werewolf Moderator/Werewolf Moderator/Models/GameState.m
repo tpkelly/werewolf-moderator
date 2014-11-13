@@ -54,4 +54,15 @@
     return self;
 }
 
+-(void)addPlayer:(Player *)player
+{
+    if (![self.unassignedRoles containsObject:@(player.role.roleType)])
+    {
+        @throw [NSException exceptionWithName:@"NoSuchRoleAvailable" reason:@"The role cannot be added to this session, as it is not part of the list of unassigned roles" userInfo:nil];
+    }
+    
+    self.playersAlive = [self.playersAlive arrayByAddingObject:player];
+    [_unassignedRoles removeObject:@(player.role.roleType)];
+}
+
 @end

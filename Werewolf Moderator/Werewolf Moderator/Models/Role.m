@@ -8,12 +8,6 @@
 
 #import "Role.h"
 
-@interface Role()
-
-@property (nonatomic, assign) RoleType underlyingRole;
-
-@end
-
 @implementation Role
 
 -(instancetype)initWithRole:(RoleType)roleType
@@ -21,14 +15,14 @@
     self = [super init];
     if (self)
     {
-        self.underlyingRole = roleType;
+        _roleType = roleType;
     }
     return self;
 }
 
 -(NSString *)name
 {
-    switch (self.underlyingRole)
+    switch (self.roleType)
     {
         case AlphaWolf: return @"Alpha Wolf";
         case PackWolf: return @"Pack Wolf";
@@ -60,7 +54,7 @@
 
 -(BOOL)isCorrupt
 {
-    switch (self.underlyingRole)
+    switch (self.roleType)
     {
         case AlphaWolf:
         case PackWolf:
@@ -78,7 +72,7 @@
 
 -(BOOL)isMystic
 {
-    switch (self.underlyingRole)
+    switch (self.roleType)
     {
         case Witch:
         case Healer:
@@ -94,7 +88,7 @@
 
 -(Faction)faction
 {
-    switch (self.underlyingRole)
+    switch (self.roleType)
     {
         case AlphaWolf:
         case PackWolf:

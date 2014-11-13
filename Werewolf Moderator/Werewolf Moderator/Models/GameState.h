@@ -27,4 +27,6 @@
 //Player picked by Guardian Angel
 @property (nonatomic, strong) Player *guardedPlayer;
 
+-(void)addPlayer:(Player*)player;
+
 @end
