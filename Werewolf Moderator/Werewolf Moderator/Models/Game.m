@@ -9,6 +9,7 @@
 #import "Game.h"
 #import "Player.h"
 #import "Role.h"
+#import "GameState.h"
 
 @implementation Game
 
@@ -17,7 +18,7 @@
     self = [super init];
     if (self)
     {
-        
+        _state = state;
     }
     return self;
 }
@@ -26,7 +27,22 @@
 
 -(BOOL)clairvoyantChecksPlayer:(Player *)player
 {
-    return player.role.isCorrupt;
+    BOOL checkedPlayerWasCorrupt = player.role.isCorrupt;
+    
+    if (checkedPlayerWasCorrupt && [_state roleIsAlive:Innkeeper])
+    {
+        _state.newsFromTheInn = FoundCorrupt;
+    }
+    else if (!checkedPlayerWasCorrupt && [_state roleIsAlive:Bard])
+    {
+        _state.newsFromTheInn = FoundNonCorrupt;
+    }
+    else
+    {
+        _state.newsFromTheInn = NoNews;
+    }
+    
+    return checkedPlayerWasCorrupt;
 }
 
 -(BOOL)mediumChecksPlayer:(Player *)player

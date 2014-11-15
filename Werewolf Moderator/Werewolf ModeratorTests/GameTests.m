@@ -26,7 +26,7 @@
 - (void)setUp {
     [super setUp];
     
-    self.mockGameState = [OCMockObject mockForClass:[GameState class]];
+    self.mockGameState = [OCMockObject niceMockForClass:[GameState class]];
     self.testGame = [[Game alloc] initWithState:self.mockGameState];
 }
 
@@ -69,6 +69,62 @@
     //Then:
     XCTAssertTrue([self.testGame wizardChecksPlayer:mysticPlayer]);
     XCTAssertFalse([self.testGame wizardChecksPlayer:regularPlayer]);
+}
+
+-(void)testThatClairvoyantFindingCorruptionUpdatesNewsForTheVillage
+{
+    // Given:
+    Player *corruptPlayer = [[Player alloc] initWithName:@"Wolf" role:AlphaWolf];
+    
+    // Expect:
+    BOOL innkeeperIsAlive = YES;
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(innkeeperIsAlive)] roleIsAlive:Innkeeper];
+    [[self.mockGameState expect] setNewsFromTheInn:FoundCorrupt];
+    
+    //When:
+    [self.testGame clairvoyantChecksPlayer:corruptPlayer];
+}
+
+-(void)testThatClairvoyantFindingNoCorruptionUpdatesNewsForTheVillage
+{
+    // Given:
+    Player *noncorruptPlayer = [[Player alloc] initWithName:@"Farmer" role:Farmer];
+    
+    // Expect:
+    BOOL bardIsAlive = YES;
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(bardIsAlive)] roleIsAlive:Bard];
+    [[self.mockGameState expect] setNewsFromTheInn:FoundNonCorrupt];
+    
+    //When:
+    [self.testGame clairvoyantChecksPlayer:noncorruptPlayer];
+}
+
+-(void)testThatNoNewsForTheVillageIfCorruptionFoundButInnkeeperIsGone
+{
+    // Given:
+    Player *corruptPlayer = [[Player alloc] initWithName:@"Wolf" role:AlphaWolf];
+    
+    // Expect:
+    BOOL innkeeperIsAlive = NO;
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(innkeeperIsAlive)] roleIsAlive:Innkeeper];
+    [[self.mockGameState expect] setNewsFromTheInn:NoNews];
+    
+    //When:
+    [self.testGame clairvoyantChecksPlayer:corruptPlayer];
+}
+
+-(void)testThatNoNewsForTheVillageIfNoCorruptionFoundButBardIsGone
+{
+    // Given:
+    Player *noncorruptPlayer = [[Player alloc] initWithName:@"Farmer" role:Farmer];
+    
+    // Expect:
+    BOOL bardIsAlive = NO;
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(bardIsAlive)] roleIsAlive:Bard];
+    [[self.mockGameState expect] setNewsFromTheInn:NoNews];
+    
+    //When:
+    [self.testGame clairvoyantChecksPlayer:noncorruptPlayer];
 }
 
 @end

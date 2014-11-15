@@ -68,4 +68,18 @@
     [_unassignedRoles removeObject:@(player.role.roleType)];
 }
 
+-(Player *)playerWithRole:(RoleType)role inPlayerSet:(NSArray *)playerSet
+{
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(Player *evaluatedPlayer, NSDictionary *bindings) {
+        return evaluatedPlayer.role.roleType == role;
+    }];
+    NSArray *matchingPlayers = [playerSet filteredArrayUsingPredicate:predicate];
+    return [matchingPlayers firstObject];
+}
+
+-(BOOL)roleIsAlive:(RoleType)role
+{
+    return [self playerWithRole:role inPlayerSet:self.playersAlive] != nil;
+}
+
 @end

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NewsFromTheInn.h"
+#import "RoleType.h"
 
 @class Player;
 
@@ -29,5 +30,8 @@
 @property (nonatomic, strong) Player *guardedPlayer;
 
 -(void)addPlayer:(Player*)player;
+
+-(Player*)playerWithRole:(RoleType)role inPlayerSet:(NSArray*)playerSet;
+-(BOOL)roleIsAlive:(RoleType)role;
 
 @end
