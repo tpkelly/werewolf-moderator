@@ -57,12 +57,30 @@
 
 -(void)witchProtectPlayer:(Player *)player
 {
-    
+    player.temporaryProtection = YES;
 }
 
 -(void)healerSavesPlayer:(Player *)player
 {
+    if (!_state.healerHasPowers)
+    {
+        return;
+    }
     
+    NSMutableArray *destinedToDie = [_state.destinedToDie mutableCopy];
+    
+    // "Once per game, unless dying..." - Healer cannot save if they are about to die
+    Player *healerDestinedToDie = [_state playerWithRole:Healer inPlayerSet:destinedToDie];
+    if (healerDestinedToDie)
+    {
+        return;
+    }
+    
+    //Let him be saaaved!
+    [destinedToDie removeObject:player];
+    
+    _state.destinedToDie = destinedToDie;
+    _state.healerHasPowers = NO;
 }
 
 #pragma mark - Nightly attacks

@@ -127,4 +127,87 @@
     [self.testGame clairvoyantChecksPlayer:noncorruptPlayer];
 }
 
+-(void)testThatWitchGivesTemporaryProtectionToTargetPlayer
+{
+    // Given:
+    Player *player = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    
+    // When:
+    [self.testGame witchProtectPlayer:player];
+    
+    // Then:
+    XCTAssertTrue(player.temporaryProtection);
+}
+
+-(void)testThatHealerBringsPlayerBackFromBrinkOfDeath
+{
+    // Given:
+    Player *chosenToDie = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    Player *otherPlayer = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    NSArray *destinedToDie = @[chosenToDie, otherPlayer];
+    
+    // Expect:
+    BOOL healerHasPowers = YES;
+    NSArray *expectedNewArray = @[otherPlayer];
+    [[[self.mockGameState stub] andReturn:destinedToDie] destinedToDie];
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(healerHasPowers)] healerHasPowers];
+    [[self.mockGameState expect] setDestinedToDie:expectedNewArray];
+    
+    // When
+    [self.testGame healerSavesPlayer:chosenToDie];
+}
+
+-(void)testThatHealerWithoutPowersCannotBringBackFromTheDead
+{
+    // Given:
+    Player *chosenToDie = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    Player *otherPlayer = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    NSArray *destinedToDie = @[chosenToDie, otherPlayer];
+    
+    // Expect:
+    BOOL healerHasPowers = NO;
+    [[[self.mockGameState stub] andReturn:destinedToDie] destinedToDie];
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(healerHasPowers)] healerHasPowers];
+    [[self.mockGameState reject] setDestinedToDie:OCMOCK_ANY];
+    
+    // When
+    [self.testGame healerSavesPlayer:chosenToDie];
+}
+
+-(void)testThatHealerCannotUsePowersIfHealerIsDestinedToDie
+{
+    // Given:
+    Player *chosenToDie = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    Player *otherPlayer = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    Player *healer = [[Player alloc] initWithName:@"Healer Bob" role:Healer];
+    NSArray *destinedToDie = @[chosenToDie, otherPlayer, healer];
+    
+    // Expect:
+    BOOL healerHasPowers = YES;
+    [[[self.mockGameState stub] andReturn:destinedToDie] destinedToDie];
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(healerHasPowers)] healerHasPowers];
+    [[[self.mockGameState stub] andReturn:healer] playerWithRole:Healer inPlayerSet:OCMOCK_ANY];
+    [[self.mockGameState reject] setDestinedToDie:OCMOCK_ANY];
+    
+    // When
+    [self.testGame healerSavesPlayer:chosenToDie];
+}
+
+-(void)testThatSuccessfulHealingCanOnlyBeUsedOncePerGame
+{
+    // Given:
+    Player *chosenToDie = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    NSArray *destinedToDie = @[chosenToDie];
+    
+    // Expect:
+    BOOL healerHasPowers = YES;
+    [[[self.mockGameState stub] andReturn:destinedToDie] destinedToDie];
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(healerHasPowers)] healerHasPowers];
+    [[self.mockGameState stub] setDestinedToDie:OCMOCK_ANY];
+    [[self.mockGameState expect] setHealerHasPowers:NO];
+    
+    // When
+    [self.testGame healerSavesPlayer:chosenToDie];
+}
+
 @end
