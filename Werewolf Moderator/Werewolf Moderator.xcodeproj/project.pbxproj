@@ -432,11 +432,19 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"../3rdParty/**",
+					"$(SRCROOT)/../3rdParty/**",
 				);
 				INFOPLIST_FILE = "Werewolf ModeratorTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "../3rdParty/**";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../3rdParty/**";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-force_load",
+					"\"$(SRCROOT)/../3rdParty/OCMock/libOCMock.a\"",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Werewolf Moderator.app/Werewolf Moderator";
 			};
@@ -453,11 +461,19 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"../3rdParty/**",
+					"$(SRCROOT)/../3rdParty/**",
 				);
 				INFOPLIST_FILE = "Werewolf ModeratorTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "../3rdParty/**";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../3rdParty/**";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-force_load",
+					"\"$(SRCROOT)/../3rdParty/OCMock/libOCMock.a\"",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Werewolf Moderator.app/Werewolf Moderator";
 			};

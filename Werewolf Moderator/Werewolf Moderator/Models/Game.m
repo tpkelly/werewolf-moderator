@@ -7,6 +7,8 @@
 //
 
 #import "Game.h"
+#import "Player.h"
+#import "Role.h"
 
 @implementation Game
 
@@ -24,17 +26,17 @@
 
 -(BOOL)clairvoyantChecksPlayer:(Player *)player
 {
-    return YES;
+    return player.role.isCorrupt;
 }
 
 -(BOOL)mediumChecksPlayer:(Player *)player
 {
-    return YES;
+    return player.role.isCorrupt;
 }
 
 -(BOOL)wizardChecksPlayer:(Player *)player
 {
-    return YES;
+    return player.role.isMystic;
 }
 
 -(void)witchProtectPlayer:(Player *)player

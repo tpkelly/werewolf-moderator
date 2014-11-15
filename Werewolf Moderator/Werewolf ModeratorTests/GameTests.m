@@ -10,9 +10,14 @@
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
 
+#import "Game.h"
+#import "GameState.h"
+#import "Player.h"
+
 @interface GameTests : XCTestCase
 
 @property (nonatomic, strong) id mockGameState;
+@property (nonatomic, strong) Game *testGame;
 
 @end
 
@@ -20,22 +25,50 @@
 
 - (void)setUp {
     [super setUp];
+    
+    self.mockGameState = [OCMockObject mockForClass:[GameState class]];
+    self.testGame = [[Game alloc] initWithState:self.mockGameState];
 }
 
 - (void)tearDown {
+    [self.mockGameState verify];
+    
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+#pragma mark - Mystics
+
+-(void)testThatClairvoyantChecksForCorruption
+{
+    // Given:
+    Player *corruptPlayer = [[Player alloc] initWithName:@"Bob" role:AlphaWolf];
+    Player *noncorruptPlayer = [[Player alloc] initWithName:@"Bob" role:Farmer];
+    
+    //Then:
+    XCTAssertTrue([self.testGame clairvoyantChecksPlayer:corruptPlayer]);
+    XCTAssertFalse([self.testGame clairvoyantChecksPlayer:noncorruptPlayer]);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+-(void)testThatMediumChecksForCorruption
+{
+    // Given:
+    Player *corruptPlayer = [[Player alloc] initWithName:@"Bob" role:AlphaWolf];
+    Player *noncorruptPlayer = [[Player alloc] initWithName:@"Bob" role:Farmer];
+    
+    //Then:
+    XCTAssertTrue([self.testGame mediumChecksPlayer:corruptPlayer]);
+    XCTAssertFalse([self.testGame mediumChecksPlayer:noncorruptPlayer]);
+}
+
+-(void)testThatWizardChecksForMysticism
+{
+    // Given:
+    Player *mysticPlayer = [[Player alloc] initWithName:@"Bob" role:Healer];
+    Player *regularPlayer = [[Player alloc] initWithName:@"Bob" role:Farmer];
+    
+    //Then:
+    XCTAssertTrue([self.testGame wizardChecksPlayer:mysticPlayer]);
+    XCTAssertFalse([self.testGame wizardChecksPlayer:regularPlayer]);
 }
 
 @end
