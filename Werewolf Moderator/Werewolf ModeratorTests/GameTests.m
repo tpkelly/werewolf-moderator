@@ -13,6 +13,7 @@
 #import "Game.h"
 #import "GameState.h"
 #import "Player.h"
+#import "Role.h"
 
 @interface GameTests : XCTestCase
 
@@ -208,6 +209,149 @@
     
     // When
     [self.testGame healerSavesPlayer:chosenToDie];
+}
+
+#pragma mark - Vampire Attacks
+
+-(void)testThatVampireTurnsTargetIntoMinion
+{
+    // Given:
+    Player *farmer = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    
+    // When:
+    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:farmer];
+    
+    // Then:
+    XCTAssertEqual(Minion, farmer.role.roleType);
+    XCTAssertTrue(attackSucceeded);
+}
+
+-(void)testThatVampireCannotAttackHermit
+{
+    // Given:
+    Player *player = [[Player alloc] initWithName:@"Farmer Joe" role:Hermit];
+    
+    // When:
+    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:player];
+    
+    // Then:
+    XCTAssertEqual(Hermit, player.role.roleType);
+    XCTAssertFalse(attackSucceeded);
+}
+
+-(void)testThatVampireCannotAttackProtectedPlayer
+{
+    // Given:
+    Player *player = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    player.temporaryProtection = YES;
+    
+    // When:
+    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:player];
+    
+    // Then:
+    XCTAssertEqual(Farmer, player.role.roleType);
+    XCTAssertFalse(attackSucceeded);
+}
+
+-(void)testThatVampireCannotAttackRomeo
+{
+    // Given:
+    Player *player = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    [self.testGame julietPicksRomeo:player];
+    
+    // When:
+    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:player];
+    
+    // Then:
+    XCTAssertEqual(Farmer, player.role.roleType);
+    XCTAssertFalse(attackSucceeded);
+}
+
+-(void)testThatVampireCannotAttackMystics
+{
+    // Given:
+    Player *player = [[Player alloc] initWithName:@"Farmer Joe" role:Wizard];
+    
+    // When:
+    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:player];
+    
+    // Then:
+    XCTAssertEqual(Wizard, player.role.roleType);
+    XCTAssertFalse(attackSucceeded);
+}
+
+-(void)testThatVampireDiesWhenAttackingVampireHunter
+{
+    // Given:
+    Player *hunter = [[Player alloc] initWithName:@"Van Hellsing" role:VampireHunter];
+    Player *vampire = [[Player alloc] initWithName:@"Dracula" role:Vampire];
+    
+    // Expect:
+    NSArray *destinedToDie = @[vampire];
+    [[[self.mockGameState stub] andReturn:vampire] playerWithRole:Vampire inPlayerSet:OCMOCK_ANY];
+    [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
+    [[self.mockGameState expect] setDestinedToDie:destinedToDie];
+    
+    // When:
+    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:hunter];
+    
+    // Then:
+    XCTAssertFalse(attackSucceeded);
+}
+
+-(void)testThatVampireDiesWhenAttackingWolves
+{
+    // Given:
+    Player *wolf = [[Player alloc] initWithName:@"Rex" role:Defector];
+    Player *vampire = [[Player alloc] initWithName:@"Dracula" role:Vampire];
+    
+    // Expect:
+    NSArray *destinedToDie = @[vampire];
+    [[[self.mockGameState stub] andReturn:vampire] playerWithRole:Vampire inPlayerSet:OCMOCK_ANY];
+    [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
+    [[self.mockGameState expect] setDestinedToDie:destinedToDie];
+    
+    // When:
+    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:wolf];
+    
+    // Then:
+    XCTAssertFalse(attackSucceeded);
+}
+
+-(void)testThatIgorDiesInVampiresPlaceDuringVampireAttackPhase
+{
+    // Given:
+    Player *wolf = [[Player alloc] initWithName:@"Rex" role:Defector];
+    Player *igor = [[Player alloc] initWithName:@"Igor" role:Igor];
+    
+    // Expect:
+    NSArray *destinedToDie = @[igor];
+    [[[self.mockGameState stub] andReturn:igor] playerWithRole:Igor inPlayerSet:OCMOCK_ANY];
+    [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
+    [[self.mockGameState expect] setDestinedToDie:destinedToDie];
+    
+    // When:
+    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:wolf];
+    
+    //Then:
+    XCTAssertFalse(attackSucceeded);
+}
+
+#pragma mark - First night actions
+
+-(void)testThatRomeoIsProtectedFromShadows
+{
+    //Given:
+    Player *player = [[Player alloc] initWithName:@"Romeo" role:Farmer];
+    
+    //Expect:
+    [[self.mockGameState expect] setRomeoPlayer:player];
+    
+    //When:
+    [self.testGame julietPicksRomeo:player];
+    
+    //Then:
+    XCTAssertTrue(player.permanentProtection);
 }
 
 @end

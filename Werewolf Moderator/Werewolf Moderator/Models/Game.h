@@ -24,7 +24,10 @@
 -(void)witchProtectPlayer:(Player*)player;
 -(void)healerSavesPlayer:(Player*)player;
 
--(void)vampireAttackPlayer:(Player*)player;
--(void)wolfAttackPlayer:(Player*)player;
+-(void)julietPicksRomeo:(Player*)player;
+
+// Returns whether the attack was successful
+-(BOOL)vampireAttackPlayer:(Player*)player;
+-(BOOL)wolfAttackPlayer:(Player*)player;
 
 @end

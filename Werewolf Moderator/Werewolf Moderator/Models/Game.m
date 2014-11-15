@@ -85,14 +85,43 @@
 
 #pragma mark - Nightly attacks
 
--(void)wolfAttackPlayer:(Player *)player
+-(BOOL)wolfAttackPlayer:(Player *)player
 {
-    
+    return YES;
 }
 
--(void)vampireAttackPlayer:(Player *)player
+-(BOOL)vampireAttackPlayer:(Player *)player
 {
+    // Protected from vampire attacks
+    if (player.temporaryProtection || player.permanentProtection || player.role.isMystic)
+    {
+        return NO;
+    }
     
+    // Critical mission failure - Kill the vampire/igor off
+    if (player.role.roleType == VampireHunter || player.role.faction == WolvesFaction)
+    {
+        //Kill igor if they are in play, or the vampire if not
+        Player *playerToKill = [_state playerWithRole:Igor inPlayerSet:_state.playersAlive];
+        if (!playerToKill)
+        {
+            playerToKill = [_state playerWithRole:Vampire inPlayerSet:_state.playersAlive];
+        }
+        _state.destinedToDie = [_state.destinedToDie arrayByAddingObject:playerToKill];
+        return NO;
+    }
+    
+    // Just as planned...
+    player.role = [[Role alloc] initWithRole:Minion];
+    return YES;
+}
+
+#pragma mark - First night actions
+
+-(void)julietPicksRomeo:(Player *)player
+{
+    _state.romeoPlayer = player;
+    player.permanentProtection = YES;
 }
 
 @end
