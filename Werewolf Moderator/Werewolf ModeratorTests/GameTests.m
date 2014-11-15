@@ -310,6 +310,123 @@
     XCTAssertFalse(attackSucceeded);
 }
 
+#pragma mark - Wolf attacks
+
+-(void)testThatWolfAttackTargetIsDestinedToDie
+{
+    // Given
+    Player *dyingPlayer = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    Player *wolfTarget = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:@[dyingPlayer]] destinedToDie];
+    [[self.mockGameState expect] setDestinedToDie:@[dyingPlayer, wolfTarget]];
+    
+    // When
+    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:wolfTarget];
+    
+    // Then
+    XCTAssertTrue(attackSucceeded);
+}
+
+-(void)testThatWolfAttackFailsOnProtectedTarget
+{
+    // Given
+    Player *wolfTarget = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    wolfTarget.temporaryProtection = YES;
+    
+    // When
+    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:wolfTarget];
+    
+    // Then
+    XCTAssertFalse(attackSucceeded);
+}
+
+-(void)testThatWolfAttackFailsOnImmuneTarget
+{
+    // Given
+    Player *wolfTarget = [[Player alloc] initWithName:@"Farmer Joe" role:Hermit];
+    
+    // When
+    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:wolfTarget];
+    
+    // Then
+    XCTAssertFalse(attackSucceeded);
+}
+
+-(void)testThatWolfAttackOnJulietKillsRomeoToo
+{
+    // Given
+    Player *romeo = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    Player *juliet = [[Player alloc] initWithName:@"Farmer Joe" role:Juliet];
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:romeo] romeoPlayer];
+    [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
+    [[self.mockGameState expect] setDestinedToDie:@[romeo, juliet]];
+    
+    // When
+    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:juliet];
+    
+    // Then
+    XCTAssertTrue(attackSucceeded);
+}
+
+-(void)testThatWolfAttackOnGuardedKillsAngelInstead
+{
+    // Given
+    Player *guarded = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    Player *angel = [[Player alloc] initWithName:@"Farmer Joe" role:GuardianAngel];
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:guarded] guardedPlayer];
+    [[[self.mockGameState stub] andReturn:angel] playerWithRole:GuardianAngel inPlayerSet:OCMOCK_ANY];
+    [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
+    [[self.mockGameState expect] setDestinedToDie:@[angel]];
+    
+    // When
+    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:guarded];
+    
+    // Then
+    XCTAssertTrue(attackSucceeded);
+}
+
+// The rules say that Igor "Dies in Vampire's place during Vampire's turn". I take this to mean that Igor only takes the vampire's place when the vampire is attacking a wolf/hunter.
+-(void)testThatWolfAttackOnVampireDoesNotKillIgorInstead
+{
+    // Given
+    Player *igor = [[Player alloc] initWithName:@"Farmer Joe" role:Igor];
+    Player *vampire = [[Player alloc] initWithName:@"Farmer Joe" role:Vampire];
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:igor] playerWithRole:Igor inPlayerSet:OCMOCK_ANY];
+    [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
+    [[self.mockGameState expect] setDestinedToDie:@[vampire]];
+    
+    // When
+    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:vampire];
+    
+    // Then
+    XCTAssertTrue(attackSucceeded);
+}
+
+-(void)testThatWolfAttackCancelledIfMadmanMaulledLastNight
+{
+    // Given
+    Player *wolfTarget = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    
+    // Expect
+    BOOL madmanDied = YES;
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(madmanDied)] madmanMauledLastNight];
+    [[self.mockGameState reject] setDestinedToDie:OCMOCK_ANY];
+    
+    // When
+    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:wolfTarget];
+    
+    // Then
+    XCTAssertFalse(attackSucceeded);
+}
+
 #pragma mark - First night actions
 
 -(void)testThatRomeoIsProtectedFromShadows
@@ -473,6 +590,28 @@
     
     //Then:
     XCTAssertEqual(NoNews, morningNews.news);
+}
+
+-(void)testThatMadmanMaulledFlagIsReset
+{
+    //Expect
+    [[self.mockGameState expect] setMadmanMauledLastNight:NO];
+    
+    //When
+    [self.testGame transitionToMorning];
+}
+
+-(void)testThatMadmanMaulledFlagIsSetWhenMadmanDiesFromWolves
+{
+    //Given
+    Player *madman = [[Player alloc] initWithName:@"Madman" role:Madman];
+    
+    //Expect
+    [[[self.mockGameState stub] andReturn:madman] playerWithRole:Madman inPlayerSet:OCMOCK_ANY];
+    [[self.mockGameState expect] setMadmanMauledLastNight:YES];
+    
+    //When
+    [self.testGame transitionToMorning];
 }
 
 @end

@@ -77,6 +77,36 @@
 
 -(BOOL)wolfAttackPlayer:(Player *)player
 {
+    // Madman blocks attacks
+    if (_state.madmanMauledLastNight)
+    {
+        return NO;
+    }
+    
+    // Protected from shadow attacks
+    if (player.temporaryProtection || player.permanentProtection)
+    {
+        return NO;
+    }
+    
+    NSMutableArray *destinedToDie = [_state.destinedToDie mutableCopy];
+    
+    // Kill romeo with juliet - Romeo is immune to shadow attacks, so this only happens one way around.
+    if (player.role.roleType == Juliet)
+    {
+        [destinedToDie addObject:_state.romeoPlayer];
+    }
+    // Guardian angel takes Guarded's place, if possible.
+    else if (player == _state.guardedPlayer)
+    {
+        Player *guardianAngel = [_state playerWithRole:GuardianAngel inPlayerSet:_state.playersAlive];
+        player = (guardianAngel) ? guardianAngel : player;
+    }
+    
+    // Kill target
+    [destinedToDie addObject:player];
+    _state.destinedToDie = destinedToDie;
+    
     return YES;
 }
 
@@ -118,6 +148,9 @@
 
 -(MorningNews *)transitionToMorning
 {
+    Player *madmanDestinedToDie = [_state playerWithRole:Madman inPlayerSet:_state.destinedToDie];
+    _state.madmanMauledLastNight = (madmanDestinedToDie != nil);
+    
     MorningNews *news = [MorningNews new];
     news.diedLastNight = _state.destinedToDie;
     
