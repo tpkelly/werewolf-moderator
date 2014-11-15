@@ -101,34 +101,6 @@
     [self.testGame clairvoyantChecksPlayer:noncorruptPlayer];
 }
 
--(void)testThatNoNewsForTheVillageIfCorruptionFoundButInnkeeperIsGone
-{
-    // Given:
-    Player *corruptPlayer = [[Player alloc] initWithName:@"Wolf" role:AlphaWolf];
-    
-    // Expect:
-    BOOL innkeeperIsAlive = NO;
-    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(innkeeperIsAlive)] roleIsAlive:Innkeeper];
-    [[self.mockGameState expect] setNewsFromTheInn:NoNews];
-    
-    //When:
-    [self.testGame clairvoyantChecksPlayer:corruptPlayer];
-}
-
--(void)testThatNoNewsForTheVillageIfNoCorruptionFoundButBardIsGone
-{
-    // Given:
-    Player *noncorruptPlayer = [[Player alloc] initWithName:@"Farmer" role:Farmer];
-    
-    // Expect:
-    BOOL bardIsAlive = NO;
-    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(bardIsAlive)] roleIsAlive:Bard];
-    [[self.mockGameState expect] setNewsFromTheInn:NoNews];
-    
-    //When:
-    [self.testGame clairvoyantChecksPlayer:noncorruptPlayer];
-}
-
 -(void)testThatWitchGivesTemporaryProtectionToTargetPlayer
 {
     // Given:
@@ -437,6 +409,70 @@
     
     //Then:
     XCTAssertEqualObjects(@[dyingPlayer], news.diedLastNight);
+}
+
+-(void)testThatMorningNewsHasNewsFromTheInn
+{
+    //Given:
+    NewsFromTheInn news = FoundCorrupt;
+    
+    //Expect:
+    BOOL innkeeperIsAlive = YES;
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(news)] newsFromTheInn];
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(innkeeperIsAlive)] roleIsAlive:Innkeeper];
+
+    //When:
+    MorningNews *morningNews = [self.testGame transitionToMorning];
+    
+    //Then:
+    XCTAssertEqual(FoundCorrupt, morningNews.news);
+}
+
+-(void)testThatTransitionToMorningResetsNewsFromTheInn
+{
+    //Given:
+    NewsFromTheInn news = FoundCorrupt;
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(news)] newsFromTheInn];
+    [[self.mockGameState expect] setNewsFromTheInn:NoNews];
+    
+    //When:
+    [self.testGame transitionToMorning];
+}
+
+-(void)testThatNoNewsFromTheInnIfCorruptFoundButInnkeeperIsDead
+{
+    //Given:
+    NewsFromTheInn news = FoundCorrupt;
+    
+    //Expect:
+    BOOL innkeeperAlive = NO;
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(news)] newsFromTheInn];
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(innkeeperAlive)] roleIsAlive:Innkeeper];
+    
+    //When:
+    MorningNews *morningNews = [self.testGame transitionToMorning];
+    
+    //Then:
+    XCTAssertEqual(NoNews, morningNews.news);
+}
+
+-(void)testThatNoNewsFromTheInnIfNonCorruptFoundButBardIsDead
+{
+    //Given:
+    NewsFromTheInn news = FoundNonCorrupt;
+    
+    //Expect:
+    BOOL bardIsAlive = NO;
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(news)] newsFromTheInn];
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(bardIsAlive)] roleIsAlive:Bard];
+    
+    //When:
+    MorningNews *morningNews = [self.testGame transitionToMorning];
+    
+    //Then:
+    XCTAssertEqual(NoNews, morningNews.news);
 }
 
 @end

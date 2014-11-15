@@ -30,19 +30,8 @@
 {
     BOOL checkedPlayerWasCorrupt = player.role.isCorrupt;
     
-    if (checkedPlayerWasCorrupt && [_state roleIsAlive:Innkeeper])
-    {
-        _state.newsFromTheInn = FoundCorrupt;
-    }
-    else if (!checkedPlayerWasCorrupt && [_state roleIsAlive:Bard])
-    {
-        _state.newsFromTheInn = FoundNonCorrupt;
-    }
-    else
-    {
-        _state.newsFromTheInn = NoNews;
-    }
-    
+    _state.newsFromTheInn = (checkedPlayerWasCorrupt) ? FoundCorrupt : FoundNonCorrupt;
+
     return checkedPlayerWasCorrupt;
 }
 
@@ -132,12 +121,23 @@
     MorningNews *news = [MorningNews new];
     news.diedLastNight = _state.destinedToDie;
     
+    // Update GameState player lists
     NSMutableArray *playersAlive = [_state.playersAlive mutableCopy];
     [playersAlive removeObjectsInArray:_state.destinedToDie];
-    
     _state.playersAlive = playersAlive;
     _state.playersDead = [_state.playersDead arrayByAddingObjectsFromArray:_state.destinedToDie];
     _state.destinedToDie = @[];
+    
+    // Find news from the inn
+    news.news = _state.newsFromTheInn;
+    _state.newsFromTheInn = NoNews;
+    
+    //We need the bard or innkeeper alive to hear about the news
+    if ((news.news == FoundCorrupt && ![_state roleIsAlive:Innkeeper])
+        || (news.news == FoundNonCorrupt && ![_state roleIsAlive:Bard]))
+    {
+        news.news = NoNews;
+    }
     
     return news;
 }
