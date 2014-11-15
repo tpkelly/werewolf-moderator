@@ -10,6 +10,7 @@
 #import "Player.h"
 #import "Role.h"
 #import "GameState.h"
+#import "MorningNews.h"
 
 @implementation Game
 
@@ -122,6 +123,23 @@
 {
     _state.romeoPlayer = player;
     player.permanentProtection = YES;
+}
+
+#pragma mark - It is morning
+
+-(MorningNews *)transitionToMorning
+{
+    MorningNews *news = [MorningNews new];
+    news.diedLastNight = _state.destinedToDie;
+    
+    NSMutableArray *playersAlive = [_state.playersAlive mutableCopy];
+    [playersAlive removeObjectsInArray:_state.destinedToDie];
+    
+    _state.playersAlive = playersAlive;
+    _state.playersDead = [_state.playersDead arrayByAddingObjectsFromArray:_state.destinedToDie];
+    _state.destinedToDie = @[];
+    
+    return news;
 }
 
 @end

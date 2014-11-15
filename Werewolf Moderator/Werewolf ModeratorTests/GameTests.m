@@ -14,6 +14,7 @@
 #import "GameState.h"
 #import "Player.h"
 #import "Role.h"
+#import "MorningNews.h"
 
 @interface GameTests : XCTestCase
 
@@ -352,6 +353,90 @@
     
     //Then:
     XCTAssertTrue(player.permanentProtection);
+}
+
+#pragma mark - It is morning
+
+-(void)testThatDestinedToDiePlayersHaveDied
+{
+    //Given:
+    Player *deadPlayer = [[Player alloc] initWithName:@"Corpse" role:Farmer];
+    Player *dyingPlayer = [[Player alloc] initWithName:@"Dying" role:Farmer];
+    Player *livingPlayer = [[Player alloc] initWithName:@"Living" role:Farmer];
+    NSArray *destinedToDie = @[dyingPlayer];
+    NSArray *deadPlayers = @[deadPlayer];
+    NSArray *alivePlayers = @[dyingPlayer, livingPlayer];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:alivePlayers] playersAlive];
+    [[[self.mockGameState stub] andReturn:deadPlayers] playersDead];
+    [[[self.mockGameState stub] andReturn:destinedToDie] destinedToDie];
+    [[self.mockGameState expect] setPlayersDead:@[deadPlayer, dyingPlayer]];
+    
+    //When:
+    [self.testGame transitionToMorning];
+}
+
+-(void)testThatDestinedToDiePlayersAreNoLongerAlive
+{
+    //Given:
+    Player *deadPlayer = [[Player alloc] initWithName:@"Corpse" role:Farmer];
+    Player *dyingPlayer = [[Player alloc] initWithName:@"Dying" role:Farmer];
+    Player *livingPlayer = [[Player alloc] initWithName:@"Living" role:Farmer];
+    NSArray *destinedToDie = @[dyingPlayer];
+    NSArray *deadPlayers = @[deadPlayer];
+    NSArray *alivePlayers = @[dyingPlayer, livingPlayer];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:alivePlayers] playersAlive];
+    [[[self.mockGameState stub] andReturn:deadPlayers] playersDead];
+    [[[self.mockGameState stub] andReturn:destinedToDie] destinedToDie];
+    [[self.mockGameState expect] setPlayersAlive:@[livingPlayer]];
+    
+    //When:
+    [self.testGame transitionToMorning];
+}
+
+-(void)testThatNobodyIsDestinedToDieAfterMorningArrives
+{
+    //Given:
+    Player *deadPlayer = [[Player alloc] initWithName:@"Corpse" role:Farmer];
+    Player *dyingPlayer = [[Player alloc] initWithName:@"Dying" role:Farmer];
+    Player *livingPlayer = [[Player alloc] initWithName:@"Living" role:Farmer];
+    NSArray *destinedToDie = @[dyingPlayer];
+    NSArray *deadPlayers = @[deadPlayer];
+    NSArray *alivePlayers = @[dyingPlayer, livingPlayer];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:alivePlayers] playersAlive];
+    [[[self.mockGameState stub] andReturn:deadPlayers] playersDead];
+    [[[self.mockGameState stub] andReturn:destinedToDie] destinedToDie];
+    [[self.mockGameState expect] setDestinedToDie:@[]];
+    
+    //When:
+    [self.testGame transitionToMorning];
+}
+
+-(void)testThatMorningNewsListsDestinedToDieAsDead
+{
+    //Given:
+    Player *deadPlayer = [[Player alloc] initWithName:@"Corpse" role:Farmer];
+    Player *dyingPlayer = [[Player alloc] initWithName:@"Dying" role:Farmer];
+    Player *livingPlayer = [[Player alloc] initWithName:@"Living" role:Farmer];
+    NSArray *destinedToDie = @[dyingPlayer];
+    NSArray *deadPlayers = @[deadPlayer];
+    NSArray *alivePlayers = @[dyingPlayer, livingPlayer];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:alivePlayers] playersAlive];
+    [[[self.mockGameState stub] andReturn:deadPlayers] playersDead];
+    [[[self.mockGameState stub] andReturn:destinedToDie] destinedToDie];
+    
+    //When:
+    MorningNews *news = [self.testGame transitionToMorning];
+    
+    //Then:
+    XCTAssertEqualObjects(@[dyingPlayer], news.diedLastNight);
 }
 
 @end

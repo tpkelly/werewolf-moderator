@@ -22,6 +22,7 @@
 		47B4C1331A15514A00D30338 /* GameStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C1321A15514A00D30338 /* GameStateTests.m */; };
 		47B4C1361A16CC0800D30338 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C1351A16CC0800D30338 /* Game.m */; };
 		47B4C1381A16DE8700D30338 /* GameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C1371A16DE8700D30338 /* GameTests.m */; };
+		47EF772E1A17CA48004E6DDD /* MorningNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EF772D1A17CA48004E6DDD /* MorningNews.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		47B4C1341A16CC0800D30338 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		47B4C1351A16CC0800D30338 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		47B4C1371A16DE8700D30338 /* GameTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTests.m; sourceTree = "<group>"; };
+		47EF772C1A17CA48004E6DDD /* MorningNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorningNews.h; sourceTree = "<group>"; };
+		47EF772D1A17CA48004E6DDD /* MorningNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorningNews.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +166,8 @@
 				47B4C1311A154FA900D30338 /* NewsFromTheInn.h */,
 				47B4C1341A16CC0800D30338 /* Game.h */,
 				47B4C1351A16CC0800D30338 /* Game.m */,
+				47EF772C1A17CA48004E6DDD /* MorningNews.h */,
+				47EF772D1A17CA48004E6DDD /* MorningNews.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B4C1241A13E2ED00D30338 /* Role.m in Sources */,
+				47EF772E1A17CA48004E6DDD /* MorningNews.m in Sources */,
 				47B4C1031A13E25900D30338 /* SecondViewController.m in Sources */,
 				47B4C0FD1A13E25900D30338 /* AppDelegate.m in Sources */,
 				47B4C1361A16CC0800D30338 /* Game.m in Sources */,
@@ -498,6 +504,7 @@
 				47B4C11C1A13E25900D30338 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		47B4C11D1A13E25900D30338 /* Build configuration list for PBXNativeTarget "Werewolf ModeratorTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +513,7 @@
 				47B4C11F1A13E25900D30338 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

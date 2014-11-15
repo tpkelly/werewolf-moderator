@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NewsFromTheInn.h"
 
 @class GameState;
 @class Player;
+@class MorningNews;
 
 @interface Game : NSObject
 
@@ -29,5 +31,7 @@
 // Returns whether the attack was successful
 -(BOOL)vampireAttackPlayer:(Player*)player;
 -(BOOL)wolfAttackPlayer:(Player*)player;
+
+-(MorningNews*)transitionToMorning;
 
 @end
