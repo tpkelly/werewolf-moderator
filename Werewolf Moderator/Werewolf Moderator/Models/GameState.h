@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "NewsFromTheInn.h"
-#import "Player.h"
+
+@class Player;
 
 @interface GameState : NSObject
 

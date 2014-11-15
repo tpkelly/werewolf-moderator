@@ -7,6 +7,7 @@
 //
 
 #import "Player.h"
+#import "Role.h"
 
 @implementation Player
 

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "Player.h"
+#import "Role.h"
 
 @interface PlayerTests : XCTestCase
 

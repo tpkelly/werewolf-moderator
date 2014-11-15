@@ -7,6 +7,9 @@
 //
 
 #import "GameState.h"
+#import "RoleType.h"
+#import "Player.h"
+#import "Role.h"
 
 @implementation GameState
 

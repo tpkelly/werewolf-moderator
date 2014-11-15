@@ -8,6 +8,9 @@
 
 #import <XCTest/XCTest.h>
 #import "GameState.h"
+#import "RoleType.h"
+#import "Player.h"
+#import "Role.h"
 
 @interface GameStateTests : XCTestCase
 

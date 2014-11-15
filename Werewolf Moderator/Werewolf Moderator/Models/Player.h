@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Role.h"
+#import "RoleType.h"
+
+@class Role;
 
 @interface Player : NSObject
 
