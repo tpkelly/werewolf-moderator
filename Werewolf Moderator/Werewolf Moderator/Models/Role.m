@@ -20,6 +20,11 @@
     return self;
 }
 
+-(NSString *)description
+{
+    return self.name;
+}
+
 -(NSString *)name
 {
     switch (self.roleType)

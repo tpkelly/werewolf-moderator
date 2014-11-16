@@ -43,12 +43,13 @@
     self.jester = [[Player alloc] initWithName:@"Jester" role:Jester];
     
     self.mockGameState = [OCMockObject niceMockForClass:[GameState class]];
-    self.testBallot = [[Ballot alloc] initWithState:self.mockGameState];
     
     NSArray *allPlayers = @[self.seducer, self.juliet, self.romeo, self.angel, self.guarded, self.wolfPup, self.jester];
     [[[self.mockGameState stub] andReturn:allPlayers] playersAlive];
     [[[self.mockGameState stub] andReturn:self.romeo] romeoPlayer];
     [[[self.mockGameState stub] andReturn:self.guarded] guardedPlayer];
+
+    self.testBallot = [[Ballot alloc] initWithState:self.mockGameState];
 }
 
 - (void)tearDown {
@@ -58,6 +59,52 @@
 }
 
 #pragma mark - General Voting
+
+-(void)testThatFirstRoundOfVotingSelectsTopTwoScores
+{
+    // Given
+    NSArray *votes = @[[Vote forPlayer:self.wolfPup voteCount:2],
+                       [Vote forPlayer:self.jester voteCount:3],
+                       [Vote forPlayer:self.angel voteCount:1],
+                       [Vote forPlayer:self.romeo voteCount:3],
+                       [Vote forPlayer:self.juliet voteCount:2],
+                       [Vote forPlayer:self.guarded voteCount:0],
+                       [Vote forPlayer:self.seducer voteCount:0]];
+    // When
+    NSArray *observedBallot = [self.testBallot firstRoundResults:votes];
+    
+    // Then
+    NSArray *expectedBallot = @[self.jester, self.romeo, self.wolfPup, self.juliet];
+    XCTAssertEqualObjects(expectedBallot, observedBallot);
+}
+
+-(void)testThatSecondRoundOfBallotPicksTopVotedPlayer
+{
+    // Given
+    NSArray *votes = @[[Vote forPlayer:self.wolfPup voteCount:2],
+                       [Vote forPlayer:self.jester voteCount:3],
+                       [Vote forPlayer:self.angel voteCount:1]];
+    
+    //When
+    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    
+    //Then:
+    XCTAssertEqual(self.jester, burnedPlayer);
+}
+
+-(void)testThatNobodyDiesIfSecondRoundIsATie
+{
+    // Given
+    NSArray *votes = @[[Vote forPlayer:self.wolfPup voteCount:3],
+                       [Vote forPlayer:self.jester voteCount:3],
+                       [Vote forPlayer:self.angel voteCount:1]];
+    
+    //When
+    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    
+    //Then:
+    XCTAssertNil(burnedPlayer);
+}
 
 #pragma mark - Jester tests
 

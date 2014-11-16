@@ -15,10 +15,8 @@
 
 -(instancetype)initWithState:(GameState*)state;
 
-@property (nonatomic, copy, readonly) NSArray *playersOnBallot;
-
 //Takes arrays of Vote objects
--(void)firstRoundResults:(NSArray*)votes;
+-(NSArray*)firstRoundResults:(NSArray*)votes;
 -(Player*)secondRoundResults:(NSArray*)votes;
 
 @end

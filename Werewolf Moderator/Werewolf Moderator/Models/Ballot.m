@@ -30,9 +30,18 @@
     return self;
 }
 
--(void)firstRoundResults:(NSArray *)votes
+-(NSArray*)firstRoundResults:(NSArray *)votes
 {
+    NSArray *mostVotedPlayers = [self mostVotedPlayers:votes];
     
+    NSPredicate *allOtherVotedPredicate = [NSPredicate predicateWithBlock:^BOOL(Vote *evaluatedObject, NSDictionary *bindings) {
+        return ![mostVotedPlayers containsObject:evaluatedObject.player];
+    }];
+    NSArray *allOtherVoted = [votes filteredArrayUsingPredicate:allOtherVotedPredicate];
+    
+    NSArray *secondMostVotedPlayers = [self mostVotedPlayers:allOtherVoted];
+    
+    return [mostVotedPlayers arrayByAddingObjectsFromArray:secondMostVotedPlayers];
 }
 
 -(Player *)secondRoundResults:(NSArray *)votes
@@ -46,15 +55,15 @@
         return nil;
     }
     
-    int maxScore = [[votes valueForKeyPath:@"@max.voteCount"] integerValue];
-    NSPredicate *mostVotedPredicate = [NSPredicate predicateWithBlock:^BOOL(Vote *evaluatedObject, NSDictionary *bindings) {
-        return evaluatedObject.voteCount == maxScore;
-    }];
+    NSArray *mostVotedPlayers = [self mostVotedPlayers:votes];
     
-    NSArray *mostVotedPlayers = [votes filteredArrayUsingPredicate:mostVotedPredicate];
+    // Village was undecided
+    if (mostVotedPlayers.count != 1)
+    {
+        return nil;
+    }
     
-    Vote *mostVoted = [mostVotedPlayers firstObject];
-    Player *playerToBurn = mostVoted.player;
+    Player *playerToBurn = [mostVotedPlayers firstObject];
     
     // Cancel next ballot if jester is burned
     if (playerToBurn.role.roleType == Jester)
@@ -63,6 +72,17 @@
     }
     
     return playerToBurn;
+}
+
+-(NSArray*)mostVotedPlayers:(NSArray*)votes
+{
+    int maxScore = [[votes valueForKeyPath:@"@max.voteCount"] integerValue];
+    NSPredicate *mostVotedPredicate = [NSPredicate predicateWithBlock:^BOOL(Vote *evaluatedObject, NSDictionary *bindings) {
+        return evaluatedObject.voteCount == maxScore;
+    }];
+    
+    NSArray *mostVotedPlayers = [votes filteredArrayUsingPredicate:mostVotedPredicate];
+    return [mostVotedPlayers valueForKey:@"player"];
 }
 
 @end
