@@ -13,6 +13,7 @@
 #import "GameState.h"
 #import "Player.h"
 #import "Vote.h"
+#import "Role.h"
 
 @interface BallotTests : XCTestCase
 
@@ -136,6 +137,123 @@
     
     //Then:
     XCTAssertEqual(self.jester, burnedPlayer);
+}
+
+#pragma mark - Lover tests
+
+-(void)testThatBurningRomeoKillsJulietAtNight
+{
+    //Given
+    NSArray *votes = @[[Vote forPlayer:self.romeo voteCount:7]];
+    
+    //Expect
+    [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
+    [[[self.mockGameState stub] andReturn:self.juliet] playerWithRole:Juliet inPlayerSet:OCMOCK_ANY];
+    [[self.mockGameState expect] setDestinedToDie:@[self.juliet]];
+    
+    //When
+    [self.testBallot secondRoundResults:votes];
+}
+
+-(void)testThatBurningJulietKillsRomeoAtNight
+{
+    //Given
+    NSArray *votes = @[[Vote forPlayer:self.juliet voteCount:7]];
+    
+    //Expect
+    [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
+    [[self.mockGameState expect] setDestinedToDie:@[self.romeo]];
+    
+    //When
+    [self.testBallot secondRoundResults:votes];
+}
+
+-(void)testThatBurningRomeoDoesNotKillMinionJulietAtNight
+{
+    //Given
+    NSArray *votes = @[[Vote forPlayer:self.romeo voteCount:7]];
+    self.juliet.role = [[Role alloc] initWithRole:Minion];
+    
+    //Expect
+    [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
+    [[self.mockGameState reject] setDestinedToDie:@[self.juliet]];
+    
+    //When
+    [self.testBallot secondRoundResults:votes];
+}
+
+-(void)testThatGuardianAngelTakesPlaceOfGuardedOnBallot
+{
+    //Given
+    NSArray *votes = @[[Vote forPlayer:self.guarded voteCount:7]];
+    
+    //Expect
+    [[[self.mockGameState stub] andReturn:self.angel] playerWithRole:GuardianAngel inPlayerSet:OCMOCK_ANY];
+    
+    //When
+    NSArray *firstBallot = [self.testBallot firstRoundResults:votes];
+    
+    //Then:
+    NSArray *expectedBallot = @[self.angel];
+    XCTAssertEqualObjects(expectedBallot, firstBallot);
+}
+
+-(void)testThatMinionGuardianAngelDoesNotTakePlaceOfGuardedOnBallot
+{
+    //Given
+    NSArray *votes = @[[Vote forPlayer:self.guarded voteCount:7]];
+    self.angel.role = [[Role alloc] initWithRole:Minion];
+    
+    //When
+    NSArray *firstBallot = [self.testBallot firstRoundResults:votes];
+    
+    //Then:
+    NSArray *expectedBallot = @[self.guarded];
+    XCTAssertEqualObjects(expectedBallot, firstBallot);
+}
+
+-(void)testThatGuardianAngelDoesNotTakePlaceOfGuardedOnBallotIfAngelAlreadyOnBallot
+{
+    //Given
+    NSArray *votes = @[[Vote forPlayer:self.guarded voteCount:7], [Vote forPlayer:self.angel voteCount:1]];
+    
+    //Expect
+    [[[self.mockGameState stub] andReturn:self.angel] playerWithRole:GuardianAngel inPlayerSet:OCMOCK_ANY];
+    
+    //When
+    NSArray *firstBallot = [self.testBallot firstRoundResults:votes];
+    
+    //Then:
+    NSArray *expectedBallot = @[self.guarded, self.angel];
+    XCTAssertEqualObjects(expectedBallot, firstBallot);
+}
+
+-(void)testThatGuardianAngelTakesPlaceOfGuardedIfGuardedAboutToBeBurned
+{
+    //Given
+    NSArray *votes = @[[Vote forPlayer:self.guarded voteCount:7], [Vote forPlayer:self.angel voteCount:1]];
+    
+    //Expect
+    [[[self.mockGameState stub] andReturn:self.angel] playerWithRole:GuardianAngel inPlayerSet:OCMOCK_ANY];
+    
+    //When
+    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    
+    //Then:
+    XCTAssertEqualObjects(self.angel, burnedPlayer);
+}
+
+-(void)testThatMinionGuardianAngelDoesNotTakePlaceOfGuardedAboutToBeBurned
+{
+    //Given
+    NSArray *votes = @[[Vote forPlayer:self.guarded voteCount:7]];
+    self.angel.role = [[Role alloc] initWithRole:Minion];
+    
+    //When
+    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    
+    //Then:
+    XCTAssertEqualObjects(self.guarded, burnedPlayer);
 }
 
 @end
