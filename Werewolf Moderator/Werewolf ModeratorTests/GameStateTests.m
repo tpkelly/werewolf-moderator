@@ -31,6 +31,10 @@
     XCTAssertEqual(NoNews, self.gameState.newsFromTheInn);
 }
 
+-(void)testThatWolvesDoNotInitiallyAttackTwice {
+    XCTAssertFalse(self.gameState.wolvesAttackTwice);
+}
+
 - (void)testThatGameStartsWithJesterUnburned {
     XCTAssertFalse(self.gameState.jesterBurnedLastNight);
 }

@@ -314,4 +314,18 @@
     XCTAssertEqualObjects(self.seducer, burnedPlayer);
 }
 
+#pragma mark - Wolf pup
+
+-(void)testThatBurningTheWolfPupGivesWolvesTwoAttacks
+{
+    //Given
+    NSArray *votes = @[[Vote forPlayer:self.wolfPup voteCount:7]];
+    
+    //Expect
+    [[self.mockGameState expect] setWolvesAttackTwice:YES];
+    
+    //When
+    [self.testBallot secondRoundResults:votes];
+}
+
 @end

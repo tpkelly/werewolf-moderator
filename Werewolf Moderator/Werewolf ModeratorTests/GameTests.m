@@ -614,4 +614,13 @@
     [self.testGame transitionToMorning];
 }
 
+-(void)testThatDoubleWolfAttackFlagIsReset
+{
+    //Expect:
+    [[self.mockGameState expect] setWolvesAttackTwice:NO];
+    
+    //When
+    [self.testGame transitionToMorning];
+}
+
 @end

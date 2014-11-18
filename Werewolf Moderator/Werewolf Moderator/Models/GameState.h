@@ -19,6 +19,7 @@
 @property (nonatomic, copy) NSArray *destinedToDie;
 @property (nonatomic, copy) NSCountedSet *unassignedRoles;
 
+@property (nonatomic, assign) BOOL wolvesAttackTwice;
 @property (nonatomic, assign) BOOL madmanMauledLastNight;
 @property (nonatomic, assign) BOOL jesterBurnedLastNight;
 @property (nonatomic, assign) BOOL healerHasPowers;

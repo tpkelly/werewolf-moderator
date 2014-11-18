@@ -151,6 +151,8 @@
     Player *madmanDestinedToDie = [_state playerWithRole:Madman inPlayerSet:_state.destinedToDie];
     _state.madmanMauledLastNight = (madmanDestinedToDie != nil);
     
+    _state.wolvesAttackTwice = NO;
+    
     MorningNews *news = [MorningNews new];
     news.diedLastNight = _state.destinedToDie;
     

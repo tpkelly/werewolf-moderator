@@ -108,6 +108,10 @@
         Player *guardianAngel = [self.state playerWithRole:GuardianAngel inPlayerSet:self.state.playersAlive];
         playerToBurn = (guardianAngel) ? guardianAngel : playerToBurn;
     }
+    else if (playerToBurn.role.roleType == WolfPup)
+    {
+        self.state.wolvesAttackTwice = YES;
+    }
     
     return playerToBurn;
 }
