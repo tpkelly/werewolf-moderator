@@ -32,6 +32,8 @@
 
 -(NSArray*)firstRoundResults:(NSArray *)votes
 {
+    votes = [self votesWithSeducerVotes:votes];
+    
     NSArray *mostVotedPlayers = [self mostVotedPlayers:votes];
     
     NSPredicate *allOtherVotedPredicate = [NSPredicate predicateWithBlock:^BOOL(Vote *evaluatedObject, NSDictionary *bindings) {
@@ -61,6 +63,8 @@
 
 -(Player *)secondRoundResults:(NSArray *)votes
 {
+    votes = [self votesWithSeducerVotes:votes];
+    
     // Reset Jester burning flag
     BOOL jesterBurned = self.state.jesterBurnedLastNight;
     self.state.jesterBurnedLastNight = NO;
@@ -106,6 +110,25 @@
     }
     
     return playerToBurn;
+}
+
+-(NSArray*)votesWithSeducerVotes:(NSArray*)votes
+{
+    NSMutableArray *mutableVotes = [votes mutableCopy];
+    
+    NSUInteger seducerIndex = [mutableVotes indexOfObjectPassingTest:^BOOL(Vote *vote, NSUInteger idx, BOOL *stop) {
+        return vote.player.role.roleType == Seducer;
+    }];
+    
+    if (seducerIndex == NSNotFound)
+        return votes;
+    
+    Vote *seducerVote = [mutableVotes objectAtIndex:seducerIndex];
+    //Halved, rounded up
+    seducerVote.voteCount = (seducerVote.voteCount+1)/2;
+    
+    // Return as immutable
+    return [mutableVotes copy];
 }
 
 -(NSArray*)mostVotedPlayers:(NSArray*)votes

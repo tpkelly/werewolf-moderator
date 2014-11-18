@@ -256,4 +256,62 @@
     XCTAssertEqualObjects(self.guarded, burnedPlayer);
 }
 
+#pragma mark - Seducer
+
+-(void)testThatSeducerVotesAreReducedOnFirstRoundBallot
+{
+    //Given:
+    NSArray *votes = @[[Vote forPlayer:self.romeo voteCount:5],
+                       [Vote forPlayer:self.angel voteCount:3],
+                       [Vote forPlayer:self.seducer voteCount:4]];
+    
+    //When
+    NSArray *ballot = [self.testBallot firstRoundResults:votes];
+    
+    //Then
+    NSArray *expectedBallot = @[self.romeo, self.angel];
+    XCTAssertEqualObjects(expectedBallot, ballot);
+}
+
+-(void)testThatSeducerVotesAreRoundedUpOnFirstBallot
+{
+    //Given:
+    NSArray *votes = @[[Vote forPlayer:self.romeo voteCount:5],
+                       [Vote forPlayer:self.angel voteCount:2],
+                       [Vote forPlayer:self.seducer voteCount:5]];
+    
+    //When
+    NSArray *ballot = [self.testBallot firstRoundResults:votes];
+    
+    //Then
+    NSArray *expectedBallot = @[self.romeo, self.seducer];
+    XCTAssertEqualObjects(expectedBallot, ballot);
+}
+
+-(void)testThatSeducerVotesAreReducedInSecondRound
+{
+    //Given:
+    NSArray *votes = @[[Vote forPlayer:self.angel voteCount:6],
+                       [Vote forPlayer:self.seducer voteCount:10]];
+    
+    //When
+    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    
+    //Then
+    XCTAssertEqualObjects(self.angel, burnedPlayer);
+}
+
+-(void)testThatSeducerCanStillBeKilledInSecondRound
+{
+    //Given:
+    NSArray *votes = @[[Vote forPlayer:self.angel voteCount:5],
+                       [Vote forPlayer:self.seducer voteCount:11]];
+    
+    //When
+    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    
+    //Then
+    XCTAssertEqualObjects(self.seducer, burnedPlayer);
+}
+
 @end
