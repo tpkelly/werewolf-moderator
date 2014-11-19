@@ -391,8 +391,8 @@
     XCTAssertTrue(attackSucceeded);
 }
 
-// The rules say that Igor "Dies in Vampire's place during Vampire's turn". I take this to mean that Igor only takes the vampire's place when the vampire is attacking a wolf/hunter.
--(void)testThatWolfAttackOnVampireDoesNotKillIgorInstead
+
+-(void)testThatWolfAttackOnVampireKillsIgorInstead
 {
     // Given
     Player *igor = [[Player alloc] initWithName:@"Farmer Joe" role:Igor];
@@ -400,6 +400,22 @@
     
     // Expect
     [[[self.mockGameState stub] andReturn:igor] playerWithRole:Igor inPlayerSet:OCMOCK_ANY];
+    [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
+    [[self.mockGameState expect] setDestinedToDie:@[igor]];
+    
+    // When
+    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:vampire];
+    
+    // Then
+    XCTAssertTrue(attackSucceeded);
+}
+
+-(void)testThatWolfAttackOnVampireWithoutIgorKillsVampire
+{
+    // Given
+    Player *vampire = [[Player alloc] initWithName:@"Farmer Joe" role:Vampire];
+    
+    // Expect
     [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
     [[self.mockGameState expect] setDestinedToDie:@[vampire]];
     

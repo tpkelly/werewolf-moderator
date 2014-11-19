@@ -10,7 +10,7 @@ Some rules and situations have been hard-coded into the app, which have resulted
 - Minion Juliet will not be destined to die if Romeo burns at the stake.
 - The Guardian Angel will take the place of the Guarded in the first round of voting if possible, as well as the second.
 - The Guardian Angel cannot save the Guarded from the Ballot if the Angel is already on the ballot.
-- Igor only dies in the Vampire's place during the Vampire attack phase, not during the Ballot or the Wolf attack phase.
+- Igor dies in the Vampire's place at any point where the Vampire is about to die.
 - The second round ballot will feature players who were given the highest and second highest number of votes in the first round, even in the event of tying for highest.
   - E.g. Votes = A:5, B:5, C:3, D:3, E:1. Ballot = [A, B, C, D] even though A and B were tied.
 - If the second round ballot is a tie, nobody dies.

@@ -27,6 +27,8 @@
 @property (nonatomic, strong) Player *wolfPup;
 @property (nonatomic, strong) Player *guarded;
 @property (nonatomic, strong) Player *jester;
+@property (nonatomic, strong) Player *vampire;
+@property (nonatomic, strong) Player *igor;
 
 @end
 
@@ -42,10 +44,12 @@
     self.wolfPup = [[Player alloc] initWithName:@"Wolf Pup" role:WolfPup];
     self.guarded = [[Player alloc] initWithName:@"Guarded" role:Farmer];
     self.jester = [[Player alloc] initWithName:@"Jester" role:Jester];
+    self.vampire = [[Player alloc] initWithName:@"Vampire" role:Vampire];
+    self.igor = [[Player alloc] initWithName:@"Igor" role:Igor];
     
     self.mockGameState = [OCMockObject niceMockForClass:[GameState class]];
     
-    NSArray *allPlayers = @[self.seducer, self.juliet, self.romeo, self.angel, self.guarded, self.wolfPup, self.jester];
+    NSArray *allPlayers = @[self.seducer, self.juliet, self.romeo, self.angel, self.guarded, self.wolfPup, self.jester, self.vampire, self.igor];
     [[[self.mockGameState stub] andReturn:allPlayers] playersAlive];
     [[[self.mockGameState stub] andReturn:self.romeo] romeoPlayer];
     [[[self.mockGameState stub] andReturn:self.guarded] guardedPlayer];
@@ -326,6 +330,33 @@
     
     //When
     [self.testBallot secondRoundResults:votes];
+}
+
+#pragma mark - Vampires
+
+-(void)testThatVampireIsProtectedFromStakeByIgor
+{
+    // Given
+    NSArray *votes = @[[Vote forPlayer:self.vampire voteCount:7]];
+    
+    //Expect
+    [[[self.mockGameState stub] andReturn:self.igor] playerWithRole:Igor inPlayerSet:OCMOCK_ANY];
+    
+    //When
+    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    
+    XCTAssertEqual(self.igor, burnedPlayer);
+}
+
+-(void)testThatVampireIsBurnedIfIgorIsNotAlive
+{
+    // Given
+    NSArray *votes = @[[Vote forPlayer:self.vampire voteCount:7]];
+    
+    //When
+    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    
+    XCTAssertEqual(self.vampire, burnedPlayer);
 }
 
 @end

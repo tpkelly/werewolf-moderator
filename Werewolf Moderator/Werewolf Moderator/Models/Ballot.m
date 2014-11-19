@@ -112,6 +112,11 @@
     {
         self.state.wolvesAttackTwice = YES;
     }
+    else if (playerToBurn.role.roleType == Vampire)
+    {
+        Player *igor = [self.state playerWithRole:Igor inPlayerSet:self.state.playersAlive];
+        playerToBurn = (igor) ? igor : playerToBurn;
+    }
     
     return playerToBurn;
 }

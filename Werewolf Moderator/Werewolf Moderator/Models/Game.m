@@ -102,6 +102,11 @@
         Player *guardianAngel = [_state playerWithRole:GuardianAngel inPlayerSet:_state.playersAlive];
         player = (guardianAngel) ? guardianAngel : player;
     }
+    else if (player.role.roleType == Vampire)
+    {
+        Player *igor = [_state playerWithRole:Igor inPlayerSet:_state.playersAlive];
+        player = (igor) ? igor : player;
+    }
     
     // Kill target
     [destinedToDie addObject:player];
