@@ -10,6 +10,11 @@
 
 @interface FirstViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *playerName;
+@property (strong, nonatomic) IBOutlet UIPickerView *rolePicker;
+@property (strong, nonatomic) IBOutlet UIButton *addPlayerButton;
+
+- (IBAction)submitPlayer:(id)sender;
 
 @end
 
