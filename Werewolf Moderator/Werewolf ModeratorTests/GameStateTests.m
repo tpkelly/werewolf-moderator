@@ -51,6 +51,11 @@
     XCTAssertEqualObjects([NSArray array], self.gameState.destinedToDie);
 }
 
+- (void)testThatGameStartsWithNobodyPlaying
+{
+    XCTAssertEqualObjects([NSArray array], self.gameState.allPlayers);
+}
+
 - (void)testThatGameStartsWithNobodyDead {
     XCTAssertEqualObjects([NSArray array], self.gameState.playersDead);
 }

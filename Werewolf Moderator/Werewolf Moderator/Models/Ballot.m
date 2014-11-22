@@ -118,6 +118,9 @@
         playerToBurn = (igor) ? igor : playerToBurn;
     }
     
+    // No hope left, kill the player!
+    playerToBurn.alive = NO;
+    
     return playerToBurn;
 }
 

@@ -21,9 +21,8 @@
         self.healerHasPowers = YES;
         self.newsFromTheInn = NoNews;
         
+        self.allPlayers = [NSArray array];
         self.destinedToDie = [NSArray array];
-        self.playersAlive = [NSArray array];
-        self.playersDead = [NSArray array];
         
         NSArray *initialRoles = @[@(AlphaWolf),
                                   @(PackWolf),
@@ -57,6 +56,19 @@
     return self;
 }
 
+-(NSArray *)playersAlive
+{
+    NSPredicate *alivePlayers = [NSPredicate predicateWithFormat:@"alive == %@", @YES];
+    return [self.allPlayers filteredArrayUsingPredicate:alivePlayers];
+}
+
+-(NSArray *)playersDead
+{
+    NSPredicate *alivePlayers = [NSPredicate predicateWithFormat:@"alive == %@", @NO];
+    return [self.allPlayers filteredArrayUsingPredicate:alivePlayers];
+}
+
+
 -(void)addPlayer:(Player *)player
 {
     if (![self.unassignedRoles containsObject:@(player.role.roleType)])
@@ -64,7 +76,7 @@
         @throw [NSException exceptionWithName:@"NoSuchRoleAvailable" reason:@"The role cannot be added to this session, as it is not part of the list of unassigned roles" userInfo:nil];
     }
     
-    self.playersAlive = [self.playersAlive arrayByAddingObject:player];
+    self.allPlayers = [self.allPlayers arrayByAddingObject:player];
     [_unassignedRoles removeObject:@(player.role.roleType)];
 }
 

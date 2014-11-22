@@ -160,12 +160,9 @@
     
     MorningNews *news = [MorningNews new];
     news.diedLastNight = _state.destinedToDie;
-    
-    // Update GameState player lists
-    NSMutableArray *playersAlive = [_state.playersAlive mutableCopy];
-    [playersAlive removeObjectsInArray:_state.destinedToDie];
-    _state.playersAlive = playersAlive;
-    _state.playersDead = [_state.playersDead arrayByAddingObjectsFromArray:_state.destinedToDie];
+
+    //Kill them all!
+    [_state.destinedToDie makeObjectsPerformSelector:@selector(setAlive:) withObject:@NO];
     _state.destinedToDie = @[];
     
     // Find news from the inn

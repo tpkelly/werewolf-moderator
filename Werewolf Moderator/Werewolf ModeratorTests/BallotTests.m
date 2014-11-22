@@ -97,6 +97,20 @@
     XCTAssertEqual(self.jester, burnedPlayer);
 }
 
+-(void)testThatSecondRoundOfBallotKillsAPlayerIfNotATie
+{
+    // Given
+    NSArray *votes = @[[Vote forPlayer:self.wolfPup voteCount:2],
+                       [Vote forPlayer:self.jester voteCount:3],
+                       [Vote forPlayer:self.angel voteCount:1]];
+    
+    //When
+    [self.testBallot secondRoundResults:votes];
+    
+    //Then:
+    XCTAssertFalse(self.jester.alive);
+}
+
 -(void)testThatNobodyDiesIfSecondRoundIsATie
 {
     // Given

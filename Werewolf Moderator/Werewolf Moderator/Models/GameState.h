@@ -14,6 +14,7 @@
 
 @interface GameState : NSObject
 
+@property (nonatomic, copy) NSArray *allPlayers;
 @property (nonatomic, copy) NSArray *playersAlive;
 @property (nonatomic, copy) NSArray *playersDead;
 @property (nonatomic, copy) NSArray *destinedToDie;
