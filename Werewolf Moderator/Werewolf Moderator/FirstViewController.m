@@ -13,7 +13,7 @@
 #import "Role.h"
 #import "Player.h"
 
-@interface FirstViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface FirstViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 
 @end
 
@@ -27,6 +27,7 @@
     self.rolePicker.delegate = self;
     
     [self.playerName addTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
+    self.playerName.delegate = self;
     
     [self.addPlayerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.addPlayerButton setTitleColor:[UIColor lightTextColor] forState:UIControlStateDisabled];
@@ -43,6 +44,11 @@
 {
     self.addPlayerButton.enabled = allow;
     self.addPlayerButton.backgroundColor = (allow) ? [UIColor colorWithRed:0 green:109.0/255.0 blue:204.0/255.0 alpha:1.0] : [UIColor lightGrayColor];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 #pragma mark - UIPickerView methods
@@ -62,11 +68,19 @@
     return 1;
 }
 
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     RoleType roleType = [[[self unassignedRoles] objectAtIndex:row] integerValue];
     Role *role = [[Role alloc] initWithRole:roleType];
-    return role.name;
+    
+    NSDictionary *attributes =
+      @{NSForegroundColorAttributeName:[UIColor whiteColor],
+        NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:30]};
+    
+    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:role.name attributes:attributes];
+    
+    return attString;
+    
 }
 
 - (IBAction)submitPlayer:(UIButton *)sender
