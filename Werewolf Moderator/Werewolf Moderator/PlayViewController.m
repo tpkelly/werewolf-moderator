@@ -8,19 +8,10 @@
 
 #import "PlayViewController.h"
 
-@interface PlayViewController ()
-
-@end
-
 @implementation PlayViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
 
 - (IBAction)startGame:(id)sender
 {
-    NSLog(@"Start Game");
+    [self performSegueWithIdentifier:@"Clairvoyant" sender:self];
 }
 @end
