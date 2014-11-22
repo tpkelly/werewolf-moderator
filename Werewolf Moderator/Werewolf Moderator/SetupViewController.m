@@ -6,18 +6,18 @@
 //  Copyright (c) 2014 TKGames. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "SetupViewController.h"
 #import "SingleGame.h"
 #import "Game.h"
 #import "GameState.h"
 #import "Role.h"
 #import "Player.h"
 
-@interface FirstViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
+@interface SetupViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 
 @end
 
-@implementation FirstViewController
+@implementation SetupViewController
 
 - (void)viewDidLoad
 {

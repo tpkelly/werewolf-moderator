@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface SetupViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *playerName;
 @property (strong, nonatomic) IBOutlet UIPickerView *rolePicker;

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface PlayStateViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITableView *playerTable;
 

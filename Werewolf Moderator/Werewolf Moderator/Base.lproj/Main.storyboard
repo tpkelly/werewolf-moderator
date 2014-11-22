@@ -8,7 +8,7 @@
         <!--Setup-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="SetupViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -93,7 +93,7 @@
         <!--Play-->
         <scene sceneID="n3T-fi-toR">
             <objects>
-                <viewController id="09p-Ll-7ZI" sceneMemberID="viewController">
+                <viewController id="09p-Ll-7ZI" customClass="PlayViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o7P-sK-yh0"/>
                         <viewControllerLayoutGuide type="bottom" id="nti-qG-yPT"/>
@@ -101,7 +101,34 @@
                     <view key="view" contentMode="scaleToFill" id="KGD-5X-V6y">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6At-oQ-7vc">
+                                <rect key="frame" x="228" y="276" width="145" height="47"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098039215684" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="Fyo-jk-NS8"/>
+                                    <constraint firstAttribute="width" constant="145" id="upr-mC-CmF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Start Game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="tVi-Yk-h7a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="6At-oQ-7vc" secondAttribute="centerY" id="G6l-6l-m7A"/>
+                            <constraint firstAttribute="centerX" secondItem="6At-oQ-7vc" secondAttribute="centerX" id="cDM-R7-fIH"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Play" image="first" id="0hQ-wW-GjN"/>
                 </viewController>
@@ -112,7 +139,7 @@
         <!--State of Play-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="PlayStateViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lpL-h1-zqO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

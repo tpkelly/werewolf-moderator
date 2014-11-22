@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		47B4C0FA1A13E25900D30338 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C0F91A13E25900D30338 /* main.m */; };
 		47B4C0FD1A13E25900D30338 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C0FC1A13E25900D30338 /* AppDelegate.m */; };
-		47B4C1001A13E25900D30338 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C0FF1A13E25900D30338 /* FirstViewController.m */; };
-		47B4C1031A13E25900D30338 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C1021A13E25900D30338 /* SecondViewController.m */; };
+		47B4C1001A13E25900D30338 /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C0FF1A13E25900D30338 /* SetupViewController.m */; };
+		47B4C1031A13E25900D30338 /* PlayStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C1021A13E25900D30338 /* PlayStateViewController.m */; };
 		47B4C1061A13E25900D30338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B4C1041A13E25900D30338 /* Main.storyboard */; };
 		47B4C1081A13E25900D30338 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B4C1071A13E25900D30338 /* Images.xcassets */; };
 		47B4C10B1A13E25900D30338 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47B4C1091A13E25900D30338 /* LaunchScreen.xib */; };
@@ -28,6 +28,7 @@
 		47EF77361A182A00004E6DDD /* Vote.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EF77351A182A00004E6DDD /* Vote.m */; };
 		47FAD2071A1E8774004FB2F8 /* werewolf.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 47FAD2061A1E8774004FB2F8 /* werewolf.jpg */; };
 		47FAD20A1A1E87E3004FB2F8 /* SingleGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FAD2091A1E87E3004FB2F8 /* SingleGame.m */; };
+		47FD6B441A20D9E500F445D0 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B431A20D9E500F445D0 /* PlayViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,10 +47,10 @@
 		47B4C0F91A13E25900D30338 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		47B4C0FB1A13E25900D30338 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		47B4C0FC1A13E25900D30338 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		47B4C0FE1A13E25900D30338 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		47B4C0FF1A13E25900D30338 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		47B4C1011A13E25900D30338 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		47B4C1021A13E25900D30338 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		47B4C0FE1A13E25900D30338 /* SetupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
+		47B4C0FF1A13E25900D30338 /* SetupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
+		47B4C1011A13E25900D30338 /* PlayStateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayStateViewController.h; sourceTree = "<group>"; };
+		47B4C1021A13E25900D30338 /* PlayStateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayStateViewController.m; sourceTree = "<group>"; };
 		47B4C1051A13E25900D30338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		47B4C1071A13E25900D30338 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		47B4C10A1A13E25900D30338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -80,6 +81,8 @@
 		47FAD2061A1E8774004FB2F8 /* werewolf.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = werewolf.jpg; sourceTree = "<group>"; };
 		47FAD2081A1E87E3004FB2F8 /* SingleGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleGame.h; sourceTree = "<group>"; };
 		47FAD2091A1E87E3004FB2F8 /* SingleGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleGame.m; sourceTree = "<group>"; };
+		47FD6B421A20D9E500F445D0 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
+		47FD6B431A20D9E500F445D0 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,16 +128,18 @@
 				47B4C1201A13E26A00D30338 /* Models */,
 				47B4C0FB1A13E25900D30338 /* AppDelegate.h */,
 				47B4C0FC1A13E25900D30338 /* AppDelegate.m */,
-				47B4C0FE1A13E25900D30338 /* FirstViewController.h */,
-				47B4C0FF1A13E25900D30338 /* FirstViewController.m */,
-				47B4C1011A13E25900D30338 /* SecondViewController.h */,
-				47B4C1021A13E25900D30338 /* SecondViewController.m */,
+				47B4C0FE1A13E25900D30338 /* SetupViewController.h */,
+				47B4C0FF1A13E25900D30338 /* SetupViewController.m */,
+				47B4C1011A13E25900D30338 /* PlayStateViewController.h */,
+				47B4C1021A13E25900D30338 /* PlayStateViewController.m */,
 				47B4C1041A13E25900D30338 /* Main.storyboard */,
 				47B4C1071A13E25900D30338 /* Images.xcassets */,
 				47B4C1091A13E25900D30338 /* LaunchScreen.xib */,
 				47B4C0F71A13E25900D30338 /* Supporting Files */,
 				47FAD2081A1E87E3004FB2F8 /* SingleGame.h */,
 				47FAD2091A1E87E3004FB2F8 /* SingleGame.m */,
+				47FD6B421A20D9E500F445D0 /* PlayViewController.h */,
+				47FD6B431A20D9E500F445D0 /* PlayViewController.m */,
 			);
 			path = "Werewolf Moderator";
 			sourceTree = "<group>";
@@ -305,12 +310,13 @@
 			files = (
 				47B4C1241A13E2ED00D30338 /* Role.m in Sources */,
 				47EF772E1A17CA48004E6DDD /* MorningNews.m in Sources */,
+				47FD6B441A20D9E500F445D0 /* PlayViewController.m in Sources */,
 				47EF77361A182A00004E6DDD /* Vote.m in Sources */,
-				47B4C1031A13E25900D30338 /* SecondViewController.m in Sources */,
+				47B4C1031A13E25900D30338 /* PlayStateViewController.m in Sources */,
 				47B4C0FD1A13E25900D30338 /* AppDelegate.m in Sources */,
 				47B4C1361A16CC0800D30338 /* Game.m in Sources */,
 				47EF77311A17F517004E6DDD /* Ballot.m in Sources */,
-				47B4C1001A13E25900D30338 /* FirstViewController.m in Sources */,
+				47B4C1001A13E25900D30338 /* SetupViewController.m in Sources */,
 				47B4C12B1A153AAC00D30338 /* Player.m in Sources */,
 				47FAD20A1A1E87E3004FB2F8 /* SingleGame.m in Sources */,
 				47B4C0FA1A13E25900D30338 /* main.m in Sources */,

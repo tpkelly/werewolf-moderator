@@ -6,17 +6,17 @@
 //  Copyright (c) 2014 TKGames. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "PlayStateViewController.h"
 #import "SingleGame.h"
 #import "GameState.h"
 #import "Player.h"
 #import "Role.h"
 
-@interface SecondViewController () <UITableViewDataSource>
+@interface PlayStateViewController () <UITableViewDataSource>
 
 @end
 
-@implementation SecondViewController
+@implementation PlayStateViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
