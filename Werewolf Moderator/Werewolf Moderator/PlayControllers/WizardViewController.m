@@ -35,7 +35,7 @@
 
 - (IBAction)continue:(id)sender
 {
-    NSLog(@"Continuing");
+    [self performSegueWithIdentifier:@"MonkPrep" sender:self];
 }
 
 #pragma mark - UITableView methods

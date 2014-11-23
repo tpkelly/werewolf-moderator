@@ -37,6 +37,8 @@
 		47FD6B5C1A22189500F445D0 /* WizardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B5B1A22189500F445D0 /* WizardViewController.m */; };
 		47FD6B5F1A221CC900F445D0 /* mystic.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B5D1A221CC900F445D0 /* mystic.png */; };
 		47FD6B601A221CC900F445D0 /* nonmystic.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B5E1A221CC900F445D0 /* nonmystic.png */; };
+		47FD6B631A2283FC00F445D0 /* MonkPrepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B621A2283FC00F445D0 /* MonkPrepViewController.m */; };
+		47FD6B661A228F1F00F445D0 /* MonkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B651A228F1F00F445D0 /* MonkViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,10 @@
 		47FD6B5B1A22189500F445D0 /* WizardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WizardViewController.m; sourceTree = "<group>"; };
 		47FD6B5D1A221CC900F445D0 /* mystic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mystic.png; sourceTree = "<group>"; };
 		47FD6B5E1A221CC900F445D0 /* nonmystic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nonmystic.png; sourceTree = "<group>"; };
+		47FD6B611A2283FC00F445D0 /* MonkPrepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkPrepViewController.h; sourceTree = "<group>"; };
+		47FD6B621A2283FC00F445D0 /* MonkPrepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonkPrepViewController.m; sourceTree = "<group>"; };
+		47FD6B641A228F1F00F445D0 /* MonkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkViewController.h; sourceTree = "<group>"; };
+		47FD6B651A228F1F00F445D0 /* MonkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonkViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +247,10 @@
 				47FD6B581A220F8100F445D0 /* MediumViewController.m */,
 				47FD6B5A1A22189500F445D0 /* WizardViewController.h */,
 				47FD6B5B1A22189500F445D0 /* WizardViewController.m */,
+				47FD6B611A2283FC00F445D0 /* MonkPrepViewController.h */,
+				47FD6B621A2283FC00F445D0 /* MonkPrepViewController.m */,
+				47FD6B641A228F1F00F445D0 /* MonkViewController.h */,
+				47FD6B651A228F1F00F445D0 /* MonkViewController.m */,
 			);
 			path = PlayControllers;
 			sourceTree = "<group>";
@@ -354,7 +364,9 @@
 				47B4C1241A13E2ED00D30338 /* Role.m in Sources */,
 				47FD6B5C1A22189500F445D0 /* WizardViewController.m in Sources */,
 				47FD6B4C1A20E77300F445D0 /* ClairvoyantViewController.m in Sources */,
+				47FD6B661A228F1F00F445D0 /* MonkViewController.m in Sources */,
 				47EF772E1A17CA48004E6DDD /* MorningNews.m in Sources */,
+				47FD6B631A2283FC00F445D0 /* MonkPrepViewController.m in Sources */,
 				47FD6B591A220F8100F445D0 /* MediumViewController.m in Sources */,
 				47FD6B441A20D9E500F445D0 /* PlayViewController.m in Sources */,
 				47EF77361A182A00004E6DDD /* Vote.m in Sources */,
