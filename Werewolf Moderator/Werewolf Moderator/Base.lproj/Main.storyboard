@@ -158,24 +158,10 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yh2-FY-0fs">
-                                <rect key="frame" x="8" y="73" width="584" height="150"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="Rnx-KI-Qbl"/>
-                                </constraints>
-                                <string key="text">"Will the Clairvoyant please wake up. Please select a player to check for corruption."
-
-Tap line in table to select player
-</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9GX-gn-TOi">
                                 <rect key="frame" x="150" y="231" width="300" height="312"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="&quot;I will now tell you if that player is corrupt&quot;" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dTM-dQ-Eti">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;I will now tell you if that player is corrupt&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTM-dQ-Eti">
                                         <rect key="frame" x="8" y="0.0" width="284" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -237,6 +223,20 @@ Tap line in table to select player
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yh2-FY-0fs">
+                                <rect key="frame" x="8" y="73" width="584" height="150"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Rnx-KI-Qbl"/>
+                                </constraints>
+                                <string key="text">"Will the Clairvoyant please wake up. Please select a player to check for corruption."
+
+Tap line in table to select player
+</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -341,7 +341,7 @@ Tap line in table to select player
                                     <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="cWN-u0-Q0n"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="&quot;Will the Monk please open their eyes. I will now show you two roles which are not in play&quot;" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QhG-xC-qRc">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;Will the Monk please open their eyes. I will now show you two roles which are not in play&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhG-xC-qRc">
                                 <rect key="frame" x="24" y="93" width="552" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -435,7 +435,7 @@ Tap line in table to select player
                                     <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="gwx-TG-EXE"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Pick the two roles to show the Monk" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gY3-JH-uEr">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Pick the two roles to show the Monk" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gY3-JH-uEr">
                                 <rect key="frame" x="24" y="93" width="552" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -502,7 +502,7 @@ Tap line in table to select player
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Drh-rY-9oV">
                                 <rect key="frame" x="150" y="243" width="300" height="300"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="&quot;I will now tell you if that player has mystical powers&quot;" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6V8-cP-jnk">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;I will now tell you if that player has mystical powers&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6V8-cP-jnk">
                                         <rect key="frame" x="8" y="0.0" width="284" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
