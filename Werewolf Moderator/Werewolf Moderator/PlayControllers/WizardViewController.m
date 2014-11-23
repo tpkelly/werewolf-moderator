@@ -1,27 +1,27 @@
 //
-//  ClairvoyantViewController.m
+//  WizardViewController.m
 //  Werewolf Moderator
 //
-//  Created by Thomas Kelly on 22/11/2014.
+//  Created by Thomas Kelly on 23/11/2014.
 //  Copyright (c) 2014 TKGames. All rights reserved.
 //
 
-#import "ClairvoyantViewController.h"
+#import "WizardViewController.h"
 #import "SingleGame.h"
 #import "GameState.h"
 #import "Game.h"
 #import "Player.h"
 
-@interface ClairvoyantViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface WizardViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
-@implementation ClairvoyantViewController
+@implementation WizardViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    if ([[SingleGame state] roleIsAlive:Clairvoyant])
+    if ([[SingleGame state] roleIsAlive:Wizard])
     {
         self.alivePlayersTable.dataSource = self;
         self.alivePlayersTable.delegate = self;
@@ -29,13 +29,13 @@
     else
     {
         self.alivePlayersTable.hidden = YES;
-        [self.corruptImage setImage:[UIImage imageNamed:@"notInPlay.png"]];
+        [self.mysticImage setImage:[UIImage imageNamed:@"notInPlay.png"]];
     }
 }
 
 - (IBAction)continue:(id)sender
 {
-    [self performSegueWithIdentifier:@"Medium" sender:self];
+    NSLog(@"Continuing");
 }
 
 #pragma mark - UITableView methods
@@ -70,13 +70,13 @@
     Player *playerAtIndex = [[SingleGame state].playersAlive objectAtIndex:indexPath.row];
     self.alivePlayersTable.hidden = YES;
     
-    if ([[SingleGame game] clairvoyantChecksPlayer:playerAtIndex])
+    if ([[SingleGame game] wizardChecksPlayer:playerAtIndex])
     {
-        [self.corruptImage setImage:[UIImage imageNamed:@"corrupt.png"]];
+        [self.mysticImage setImage:[UIImage imageNamed:@"mystic.png"]];
     }
     else
     {
-        [self.corruptImage setImage:[UIImage imageNamed:@"noncorrupt.png"]];
+        [self.mysticImage setImage:[UIImage imageNamed:@"nonmystic.png"]];
     }
 }
 

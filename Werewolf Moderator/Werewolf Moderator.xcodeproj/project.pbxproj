@@ -33,6 +33,10 @@
 		47FD6B521A21416600F445D0 /* corrupt.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B511A21416600F445D0 /* corrupt.png */; };
 		47FD6B541A2142DE00F445D0 /* noncorrupt.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B531A2142DE00F445D0 /* noncorrupt.png */; };
 		47FD6B561A2209AF00F445D0 /* notInPlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B551A2209AF00F445D0 /* notInPlay.png */; };
+		47FD6B591A220F8100F445D0 /* MediumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B581A220F8100F445D0 /* MediumViewController.m */; };
+		47FD6B5C1A22189500F445D0 /* WizardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B5B1A22189500F445D0 /* WizardViewController.m */; };
+		47FD6B5F1A221CC900F445D0 /* mystic.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B5D1A221CC900F445D0 /* mystic.png */; };
+		47FD6B601A221CC900F445D0 /* nonmystic.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B5E1A221CC900F445D0 /* nonmystic.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,11 +91,17 @@
 		47FAD2091A1E87E3004FB2F8 /* SingleGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleGame.m; sourceTree = "<group>"; };
 		47FD6B421A20D9E500F445D0 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
 		47FD6B431A20D9E500F445D0 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
-		47FD6B491A20E77300F445D0 /* ClairvoyantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClairvoyantViewController.h; path = PlayControllers/ClairvoyantViewController.h; sourceTree = "<group>"; };
-		47FD6B4A1A20E77300F445D0 /* ClairvoyantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClairvoyantViewController.m; path = PlayControllers/ClairvoyantViewController.m; sourceTree = "<group>"; };
+		47FD6B491A20E77300F445D0 /* ClairvoyantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClairvoyantViewController.h; sourceTree = "<group>"; };
+		47FD6B4A1A20E77300F445D0 /* ClairvoyantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClairvoyantViewController.m; sourceTree = "<group>"; };
 		47FD6B511A21416600F445D0 /* corrupt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corrupt.png; sourceTree = "<group>"; };
 		47FD6B531A2142DE00F445D0 /* noncorrupt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noncorrupt.png; sourceTree = "<group>"; };
 		47FD6B551A2209AF00F445D0 /* notInPlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notInPlay.png; sourceTree = "<group>"; };
+		47FD6B571A220F8100F445D0 /* MediumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediumViewController.h; sourceTree = "<group>"; };
+		47FD6B581A220F8100F445D0 /* MediumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediumViewController.m; sourceTree = "<group>"; };
+		47FD6B5A1A22189500F445D0 /* WizardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WizardViewController.h; sourceTree = "<group>"; };
+		47FD6B5B1A22189500F445D0 /* WizardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WizardViewController.m; sourceTree = "<group>"; };
+		47FD6B5D1A221CC900F445D0 /* mystic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mystic.png; sourceTree = "<group>"; };
+		47FD6B5E1A221CC900F445D0 /* nonmystic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nonmystic.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +221,8 @@
 		47FAD2051A1E872B004FB2F8 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				47FD6B5D1A221CC900F445D0 /* mystic.png */,
+				47FD6B5E1A221CC900F445D0 /* nonmystic.png */,
 				47FD6B551A2209AF00F445D0 /* notInPlay.png */,
 				47FD6B511A21416600F445D0 /* corrupt.png */,
 				47FAD2061A1E8774004FB2F8 /* werewolf.jpg */,
@@ -223,19 +235,14 @@
 		47FD6B451A20E6F000F445D0 /* PlayControllers */ = {
 			isa = PBXGroup;
 			children = (
-				47FD6B4E1A20E77C00F445D0 /* Clairvoyant */,
-			);
-			path = PlayControllers;
-			sourceTree = "<group>";
-		};
-		47FD6B4E1A20E77C00F445D0 /* Clairvoyant */ = {
-			isa = PBXGroup;
-			children = (
 				47FD6B491A20E77300F445D0 /* ClairvoyantViewController.h */,
 				47FD6B4A1A20E77300F445D0 /* ClairvoyantViewController.m */,
+				47FD6B571A220F8100F445D0 /* MediumViewController.h */,
+				47FD6B581A220F8100F445D0 /* MediumViewController.m */,
+				47FD6B5A1A22189500F445D0 /* WizardViewController.h */,
+				47FD6B5B1A22189500F445D0 /* WizardViewController.m */,
 			);
-			name = Clairvoyant;
-			path = ..;
+			path = PlayControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,11 +326,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B4C1061A13E25900D30338 /* Main.storyboard in Resources */,
+				47FD6B601A221CC900F445D0 /* nonmystic.png in Resources */,
 				47FD6B521A21416600F445D0 /* corrupt.png in Resources */,
 				47B4C10B1A13E25900D30338 /* LaunchScreen.xib in Resources */,
 				47FAD2071A1E8774004FB2F8 /* werewolf.jpg in Resources */,
 				47B4C1081A13E25900D30338 /* Images.xcassets in Resources */,
 				47FD6B561A2209AF00F445D0 /* notInPlay.png in Resources */,
+				47FD6B5F1A221CC900F445D0 /* mystic.png in Resources */,
 				47FD6B541A2142DE00F445D0 /* noncorrupt.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,8 +352,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B4C1241A13E2ED00D30338 /* Role.m in Sources */,
+				47FD6B5C1A22189500F445D0 /* WizardViewController.m in Sources */,
 				47FD6B4C1A20E77300F445D0 /* ClairvoyantViewController.m in Sources */,
 				47EF772E1A17CA48004E6DDD /* MorningNews.m in Sources */,
+				47FD6B591A220F8100F445D0 /* MediumViewController.m in Sources */,
 				47FD6B441A20D9E500F445D0 /* PlayViewController.m in Sources */,
 				47EF77361A182A00004E6DDD /* Vote.m in Sources */,
 				47B4C1031A13E25900D30338 /* PlayStateViewController.m in Sources */,
