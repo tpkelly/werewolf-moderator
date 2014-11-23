@@ -32,6 +32,7 @@
 		47FD6B4C1A20E77300F445D0 /* ClairvoyantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B4A1A20E77300F445D0 /* ClairvoyantViewController.m */; };
 		47FD6B521A21416600F445D0 /* corrupt.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B511A21416600F445D0 /* corrupt.png */; };
 		47FD6B541A2142DE00F445D0 /* noncorrupt.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B531A2142DE00F445D0 /* noncorrupt.png */; };
+		47FD6B561A2209AF00F445D0 /* notInPlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B551A2209AF00F445D0 /* notInPlay.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		47FD6B4A1A20E77300F445D0 /* ClairvoyantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClairvoyantViewController.m; path = PlayControllers/ClairvoyantViewController.m; sourceTree = "<group>"; };
 		47FD6B511A21416600F445D0 /* corrupt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corrupt.png; sourceTree = "<group>"; };
 		47FD6B531A2142DE00F445D0 /* noncorrupt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noncorrupt.png; sourceTree = "<group>"; };
+		47FD6B551A2209AF00F445D0 /* notInPlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notInPlay.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 		47FAD2051A1E872B004FB2F8 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				47FD6B551A2209AF00F445D0 /* notInPlay.png */,
 				47FD6B511A21416600F445D0 /* corrupt.png */,
 				47FAD2061A1E8774004FB2F8 /* werewolf.jpg */,
 				47FD6B531A2142DE00F445D0 /* noncorrupt.png */,
@@ -320,6 +323,7 @@
 				47B4C10B1A13E25900D30338 /* LaunchScreen.xib in Resources */,
 				47FAD2071A1E8774004FB2F8 /* werewolf.jpg in Resources */,
 				47B4C1081A13E25900D30338 /* Images.xcassets in Resources */,
+				47FD6B561A2209AF00F445D0 /* notInPlay.png in Resources */,
 				47FD6B541A2142DE00F445D0 /* noncorrupt.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

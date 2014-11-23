@@ -21,8 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.alivePlayersTable.dataSource = self;
-    self.alivePlayersTable.delegate = self;
+    if ([[SingleGame state] roleIsAlive:Clairvoyant])
+    {
+        self.alivePlayersTable.dataSource = self;
+        self.alivePlayersTable.delegate = self;
+    }
+    else
+    {
+        self.alivePlayersTable.hidden = YES;
+        [self.corruptImage setImage:[UIImage imageNamed:@"notInPlay.png"]];
+    }
 }
 
 - (IBAction)continue:(id)sender
