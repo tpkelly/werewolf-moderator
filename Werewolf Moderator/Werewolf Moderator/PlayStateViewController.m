@@ -12,7 +12,7 @@
 #import "Player.h"
 #import "Role.h"
 
-@interface PlayStateViewController () <UITableViewDataSource>
+@interface PlayStateViewController () <UITableViewDataSource, UIAlertViewDelegate>
 
 @end
 
@@ -23,6 +23,26 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.playerTable.dataSource = self;
     self.playerTable.backgroundColor = [UIColor blackColor];
+}
+
+#pragma mark - Game Reset
+
+-(void)resetGame:(id)sender
+{
+    UIAlertView *yourAlert = [[UIAlertView alloc] initWithTitle:@"Reset Game" message:@"Are you sure you want to reset the game?" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:@"Confirm",nil];
+    [yourAlert show];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != 1)
+        return;
+    
+    //Definitely going to reset the game
+    [SingleGame reset];
+    
+    UIViewController *initial = [self.storyboard instantiateInitialViewController];
+    [self presentViewController:initial animated:NO completion:nil];
 }
 
 #pragma mark - UITableView methods

@@ -12,5 +12,7 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *playerTable;
 
+- (IBAction)resetGame:(id)sender;
+
 @end
 

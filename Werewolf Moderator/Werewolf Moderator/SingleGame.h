@@ -18,5 +18,6 @@
 +(instancetype)sharedGame;
 +(Game*)game;
 +(GameState*)state;
++(void)reset;
 
 @end

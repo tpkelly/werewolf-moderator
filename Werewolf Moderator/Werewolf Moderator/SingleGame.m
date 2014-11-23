@@ -32,8 +32,7 @@
     self = [super init];
     if (self)
     {
-        GameState *state = [GameState new];
-        self.game = [[Game alloc] initWithState:state];
+        [self reset];
     }
     return self;
 }
@@ -46,6 +45,17 @@
 +(GameState *)state
 {
     return [SingleGame game].state;
+}
+
++(void)reset
+{
+    [[SingleGame sharedGame] reset];
+}
+
+-(void)reset
+{
+    GameState *state = [GameState new];
+    self.game = [[Game alloc] initWithState:state];
 }
 
 @end
