@@ -111,7 +111,7 @@
                                     <constraint firstAttribute="width" constant="145" id="upr-mC-CmF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Start Game">
+                                <state key="normal" title="It is Nighttime">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -172,20 +172,20 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ljS-6P-25X">
-                                        <rect key="frame" x="78" y="84" width="145" height="145"/>
+                                        <rect key="frame" x="63" y="69" width="175" height="175"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ljS-6P-25X" secondAttribute="height" multiplier="1:1" id="CA5-u1-Pm2"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtx-bi-8Vx">
-                                        <rect key="frame" x="78" y="274" width="145" height="38"/>
+                                        <rect key="frame" x="63" y="274" width="175" height="38"/>
                                         <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="3ra-0z-d04"/>
-                                            <constraint firstAttribute="width" constant="145" id="j1T-Qy-QuJ"/>
+                                            <constraint firstAttribute="width" constant="175" id="j1T-Qy-QuJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                        <state key="normal" title="Continue">
+                                        <state key="normal" title="Close your eyes">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -317,14 +317,14 @@ Tap line in table to select player
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQv-Oo-xyK">
-                                <rect key="frame" x="227" y="463" width="145" height="38"/>
+                                <rect key="frame" x="212" y="463" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="8Tq-Ej-gYQ"/>
-                                    <constraint firstAttribute="width" constant="145" id="BOD-nq-fmb"/>
+                                    <constraint firstAttribute="width" constant="175" id="BOD-nq-fmb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Continue">
+                                <state key="normal" title="Close your eyes">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -513,20 +513,20 @@ Tap line in table to select player
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IDp-ek-W3k">
-                                        <rect key="frame" x="78" y="78" width="145" height="145"/>
+                                        <rect key="frame" x="63" y="63" width="175" height="175"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="IDp-ek-W3k" secondAttribute="height" multiplier="1:1" id="ffb-hf-xfI"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3al-m4-KEW">
-                                        <rect key="frame" x="78" y="262" width="145" height="38"/>
+                                        <rect key="frame" x="63" y="262" width="175" height="38"/>
                                         <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="145" id="TKZ-0u-yWk"/>
+                                            <constraint firstAttribute="width" constant="175" id="TKZ-0u-yWk"/>
                                             <constraint firstAttribute="height" constant="38" id="bmB-R9-DYA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                        <state key="normal" title="Continue">
+                                        <state key="normal" title="Close your eyes">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
