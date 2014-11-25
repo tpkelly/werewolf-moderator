@@ -37,6 +37,6 @@
 
 
 - (IBAction)continuing:(id)sender {
-    NSLog(@"Continue");
+    [self performSegueWithIdentifier:@"Juliet" sender:self];
 }
 @end

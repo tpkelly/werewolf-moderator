@@ -45,6 +45,7 @@
 		47FD6B701A25079800F445D0 /* PriestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B6F1A25079800F445D0 /* PriestViewController.m */; };
 		47FD6B731A2509C200F445D0 /* noSeducer.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B711A2509C200F445D0 /* noSeducer.png */; };
 		47FD6B741A2509C200F445D0 /* seducer.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B721A2509C200F445D0 /* seducer.png */; };
+		47FD6B771A250B3F00F445D0 /* JulietViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B761A250B3F00F445D0 /* JulietViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,8 @@
 		47FD6B6F1A25079800F445D0 /* PriestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriestViewController.m; sourceTree = "<group>"; };
 		47FD6B711A2509C200F445D0 /* noSeducer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noSeducer.png; sourceTree = "<group>"; };
 		47FD6B721A2509C200F445D0 /* seducer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seducer.png; sourceTree = "<group>"; };
+		47FD6B751A250B3F00F445D0 /* JulietViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JulietViewController.h; sourceTree = "<group>"; };
+		47FD6B761A250B3F00F445D0 /* JulietViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JulietViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +276,8 @@
 				47FD6B681A24FFC700F445D0 /* VampireHunterViewController.m */,
 				47FD6B6E1A25079800F445D0 /* PriestViewController.h */,
 				47FD6B6F1A25079800F445D0 /* PriestViewController.m */,
+				47FD6B751A250B3F00F445D0 /* JulietViewController.h */,
+				47FD6B761A250B3F00F445D0 /* JulietViewController.m */,
 			);
 			path = PlayControllers;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47FD6B771A250B3F00F445D0 /* JulietViewController.m in Sources */,
 				47B4C1241A13E2ED00D30338 /* Role.m in Sources */,
 				47FD6B5C1A22189500F445D0 /* WizardViewController.m in Sources */,
 				47FD6B4C1A20E77300F445D0 /* ClairvoyantViewController.m in Sources */,

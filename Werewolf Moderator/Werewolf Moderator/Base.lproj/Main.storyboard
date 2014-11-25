@@ -785,11 +785,116 @@ Will the priest please wake up. I will now tell you if the Seducer is in play"</
                     </view>
                     <connections>
                         <outlet property="seducerInPlayImage" destination="iZb-3M-Xja" id="sZa-PJ-Tht"/>
+                        <segue destination="UVs-33-YpM" kind="show" identifier="Juliet" id="Szj-cJ-jyf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WLt-B7-qhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-469" y="1721"/>
+        </scene>
+        <!--Juliet View Controller-->
+        <scene sceneID="m8O-o4-A41">
+            <objects>
+                <viewController id="UVs-33-YpM" customClass="JulietViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pHx-Kd-5Th"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xp6-8L-5xQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7gE-jr-bUc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="&quot;If I tap you on the knee, please wake up and acknowledge your lover&quot;" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hEe-aK-ARu">
+                                <rect key="frame" x="150" y="250" width="300" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="nVL-LC-EZo"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuI-HK-m0Q">
+                                <rect key="frame" x="213" y="505" width="175" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="huf-PW-0mj"/>
+                                    <constraint firstAttribute="height" constant="38" id="tCV-CH-qfN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Close your eyes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="Qc3-5O-syq"/>
+                                    <action selector="continuing:" destination="UVs-33-YpM" eventType="touchUpInside" id="UhU-3j-mqn"/>
+                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="C7n-En-2QI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Juliet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VE-0M-Jug">
+                                <rect key="frame" x="247" y="28" width="107" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kx0-Cj-hfc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oLA-OG-VCg">
+                                <rect key="frame" x="150" y="174" width="300" height="369"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="4bf-U4-apX"/>
+                                </constraints>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYq-CV-PeH">
+                                <rect key="frame" x="24" y="86" width="568" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="4Nn-Tb-sj7"/>
+                                </constraints>
+                                <string key="text">"Will Juliet please wake up. Please select a player to be your Romeo"
+
+Tap line in table to select player
+</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xp6-8L-5xQ" firstAttribute="top" secondItem="oLA-OG-VCg" secondAttribute="bottom" constant="8" id="2dN-5A-Vfa"/>
+                            <constraint firstItem="8VE-0M-Jug" firstAttribute="top" secondItem="pHx-Kd-5Th" secondAttribute="bottom" constant="8" id="3ZC-iP-QbJ"/>
+                            <constraint firstAttribute="centerX" secondItem="hEe-aK-ARu" secondAttribute="centerX" id="5hS-52-lOO"/>
+                            <constraint firstItem="hEe-aK-ARu" firstAttribute="trailing" secondItem="oLA-OG-VCg" secondAttribute="trailing" id="74i-7k-1W1"/>
+                            <constraint firstItem="Xp6-8L-5xQ" firstAttribute="top" secondItem="wuI-HK-m0Q" secondAttribute="bottom" constant="8" id="C5F-Sc-ZpV"/>
+                            <constraint firstItem="bYq-CV-PeH" firstAttribute="leading" secondItem="7gE-jr-bUc" secondAttribute="leadingMargin" constant="8" id="SWW-Zy-GGl"/>
+                            <constraint firstAttribute="centerX" secondItem="wuI-HK-m0Q" secondAttribute="centerX" id="ZnM-52-4uK"/>
+                            <constraint firstItem="bYq-CV-PeH" firstAttribute="top" secondItem="8VE-0M-Jug" secondAttribute="bottom" constant="8" id="buj-dY-kVs"/>
+                            <constraint firstAttribute="centerX" secondItem="8VE-0M-Jug" secondAttribute="centerX" id="fMM-pP-eu3"/>
+                            <constraint firstAttribute="centerX" secondItem="oLA-OG-VCg" secondAttribute="centerX" id="gpC-OZ-0k7"/>
+                            <constraint firstItem="hEe-aK-ARu" firstAttribute="leading" secondItem="oLA-OG-VCg" secondAttribute="leading" id="kQ5-cl-N1t"/>
+                            <constraint firstAttribute="centerY" secondItem="hEe-aK-ARu" secondAttribute="centerY" id="m4g-Va-8Ag"/>
+                            <constraint firstItem="bYq-CV-PeH" firstAttribute="trailing" secondItem="7gE-jr-bUc" secondAttribute="trailingMargin" constant="8" id="u3W-2j-RP9"/>
+                            <constraint firstItem="oLA-OG-VCg" firstAttribute="top" secondItem="bYq-CV-PeH" secondAttribute="bottom" constant="8" id="xuY-xY-zwy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="romeoTable" destination="oLA-OG-VCg" id="JGk-dm-dJO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bbz-o4-Xk8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-469" y="2488"/>
         </scene>
         <!--Vampire Hunter View Controller-->
         <scene sceneID="z5Z-IG-mNw">
