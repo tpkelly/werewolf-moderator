@@ -972,10 +972,94 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                             <constraint firstItem="YZY-yB-59Z" firstAttribute="top" secondItem="mta-Uo-I0e" secondAttribute="bottom" constant="8" id="VK8-Ek-7aO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="pBX-wB-VeD" kind="show" identifier="Vampire" id="hEu-0v-5QP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0k-bZ-bS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="209" y="2482"/>
+        </scene>
+        <!--Vampire Prep View Controller-->
+        <scene sceneID="LHn-cC-dL0">
+            <objects>
+                <viewController id="pBX-wB-VeD" customClass="VampirePrepViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fDg-vg-DbM"/>
+                        <viewControllerLayoutGuide type="bottom" id="yxO-fR-viV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ttw-3c-Osz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vampire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5i-A0-6vI">
+                                <rect key="frame" x="216" y="8" width="167" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ias-W1-Tgg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12K-SR-jaa">
+                                <rect key="frame" x="24" y="66" width="552" height="120"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="HII-XL-7OY"/>
+                                </constraints>
+                                <string key="text">"Will Igor and the Vampire please wake up.
+
+Please acknowledge eachother"</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrW-J3-pai">
+                                <rect key="frame" x="213" y="505" width="175" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="c8k-EC-tt0"/>
+                                    <constraint firstAttribute="width" constant="175" id="faW-MM-A2v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Close your eyes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="D3Q-f4-0GX"/>
+                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="dnl-HE-plo"/>
+                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="msc-Lq-T3K"/>
+                                    <action selector="continuing:" destination="mFI-qk-Rxb" eventType="touchUpInside" id="1Z9-hB-3rD"/>
+                                    <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="CXV-Pj-py3"/>
+                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="P3K-Qq-kJ3"/>
+                                    <action selector="continuing:" destination="pBX-wB-VeD" eventType="touchUpInside" id="SPB-JA-7j6"/>
+                                    <action selector="continuing:" destination="35d-x7-cfY" eventType="touchUpInside" id="kA6-xO-iLy"/>
+                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="riR-Gl-8Rd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="12K-SR-jaa" firstAttribute="leading" secondItem="ttw-3c-Osz" secondAttribute="leadingMargin" constant="8" id="1tW-Zd-G6E"/>
+                            <constraint firstItem="V5i-A0-6vI" firstAttribute="top" secondItem="ttw-3c-Osz" secondAttribute="topMargin" constant="8" id="Hqw-Xz-dzQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="12K-SR-jaa" secondAttribute="trailing" constant="8" id="Wrn-Fy-naH"/>
+                            <constraint firstAttribute="centerX" secondItem="OrW-J3-pai" secondAttribute="centerX" id="d0n-WJ-hzn"/>
+                            <constraint firstItem="12K-SR-jaa" firstAttribute="top" secondItem="V5i-A0-6vI" secondAttribute="bottom" constant="8" id="djR-c7-YjA"/>
+                            <constraint firstAttribute="centerX" secondItem="V5i-A0-6vI" secondAttribute="centerX" id="ekA-gu-F4N"/>
+                            <constraint firstItem="12K-SR-jaa" firstAttribute="top" secondItem="V5i-A0-6vI" secondAttribute="bottom" constant="8" id="qaC-uT-nIu"/>
+                            <constraint firstItem="yxO-fR-viV" firstAttribute="top" secondItem="OrW-J3-pai" secondAttribute="bottom" constant="8" id="rF9-Lx-bOC"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ny4-sX-9ys" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904" y="2482"/>
         </scene>
         <!--Vampire Hunter View Controller-->
         <scene sceneID="z5Z-IG-mNw">

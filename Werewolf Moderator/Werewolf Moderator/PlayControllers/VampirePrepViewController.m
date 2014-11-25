@@ -1,16 +1,16 @@
 //
-//  WolvesSetupViewController.m
+//  VampirePrepViewController.m
 //  Werewolf Moderator
 //
 //  Created by Thomas Kelly on 25/11/2014.
 //  Copyright (c) 2014 TKGames. All rights reserved.
 //
 
-#import "WolvesSetupViewController.h"
+#import "VampirePrepViewController.h"
 
-@implementation WolvesSetupViewController
+@implementation VampirePrepViewController
 
 - (IBAction)continuing:(id)sender {
-    [self performSegueWithIdentifier:@"Vampire" sender:self];
+    NSLog(@"Continue");
 }
 @end

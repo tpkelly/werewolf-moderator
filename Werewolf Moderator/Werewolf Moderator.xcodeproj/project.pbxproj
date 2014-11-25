@@ -47,6 +47,7 @@
 		47FD6B741A2509C200F445D0 /* seducer.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B721A2509C200F445D0 /* seducer.png */; };
 		47FD6B771A250B3F00F445D0 /* JulietViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B761A250B3F00F445D0 /* JulietViewController.m */; };
 		47FD6B7A1A251E1C00F445D0 /* WolvesSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B791A251E1C00F445D0 /* WolvesSetupViewController.m */; };
+		47FD6B7D1A25203700F445D0 /* VampirePrepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B7C1A25203700F445D0 /* VampirePrepViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,8 @@
 		47FD6B761A250B3F00F445D0 /* JulietViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JulietViewController.m; sourceTree = "<group>"; };
 		47FD6B781A251E1C00F445D0 /* WolvesSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WolvesSetupViewController.h; sourceTree = "<group>"; };
 		47FD6B791A251E1C00F445D0 /* WolvesSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WolvesSetupViewController.m; sourceTree = "<group>"; };
+		47FD6B7B1A25203700F445D0 /* VampirePrepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VampirePrepViewController.h; sourceTree = "<group>"; };
+		47FD6B7C1A25203700F445D0 /* VampirePrepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VampirePrepViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +286,8 @@
 				47FD6B761A250B3F00F445D0 /* JulietViewController.m */,
 				47FD6B781A251E1C00F445D0 /* WolvesSetupViewController.h */,
 				47FD6B791A251E1C00F445D0 /* WolvesSetupViewController.m */,
+				47FD6B7B1A25203700F445D0 /* VampirePrepViewController.h */,
+				47FD6B7C1A25203700F445D0 /* VampirePrepViewController.m */,
 			);
 			path = PlayControllers;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 				47FD6B691A24FFC700F445D0 /* VampireHunterViewController.m in Sources */,
 				47B4C0FD1A13E25900D30338 /* AppDelegate.m in Sources */,
 				47B4C1361A16CC0800D30338 /* Game.m in Sources */,
+				47FD6B7D1A25203700F445D0 /* VampirePrepViewController.m in Sources */,
 				47EF77311A17F517004E6DDD /* Ballot.m in Sources */,
 				47B4C1001A13E25900D30338 /* SetupViewController.m in Sources */,
 				47B4C12B1A153AAC00D30338 /* Player.m in Sources */,
