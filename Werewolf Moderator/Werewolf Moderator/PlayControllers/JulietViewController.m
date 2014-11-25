@@ -34,7 +34,7 @@
 }
 
 - (IBAction)continuing:(id)sender {
-    NSLog(@"Continue");
+    [self performSegueWithIdentifier:@"Wolves" sender:self];
 }
 
 #pragma mark - UITableView methods

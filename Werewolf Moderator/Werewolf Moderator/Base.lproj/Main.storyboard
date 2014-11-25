@@ -890,11 +890,92 @@ Tap line in table to select player
                     </view>
                     <connections>
                         <outlet property="romeoTable" destination="oLA-OG-VCg" id="JGk-dm-dJO"/>
+                        <segue destination="mFI-qk-Rxb" kind="show" identifier="Wolves" id="tIZ-CF-FAq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bbz-o4-Xk8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-469" y="2488"/>
+        </scene>
+        <!--Wolves Setup View Controller-->
+        <scene sceneID="lJH-UW-ASe">
+            <objects>
+                <viewController id="mFI-qk-Rxb" customClass="WolvesSetupViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dPP-tJ-H3c"/>
+                        <viewControllerLayoutGuide type="bottom" id="YZY-yB-59Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yT2-D7-SRG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wolves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E47-jJ-YQe">
+                                <rect key="frame" x="226" y="28" width="149" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1zE-58-bKV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgN-04-QwC">
+                                <rect key="frame" x="24" y="86" width="552" height="120"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="bMV-Pn-Bkh"/>
+                                </constraints>
+                                <string key="text">"Will the Defector keep their eyes closed but raise their hand.
+
+Will the other Wolves please wake up, acknowledge each other, and identify the Defector."</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mta-Uo-I0e">
+                                <rect key="frame" x="213" y="505" width="175" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="O6j-NB-ID6"/>
+                                    <constraint firstAttribute="width" constant="175" id="Rln-he-JZe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Close your eyes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="Dd1-5x-eJw"/>
+                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="OYE-Ra-plr"/>
+                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="e1L-9E-0IR"/>
+                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="1sc-nC-WVw"/>
+                                    <action selector="continuing:" destination="mFI-qk-Rxb" eventType="touchUpInside" id="HKJ-cw-gYE"/>
+                                    <action selector="continuing:" destination="35d-x7-cfY" eventType="touchUpInside" id="jlU-BZ-5Qy"/>
+                                    <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="lV5-E9-J58"/>
+                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="Hgc-sv-Mjb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FgN-04-QwC" firstAttribute="leading" secondItem="yT2-D7-SRG" secondAttribute="leadingMargin" constant="8" id="2M4-nl-kQf"/>
+                            <constraint firstAttribute="centerX" secondItem="E47-jJ-YQe" secondAttribute="centerX" id="9rg-ci-lpS"/>
+                            <constraint firstItem="FgN-04-QwC" firstAttribute="top" secondItem="E47-jJ-YQe" secondAttribute="bottom" constant="8" id="Fx5-y2-yo3"/>
+                            <constraint firstItem="FgN-04-QwC" firstAttribute="top" secondItem="E47-jJ-YQe" secondAttribute="bottom" constant="8" id="H40-4E-sCc"/>
+                            <constraint firstItem="E47-jJ-YQe" firstAttribute="top" secondItem="dPP-tJ-H3c" secondAttribute="bottom" constant="8" id="Hgo-G2-wKv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FgN-04-QwC" secondAttribute="trailing" constant="8" id="K11-X7-uaR"/>
+                            <constraint firstAttribute="centerX" secondItem="mta-Uo-I0e" secondAttribute="centerX" id="Usj-Fv-EDL"/>
+                            <constraint firstItem="YZY-yB-59Z" firstAttribute="top" secondItem="mta-Uo-I0e" secondAttribute="bottom" constant="8" id="VK8-Ek-7aO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d0k-bZ-bS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="209" y="2482"/>
         </scene>
         <!--Vampire Hunter View Controller-->
         <scene sceneID="z5Z-IG-mNw">

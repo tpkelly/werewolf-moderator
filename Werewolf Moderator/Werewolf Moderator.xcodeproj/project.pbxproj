@@ -46,6 +46,7 @@
 		47FD6B731A2509C200F445D0 /* noSeducer.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B711A2509C200F445D0 /* noSeducer.png */; };
 		47FD6B741A2509C200F445D0 /* seducer.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B721A2509C200F445D0 /* seducer.png */; };
 		47FD6B771A250B3F00F445D0 /* JulietViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B761A250B3F00F445D0 /* JulietViewController.m */; };
+		47FD6B7A1A251E1C00F445D0 /* WolvesSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B791A251E1C00F445D0 /* WolvesSetupViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,8 @@
 		47FD6B721A2509C200F445D0 /* seducer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seducer.png; sourceTree = "<group>"; };
 		47FD6B751A250B3F00F445D0 /* JulietViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JulietViewController.h; sourceTree = "<group>"; };
 		47FD6B761A250B3F00F445D0 /* JulietViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JulietViewController.m; sourceTree = "<group>"; };
+		47FD6B781A251E1C00F445D0 /* WolvesSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WolvesSetupViewController.h; sourceTree = "<group>"; };
+		47FD6B791A251E1C00F445D0 /* WolvesSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WolvesSetupViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +281,8 @@
 				47FD6B6F1A25079800F445D0 /* PriestViewController.m */,
 				47FD6B751A250B3F00F445D0 /* JulietViewController.h */,
 				47FD6B761A250B3F00F445D0 /* JulietViewController.m */,
+				47FD6B781A251E1C00F445D0 /* WolvesSetupViewController.h */,
+				47FD6B791A251E1C00F445D0 /* WolvesSetupViewController.m */,
 			);
 			path = PlayControllers;
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 				47FD6B4C1A20E77300F445D0 /* ClairvoyantViewController.m in Sources */,
 				47FD6B661A228F1F00F445D0 /* MonkViewController.m in Sources */,
 				47EF772E1A17CA48004E6DDD /* MorningNews.m in Sources */,
+				47FD6B7A1A251E1C00F445D0 /* WolvesSetupViewController.m in Sources */,
 				47FD6B631A2283FC00F445D0 /* MonkPrepViewController.m in Sources */,
 				47FD6B591A220F8100F445D0 /* MediumViewController.m in Sources */,
 				47FD6B441A20D9E500F445D0 /* PlayViewController.m in Sources */,
