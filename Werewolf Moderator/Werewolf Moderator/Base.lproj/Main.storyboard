@@ -341,7 +341,7 @@ Tap line in table to select player
                                     <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="cWN-u0-Q0n"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;Will the Monk please open their eyes. I will now show you two roles which are not in play&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhG-xC-qRc">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;Will the Monk please wake up. I will now show you two roles which are not in play&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhG-xC-qRc">
                                 <rect key="frame" x="24" y="93" width="552" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -699,6 +699,98 @@ Tap line in table to select player
             </objects>
             <point key="canvasLocation" x="132" y="1054"/>
         </scene>
+        <!--Priest View Controller-->
+        <scene sceneID="o1d-eF-sem">
+            <objects>
+                <viewController id="35d-x7-cfY" customClass="PriestViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BqC-me-kTN"/>
+                        <viewControllerLayoutGuide type="bottom" id="RWQ-kH-a4W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VB7-Hs-BjP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2V-Rh-CA7">
+                                <rect key="frame" x="242" y="8" width="117" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="rIN-I0-0Ua"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD6-u5-mWa">
+                                <rect key="frame" x="212" y="505" width="175" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="u5X-2d-hzZ"/>
+                                    <constraint firstAttribute="width" constant="175" id="zsT-7F-TTo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Close your eyes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="1US-ta-xQs"/>
+                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="kfo-oW-Yc0"/>
+                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="nGb-Fa-SXa"/>
+                                    <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="ch4-XD-ash"/>
+                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="owO-Ll-z8M"/>
+                                    <action selector="continuing:" destination="35d-x7-cfY" eventType="touchUpInside" id="qxp-rT-7ae"/>
+                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="Dg6-QO-7E9"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWk-Kh-2Cl">
+                                <rect key="frame" x="24" y="66" width="552" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="d5h-6H-leT"/>
+                                </constraints>
+                                <string key="text">"Will the sinner please raise their hand.
+
+Will the priest please wake up. I will now tell you if the Seducer is in play"</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iZb-3M-Xja">
+                                <rect key="frame" x="181" y="216" width="239" height="239"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iZb-3M-Xja" secondAttribute="height" multiplier="1:1" id="mR4-hh-Gwv"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iZb-3M-Xja" firstAttribute="top" secondItem="wWk-Kh-2Cl" secondAttribute="bottom" constant="70" id="8rZ-tX-Pzx"/>
+                            <constraint firstItem="iZb-3M-Xja" firstAttribute="width" secondItem="iZb-3M-Xja" secondAttribute="height" multiplier="1:1" id="PkH-iR-fQu"/>
+                            <constraint firstItem="hD6-u5-mWa" firstAttribute="top" secondItem="iZb-3M-Xja" secondAttribute="bottom" constant="50" id="SzH-iF-Lfr"/>
+                            <constraint firstItem="wWk-Kh-2Cl" firstAttribute="leading" secondItem="VB7-Hs-BjP" secondAttribute="leadingMargin" constant="8" id="Vod-Wz-Qyz"/>
+                            <constraint firstAttribute="centerX" secondItem="p2V-Rh-CA7" secondAttribute="centerX" id="WLk-ar-qtS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wWk-Kh-2Cl" secondAttribute="trailing" constant="8" id="ZSb-1F-i7r"/>
+                            <constraint firstAttribute="centerX" secondItem="hD6-u5-mWa" secondAttribute="centerX" id="byr-te-2Ac"/>
+                            <constraint firstItem="RWQ-kH-a4W" firstAttribute="top" secondItem="hD6-u5-mWa" secondAttribute="bottom" constant="8" id="cls-Sx-P8R"/>
+                            <constraint firstAttribute="centerX" secondItem="iZb-3M-Xja" secondAttribute="centerX" id="ikF-FF-Cqm"/>
+                            <constraint firstItem="wWk-Kh-2Cl" firstAttribute="top" secondItem="p2V-Rh-CA7" secondAttribute="bottom" constant="8" id="mqm-E2-GMT"/>
+                            <constraint firstItem="wWk-Kh-2Cl" firstAttribute="top" secondItem="p2V-Rh-CA7" secondAttribute="bottom" constant="8" id="pha-5v-8iv"/>
+                            <constraint firstItem="p2V-Rh-CA7" firstAttribute="top" secondItem="VB7-Hs-BjP" secondAttribute="topMargin" constant="8" id="yt8-tM-MyA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="seducerInPlayImage" destination="iZb-3M-Xja" id="sZa-PJ-Tht"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WLt-B7-qhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-469" y="1721"/>
+        </scene>
         <!--Vampire Hunter View Controller-->
         <scene sceneID="z5Z-IG-mNw">
             <objects>
@@ -737,16 +829,6 @@ Tap line in table to select player
                                     <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="RwH-tN-A7V"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;Will the vampire hunter please open their eyes. I will now tell you if the Vampire is in play&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBb-x8-TpF">
-                                <rect key="frame" x="24" y="86" width="552" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="xyY-OR-kmq"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oT0-aG-EyF">
                                 <rect key="frame" x="191" y="236" width="219" height="219"/>
                                 <constraints>
@@ -762,6 +844,16 @@ Tap line in table to select player
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;Will the vampire hunter please wake up. I will now tell you if the Vampire is in play&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBb-x8-TpF">
+                                <rect key="frame" x="24" y="86" width="552" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xyY-OR-kmq"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -779,6 +871,7 @@ Tap line in table to select player
                     </view>
                     <connections>
                         <outlet property="vampireInPlayImage" destination="oT0-aG-EyF" id="kZv-iL-Dj3"/>
+                        <segue destination="35d-x7-cfY" kind="show" identifier="Priest" id="R9w-OR-c4b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gI2-UU-jI4" userLabel="First Responder" sceneMemberID="firstResponder"/>

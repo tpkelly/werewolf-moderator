@@ -16,6 +16,7 @@
     [super viewDidLoad];
     
     NSString *imageName;
+    
     if (![[SingleGame state] roleIsAlive:VampireHunter])
     {
         imageName = @"notInPlay.png";
@@ -30,10 +31,9 @@
     }
                                           
     [self.vampireInPlayImage setImage:[UIImage imageNamed:imageName]];
-    
 }
 
 - (IBAction)continuing:(id)sender {
-    NSLog(@"Continue");
+    [self performSegueWithIdentifier:@"Priest" sender:self];
 }
 @end

@@ -42,6 +42,9 @@
 		47FD6B691A24FFC700F445D0 /* VampireHunterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B681A24FFC700F445D0 /* VampireHunterViewController.m */; };
 		47FD6B6C1A2502D600F445D0 /* noVampire.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B6A1A2502D500F445D0 /* noVampire.png */; };
 		47FD6B6D1A2502D600F445D0 /* vampire.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B6B1A2502D600F445D0 /* vampire.png */; };
+		47FD6B701A25079800F445D0 /* PriestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B6F1A25079800F445D0 /* PriestViewController.m */; };
+		47FD6B731A2509C200F445D0 /* noSeducer.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B711A2509C200F445D0 /* noSeducer.png */; };
+		47FD6B741A2509C200F445D0 /* seducer.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B721A2509C200F445D0 /* seducer.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,10 @@
 		47FD6B681A24FFC700F445D0 /* VampireHunterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VampireHunterViewController.m; sourceTree = "<group>"; };
 		47FD6B6A1A2502D500F445D0 /* noVampire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noVampire.png; sourceTree = "<group>"; };
 		47FD6B6B1A2502D600F445D0 /* vampire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vampire.png; sourceTree = "<group>"; };
+		47FD6B6E1A25079800F445D0 /* PriestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriestViewController.h; sourceTree = "<group>"; };
+		47FD6B6F1A25079800F445D0 /* PriestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriestViewController.m; sourceTree = "<group>"; };
+		47FD6B711A2509C200F445D0 /* noSeducer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noSeducer.png; sourceTree = "<group>"; };
+		47FD6B721A2509C200F445D0 /* seducer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seducer.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +241,8 @@
 		47FAD2051A1E872B004FB2F8 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				47FD6B711A2509C200F445D0 /* noSeducer.png */,
+				47FD6B721A2509C200F445D0 /* seducer.png */,
 				47FD6B6A1A2502D500F445D0 /* noVampire.png */,
 				47FD6B6B1A2502D600F445D0 /* vampire.png */,
 				47FD6B5D1A221CC900F445D0 /* mystic.png */,
@@ -262,6 +271,8 @@
 				47FD6B651A228F1F00F445D0 /* MonkViewController.m */,
 				47FD6B671A24FFC700F445D0 /* VampireHunterViewController.h */,
 				47FD6B681A24FFC700F445D0 /* VampireHunterViewController.m */,
+				47FD6B6E1A25079800F445D0 /* PriestViewController.h */,
+				47FD6B6F1A25079800F445D0 /* PriestViewController.m */,
 			);
 			path = PlayControllers;
 			sourceTree = "<group>";
@@ -346,8 +357,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47FD6B731A2509C200F445D0 /* noSeducer.png in Resources */,
 				47B4C1061A13E25900D30338 /* Main.storyboard in Resources */,
 				47FD6B6D1A2502D600F445D0 /* vampire.png in Resources */,
+				47FD6B741A2509C200F445D0 /* seducer.png in Resources */,
 				47FD6B601A221CC900F445D0 /* nonmystic.png in Resources */,
 				47FD6B521A21416600F445D0 /* corrupt.png in Resources */,
 				47B4C10B1A13E25900D30338 /* LaunchScreen.xib in Resources */,
@@ -393,6 +406,7 @@
 				47FAD20A1A1E87E3004FB2F8 /* SingleGame.m in Sources */,
 				47B4C0FA1A13E25900D30338 /* main.m in Sources */,
 				47B4C1301A154EF500D30338 /* GameState.m in Sources */,
+				47FD6B701A25079800F445D0 /* PriestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
