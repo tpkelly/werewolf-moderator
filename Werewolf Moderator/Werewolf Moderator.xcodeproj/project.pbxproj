@@ -48,6 +48,7 @@
 		47FD6B771A250B3F00F445D0 /* JulietViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B761A250B3F00F445D0 /* JulietViewController.m */; };
 		47FD6B7A1A251E1C00F445D0 /* WolvesSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B791A251E1C00F445D0 /* WolvesSetupViewController.m */; };
 		47FD6B7D1A25203700F445D0 /* VampirePrepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B7C1A25203700F445D0 /* VampirePrepViewController.m */; };
+		47FD6B841A25230800F445D0 /* MorningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B831A25230800F445D0 /* MorningViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,8 @@
 		47FD6B791A251E1C00F445D0 /* WolvesSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WolvesSetupViewController.m; sourceTree = "<group>"; };
 		47FD6B7B1A25203700F445D0 /* VampirePrepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VampirePrepViewController.h; sourceTree = "<group>"; };
 		47FD6B7C1A25203700F445D0 /* VampirePrepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VampirePrepViewController.m; sourceTree = "<group>"; };
+		47FD6B821A25230800F445D0 /* MorningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorningViewController.h; sourceTree = "<group>"; };
+		47FD6B831A25230800F445D0 /* MorningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorningViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +275,8 @@
 				47FD6B801A25218700F445D0 /* Shadow Attacks */,
 				47FD6B7F1A25216B00F445D0 /* Mystics */,
 				47FD6B7E1A25215600F445D0 /* First Night only */,
+				47FD6B821A25230800F445D0 /* MorningViewController.h */,
+				47FD6B831A25230800F445D0 /* MorningViewController.m */,
 			);
 			path = PlayControllers;
 			sourceTree = "<group>";
@@ -446,6 +451,7 @@
 				47FD6B591A220F8100F445D0 /* MediumViewController.m in Sources */,
 				47FD6B441A20D9E500F445D0 /* PlayViewController.m in Sources */,
 				47EF77361A182A00004E6DDD /* Vote.m in Sources */,
+				47FD6B841A25230800F445D0 /* MorningViewController.m in Sources */,
 				47B4C1031A13E25900D30338 /* PlayStateViewController.m in Sources */,
 				47FD6B691A24FFC700F445D0 /* VampireHunterViewController.m in Sources */,
 				47B4C0FD1A13E25900D30338 /* AppDelegate.m in Sources */,

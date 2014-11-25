@@ -1056,10 +1056,137 @@ Please acknowledge eachother"</string>
                             <constraint firstItem="yxO-fR-viV" firstAttribute="top" secondItem="OrW-J3-pai" secondAttribute="bottom" constant="8" id="rF9-Lx-bOC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="Evc-2u-N8Z" kind="show" identifier="Morning" id="iU4-zQ-jWI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ny4-sX-9ys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="904" y="2482"/>
+        </scene>
+        <!--Morning View Controller-->
+        <scene sceneID="wme-vq-eTc">
+            <objects>
+                <viewController id="Evc-2u-N8Z" customClass="MorningViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aPO-kL-89O"/>
+                        <viewControllerLayoutGuide type="bottom" id="53s-9R-GQu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e64-qs-wXn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It is Morning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECg-xw-eff">
+                                <rect key="frame" x="174" y="28" width="253" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="JGp-5h-LhX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geS-cP-m3p">
+                                <rect key="frame" x="213" y="505" width="175" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="W3P-c2-zIX"/>
+                                    <constraint firstAttribute="width" constant="175" id="gLx-3h-9aD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Close your eyes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="ballotTime:" destination="Evc-2u-N8Z" eventType="touchUpInside" id="AQ5-Gc-44Z"/>
+                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="Con-MV-G0v"/>
+                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="nWh-EX-yAb"/>
+                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="zUB-JX-gP5"/>
+                                    <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="3oD-6A-d0o"/>
+                                    <action selector="continuing:" destination="35d-x7-cfY" eventType="touchUpInside" id="5g5-Jm-AqS"/>
+                                    <action selector="continuing:" destination="pBX-wB-VeD" eventType="touchUpInside" id="Dcz-81-8yp"/>
+                                    <action selector="continuing:" destination="mFI-qk-Rxb" eventType="touchUpInside" id="JpH-Tz-weT"/>
+                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="S0g-v2-OiY"/>
+                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="Xvh-XH-m2Z"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News from the Inn:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vay-BB-wLP">
+                                <rect key="frame" x="46" y="133" width="169" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Died last night:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYv-NB-TB6">
+                                <rect key="frame" x="46" y="232" width="134" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HeD-P6-8dd">
+                                <rect key="frame" x="46" y="264" width="300" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="1cJ-zD-bnA"/>
+                                    <constraint firstAttribute="width" constant="300" id="Var-vc-7nz"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7M-zM-ZGV">
+                                <rect key="frame" x="46" y="165" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="CQd-ES-Meg"/>
+                                    <constraint firstAttribute="height" constant="30" id="sLC-NG-eXP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHV-Kv-m0g">
+                                <rect key="frame" x="46" y="372" width="508" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="0qO-CN-fF2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="53s-9R-GQu" firstAttribute="top" secondItem="geS-cP-m3p" secondAttribute="bottom" constant="8" id="0eu-DG-8AK"/>
+                            <constraint firstItem="wHV-Kv-m0g" firstAttribute="leading" secondItem="e64-qs-wXn" secondAttribute="leadingMargin" constant="30" id="1Ex-IW-40C"/>
+                            <constraint firstAttribute="centerX" secondItem="ECg-xw-eff" secondAttribute="centerX" id="76p-5v-kpt"/>
+                            <constraint firstItem="Vay-BB-wLP" firstAttribute="leading" secondItem="e64-qs-wXn" secondAttribute="leadingMargin" constant="30" id="Aby-rR-efe"/>
+                            <constraint firstItem="eYv-NB-TB6" firstAttribute="top" secondItem="Vay-BB-wLP" secondAttribute="bottom" constant="75" id="AzQ-Qs-469"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wHV-Kv-m0g" secondAttribute="trailing" constant="30" id="CFa-ju-lve"/>
+                            <constraint firstItem="I7M-zM-ZGV" firstAttribute="top" secondItem="Vay-BB-wLP" secondAttribute="bottom" constant="8" id="HuY-tG-lum"/>
+                            <constraint firstItem="ECg-xw-eff" firstAttribute="top" secondItem="aPO-kL-89O" secondAttribute="bottom" constant="8" id="LM4-U9-OA0"/>
+                            <constraint firstItem="Vay-BB-wLP" firstAttribute="top" secondItem="ECg-xw-eff" secondAttribute="bottom" constant="50" id="MKy-t7-7vm"/>
+                            <constraint firstItem="wHV-Kv-m0g" firstAttribute="top" secondItem="HeD-P6-8dd" secondAttribute="bottom" constant="8" id="NV6-1c-JEw"/>
+                            <constraint firstItem="I7M-zM-ZGV" firstAttribute="leading" secondItem="e64-qs-wXn" secondAttribute="leadingMargin" constant="30" id="bYY-nP-C8Z"/>
+                            <constraint firstItem="eYv-NB-TB6" firstAttribute="leading" secondItem="e64-qs-wXn" secondAttribute="leadingMargin" constant="30" id="cjQ-fy-LNh"/>
+                            <constraint firstItem="HeD-P6-8dd" firstAttribute="leading" secondItem="e64-qs-wXn" secondAttribute="leadingMargin" constant="30" id="m9Z-IK-hKY"/>
+                            <constraint firstItem="HeD-P6-8dd" firstAttribute="top" secondItem="eYv-NB-TB6" secondAttribute="bottom" constant="8" id="rMD-6t-kH6"/>
+                            <constraint firstAttribute="centerX" secondItem="geS-cP-m3p" secondAttribute="centerX" id="vab-PL-cUS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="diedLastNight" destination="HeD-P6-8dd" id="Dkv-yp-X7y"/>
+                        <outlet property="morningtime" destination="wHV-Kv-m0g" id="Mk2-X1-bau"/>
+                        <outlet property="newsFromTheInn" destination="I7M-zM-ZGV" id="czQ-4k-VQC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XxY-mc-G8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1603" y="2488"/>
         </scene>
         <!--Vampire Hunter View Controller-->
         <scene sceneID="z5Z-IG-mNw">

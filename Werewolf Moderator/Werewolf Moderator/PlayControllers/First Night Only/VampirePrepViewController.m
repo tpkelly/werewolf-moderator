@@ -11,6 +11,6 @@
 @implementation VampirePrepViewController
 
 - (IBAction)continuing:(id)sender {
-    NSLog(@"Continue");
+    [self performSegueWithIdentifier:@"Morning" sender:self];
 }
 @end
