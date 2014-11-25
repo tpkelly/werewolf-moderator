@@ -268,12 +268,17 @@
 		47FD6B451A20E6F000F445D0 /* PlayControllers */ = {
 			isa = PBXGroup;
 			children = (
-				47FD6B491A20E77300F445D0 /* ClairvoyantViewController.h */,
-				47FD6B4A1A20E77300F445D0 /* ClairvoyantViewController.m */,
-				47FD6B571A220F8100F445D0 /* MediumViewController.h */,
-				47FD6B581A220F8100F445D0 /* MediumViewController.m */,
-				47FD6B5A1A22189500F445D0 /* WizardViewController.h */,
-				47FD6B5B1A22189500F445D0 /* WizardViewController.m */,
+				47FD6B811A25218F00F445D0 /* Ballot */,
+				47FD6B801A25218700F445D0 /* Shadow Attacks */,
+				47FD6B7F1A25216B00F445D0 /* Mystics */,
+				47FD6B7E1A25215600F445D0 /* First Night only */,
+			);
+			path = PlayControllers;
+			sourceTree = "<group>";
+		};
+		47FD6B7E1A25215600F445D0 /* First Night only */ = {
+			isa = PBXGroup;
+			children = (
 				47FD6B611A2283FC00F445D0 /* MonkPrepViewController.h */,
 				47FD6B621A2283FC00F445D0 /* MonkPrepViewController.m */,
 				47FD6B641A228F1F00F445D0 /* MonkViewController.h */,
@@ -289,7 +294,35 @@
 				47FD6B7B1A25203700F445D0 /* VampirePrepViewController.h */,
 				47FD6B7C1A25203700F445D0 /* VampirePrepViewController.m */,
 			);
-			path = PlayControllers;
+			name = "First Night only";
+			path = "First Night Only";
+			sourceTree = "<group>";
+		};
+		47FD6B7F1A25216B00F445D0 /* Mystics */ = {
+			isa = PBXGroup;
+			children = (
+				47FD6B491A20E77300F445D0 /* ClairvoyantViewController.h */,
+				47FD6B4A1A20E77300F445D0 /* ClairvoyantViewController.m */,
+				47FD6B571A220F8100F445D0 /* MediumViewController.h */,
+				47FD6B581A220F8100F445D0 /* MediumViewController.m */,
+				47FD6B5A1A22189500F445D0 /* WizardViewController.h */,
+				47FD6B5B1A22189500F445D0 /* WizardViewController.m */,
+			);
+			path = Mystics;
+			sourceTree = "<group>";
+		};
+		47FD6B801A25218700F445D0 /* Shadow Attacks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Shadow Attacks";
+			sourceTree = "<group>";
+		};
+		47FD6B811A25218F00F445D0 /* Ballot */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Ballot;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
