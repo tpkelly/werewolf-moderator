@@ -39,6 +39,9 @@
 		47FD6B601A221CC900F445D0 /* nonmystic.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B5E1A221CC900F445D0 /* nonmystic.png */; };
 		47FD6B631A2283FC00F445D0 /* MonkPrepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B621A2283FC00F445D0 /* MonkPrepViewController.m */; };
 		47FD6B661A228F1F00F445D0 /* MonkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B651A228F1F00F445D0 /* MonkViewController.m */; };
+		47FD6B691A24FFC700F445D0 /* VampireHunterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B681A24FFC700F445D0 /* VampireHunterViewController.m */; };
+		47FD6B6C1A2502D600F445D0 /* noVampire.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B6A1A2502D500F445D0 /* noVampire.png */; };
+		47FD6B6D1A2502D600F445D0 /* vampire.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FD6B6B1A2502D600F445D0 /* vampire.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +111,10 @@
 		47FD6B621A2283FC00F445D0 /* MonkPrepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonkPrepViewController.m; sourceTree = "<group>"; };
 		47FD6B641A228F1F00F445D0 /* MonkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkViewController.h; sourceTree = "<group>"; };
 		47FD6B651A228F1F00F445D0 /* MonkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonkViewController.m; sourceTree = "<group>"; };
+		47FD6B671A24FFC700F445D0 /* VampireHunterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VampireHunterViewController.h; sourceTree = "<group>"; };
+		47FD6B681A24FFC700F445D0 /* VampireHunterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VampireHunterViewController.m; sourceTree = "<group>"; };
+		47FD6B6A1A2502D500F445D0 /* noVampire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noVampire.png; sourceTree = "<group>"; };
+		47FD6B6B1A2502D600F445D0 /* vampire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vampire.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +234,8 @@
 		47FAD2051A1E872B004FB2F8 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				47FD6B6A1A2502D500F445D0 /* noVampire.png */,
+				47FD6B6B1A2502D600F445D0 /* vampire.png */,
 				47FD6B5D1A221CC900F445D0 /* mystic.png */,
 				47FD6B5E1A221CC900F445D0 /* nonmystic.png */,
 				47FD6B551A2209AF00F445D0 /* notInPlay.png */,
@@ -251,6 +260,8 @@
 				47FD6B621A2283FC00F445D0 /* MonkPrepViewController.m */,
 				47FD6B641A228F1F00F445D0 /* MonkViewController.h */,
 				47FD6B651A228F1F00F445D0 /* MonkViewController.m */,
+				47FD6B671A24FFC700F445D0 /* VampireHunterViewController.h */,
+				47FD6B681A24FFC700F445D0 /* VampireHunterViewController.m */,
 			);
 			path = PlayControllers;
 			sourceTree = "<group>";
@@ -336,12 +347,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B4C1061A13E25900D30338 /* Main.storyboard in Resources */,
+				47FD6B6D1A2502D600F445D0 /* vampire.png in Resources */,
 				47FD6B601A221CC900F445D0 /* nonmystic.png in Resources */,
 				47FD6B521A21416600F445D0 /* corrupt.png in Resources */,
 				47B4C10B1A13E25900D30338 /* LaunchScreen.xib in Resources */,
 				47FAD2071A1E8774004FB2F8 /* werewolf.jpg in Resources */,
 				47B4C1081A13E25900D30338 /* Images.xcassets in Resources */,
 				47FD6B561A2209AF00F445D0 /* notInPlay.png in Resources */,
+				47FD6B6C1A2502D600F445D0 /* noVampire.png in Resources */,
 				47FD6B5F1A221CC900F445D0 /* mystic.png in Resources */,
 				47FD6B541A2142DE00F445D0 /* noncorrupt.png in Resources */,
 			);
@@ -371,6 +384,7 @@
 				47FD6B441A20D9E500F445D0 /* PlayViewController.m in Sources */,
 				47EF77361A182A00004E6DDD /* Vote.m in Sources */,
 				47B4C1031A13E25900D30338 /* PlayStateViewController.m in Sources */,
+				47FD6B691A24FFC700F445D0 /* VampireHunterViewController.m in Sources */,
 				47B4C0FD1A13E25900D30338 /* AppDelegate.m in Sources */,
 				47B4C1361A16CC0800D30338 /* Game.m in Sources */,
 				47EF77311A17F517004E6DDD /* Ballot.m in Sources */,

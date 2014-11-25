@@ -351,13 +351,13 @@ Tap line in table to select player
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qo6-LJ-rBR">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qo6-LJ-rBR">
                                 <rect key="frame" x="325" y="151" width="251" height="282"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tjT-8N-8k5">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjT-8N-8k5">
                                 <rect key="frame" x="24" y="151" width="251" height="282"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -387,6 +387,7 @@ Tap line in table to select player
                     <connections>
                         <outlet property="firstUnassignedRole" destination="tjT-8N-8k5" id="2Vf-Zf-UjU"/>
                         <outlet property="secondUnassignedRole" destination="Qo6-LJ-rBR" id="gVk-0A-aeW"/>
+                        <segue destination="S1H-7z-jbC" kind="show" identifier="VampireHunter" id="SjH-HX-k3E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nvb-TO-mZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -697,6 +698,92 @@ Tap line in table to select player
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WWM-b8-Kg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="1054"/>
+        </scene>
+        <!--Vampire Hunter View Controller-->
+        <scene sceneID="z5Z-IG-mNw">
+            <objects>
+                <viewController id="S1H-7z-jbC" customClass="VampireHunterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d9T-Rq-3rN"/>
+                        <viewControllerLayoutGuide type="bottom" id="LC7-2U-zsh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iWW-F1-odg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyW-im-UPe">
+                                <rect key="frame" x="212" y="505" width="175" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="Xx8-jX-EV1"/>
+                                    <constraint firstAttribute="height" constant="38" id="joi-ug-lZo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Close your eyes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="8YD-Lo-e0O"/>
+                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="aKq-Od-kye"/>
+                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="kgr-Jk-D1h"/>
+                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="DJR-kN-4vQ"/>
+                                    <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="EhZ-WV-wS2"/>
+                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="RwH-tN-A7V"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;Will the vampire hunter please open their eyes. I will now tell you if the Vampire is in play&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBb-x8-TpF">
+                                <rect key="frame" x="24" y="86" width="552" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xyY-OR-kmq"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oT0-aG-EyF">
+                                <rect key="frame" x="191" y="236" width="219" height="219"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oT0-aG-EyF" secondAttribute="height" multiplier="1:1" id="a8L-47-RoV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vampire Hunter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zm9-Mo-cCv">
+                                <rect key="frame" x="140" y="28" width="320" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="der-on-QbG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zm9-Mo-cCv" firstAttribute="top" secondItem="d9T-Rq-3rN" secondAttribute="bottom" constant="8" id="2ui-Zn-q90"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aBb-x8-TpF" secondAttribute="trailing" constant="8" id="DrO-58-6c8"/>
+                            <constraint firstAttribute="centerX" secondItem="Zm9-Mo-cCv" secondAttribute="centerX" id="FND-Jp-dWA"/>
+                            <constraint firstItem="aBb-x8-TpF" firstAttribute="top" secondItem="Zm9-Mo-cCv" secondAttribute="bottom" constant="8" id="NPL-bB-iEi"/>
+                            <constraint firstItem="LC7-2U-zsh" firstAttribute="top" secondItem="IyW-im-UPe" secondAttribute="bottom" constant="8" id="Pr6-gs-8hk"/>
+                            <constraint firstItem="IyW-im-UPe" firstAttribute="top" secondItem="oT0-aG-EyF" secondAttribute="bottom" constant="50" id="V0I-2m-JO1"/>
+                            <constraint firstItem="oT0-aG-EyF" firstAttribute="top" secondItem="aBb-x8-TpF" secondAttribute="bottom" constant="100" id="WbQ-sd-csA"/>
+                            <constraint firstAttribute="centerX" secondItem="IyW-im-UPe" secondAttribute="centerX" id="dfZ-aj-mhp"/>
+                            <constraint firstItem="aBb-x8-TpF" firstAttribute="leading" secondItem="iWW-F1-odg" secondAttribute="leadingMargin" constant="8" id="sZy-Ye-x0v"/>
+                            <constraint firstAttribute="centerX" secondItem="oT0-aG-EyF" secondAttribute="centerX" id="uiD-pu-Egt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="vampireInPlayImage" destination="oT0-aG-EyF" id="kZv-iL-Dj3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gI2-UU-jI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="204" y="1724"/>
         </scene>
     </scenes>
     <resources>

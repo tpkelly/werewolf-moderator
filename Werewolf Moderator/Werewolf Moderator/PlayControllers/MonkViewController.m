@@ -32,6 +32,6 @@
 }
 
 - (IBAction)continuing:(id)sender {
-    NSLog(@"Continue");
+    [self performSegueWithIdentifier:@"VampireHunter" sender:self];
 }
 @end
