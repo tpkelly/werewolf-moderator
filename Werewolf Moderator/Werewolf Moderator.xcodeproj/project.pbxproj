@@ -49,7 +49,7 @@
 		47FD6B7A1A251E1C00F445D0 /* WolvesSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B791A251E1C00F445D0 /* WolvesSetupViewController.m */; };
 		47FD6B7D1A25203700F445D0 /* VampirePrepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B7C1A25203700F445D0 /* VampirePrepViewController.m */; };
 		47FD6B841A25230800F445D0 /* MorningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FD6B831A25230800F445D0 /* MorningViewController.m */; };
-		47FED0C11A269E470084C43C /* BallotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0C01A269E470084C43C /* BallotViewController.m */; };
+		47FED0C11A269E470084C43C /* BallotFirstRoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0C01A269E470084C43C /* BallotFirstRoundViewController.m */; };
 		47FED0C41A2B584B0084C43C /* BallotFirstRoundResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0C31A2B584B0084C43C /* BallotFirstRoundResultsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -136,8 +136,8 @@
 		47FD6B7C1A25203700F445D0 /* VampirePrepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VampirePrepViewController.m; sourceTree = "<group>"; };
 		47FD6B821A25230800F445D0 /* MorningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorningViewController.h; sourceTree = "<group>"; };
 		47FD6B831A25230800F445D0 /* MorningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorningViewController.m; sourceTree = "<group>"; };
-		47FED0BF1A269E470084C43C /* BallotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallotViewController.h; sourceTree = "<group>"; };
-		47FED0C01A269E470084C43C /* BallotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallotViewController.m; sourceTree = "<group>"; };
+		47FED0BF1A269E470084C43C /* BallotFirstRoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallotFirstRoundViewController.h; sourceTree = "<group>"; };
+		47FED0C01A269E470084C43C /* BallotFirstRoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallotFirstRoundViewController.m; sourceTree = "<group>"; };
 		47FED0C21A2B584B0084C43C /* BallotFirstRoundResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallotFirstRoundResultsViewController.h; sourceTree = "<group>"; };
 		47FED0C31A2B584B0084C43C /* BallotFirstRoundResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallotFirstRoundResultsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -332,8 +332,8 @@
 		47FD6B811A25218F00F445D0 /* Ballot */ = {
 			isa = PBXGroup;
 			children = (
-				47FED0BF1A269E470084C43C /* BallotViewController.h */,
-				47FED0C01A269E470084C43C /* BallotViewController.m */,
+				47FED0BF1A269E470084C43C /* BallotFirstRoundViewController.h */,
+				47FED0C01A269E470084C43C /* BallotFirstRoundViewController.m */,
 				47FED0C21A2B584B0084C43C /* BallotFirstRoundResultsViewController.h */,
 				47FED0C31A2B584B0084C43C /* BallotFirstRoundResultsViewController.m */,
 			);
@@ -466,7 +466,7 @@
 				47FD6B691A24FFC700F445D0 /* VampireHunterViewController.m in Sources */,
 				47B4C0FD1A13E25900D30338 /* AppDelegate.m in Sources */,
 				47B4C1361A16CC0800D30338 /* Game.m in Sources */,
-				47FED0C11A269E470084C43C /* BallotViewController.m in Sources */,
+				47FED0C11A269E470084C43C /* BallotFirstRoundViewController.m in Sources */,
 				47FD6B7D1A25203700F445D0 /* VampirePrepViewController.m in Sources */,
 				47EF77311A17F517004E6DDD /* Ballot.m in Sources */,
 				47B4C1001A13E25900D30338 /* SetupViewController.m in Sources */,

@@ -1189,10 +1189,10 @@ Please acknowledge eachother"</string>
             </objects>
             <point key="canvasLocation" x="1603" y="2488"/>
         </scene>
-        <!--Ballot View Controller-->
+        <!--Ballot First Round View Controller-->
         <scene sceneID="Rsj-Hy-rID">
             <objects>
-                <viewController id="glr-Kf-2ET" customClass="BallotViewController" sceneMemberID="viewController">
+                <viewController id="glr-Kf-2ET" customClass="BallotFirstRoundViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CVL-H4-cZk"/>
                         <viewControllerLayoutGuide type="bottom" id="sVE-tU-fwb"/>

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BallotViewController : UIViewController
+@interface BallotFirstRoundViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *playerVoteLabel;
 @property (strong, nonatomic) IBOutlet UITextField *playerVotes;

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 TKGames. All rights reserved.
 //
 
-#import "BallotViewController.h"
+#import "BallotFirstRoundViewController.h"
 #import "SingleGame.h"
 #import "GameState.h"
 #import "Player.h"
@@ -14,7 +14,7 @@
 #import "Ballot.h"
 #import "BallotFirstRoundResultsViewController.h"
 
-@interface BallotViewController ()
+@interface BallotFirstRoundViewController ()
 
 @property (nonatomic, strong) NSMutableArray *playersWithoutVotes;
 @property (nonatomic, strong) NSMutableArray *votesForPlayers;
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation BallotViewController
+@implementation BallotFirstRoundViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
