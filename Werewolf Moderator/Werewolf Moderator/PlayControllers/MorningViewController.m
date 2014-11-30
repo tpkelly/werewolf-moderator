@@ -61,6 +61,6 @@
 }
 
 - (IBAction)ballotTime:(id)sender {
-    NSLog(@"Ballot");
+    [self performSegueWithIdentifier:@"Ballot" sender:self];
 }
 @end

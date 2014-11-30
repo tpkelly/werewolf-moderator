@@ -31,9 +31,18 @@
     
     [self.addPlayerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.addPlayerButton setTitleColor:[UIColor lightTextColor] forState:UIControlStateDisabled];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    tap.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tap];
 }
 
 #pragma mark - UITextField methods
+
+-(void)dismissKeyboard
+{
+    [self.playerName resignFirstResponder];
+}
 
 -(void)textDidChange:(UITextField*)textField
 {
