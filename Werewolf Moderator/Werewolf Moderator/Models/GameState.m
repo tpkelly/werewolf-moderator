@@ -19,6 +19,7 @@
     if (self)
     {
         self.healerHasPowers = YES;
+        self.isFirstNight = YES;
         self.newsFromTheInn = NoNews;
         
         self.allPlayers = [NSArray array];

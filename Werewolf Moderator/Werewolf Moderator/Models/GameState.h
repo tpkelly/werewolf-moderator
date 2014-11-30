@@ -26,6 +26,8 @@
 @property (nonatomic, assign) BOOL healerHasPowers;
 @property (nonatomic, assign) NewsFromTheInn newsFromTheInn;
 
+@property (nonatomic, assign) BOOL isFirstNight;
+
 //Player picked by Juliet
 @property (nonatomic, strong) Player *romeoPlayer;
 //Player picked by Guardian Angel

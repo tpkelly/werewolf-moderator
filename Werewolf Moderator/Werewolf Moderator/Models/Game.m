@@ -157,6 +157,7 @@
     _state.madmanMauledLastNight = (madmanDestinedToDie != nil);
     
     _state.wolvesAttackTwice = NO;
+    _state.isFirstNight = NO;
     
     MorningNews *news = [MorningNews new];
     news.diedLastNight = _state.destinedToDie;

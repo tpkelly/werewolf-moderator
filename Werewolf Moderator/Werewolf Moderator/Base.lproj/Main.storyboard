@@ -580,7 +580,7 @@ Tap line in table to select player
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Drh-rY-9oV">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Drh-rY-9oV">
                                 <rect key="frame" x="150" y="243" width="300" height="300"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;I will now tell you if that player has mystical powers&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6V8-cP-jnk">
@@ -593,13 +593,13 @@ Tap line in table to select player
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDp-ek-W3k">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IDp-ek-W3k">
                                         <rect key="frame" x="63" y="63" width="175" height="175"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="IDp-ek-W3k" secondAttribute="height" multiplier="1:1" id="ffb-hf-xfI"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3al-m4-KEW">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3al-m4-KEW">
                                         <rect key="frame" x="63" y="262" width="175" height="38"/>
                                         <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -641,7 +641,7 @@ Tap line in table to select player
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fUL-ag-VqB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fUL-ag-VqB">
                                 <rect key="frame" x="150" y="243" width="300" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -671,16 +671,17 @@ Tap line in table to select player
                         <outlet property="alivePlayersTable" destination="fUL-ag-VqB" id="kFQ-xd-JAE"/>
                         <outlet property="mysticImage" destination="IDp-ek-W3k" id="3P7-ey-j5U"/>
                         <segue destination="bxA-gA-2oC" kind="show" identifier="MonkPrep" id="Qzv-1G-Syf"/>
+                        <segue destination="etn-hz-aJy" kind="show" identifier="Witch" id="G2T-cP-ciP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ck4-Cn-6CR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2242" y="1738"/>
+            <point key="canvasLocation" x="2184" y="1764"/>
         </scene>
-        <!--View Controller-->
+        <!--Witch View Controller-->
         <scene sceneID="nc1-zr-UR7">
             <objects>
-                <viewController id="etn-hz-aJy" sceneMemberID="viewController">
+                <viewController id="etn-hz-aJy" customClass="WitchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OQV-D5-oIn"/>
                         <viewControllerLayoutGuide type="bottom" id="WkO-bE-2GS"/>
@@ -688,8 +689,100 @@ Tap line in table to select player
                     <view key="view" contentMode="scaleToFill" id="qZL-SQ-v5t">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0b3-Mo-zwT">
+                                <rect key="frame" x="150" y="251" width="300" height="292"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CDh-aA-Fsv">
+                                        <rect key="frame" x="63" y="59" width="175" height="175"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="CDh-aA-Fsv" secondAttribute="height" multiplier="1:1" id="mmi-rQ-ZUL"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1V-hf-3qE">
+                                        <rect key="frame" x="63" y="254" width="175" height="38"/>
+                                        <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="JAJ-WQ-WbW"/>
+                                            <constraint firstAttribute="width" constant="175" id="v7U-BX-JOc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                        <state key="normal" title="Close your eyes">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="TSp-C4-3ZM"/>
+                                            <action selector="continuing:" destination="etn-hz-aJy" eventType="touchUpInside" id="aNg-LC-wll"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="l1V-hf-3qE" firstAttribute="trailing" secondItem="CDh-aA-Fsv" secondAttribute="trailing" id="0lA-eT-dGU"/>
+                                    <constraint firstAttribute="centerX" secondItem="l1V-hf-3qE" secondAttribute="centerX" id="3aN-et-hnw"/>
+                                    <constraint firstAttribute="centerY" secondItem="CDh-aA-Fsv" secondAttribute="centerY" id="6cT-om-0b8"/>
+                                    <constraint firstItem="l1V-hf-3qE" firstAttribute="leading" secondItem="CDh-aA-Fsv" secondAttribute="leading" id="8To-qf-ytN"/>
+                                    <constraint firstAttribute="bottom" secondItem="l1V-hf-3qE" secondAttribute="bottom" id="hDd-25-m33"/>
+                                    <constraint firstAttribute="centerX" secondItem="CDh-aA-Fsv" secondAttribute="centerX" id="jZg-zL-Kg3"/>
+                                    <constraint firstAttribute="width" constant="300" id="rDg-sD-QB2"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDs-ss-F7t">
+                                <rect key="frame" x="24" y="93" width="552" height="150"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="8L4-8u-U7h"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="rXL-Ih-OZb"/>
+                                </constraints>
+                                <string key="text">"Will the Witch please wake up. Please select a player to protect from shadow attacks tonight."
+
+Tap line in table to select player
+</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Witch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hF0-Yh-9NI">
+                                <rect key="frame" x="241" y="28" width="119" height="57"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PJZ-j6-QPu">
+                                <rect key="frame" x="150" y="251" width="300" height="292"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="BkA-Qf-oGR"/>
+                                </constraints>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eDs-ss-F7t" firstAttribute="leading" secondItem="qZL-SQ-v5t" secondAttribute="leadingMargin" constant="8" id="25a-XX-qDe"/>
+                            <constraint firstAttribute="centerX" secondItem="0b3-Mo-zwT" secondAttribute="centerX" id="8gg-K9-SlP"/>
+                            <constraint firstItem="eDs-ss-F7t" firstAttribute="top" secondItem="hF0-Yh-9NI" secondAttribute="bottom" constant="8" id="CyQ-rb-vQ7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eDs-ss-F7t" secondAttribute="trailing" constant="8" id="Gsv-Bq-Ukp"/>
+                            <constraint firstAttribute="centerX" secondItem="PJZ-j6-QPu" secondAttribute="centerX" id="RkJ-YH-hhP"/>
+                            <constraint firstItem="0b3-Mo-zwT" firstAttribute="top" secondItem="eDs-ss-F7t" secondAttribute="bottom" constant="8" id="YK9-Hd-l17"/>
+                            <constraint firstItem="WkO-bE-2GS" firstAttribute="top" secondItem="PJZ-j6-QPu" secondAttribute="bottom" constant="8" id="Zfp-VK-8ed"/>
+                            <constraint firstAttribute="centerX" secondItem="hF0-Yh-9NI" secondAttribute="centerX" id="d0G-l4-CAS"/>
+                            <constraint firstItem="WkO-bE-2GS" firstAttribute="top" secondItem="0b3-Mo-zwT" secondAttribute="bottom" constant="8" id="oPM-4K-upM"/>
+                            <constraint firstItem="hF0-Yh-9NI" firstAttribute="top" secondItem="OQV-D5-oIn" secondAttribute="bottom" constant="8" id="q06-Sr-svu"/>
+                            <constraint firstItem="PJZ-j6-QPu" firstAttribute="top" secondItem="eDs-ss-F7t" secondAttribute="bottom" constant="8" id="uJf-SH-Pan"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="playerTable" destination="PJZ-j6-QPu" id="Pne-59-Ea9"/>
+                        <outlet property="witchInPlayImage" destination="CDh-aA-Fsv" id="z93-P7-QhZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t0k-S1-WHD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -904,7 +997,7 @@ Will the priest please wake up. I will now tell you if the Seducer is in play"</
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuI-HK-m0Q">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuI-HK-m0Q">
                                 <rect key="frame" x="213" y="505" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -934,7 +1027,7 @@ Will the priest please wake up. I will now tell you if the Seducer is in play"</
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oLA-OG-VCg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oLA-OG-VCg">
                                 <rect key="frame" x="150" y="174" width="300" height="369"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1866,9 +1959,9 @@ Please acknowledge eachother"</string>
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zJm-yM-FWg"/>
-        <segue reference="cQS-uw-swt"/>
+        <segue reference="b9F-be-3HY"/>
         <segue reference="jh8-2z-7i3"/>
-        <segue reference="SQT-nX-Qle"/>
+        <segue reference="5Rx-Fr-hDL"/>
+        <segue reference="4c7-IS-ucO"/>
     </inferredMetricsTieBreakers>
 </document>

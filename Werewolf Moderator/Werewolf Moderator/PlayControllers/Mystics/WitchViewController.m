@@ -1,48 +1,40 @@
 //
-//  WizardViewController.m
+//  WitchViewController.m
 //  Werewolf Moderator
 //
-//  Created by Thomas Kelly on 23/11/2014.
+//  Created by Thomas Kelly on 30/11/2014.
 //  Copyright (c) 2014 TKGames. All rights reserved.
 //
 
-#import "WizardViewController.h"
+#import "WitchViewController.h"
 #import "SingleGame.h"
 #import "GameState.h"
-#import "Game.h"
 #import "Player.h"
+#import "Game.h"
 
-@interface WizardViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface WitchViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
-@implementation WizardViewController
+@implementation WitchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    if ([[SingleGame state] roleIsAlive:Wizard])
+    // Do any additional setup after loading the view.
+    if ([[SingleGame state] roleIsAlive:Witch])
     {
-        self.alivePlayersTable.dataSource = self;
-        self.alivePlayersTable.delegate = self;
+        self.playerTable.dataSource = self;
+        self.playerTable.delegate = self;
     }
     else
     {
-        self.alivePlayersTable.hidden = YES;
-        [self.mysticImage setImage:[UIImage imageNamed:@"notInPlay.png"]];
+        [self.witchInPlayImage setImage:[UIImage imageNamed:@"NotInPlay.png"]];
+        self.playerTable.hidden = YES;
     }
 }
 
-- (IBAction)continue:(id)sender
-{
-    if ([SingleGame state].isFirstNight)
-    {
-        [self performSegueWithIdentifier:@"MonkPrep" sender:self];
-    }
-    else
-    {
-        [self performSegueWithIdentifier:@"Witch" sender:self];
-    }
+- (IBAction)continuing:(id)sender {
+    NSLog(@"Close your eyes");
 }
 
 #pragma mark - UITableView methods
@@ -75,16 +67,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Player *playerAtIndex = [[SingleGame state].playersAlive objectAtIndex:indexPath.row];
-    self.alivePlayersTable.hidden = YES;
+    self.playerTable.hidden = YES;
     
-    if ([[SingleGame game] wizardChecksPlayer:playerAtIndex])
-    {
-        [self.mysticImage setImage:[UIImage imageNamed:@"mystic.png"]];
-    }
-    else
-    {
-        [self.mysticImage setImage:[UIImage imageNamed:@"nonmystic.png"]];
-    }
+    [[SingleGame game] witchProtectPlayer:playerAtIndex];
 }
 
 @end

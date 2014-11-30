@@ -53,6 +53,7 @@
 		47FED0C41A2B584B0084C43C /* BallotFirstRoundResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0C31A2B584B0084C43C /* BallotFirstRoundResultsViewController.m */; };
 		47FED0C71A2B76180084C43C /* BallotSecondRoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0C61A2B76180084C43C /* BallotSecondRoundViewController.m */; };
 		47FED0CA1A2B7EA90084C43C /* BallotSecondRoundResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0C91A2B7EA90084C43C /* BallotSecondRoundResultsViewController.m */; };
+		47FED0CD1A2BC2B30084C43C /* WitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0CC1A2BC2B30084C43C /* WitchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,8 @@
 		47FED0C61A2B76180084C43C /* BallotSecondRoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallotSecondRoundViewController.m; sourceTree = "<group>"; };
 		47FED0C81A2B7EA90084C43C /* BallotSecondRoundResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallotSecondRoundResultsViewController.h; sourceTree = "<group>"; };
 		47FED0C91A2B7EA90084C43C /* BallotSecondRoundResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallotSecondRoundResultsViewController.m; sourceTree = "<group>"; };
+		47FED0CB1A2BC2B30084C43C /* WitchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WitchViewController.h; sourceTree = "<group>"; };
+		47FED0CC1A2BC2B30084C43C /* WitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WitchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +327,8 @@
 				47FD6B581A220F8100F445D0 /* MediumViewController.m */,
 				47FD6B5A1A22189500F445D0 /* WizardViewController.h */,
 				47FD6B5B1A22189500F445D0 /* WizardViewController.m */,
+				47FED0CB1A2BC2B30084C43C /* WitchViewController.h */,
+				47FED0CC1A2BC2B30084C43C /* WitchViewController.m */,
 			);
 			path = Mystics;
 			sourceTree = "<group>";
@@ -460,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47FED0CD1A2BC2B30084C43C /* WitchViewController.m in Sources */,
 				47FD6B771A250B3F00F445D0 /* JulietViewController.m in Sources */,
 				47B4C1241A13E2ED00D30338 /* Role.m in Sources */,
 				47FD6B5C1A22189500F445D0 /* WizardViewController.m in Sources */,
