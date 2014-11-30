@@ -10,6 +10,7 @@
 #import "SingleGame.h"
 #import "GameState.h"
 #import "Player.h"
+#import "BallotSecondRoundViewController.h"
 
 @interface BallotFirstRoundResultsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -32,6 +33,16 @@
 }
 
 - (IBAction)secondRound:(id)sender {
+    [self performSegueWithIdentifier:@"SecondRound" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"SecondRound"])
+    {
+        BallotSecondRoundViewController *nextViewController = segue.destinationViewController;
+        nextViewController.playersOnBallot = self.playersOnBallot;
+    }
 }
 
 #pragma mark - UITableView methods

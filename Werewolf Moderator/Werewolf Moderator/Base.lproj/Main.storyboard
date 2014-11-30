@@ -1201,7 +1201,7 @@ Please acknowledge eachother"</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIA-ZP-gJ4">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIA-ZP-gJ4">
                                 <rect key="frame" x="225" y="505" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1282,6 +1282,232 @@ Please acknowledge eachother"</string>
             </objects>
             <point key="canvasLocation" x="2302" y="2482"/>
         </scene>
+        <!--Ballot Second Round Results View Controller-->
+        <scene sceneID="TEY-6N-ihT">
+            <objects>
+                <viewController id="6QH-fy-0OB" customClass="BallotSecondRoundResultsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3RM-ie-YSq"/>
+                        <viewControllerLayoutGuide type="bottom" id="dsB-oY-zYI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qJB-vK-laX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Ballot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDL-x1-9zp">
+                                <rect key="frame" x="188" y="28" width="224" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="ghe-zb-IRP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTN-dC-ctw">
+                                <rect key="frame" x="261" y="281" width="79" height="38"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expected votes:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bih-iG-Vbg">
+                                <rect key="frame" x="24" y="133" width="174" height="28"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actual votes:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6J-fD-2o7">
+                                <rect key="frame" x="24" y="169" width="174" height="28"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9u-vp-NCL">
+                                <rect key="frame" x="218" y="133" width="59" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="Qhl-a4-JOd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHW-sF-2QF">
+                                <rect key="frame" x="218" y="169" width="59" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="Thg-4D-gqd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygm-DY-KWQ">
+                                <rect key="frame" x="225" y="508" width="150" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="0Ng-YT-wiG"/>
+                                    <constraint firstAttribute="height" constant="38" id="kYu-Em-Clk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Redo Round">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="redoRound:" destination="6QH-fy-0OB" eventType="touchUpInside" id="hs8-Cw-4Oz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1x-Jy-PtR">
+                                <rect key="frame" x="225" y="554" width="150" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="ZBx-rB-Z84"/>
+                                    <constraint firstAttribute="width" constant="150" id="gmU-Zb-ipv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="It is Nighttime">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continuing:" destination="6QH-fy-0OB" eventType="touchUpInside" id="blp-ZG-eYY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="GTN-dC-ctw" secondAttribute="centerX" id="6bf-Xe-Uok"/>
+                            <constraint firstItem="nDL-x1-9zp" firstAttribute="top" secondItem="3RM-ie-YSq" secondAttribute="bottom" constant="8" id="7cT-PI-aT1"/>
+                            <constraint firstItem="bih-iG-Vbg" firstAttribute="top" secondItem="nDL-x1-9zp" secondAttribute="bottom" constant="50" id="EEl-gn-xHY"/>
+                            <constraint firstAttribute="centerX" secondItem="Ygm-DY-KWQ" secondAttribute="centerX" id="HMc-yE-2M5"/>
+                            <constraint firstAttribute="centerY" secondItem="GTN-dC-ctw" secondAttribute="centerY" id="QEz-yu-H9h"/>
+                            <constraint firstAttribute="centerX" secondItem="M1x-Jy-PtR" secondAttribute="centerX" id="QTG-e0-uQj"/>
+                            <constraint firstItem="bih-iG-Vbg" firstAttribute="top" secondItem="e9u-vp-NCL" secondAttribute="top" id="Shf-jW-4S8"/>
+                            <constraint firstItem="KHW-sF-2QF" firstAttribute="leading" secondItem="u6J-fD-2o7" secondAttribute="trailing" constant="20" id="Svo-qf-OsA"/>
+                            <constraint firstItem="bih-iG-Vbg" firstAttribute="leading" secondItem="qJB-vK-laX" secondAttribute="leadingMargin" constant="8" id="UEp-Vy-FrX"/>
+                            <constraint firstItem="u6J-fD-2o7" firstAttribute="top" secondItem="bih-iG-Vbg" secondAttribute="bottom" constant="8" id="WIb-w1-09I"/>
+                            <constraint firstItem="e9u-vp-NCL" firstAttribute="leading" secondItem="bih-iG-Vbg" secondAttribute="trailing" constant="20" id="YuB-4T-h2z"/>
+                            <constraint firstItem="M1x-Jy-PtR" firstAttribute="top" secondItem="Ygm-DY-KWQ" secondAttribute="bottom" constant="8" id="ZlQ-DO-njE"/>
+                            <constraint firstAttribute="centerX" secondItem="nDL-x1-9zp" secondAttribute="centerX" id="a3h-7m-ayb"/>
+                            <constraint firstItem="u6J-fD-2o7" firstAttribute="trailing" secondItem="bih-iG-Vbg" secondAttribute="trailing" id="ayP-zz-C8P"/>
+                            <constraint firstItem="dsB-oY-zYI" firstAttribute="top" secondItem="M1x-Jy-PtR" secondAttribute="bottom" constant="8" id="i2l-8s-oEE"/>
+                            <constraint firstItem="u6J-fD-2o7" firstAttribute="top" secondItem="KHW-sF-2QF" secondAttribute="top" id="jqq-qQ-laM"/>
+                            <constraint firstItem="u6J-fD-2o7" firstAttribute="leading" secondItem="qJB-vK-laX" secondAttribute="leadingMargin" constant="8" id="pfe-E7-hg5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="actualVotes" destination="KHW-sF-2QF" id="w5K-so-Etx"/>
+                        <outlet property="ballotResult" destination="GTN-dC-ctw" id="xsU-oE-ZMX"/>
+                        <outlet property="expectedVotes" destination="e9u-vp-NCL" id="zPY-fK-d1X"/>
+                        <segue destination="MVs-Jt-WB6" kind="show" identifier="Redo" id="zJm-yM-FWg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ahs-yk-cuX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="909" y="3228"/>
+        </scene>
+        <!--Ballot Second Round View Controller-->
+        <scene sceneID="pfY-II-iN9">
+            <objects>
+                <viewController id="MVs-Jt-WB6" customClass="BallotSecondRoundViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i0A-r8-8BU"/>
+                        <viewControllerLayoutGuide type="bottom" id="I3k-0c-A6E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X5b-59-tVw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejk-Is-VnB">
+                                <rect key="frame" x="225" y="505" width="150" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="6Pn-Bz-sWm"/>
+                                    <constraint firstAttribute="width" constant="150" id="zgw-dr-KP2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Submit votes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="ballotTime:" destination="Evc-2u-N8Z" eventType="touchUpInside" id="QYn-nr-u8X"/>
+                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="cwt-UU-J9a"/>
+                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="qKV-ys-pFY"/>
+                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="tXa-Fa-5S8"/>
+                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="Ifr-nT-Etj"/>
+                                    <action selector="continuing:" destination="mFI-qk-Rxb" eventType="touchUpInside" id="dfq-Qo-iRD"/>
+                                    <action selector="continuing:" destination="35d-x7-cfY" eventType="touchUpInside" id="iHH-4e-AO6"/>
+                                    <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="pJP-mP-pgE"/>
+                                    <action selector="continuing:" destination="pBX-wB-VeD" eventType="touchUpInside" id="q0G-dT-5SZ"/>
+                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="bd8-yt-8nf"/>
+                                    <action selector="submitVotes:" destination="ITC-Ve-wQf" eventType="touchUpInside" id="Ht9-kq-1s0"/>
+                                    <action selector="submitVotes:" destination="MVs-Jt-WB6" eventType="touchUpInside" id="X5l-hq-wAX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votes for Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBq-PN-Woy">
+                                <rect key="frame" x="202" y="183" width="197" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dKN-3Q-qN4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zP3-tc-G5y">
+                                <rect key="frame" x="250" y="221" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="noI-Y3-LCi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Ballot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ID-iz-IU6">
+                                <rect key="frame" x="188" y="28" width="224" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="zMl-us-wki"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aBq-PN-Woy" firstAttribute="top" secondItem="4ID-iz-IU6" secondAttribute="bottom" constant="100" id="0F2-FT-xcu"/>
+                            <constraint firstAttribute="centerX" secondItem="Ejk-Is-VnB" secondAttribute="centerX" id="HbW-Gt-iyX"/>
+                            <constraint firstItem="aBq-PN-Woy" firstAttribute="top" secondItem="4ID-iz-IU6" secondAttribute="bottom" constant="100" id="K5R-MP-Euk"/>
+                            <constraint firstItem="zP3-tc-G5y" firstAttribute="top" secondItem="aBq-PN-Woy" secondAttribute="bottom" constant="8" id="Uaq-Xj-xEs"/>
+                            <constraint firstAttribute="centerX" secondItem="aBq-PN-Woy" secondAttribute="centerX" id="WdE-2F-INH"/>
+                            <constraint firstItem="4ID-iz-IU6" firstAttribute="top" secondItem="i0A-r8-8BU" secondAttribute="bottom" constant="8" id="f4T-gl-opX"/>
+                            <constraint firstItem="I3k-0c-A6E" firstAttribute="top" secondItem="Ejk-Is-VnB" secondAttribute="bottom" constant="8" id="wSc-P8-s8G"/>
+                            <constraint firstAttribute="centerX" secondItem="4ID-iz-IU6" secondAttribute="centerX" id="wjt-za-p1Y"/>
+                            <constraint firstAttribute="centerX" secondItem="zP3-tc-G5y" secondAttribute="centerX" id="xj9-bG-Zcw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playerVoteLabel" destination="aBq-PN-Woy" id="9TJ-N9-4es"/>
+                        <outlet property="playerVotes" destination="zP3-tc-G5y" id="HFL-Da-dDK"/>
+                        <segue destination="6QH-fy-0OB" kind="show" identifier="Results" id="VnR-Yl-Eb1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e1N-Nd-gy9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1595" y="3227"/>
+        </scene>
         <!--Ballot First Round Results View Controller-->
         <scene sceneID="f5l-1h-W19">
             <objects>
@@ -1324,7 +1550,7 @@ Please acknowledge eachother"</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLZ-J2-tdT">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLZ-J2-tdT">
                                 <rect key="frame" x="225" y="505" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1356,7 +1582,7 @@ Please acknowledge eachother"</string>
                                     <action selector="submitVotes:" destination="glr-Kf-2ET" eventType="touchUpInside" id="fLy-NM-l1l"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY9-VI-Wz8">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY9-VI-Wz8">
                                 <rect key="frame" x="225" y="459" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1388,7 +1614,7 @@ Please acknowledge eachother"</string>
                                     <action selector="submitVotes:" destination="glr-Kf-2ET" eventType="touchUpInside" id="Mdg-Jw-Lzz"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fJs-K3-fjS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fJs-K3-fjS">
                                 <rect key="frame" x="175" y="205" width="250" height="246"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1431,7 +1657,8 @@ Please acknowledge eachother"</string>
                         <outlet property="actualVotesLabel" destination="iqS-GG-3iv" id="lyO-Yq-bkS"/>
                         <outlet property="expectedVotesLabel" destination="ZEo-dK-FiZ" id="gx3-j4-Cwi"/>
                         <outlet property="playersOnBallotTable" destination="fJs-K3-fjS" id="nle-A8-Kw6"/>
-                        <segue destination="glr-Kf-2ET" kind="show" identifier="Redo" id="SQT-nX-Qle"/>
+                        <segue destination="glr-Kf-2ET" kind="showDetail" identifier="Redo" id="SQT-nX-Qle"/>
+                        <segue destination="MVs-Jt-WB6" kind="show" identifier="SecondRound" id="4c7-IS-ucO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Dp-9r-mzF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1525,11 +1752,104 @@ Please acknowledge eachother"</string>
             </objects>
             <point key="canvasLocation" x="204" y="1724"/>
         </scene>
+        <!--Ballot First Round View Controller-->
+        <scene sceneID="4wg-Cm-Wbj">
+            <objects>
+                <viewController id="ITC-Ve-wQf" customClass="BallotFirstRoundViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wO9-j2-kvQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="HX6-Ro-CY1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r1x-U4-TY8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VE4-3N-6HS">
+                                <rect key="frame" x="225" y="505" width="150" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="2Dk-bC-lgH"/>
+                                    <constraint firstAttribute="height" constant="38" id="YK7-Dt-p6U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Submit votes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="ballotTime:" destination="Evc-2u-N8Z" eventType="touchUpInside" id="UXk-pq-hy5"/>
+                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="8Lm-9q-s3v"/>
+                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="Trd-F5-9MQ"/>
+                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="eIp-nd-Hhn"/>
+                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="633-75-a5X"/>
+                                    <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="ISg-BV-prY"/>
+                                    <action selector="continuing:" destination="pBX-wB-VeD" eventType="touchUpInside" id="X5t-Ax-LmR"/>
+                                    <action selector="continuing:" destination="35d-x7-cfY" eventType="touchUpInside" id="cni-lb-1Nx"/>
+                                    <action selector="continuing:" destination="mFI-qk-Rxb" eventType="touchUpInside" id="oGy-Pv-pQP"/>
+                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="UfH-Nr-xOh"/>
+                                    <action selector="submitVotes:" destination="ITC-Ve-wQf" eventType="touchUpInside" id="gyE-Et-NMF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votes for Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxp-T5-iS0">
+                                <rect key="frame" x="24" y="163" width="552" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Wa7-dc-hG2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ar-mR-GUB">
+                                <rect key="frame" x="250" y="201" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Idq-Ol-Ifh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initial Ballot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HM4-Wp-GjX">
+                                <rect key="frame" x="184" y="8" width="232" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="uh5-wi-r2d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oxp-T5-iS0" firstAttribute="top" secondItem="HM4-Wp-GjX" secondAttribute="bottom" constant="100" id="0po-1x-HDA"/>
+                            <constraint firstItem="HM4-Wp-GjX" firstAttribute="top" secondItem="r1x-U4-TY8" secondAttribute="topMargin" constant="8" id="90E-g7-Q78"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oxp-T5-iS0" secondAttribute="trailing" constant="8" id="KFS-0T-1ej"/>
+                            <constraint firstAttribute="centerX" secondItem="HM4-Wp-GjX" secondAttribute="centerX" id="McB-FF-yCC"/>
+                            <constraint firstItem="oxp-T5-iS0" firstAttribute="leading" secondItem="r1x-U4-TY8" secondAttribute="leadingMargin" constant="8" id="Mdx-Vz-6af"/>
+                            <constraint firstItem="HX6-Ro-CY1" firstAttribute="top" secondItem="VE4-3N-6HS" secondAttribute="bottom" constant="8" id="Upb-pU-Cdy"/>
+                            <constraint firstAttribute="centerX" secondItem="VE4-3N-6HS" secondAttribute="centerX" id="Z0K-4f-2ml"/>
+                            <constraint firstAttribute="centerX" secondItem="9ar-mR-GUB" secondAttribute="centerX" id="rlr-9X-w3o"/>
+                            <constraint firstItem="9ar-mR-GUB" firstAttribute="top" secondItem="oxp-T5-iS0" secondAttribute="bottom" constant="8" id="x3R-ms-1nm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playerVoteLabel" destination="oxp-T5-iS0" id="k0C-60-u7A"/>
+                        <outlet property="playerVotes" destination="9ar-mR-GUB" id="Mcx-nj-a9W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OCI-B5-Rnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2302" y="2482"/>
+        </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SQT-nX-Qle"/>
+        <segue reference="zJm-yM-FWg"/>
+        <segue reference="5Rx-Fr-hDL"/>
     </inferredMetricsTieBreakers>
 </document>
