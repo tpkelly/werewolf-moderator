@@ -25,6 +25,11 @@
     self.playerTable.backgroundColor = [UIColor blackColor];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.playerTable reloadData];
+}
+
 #pragma mark - Game Reset
 
 -(void)resetGame:(id)sender

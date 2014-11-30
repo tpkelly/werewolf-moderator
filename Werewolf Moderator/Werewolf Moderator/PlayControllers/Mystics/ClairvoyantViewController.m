@@ -35,7 +35,14 @@
 
 - (IBAction)continue:(id)sender
 {
-    [self performSegueWithIdentifier:@"Medium" sender:self];
+    if ([SingleGame state].playersDead.count > 0)
+    {
+        [self performSegueWithIdentifier:@"Medium" sender:self];
+    }
+    else
+    {
+        [self performSegueWithIdentifier:@"Wizard" sender:self];
+    }
 }
 
 #pragma mark - UITableView methods

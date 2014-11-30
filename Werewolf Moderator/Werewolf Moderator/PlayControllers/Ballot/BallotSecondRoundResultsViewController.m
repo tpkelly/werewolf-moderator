@@ -74,7 +74,7 @@
 }
 
 - (IBAction)continuing:(id)sender {
-    NSLog(@"It is nighttime");
+    [self performSegueWithIdentifier:@"Clairvoyant" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

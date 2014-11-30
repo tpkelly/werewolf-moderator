@@ -158,7 +158,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9GX-gn-TOi">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9GX-gn-TOi">
                                 <rect key="frame" x="150" y="231" width="300" height="312"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;I will now tell you if that player is corrupt&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTM-dQ-Eti">
@@ -171,13 +171,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ljS-6P-25X">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ljS-6P-25X">
                                         <rect key="frame" x="63" y="69" width="175" height="175"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ljS-6P-25X" secondAttribute="height" multiplier="1:1" id="CA5-u1-Pm2"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtx-bi-8Vx">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtx-bi-8Vx">
                                         <rect key="frame" x="63" y="274" width="175" height="38"/>
                                         <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -196,7 +196,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="Z2m-xE-cl7"/>
-                                            <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="PgF-PY-1o2"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -259,6 +258,7 @@ Tap line in table to select player
                         <outlet property="alivePlayersTable" destination="CLi-gS-EM3" id="kNM-l1-xTm"/>
                         <outlet property="corruptImage" destination="ljS-6P-25X" id="6lO-o1-Hht"/>
                         <segue destination="b8R-uv-6da" kind="show" identifier="Medium" id="8G1-KY-yM0"/>
+                        <segue destination="sLs-dd-xF3" kind="show" identifier="Wizard" id="x91-Gc-kFo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="umR-E8-z4f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -277,20 +277,107 @@ Tap line in table to select player
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medium" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7oa-xU-mzP">
-                                <rect key="frame" x="269" y="290" width="63" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Medium" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIE-QO-eSA">
+                                <rect key="frame" x="217" y="28" width="167" height="57"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ugz-E9-FGE">
+                                <rect key="frame" x="150" y="251" width="300" height="292"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;I will now tell you if that player is corrupt&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAC-Ut-yYJ">
+                                        <rect key="frame" x="8" y="0.0" width="284" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Dn0-XR-uMj"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZ4-Er-GPG">
+                                        <rect key="frame" x="63" y="59" width="175" height="175"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="PZ4-Er-GPG" secondAttribute="height" multiplier="1:1" id="EL7-zN-fLh"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAd-uk-DA9">
+                                        <rect key="frame" x="63" y="254" width="175" height="38"/>
+                                        <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="175" id="Iof-0P-jA3"/>
+                                            <constraint firstAttribute="height" constant="38" id="KVx-5s-Ap9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                        <state key="normal" title="Close your eyes">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="continue:" destination="b8R-uv-6da" eventType="touchUpInside" id="N7V-js-3Mb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="gAC-Ut-yYJ" firstAttribute="top" secondItem="Ugz-E9-FGE" secondAttribute="top" id="68q-1K-mVT"/>
+                                    <constraint firstAttribute="centerY" secondItem="PZ4-Er-GPG" secondAttribute="centerY" id="Iag-Hw-vKx"/>
+                                    <constraint firstAttribute="trailing" secondItem="gAC-Ut-yYJ" secondAttribute="trailing" constant="8" id="LlS-8p-iKp"/>
+                                    <constraint firstItem="nAd-uk-DA9" firstAttribute="trailing" secondItem="PZ4-Er-GPG" secondAttribute="trailing" id="O9l-KQ-jF9"/>
+                                    <constraint firstAttribute="centerX" secondItem="nAd-uk-DA9" secondAttribute="centerX" id="Pr6-KK-3LU"/>
+                                    <constraint firstAttribute="bottom" secondItem="nAd-uk-DA9" secondAttribute="bottom" id="SST-H7-VcH"/>
+                                    <constraint firstItem="nAd-uk-DA9" firstAttribute="leading" secondItem="PZ4-Er-GPG" secondAttribute="leading" id="c0A-Nj-7a1"/>
+                                    <constraint firstItem="gAC-Ut-yYJ" firstAttribute="leading" secondItem="Ugz-E9-FGE" secondAttribute="leading" constant="8" id="eLO-Lk-8Nq"/>
+                                    <constraint firstAttribute="centerX" secondItem="PZ4-Er-GPG" secondAttribute="centerX" id="g0A-hN-WXr"/>
+                                    <constraint firstAttribute="width" constant="300" id="wUW-C5-jom"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FZh-ei-wT8">
+                                <rect key="frame" x="150" y="251" width="300" height="292"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="YaN-D6-ORN"/>
+                                </constraints>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysX-Sq-Ck5">
+                                <rect key="frame" x="24" y="93" width="552" height="150"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="1TJ-Kc-j9W"/>
+                                </constraints>
+                                <string key="text">"Will the Medium please wake up. Please select a dead player to check for corruption."
+
+Tap line in table to select player
+</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="7oa-xU-mzP" secondAttribute="centerX" id="5KA-lY-giC"/>
-                            <constraint firstAttribute="centerY" secondItem="7oa-xU-mzP" secondAttribute="centerY" id="DgD-S4-RV8"/>
+                            <constraint firstAttribute="centerX" secondItem="FZh-ei-wT8" secondAttribute="centerX" id="6Mw-bj-NJF"/>
+                            <constraint firstItem="YIE-QO-eSA" firstAttribute="top" secondItem="guF-Ku-UFL" secondAttribute="bottom" constant="8" id="89H-pA-EIx"/>
+                            <constraint firstItem="Ugz-E9-FGE" firstAttribute="top" secondItem="ysX-Sq-Ck5" secondAttribute="bottom" constant="8" id="FBp-IT-1VN"/>
+                            <constraint firstItem="FZh-ei-wT8" firstAttribute="top" secondItem="ysX-Sq-Ck5" secondAttribute="bottom" constant="8" id="Iz6-CQ-Yea"/>
+                            <constraint firstItem="ysX-Sq-Ck5" firstAttribute="leading" secondItem="snf-x5-dQw" secondAttribute="leadingMargin" constant="8" id="Shr-ar-RQT"/>
+                            <constraint firstItem="mqJ-Mg-OMe" firstAttribute="top" secondItem="Ugz-E9-FGE" secondAttribute="bottom" constant="8" id="Ykv-SI-hLm"/>
+                            <constraint firstItem="mqJ-Mg-OMe" firstAttribute="top" secondItem="FZh-ei-wT8" secondAttribute="bottom" constant="8" id="o1J-Ss-rGf"/>
+                            <constraint firstAttribute="centerX" secondItem="Ugz-E9-FGE" secondAttribute="centerX" id="yOr-6k-4uh"/>
+                            <constraint firstItem="ysX-Sq-Ck5" firstAttribute="top" secondItem="YIE-QO-eSA" secondAttribute="bottom" constant="8" id="zwD-va-adN"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="corruptImage" destination="PZ4-Er-GPG" id="cBY-Da-Wac"/>
+                        <outlet property="deadPlayersTable" destination="FZh-ei-wT8" id="SEU-8d-5Ma"/>
                         <segue destination="sLs-dd-xF3" kind="show" identifier="Wizard" id="jh8-2z-7i3"/>
                     </connections>
                 </viewController>
@@ -316,7 +403,7 @@ Tap line in table to select player
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQv-Oo-xyK">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQv-Oo-xyK">
                                 <rect key="frame" x="212" y="463" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -334,11 +421,7 @@ Tap line in table to select player
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="23V-xl-IEK"/>
-                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="Kwl-LH-byZ"/>
-                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="WWg-8e-frJ"/>
                                     <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="zRG-bn-mtL"/>
-                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="cWN-u0-Q0n"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;Will the Monk please wake up. I will now show you two roles which are not in play&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhG-xC-qRc">
@@ -351,13 +434,13 @@ Tap line in table to select player
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qo6-LJ-rBR">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qo6-LJ-rBR">
                                 <rect key="frame" x="325" y="151" width="251" height="282"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjT-8N-8k5">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjT-8N-8k5">
                                 <rect key="frame" x="24" y="151" width="251" height="282"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -412,7 +495,7 @@ Tap line in table to select player
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAQ-Y7-1fF">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAQ-Y7-1fF">
                                 <rect key="frame" x="227" y="413" width="145" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -430,10 +513,7 @@ Tap line in table to select player
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="1YO-sz-mhP"/>
-                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="ZKQ-fG-aNY"/>
                                     <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="pGD-Zs-yJa"/>
-                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="gwx-TG-EXE"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Pick the two roles to show the Monk" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gY3-JH-uEr">
@@ -446,7 +526,7 @@ Tap line in table to select player
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doJ-fy-ssh">
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="doJ-fy-ssh">
                                 <rect key="frame" x="24" y="165" width="552" height="216"/>
                             </pickerView>
                         </subviews>
@@ -500,7 +580,7 @@ Tap line in table to select player
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Drh-rY-9oV">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Drh-rY-9oV">
                                 <rect key="frame" x="150" y="243" width="300" height="300"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;I will now tell you if that player has mystical powers&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6V8-cP-jnk">
@@ -513,13 +593,13 @@ Tap line in table to select player
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IDp-ek-W3k">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDp-ek-W3k">
                                         <rect key="frame" x="63" y="63" width="175" height="175"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="IDp-ek-W3k" secondAttribute="height" multiplier="1:1" id="ffb-hf-xfI"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3al-m4-KEW">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3al-m4-KEW">
                                         <rect key="frame" x="63" y="262" width="175" height="38"/>
                                         <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -537,9 +617,7 @@ Tap line in table to select player
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="3GK-tk-Iwm"/>
                                             <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="cFr-9F-1pD"/>
-                                            <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="LE4-MX-UPm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -563,7 +641,7 @@ Tap line in table to select player
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fUL-ag-VqB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fUL-ag-VqB">
                                 <rect key="frame" x="150" y="243" width="300" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -598,6 +676,24 @@ Tap line in table to select player
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ck4-Cn-6CR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2242" y="1738"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nc1-zr-UR7">
+            <objects>
+                <viewController id="etn-hz-aJy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OQV-D5-oIn"/>
+                        <viewControllerLayoutGuide type="bottom" id="WkO-bE-2GS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qZL-SQ-v5t">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t0k-S1-WHD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2933" y="1736"/>
         </scene>
         <!--State of Play-->
         <scene sceneID="2T4-58-uKJ">
@@ -720,7 +816,7 @@ Tap line in table to select player
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD6-u5-mWa">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD6-u5-mWa">
                                 <rect key="frame" x="212" y="505" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -738,13 +834,7 @@ Tap line in table to select player
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="1US-ta-xQs"/>
-                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="kfo-oW-Yc0"/>
-                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="nGb-Fa-SXa"/>
-                                    <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="ch4-XD-ash"/>
-                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="owO-Ll-z8M"/>
                                     <action selector="continuing:" destination="35d-x7-cfY" eventType="touchUpInside" id="qxp-rT-7ae"/>
-                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="Dg6-QO-7E9"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWk-Kh-2Cl">
@@ -760,7 +850,7 @@ Will the priest please wake up. I will now tell you if the Seducer is in play"</
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iZb-3M-Xja">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZb-3M-Xja">
                                 <rect key="frame" x="181" y="216" width="239" height="239"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iZb-3M-Xja" secondAttribute="height" multiplier="1:1" id="mR4-hh-Gwv"/>
@@ -814,7 +904,7 @@ Will the priest please wake up. I will now tell you if the Seducer is in play"</
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuI-HK-m0Q">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuI-HK-m0Q">
                                 <rect key="frame" x="213" y="505" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -832,9 +922,7 @@ Will the priest please wake up. I will now tell you if the Seducer is in play"</
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="Qc3-5O-syq"/>
                                     <action selector="continuing:" destination="UVs-33-YpM" eventType="touchUpInside" id="UhU-3j-mqn"/>
-                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="C7n-En-2QI"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Juliet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VE-0M-Jug">
@@ -846,7 +934,7 @@ Will the priest please wake up. I will now tell you if the Seducer is in play"</
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oLA-OG-VCg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oLA-OG-VCg">
                                 <rect key="frame" x="150" y="174" width="300" height="369"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -931,7 +1019,7 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mta-Uo-I0e">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mta-Uo-I0e">
                                 <rect key="frame" x="213" y="505" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -949,14 +1037,7 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="Dd1-5x-eJw"/>
-                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="OYE-Ra-plr"/>
-                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="e1L-9E-0IR"/>
-                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="1sc-nC-WVw"/>
                                     <action selector="continuing:" destination="mFI-qk-Rxb" eventType="touchUpInside" id="HKJ-cw-gYE"/>
-                                    <action selector="continuing:" destination="35d-x7-cfY" eventType="touchUpInside" id="jlU-BZ-5Qy"/>
-                                    <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="lV5-E9-J58"/>
-                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="Hgc-sv-Mjb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1014,7 +1095,7 @@ Please acknowledge eachother"</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrW-J3-pai">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrW-J3-pai">
                                 <rect key="frame" x="213" y="505" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1032,15 +1113,7 @@ Please acknowledge eachother"</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="D3Q-f4-0GX"/>
-                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="dnl-HE-plo"/>
-                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="msc-Lq-T3K"/>
-                                    <action selector="continuing:" destination="mFI-qk-Rxb" eventType="touchUpInside" id="1Z9-hB-3rD"/>
-                                    <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="CXV-Pj-py3"/>
-                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="P3K-Qq-kJ3"/>
                                     <action selector="continuing:" destination="pBX-wB-VeD" eventType="touchUpInside" id="SPB-JA-7j6"/>
-                                    <action selector="continuing:" destination="35d-x7-cfY" eventType="touchUpInside" id="kA6-xO-iLy"/>
-                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="riR-Gl-8Rd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1085,7 +1158,7 @@ Please acknowledge eachother"</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geS-cP-m3p">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geS-cP-m3p">
                                 <rect key="frame" x="213" y="505" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1104,15 +1177,6 @@ Please acknowledge eachother"</string>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="ballotTime:" destination="Evc-2u-N8Z" eventType="touchUpInside" id="AQ5-Gc-44Z"/>
-                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="Con-MV-G0v"/>
-                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="nWh-EX-yAb"/>
-                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="zUB-JX-gP5"/>
-                                    <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="3oD-6A-d0o"/>
-                                    <action selector="continuing:" destination="35d-x7-cfY" eventType="touchUpInside" id="5g5-Jm-AqS"/>
-                                    <action selector="continuing:" destination="pBX-wB-VeD" eventType="touchUpInside" id="Dcz-81-8yp"/>
-                                    <action selector="continuing:" destination="mFI-qk-Rxb" eventType="touchUpInside" id="JpH-Tz-weT"/>
-                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="S0g-v2-OiY"/>
-                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="Xvh-XH-m2Z"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News from the Inn:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vay-BB-wLP">
@@ -1219,16 +1283,6 @@ Please acknowledge eachother"</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="ballotTime:" destination="Evc-2u-N8Z" eventType="touchUpInside" id="Sid-IX-U1l"/>
-                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="HQt-3b-XFb"/>
-                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="RUd-fk-erU"/>
-                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="VJ5-DF-Sby"/>
-                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="Gx5-IK-Eco"/>
-                                    <action selector="continuing:" destination="pBX-wB-VeD" eventType="touchUpInside" id="M6F-QF-sar"/>
-                                    <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="fD5-KS-9Q8"/>
-                                    <action selector="continuing:" destination="mFI-qk-Rxb" eventType="touchUpInside" id="iSk-rH-8F1"/>
-                                    <action selector="continuing:" destination="35d-x7-cfY" eventType="touchUpInside" id="kb2-Nd-4PR"/>
-                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="aDx-kL-gMZ"/>
                                     <action selector="submitVotes:" destination="glr-Kf-2ET" eventType="touchUpInside" id="TRa-1Z-Uhy"/>
                                 </connections>
                             </button>
@@ -1408,6 +1462,7 @@ Please acknowledge eachother"</string>
                         <outlet property="ballotResult" destination="GTN-dC-ctw" id="xsU-oE-ZMX"/>
                         <outlet property="expectedVotes" destination="e9u-vp-NCL" id="zPY-fK-d1X"/>
                         <segue destination="MVs-Jt-WB6" kind="show" identifier="Redo" id="zJm-yM-FWg"/>
+                        <segue destination="Rpa-WO-XyW" kind="show" identifier="Clairvoyant" id="cQS-uw-swt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ahs-yk-cuX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1426,7 +1481,7 @@ Please acknowledge eachother"</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejk-Is-VnB">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejk-Is-VnB">
                                 <rect key="frame" x="225" y="505" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1444,17 +1499,6 @@ Please acknowledge eachother"</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="ballotTime:" destination="Evc-2u-N8Z" eventType="touchUpInside" id="QYn-nr-u8X"/>
-                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="cwt-UU-J9a"/>
-                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="qKV-ys-pFY"/>
-                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="tXa-Fa-5S8"/>
-                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="Ifr-nT-Etj"/>
-                                    <action selector="continuing:" destination="mFI-qk-Rxb" eventType="touchUpInside" id="dfq-Qo-iRD"/>
-                                    <action selector="continuing:" destination="35d-x7-cfY" eventType="touchUpInside" id="iHH-4e-AO6"/>
-                                    <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="pJP-mP-pgE"/>
-                                    <action selector="continuing:" destination="pBX-wB-VeD" eventType="touchUpInside" id="q0G-dT-5SZ"/>
-                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="bd8-yt-8nf"/>
-                                    <action selector="submitVotes:" destination="ITC-Ve-wQf" eventType="touchUpInside" id="Ht9-kq-1s0"/>
                                     <action selector="submitVotes:" destination="MVs-Jt-WB6" eventType="touchUpInside" id="X5l-hq-wAX"/>
                                 </connections>
                             </button>
@@ -1568,18 +1612,7 @@ Please acknowledge eachother"</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="ballotTime:" destination="Evc-2u-N8Z" eventType="touchUpInside" id="2wh-iD-FrK"/>
-                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="1ye-Ik-TIZ"/>
-                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="IS3-qe-nc4"/>
-                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="gfu-N0-DRC"/>
-                                    <action selector="continuing:" destination="pBX-wB-VeD" eventType="touchUpInside" id="8Ik-ZY-bia"/>
-                                    <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="Hko-33-ju9"/>
-                                    <action selector="continuing:" destination="35d-x7-cfY" eventType="touchUpInside" id="gJZ-ab-Ijt"/>
-                                    <action selector="continuing:" destination="mFI-qk-Rxb" eventType="touchUpInside" id="ldo-a5-HQf"/>
-                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="u0O-07-N2M"/>
                                     <action selector="secondRound:" destination="5go-vW-ZN3" eventType="touchUpInside" id="GvN-tI-Fz7"/>
-                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="Pcd-kr-9LT"/>
-                                    <action selector="submitVotes:" destination="glr-Kf-2ET" eventType="touchUpInside" id="fLy-NM-l1l"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY9-VI-Wz8">
@@ -1600,18 +1633,7 @@ Please acknowledge eachother"</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="ballotTime:" destination="Evc-2u-N8Z" eventType="touchUpInside" id="WiC-TL-d7J"/>
-                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="C3t-1U-VfD"/>
-                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="pxt-J0-Dt3"/>
-                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="urZ-0e-4rJ"/>
-                                    <action selector="continuing:" destination="pBX-wB-VeD" eventType="touchUpInside" id="4mc-Wb-wlS"/>
-                                    <action selector="continuing:" destination="mFI-qk-Rxb" eventType="touchUpInside" id="ESF-4X-fnQ"/>
-                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="Eci-YN-gEn"/>
-                                    <action selector="continuing:" destination="35d-x7-cfY" eventType="touchUpInside" id="NZb-eH-OQL"/>
-                                    <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="w9j-3n-Ipj"/>
                                     <action selector="redoRound:" destination="5go-vW-ZN3" eventType="touchUpInside" id="0nA-VF-fec"/>
-                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="QII-FK-rqA"/>
-                                    <action selector="submitVotes:" destination="glr-Kf-2ET" eventType="touchUpInside" id="Mdg-Jw-Lzz"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fJs-K3-fjS">
@@ -1677,7 +1699,7 @@ Please acknowledge eachother"</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyW-im-UPe">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyW-im-UPe">
                                 <rect key="frame" x="212" y="505" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1695,15 +1717,10 @@ Please acknowledge eachother"</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="8YD-Lo-e0O"/>
-                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="aKq-Od-kye"/>
-                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="kgr-Jk-D1h"/>
-                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="DJR-kN-4vQ"/>
                                     <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="EhZ-WV-wS2"/>
-                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="RwH-tN-A7V"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oT0-aG-EyF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oT0-aG-EyF">
                                 <rect key="frame" x="191" y="236" width="219" height="219"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oT0-aG-EyF" secondAttribute="height" multiplier="1:1" id="a8L-47-RoV"/>
@@ -1850,6 +1867,8 @@ Please acknowledge eachother"</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zJm-yM-FWg"/>
-        <segue reference="5Rx-Fr-hDL"/>
+        <segue reference="cQS-uw-swt"/>
+        <segue reference="jh8-2z-7i3"/>
+        <segue reference="SQT-nX-Qle"/>
     </inferredMetricsTieBreakers>
 </document>

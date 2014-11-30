@@ -10,4 +10,9 @@
 
 @interface MediumViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITableView *deadPlayersTable;
+@property (strong, nonatomic) IBOutlet UIImageView *corruptImage;
+
+- (IBAction)continue:(id)sender;
+
 @end
