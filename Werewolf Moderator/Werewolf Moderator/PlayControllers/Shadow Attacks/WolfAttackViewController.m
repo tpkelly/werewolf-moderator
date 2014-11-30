@@ -1,40 +1,40 @@
 //
-//  WitchViewController.m
+//  WolfAttackViewController.m
 //  Werewolf Moderator
 //
 //  Created by Thomas Kelly on 30/11/2014.
 //  Copyright (c) 2014 TKGames. All rights reserved.
 //
 
-#import "WitchViewController.h"
+#import "WolfAttackViewController.h"
 #import "SingleGame.h"
 #import "GameState.h"
-#import "Player.h"
 #import "Game.h"
+#import "Player.h"
 
-@interface WitchViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface WolfAttackViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
-@implementation WitchViewController
+@implementation WolfAttackViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if ([[SingleGame state] roleIsAlive:Witch])
+    if ([[SingleGame state] roleIsAlive:AlphaWolf] || [[SingleGame state] roleIsAlive:PackWolf])
     {
-        self.playerTable.dataSource = self;
         self.playerTable.delegate = self;
+        self.playerTable.dataSource = self;
     }
     else
     {
-        [self.witchInPlayImage setImage:[UIImage imageNamed:@"NotInPlay.png"]];
         self.playerTable.hidden = YES;
+        [self.playerImmunityImage setImage:[UIImage imageNamed:@"notInPlay.png"]];
     }
 }
 
 - (IBAction)continuing:(id)sender {
-    [self performSegueWithIdentifier:@"Wolves" sender:self];
+    [self performSegueWithIdentifier:@"Vampire" sender:self];
 }
 
 #pragma mark - UITableView methods
@@ -51,10 +51,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"playerAlive"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"wolfAttack"];
     if (!cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"playerAlive"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"wolfAttack"];
         cell.backgroundColor = [UIColor clearColor];
     }
     
@@ -69,7 +69,14 @@
     Player *playerAtIndex = [[SingleGame state].playersAlive objectAtIndex:indexPath.row];
     self.playerTable.hidden = YES;
     
-    [[SingleGame game] witchProtectPlayer:playerAtIndex];
+    if ([[SingleGame game] wolfAttackPlayer:playerAtIndex])
+    {
+        self.tapPlayerLabel.text = [NSString stringWithFormat:@"Tap %@", playerAtIndex.name];
+    }
+    else
+    {
+        [self.playerImmunityImage setImage:[UIImage imageNamed:@"immune.png"]];
+    }
 }
 
 @end

@@ -54,6 +54,8 @@
 		47FED0C71A2B76180084C43C /* BallotSecondRoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0C61A2B76180084C43C /* BallotSecondRoundViewController.m */; };
 		47FED0CA1A2B7EA90084C43C /* BallotSecondRoundResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0C91A2B7EA90084C43C /* BallotSecondRoundResultsViewController.m */; };
 		47FED0CD1A2BC2B30084C43C /* WitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0CC1A2BC2B30084C43C /* WitchViewController.m */; };
+		47FED0D01A2BC8610084C43C /* WolfAttackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0CF1A2BC8610084C43C /* WolfAttackViewController.m */; };
+		47FED0D21A2BCE230084C43C /* immune.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FED0D11A2BCE230084C43C /* immune.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +151,9 @@
 		47FED0C91A2B7EA90084C43C /* BallotSecondRoundResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallotSecondRoundResultsViewController.m; sourceTree = "<group>"; };
 		47FED0CB1A2BC2B30084C43C /* WitchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WitchViewController.h; sourceTree = "<group>"; };
 		47FED0CC1A2BC2B30084C43C /* WitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WitchViewController.m; sourceTree = "<group>"; };
+		47FED0CE1A2BC8610084C43C /* WolfAttackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WolfAttackViewController.h; sourceTree = "<group>"; };
+		47FED0CF1A2BC8610084C43C /* WolfAttackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WolfAttackViewController.m; sourceTree = "<group>"; };
+		47FED0D11A2BCE230084C43C /* immune.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = immune.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +273,7 @@
 		47FAD2051A1E872B004FB2F8 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				47FED0D11A2BCE230084C43C /* immune.png */,
 				47FD6B711A2509C200F445D0 /* noSeducer.png */,
 				47FD6B721A2509C200F445D0 /* seducer.png */,
 				47FD6B6A1A2502D500F445D0 /* noVampire.png */,
@@ -336,6 +342,8 @@
 		47FD6B801A25218700F445D0 /* Shadow Attacks */ = {
 			isa = PBXGroup;
 			children = (
+				47FED0CE1A2BC8610084C43C /* WolfAttackViewController.h */,
+				47FED0CF1A2BC8610084C43C /* WolfAttackViewController.m */,
 			);
 			path = "Shadow Attacks";
 			sourceTree = "<group>";
@@ -445,6 +453,7 @@
 				47FAD2071A1E8774004FB2F8 /* werewolf.jpg in Resources */,
 				47B4C1081A13E25900D30338 /* Images.xcassets in Resources */,
 				47FD6B561A2209AF00F445D0 /* notInPlay.png in Resources */,
+				47FED0D21A2BCE230084C43C /* immune.png in Resources */,
 				47FD6B6C1A2502D600F445D0 /* noVampire.png in Resources */,
 				47FD6B5F1A221CC900F445D0 /* mystic.png in Resources */,
 				47FD6B541A2142DE00F445D0 /* noncorrupt.png in Resources */,
@@ -479,6 +488,7 @@
 				47FD6B441A20D9E500F445D0 /* PlayViewController.m in Sources */,
 				47EF77361A182A00004E6DDD /* Vote.m in Sources */,
 				47FD6B841A25230800F445D0 /* MorningViewController.m in Sources */,
+				47FED0D01A2BC8610084C43C /* WolfAttackViewController.m in Sources */,
 				47B4C1031A13E25900D30338 /* PlayStateViewController.m in Sources */,
 				47FED0C71A2B76180084C43C /* BallotSecondRoundViewController.m in Sources */,
 				47FD6B691A24FFC700F445D0 /* VampireHunterViewController.m in Sources */,
