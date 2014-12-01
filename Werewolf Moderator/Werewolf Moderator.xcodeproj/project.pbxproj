@@ -56,6 +56,7 @@
 		47FED0CD1A2BC2B30084C43C /* WitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0CC1A2BC2B30084C43C /* WitchViewController.m */; };
 		47FED0D01A2BC8610084C43C /* WolfAttackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0CF1A2BC8610084C43C /* WolfAttackViewController.m */; };
 		47FED0D21A2BCE230084C43C /* immune.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FED0D11A2BCE230084C43C /* immune.png */; };
+		47FED0D51A2C8C9C0084C43C /* VampireAttackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0D41A2C8C9C0084C43C /* VampireAttackViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,8 @@
 		47FED0CE1A2BC8610084C43C /* WolfAttackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WolfAttackViewController.h; sourceTree = "<group>"; };
 		47FED0CF1A2BC8610084C43C /* WolfAttackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WolfAttackViewController.m; sourceTree = "<group>"; };
 		47FED0D11A2BCE230084C43C /* immune.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = immune.png; sourceTree = "<group>"; };
+		47FED0D31A2C8C9C0084C43C /* VampireAttackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VampireAttackViewController.h; sourceTree = "<group>"; };
+		47FED0D41A2C8C9C0084C43C /* VampireAttackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VampireAttackViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +347,8 @@
 			children = (
 				47FED0CE1A2BC8610084C43C /* WolfAttackViewController.h */,
 				47FED0CF1A2BC8610084C43C /* WolfAttackViewController.m */,
+				47FED0D31A2C8C9C0084C43C /* VampireAttackViewController.h */,
+				47FED0D41A2C8C9C0084C43C /* VampireAttackViewController.m */,
 			);
 			path = "Shadow Attacks";
 			sourceTree = "<group>";
@@ -476,6 +481,7 @@
 			files = (
 				47FED0CD1A2BC2B30084C43C /* WitchViewController.m in Sources */,
 				47FD6B771A250B3F00F445D0 /* JulietViewController.m in Sources */,
+				47FED0D51A2C8C9C0084C43C /* VampireAttackViewController.m in Sources */,
 				47B4C1241A13E2ED00D30338 /* Role.m in Sources */,
 				47FD6B5C1A22189500F445D0 /* WizardViewController.m in Sources */,
 				47FD6B4C1A20E77300F445D0 /* ClairvoyantViewController.m in Sources */,

@@ -921,10 +921,10 @@ Tap line in table to select player
             </objects>
             <point key="canvasLocation" x="3613" y="1736"/>
         </scene>
-        <!--View Controller-->
+        <!--Vampire Attack View Controller-->
         <scene sceneID="9xn-ea-O5l">
             <objects>
-                <viewController id="WQa-37-duF" sceneMemberID="viewController">
+                <viewController id="WQa-37-duF" customClass="VampireAttackViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dGY-pU-cv9"/>
                         <viewControllerLayoutGuide type="bottom" id="p25-jR-Wec"/>
@@ -932,9 +932,121 @@ Tap line in table to select player
                     <view key="view" contentMode="scaleToFill" id="6vc-Us-buL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="26F-uR-w7V">
+                                <rect key="frame" x="150" y="181" width="300" height="362"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="&quot;If I tap you on the knee, please wake up and acknowledge your Vampire master&quot;" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SO9-mk-TOt">
+                                        <rect key="frame" x="8" y="8" width="284" height="70"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="sU9-Pv-4y8"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gcj-93-vCQ">
+                                        <rect key="frame" x="70" y="156" width="160" height="160"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Gcj-93-vCQ" secondAttribute="height" multiplier="1:1" id="xjd-mp-ABU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRl-J7-vc8">
+                                        <rect key="frame" x="70" y="324" width="160" height="38"/>
+                                        <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="3x4-1j-LK2"/>
+                                            <constraint firstAttribute="width" constant="160" id="hvX-Lg-tyc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                        <state key="normal" title="Close your eyes">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="UUP-AZ-Eul"/>
+                                            <action selector="continuing:" destination="etn-hz-aJy" eventType="touchUpInside" id="Ess-Sw-6NI"/>
+                                            <action selector="continuing:" destination="9Qo-8c-yYq" eventType="touchUpInside" id="Nyq-Jd-Uyd"/>
+                                            <action selector="continuing:" destination="WQa-37-duF" eventType="touchUpInside" id="ioc-nw-8nW"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGj-DL-t5L">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="kRl-J7-vc8" secondAttribute="centerX" id="1h8-iM-Kxu"/>
+                                    <constraint firstAttribute="centerY" secondItem="gGj-DL-t5L" secondAttribute="centerY" id="3hg-Uq-Hnb"/>
+                                    <constraint firstAttribute="centerX" secondItem="Gcj-93-vCQ" secondAttribute="centerX" id="87C-g7-qGk"/>
+                                    <constraint firstItem="kRl-J7-vc8" firstAttribute="trailing" secondItem="Gcj-93-vCQ" secondAttribute="trailing" id="BgN-rk-bLv"/>
+                                    <constraint firstItem="SO9-mk-TOt" firstAttribute="leading" secondItem="26F-uR-w7V" secondAttribute="leading" constant="8" id="Ja4-TO-Zsk"/>
+                                    <constraint firstAttribute="bottom" secondItem="kRl-J7-vc8" secondAttribute="bottom" id="Vnx-bc-gWa"/>
+                                    <constraint firstAttribute="width" constant="300" id="Y88-7D-DOM"/>
+                                    <constraint firstItem="SO9-mk-TOt" firstAttribute="top" secondItem="26F-uR-w7V" secondAttribute="top" constant="8" id="a92-ZJ-Imy"/>
+                                    <constraint firstAttribute="trailing" secondItem="SO9-mk-TOt" secondAttribute="trailing" constant="8" id="aHN-WX-fGI"/>
+                                    <constraint firstItem="kRl-J7-vc8" firstAttribute="leading" secondItem="Gcj-93-vCQ" secondAttribute="leading" id="iow-UK-hfJ"/>
+                                    <constraint firstAttribute="centerX" secondItem="gGj-DL-t5L" secondAttribute="centerX" id="oyQ-aZ-rwt"/>
+                                    <constraint firstItem="kRl-J7-vc8" firstAttribute="top" secondItem="Gcj-93-vCQ" secondAttribute="bottom" constant="8" id="pwr-Vb-9Ql"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vampire" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRX-8Y-2Yl">
+                                <rect key="frame" x="217" y="8" width="167" height="57"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LOG-74-4Ds">
+                                <rect key="frame" x="150" y="181" width="300" height="362"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="vD7-oM-KxO"/>
+                                </constraints>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSZ-uW-oPC">
+                                <rect key="frame" x="24" y="73" width="552" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="kKa-h4-2zX"/>
+                                </constraints>
+                                <string key="text">"Will the Vampire please wake up. Please select a target to become your minion tonight."
+
+Tap line in table to select player
+</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LOG-74-4Ds" firstAttribute="top" secondItem="FSZ-uW-oPC" secondAttribute="bottom" constant="8" id="0nW-QP-zlh"/>
+                            <constraint firstItem="p25-jR-Wec" firstAttribute="top" secondItem="26F-uR-w7V" secondAttribute="bottom" constant="8" id="2Mk-eg-kve"/>
+                            <constraint firstItem="vRX-8Y-2Yl" firstAttribute="top" secondItem="6vc-Us-buL" secondAttribute="topMargin" constant="8" id="3Wz-hK-sWJ"/>
+                            <constraint firstItem="26F-uR-w7V" firstAttribute="top" secondItem="FSZ-uW-oPC" secondAttribute="bottom" constant="8" id="AeL-I1-NlX"/>
+                            <constraint firstItem="p25-jR-Wec" firstAttribute="top" secondItem="LOG-74-4Ds" secondAttribute="bottom" constant="8" id="Eio-Xl-cV0"/>
+                            <constraint firstAttribute="centerX" secondItem="LOG-74-4Ds" secondAttribute="centerX" id="Ihr-xA-aej"/>
+                            <constraint firstAttribute="centerX" secondItem="26F-uR-w7V" secondAttribute="centerX" id="Mmj-I2-BQQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FSZ-uW-oPC" secondAttribute="trailing" constant="8" id="dVx-WJ-Ml0"/>
+                            <constraint firstAttribute="centerX" secondItem="vRX-8Y-2Yl" secondAttribute="centerX" id="p3X-ZR-g8z"/>
+                            <constraint firstItem="FSZ-uW-oPC" firstAttribute="top" secondItem="vRX-8Y-2Yl" secondAttribute="bottom" constant="8" id="p69-e8-wjI"/>
+                            <constraint firstItem="FSZ-uW-oPC" firstAttribute="leading" secondItem="6vc-Us-buL" secondAttribute="leadingMargin" constant="8" id="vkB-jy-kz3"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="playerImmunityImage" destination="Gcj-93-vCQ" id="5tw-tB-1a1"/>
+                        <outlet property="playerTable" destination="LOG-74-4Ds" id="846-AX-38E"/>
+                        <outlet property="tapPlayerLabel" destination="gGj-DL-t5L" id="Roy-n3-8R6"/>
                         <segue destination="ymF-Sc-4Om" kind="show" identifier="Healer" id="mgl-HO-hiM"/>
                     </connections>
                 </viewController>
