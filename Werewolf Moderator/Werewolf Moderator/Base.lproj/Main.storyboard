@@ -643,7 +643,7 @@ Tap line in table to select player
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fUL-ag-VqB">
                                 <rect key="frame" x="150" y="243" width="300" height="300"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="aE9-jd-LvE"/>
                                 </constraints>
@@ -756,7 +756,7 @@ Tap line in table to select player
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PJZ-j6-QPu">
                                 <rect key="frame" x="150" y="251" width="300" height="292"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="BkA-Qf-oGR"/>
                                 </constraints>
@@ -887,7 +887,7 @@ Tap line in table to select player
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gzA-h1-Zkj">
                                 <rect key="frame" x="150" y="201" width="300" height="342"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="443-jm-CBP"/>
                                 </constraints>
@@ -1006,7 +1006,7 @@ Tap line in table to select player
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LOG-74-4Ds">
                                 <rect key="frame" x="150" y="181" width="300" height="362"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="vD7-oM-KxO"/>
                                 </constraints>
@@ -1695,10 +1695,10 @@ Please acknowledge eachother"</string>
             </objects>
             <point key="canvasLocation" x="2302" y="2482"/>
         </scene>
-        <!--View Controller-->
+        <!--Healer View Controller-->
         <scene sceneID="8Qp-zd-1I9">
             <objects>
-                <viewController id="ymF-Sc-4Om" sceneMemberID="viewController">
+                <viewController id="ymF-Sc-4Om" customClass="HealerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xF9-Im-EwT"/>
                         <viewControllerLayoutGuide type="bottom" id="U02-LL-ONI"/>
@@ -1706,10 +1706,104 @@ Please acknowledge eachother"</string>
                     <view key="view" contentMode="scaleToFill" id="bM6-EN-eaE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Healer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cy2-6i-Ii6">
+                                <rect key="frame" x="234" y="8" width="133" height="57"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xm-Bi-pdh">
+                                <rect key="frame" x="24" y="73" width="552" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="QsG-me-FGu"/>
+                                </constraints>
+                                <string key="text">"Will the Healer please wake up. The person with their hand up is destined to die. Please choose if you want to use your one-time power to save them."</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsV-x9-Vcr">
+                                <rect key="frame" x="213" y="248" width="175" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="oIt-A7-0gs"/>
+                                    <constraint firstAttribute="width" constant="175" id="yqb-SB-a5W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Save player">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="healPlayer:" destination="ymF-Sc-4Om" eventType="touchUpInside" id="KnZ-CF-Zm7"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wcv-SQ-nf6">
+                                <rect key="frame" x="200" y="223" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="eUE-Td-fZx"/>
+                                    <constraint firstAttribute="width" constant="200" id="fcJ-Nd-EZH"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceE-vy-9rF">
+                                <rect key="frame" x="213" y="505" width="175" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Fxl-9p-az8"/>
+                                    <constraint firstAttribute="width" constant="175" id="Imj-7M-TbL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Close your eyes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continuing:" destination="pBX-wB-VeD" eventType="touchUpInside" id="8tD-Qy-WB7"/>
+                                    <action selector="continuing:" destination="ymF-Sc-4Om" eventType="touchUpInside" id="DTQ-1K-7jk"/>
+                                </connections>
+                            </button>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="f77-ee-stl">
+                                <rect key="frame" x="150" y="181" width="300" height="316"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="D63-5T-egK"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="nsV-x9-Vcr" secondAttribute="centerX" id="0a8-gU-i9L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Xm-Bi-pdh" secondAttribute="trailing" constant="8" id="3TC-g6-8nx"/>
+                            <constraint firstItem="1Xm-Bi-pdh" firstAttribute="top" secondItem="cy2-6i-Ii6" secondAttribute="bottom" constant="8" id="CIi-qe-nZ4"/>
+                            <constraint firstItem="cy2-6i-Ii6" firstAttribute="top" secondItem="bM6-EN-eaE" secondAttribute="topMargin" constant="8" id="CiF-vf-OqS"/>
+                            <constraint firstAttribute="centerX" secondItem="wcv-SQ-nf6" secondAttribute="centerX" id="CwP-18-dqL"/>
+                            <constraint firstItem="ceE-vy-9rF" firstAttribute="top" secondItem="f77-ee-stl" secondAttribute="bottom" constant="8" id="O7N-6u-mch"/>
+                            <constraint firstAttribute="centerX" secondItem="ceE-vy-9rF" secondAttribute="centerX" id="SNm-Si-WXH"/>
+                            <constraint firstItem="wcv-SQ-nf6" firstAttribute="top" secondItem="1Xm-Bi-pdh" secondAttribute="bottom" constant="50" id="WPu-vx-UYS"/>
+                            <constraint firstAttribute="centerX" secondItem="cy2-6i-Ii6" secondAttribute="centerX" id="Xfa-DJ-GSM"/>
+                            <constraint firstItem="U02-LL-ONI" firstAttribute="top" secondItem="ceE-vy-9rF" secondAttribute="bottom" constant="8" id="Ykt-rz-JK1"/>
+                            <constraint firstItem="f77-ee-stl" firstAttribute="top" secondItem="1Xm-Bi-pdh" secondAttribute="bottom" constant="8" id="efi-JI-tC5"/>
+                            <constraint firstAttribute="centerX" secondItem="f77-ee-stl" secondAttribute="centerX" id="jXd-N6-RCn"/>
+                            <constraint firstItem="nsV-x9-Vcr" firstAttribute="top" secondItem="1Xm-Bi-pdh" secondAttribute="bottom" constant="75" id="wIL-FQ-U48"/>
+                            <constraint firstItem="1Xm-Bi-pdh" firstAttribute="leading" secondItem="bM6-EN-eaE" secondAttribute="leadingMargin" constant="8" id="zge-BF-AOe"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <segue destination="ITC-Ve-wQf" kind="show" identifier="Ballot" id="WEN-ey-FEM"/>
+                        <outlet property="destinedToDieTable" destination="f77-ee-stl" id="Ktc-Sh-xhR"/>
+                        <outlet property="healerInPlayImage" destination="wcv-SQ-nf6" id="yNA-fe-SoR"/>
+                        <segue destination="Evc-2u-N8Z" kind="show" identifier="Morning" id="zym-j9-WmI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6Y-lI-l60" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2248,6 +2342,7 @@ Please acknowledge eachother"</string>
     <inferredMetricsTieBreakers>
         <segue reference="b9F-be-3HY"/>
         <segue reference="jh8-2z-7i3"/>
+        <segue reference="zym-j9-WmI"/>
         <segue reference="5Rx-Fr-hDL"/>
         <segue reference="4c7-IS-ucO"/>
     </inferredMetricsTieBreakers>
