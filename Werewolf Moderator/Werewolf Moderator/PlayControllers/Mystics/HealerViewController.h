@@ -11,6 +11,7 @@
 @interface HealerViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITableView *destinedToDieTable;
+@property (strong, nonatomic) IBOutlet UIButton *savePlayerButton;
 @property (strong, nonatomic) IBOutlet UIImageView *healerInPlayImage;
 - (IBAction)healPlayer:(id)sender;
 

@@ -28,6 +28,7 @@
     }
     else
     {
+        self.savePlayerButton.hidden = YES;
         [self.healerInPlayImage setImage:[UIImage imageNamed:@"notInPlay.png"]];
     }
 }

@@ -1803,6 +1803,7 @@ Please acknowledge eachother"</string>
                     <connections>
                         <outlet property="destinedToDieTable" destination="f77-ee-stl" id="Ktc-Sh-xhR"/>
                         <outlet property="healerInPlayImage" destination="wcv-SQ-nf6" id="yNA-fe-SoR"/>
+                        <outlet property="savePlayerButton" destination="nsV-x9-Vcr" id="3qU-hc-S2U"/>
                         <segue destination="Evc-2u-N8Z" kind="show" identifier="Morning" id="zym-j9-WmI"/>
                     </connections>
                 </viewController>

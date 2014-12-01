@@ -73,11 +73,18 @@
     
     Player *player = [[SingleGame state].allPlayers objectAtIndex:indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ (%@)", player.name, player.role.name];
-    cell.textLabel.textColor = (player.alive)
-      ? [UIColor colorWithRed:42.0/255 green:162.0/255 blue:95.0/255 alpha:1.0]
-      : [UIColor redColor];
+    cell.textLabel.textColor = [self playerColor:player];
     
     return cell;
+}
+
+-(UIColor*)playerColor:(Player*)player
+{
+    if ([[SingleGame state].destinedToDie containsObject:player])
+        return [UIColor yellowColor];
+    
+    UIColor *werewolfGreen = [UIColor colorWithRed:42.0/255 green:162.0/255 blue:95.0/255 alpha:1.0];
+    return (player.alive) ? werewolfGreen : [UIColor redColor];
 }
 
 @end
