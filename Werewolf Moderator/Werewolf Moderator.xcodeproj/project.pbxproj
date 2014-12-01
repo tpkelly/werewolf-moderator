@@ -58,6 +58,7 @@
 		47FED0D21A2BCE230084C43C /* immune.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FED0D11A2BCE230084C43C /* immune.png */; };
 		47FED0D51A2C8C9C0084C43C /* VampireAttackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0D41A2C8C9C0084C43C /* VampireAttackViewController.m */; };
 		47FED0D81A2C90A80084C43C /* HealerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0D71A2C90A80084C43C /* HealerViewController.m */; };
+		47FED0DB1A2CE6240084C43C /* AngelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0DA1A2CE6240084C43C /* AngelViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,8 @@
 		47FED0D41A2C8C9C0084C43C /* VampireAttackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VampireAttackViewController.m; sourceTree = "<group>"; };
 		47FED0D61A2C90A80084C43C /* HealerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealerViewController.h; sourceTree = "<group>"; };
 		47FED0D71A2C90A80084C43C /* HealerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealerViewController.m; sourceTree = "<group>"; };
+		47FED0D91A2CE6240084C43C /* AngelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AngelViewController.h; sourceTree = "<group>"; };
+		47FED0DA1A2CE6240084C43C /* AngelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AngelViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +328,8 @@
 				47FD6B791A251E1C00F445D0 /* WolvesSetupViewController.m */,
 				47FD6B7B1A25203700F445D0 /* VampirePrepViewController.h */,
 				47FD6B7C1A25203700F445D0 /* VampirePrepViewController.m */,
+				47FED0D91A2CE6240084C43C /* AngelViewController.h */,
+				47FED0DA1A2CE6240084C43C /* AngelViewController.m */,
 			);
 			name = "First Night only";
 			path = "First Night Only";
@@ -486,6 +491,7 @@
 			files = (
 				47FED0CD1A2BC2B30084C43C /* WitchViewController.m in Sources */,
 				47FED0D81A2C90A80084C43C /* HealerViewController.m in Sources */,
+				47FED0DB1A2CE6240084C43C /* AngelViewController.m in Sources */,
 				47FD6B771A250B3F00F445D0 /* JulietViewController.m in Sources */,
 				47FED0D51A2C8C9C0084C43C /* VampireAttackViewController.m in Sources */,
 				47B4C1241A13E2ED00D30338 /* Role.m in Sources */,

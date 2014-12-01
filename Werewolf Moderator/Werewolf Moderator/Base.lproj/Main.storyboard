@@ -158,7 +158,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9GX-gn-TOi">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9GX-gn-TOi">
                                 <rect key="frame" x="150" y="231" width="300" height="312"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;I will now tell you if that player is corrupt&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTM-dQ-Eti">
@@ -171,13 +171,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ljS-6P-25X">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ljS-6P-25X">
                                         <rect key="frame" x="63" y="69" width="175" height="175"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ljS-6P-25X" secondAttribute="height" multiplier="1:1" id="CA5-u1-Pm2"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtx-bi-8Vx">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtx-bi-8Vx">
                                         <rect key="frame" x="63" y="274" width="175" height="38"/>
                                         <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -283,7 +283,7 @@ Tap line in table to select player
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ugz-E9-FGE">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ugz-E9-FGE">
                                 <rect key="frame" x="150" y="251" width="300" height="292"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;I will now tell you if that player is corrupt&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAC-Ut-yYJ">
@@ -296,13 +296,13 @@ Tap line in table to select player
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZ4-Er-GPG">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PZ4-Er-GPG">
                                         <rect key="frame" x="63" y="59" width="175" height="175"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="PZ4-Er-GPG" secondAttribute="height" multiplier="1:1" id="EL7-zN-fLh"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAd-uk-DA9">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAd-uk-DA9">
                                         <rect key="frame" x="63" y="254" width="175" height="38"/>
                                         <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -338,7 +338,7 @@ Tap line in table to select player
                                     <constraint firstAttribute="width" constant="300" id="wUW-C5-jom"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FZh-ei-wT8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FZh-ei-wT8">
                                 <rect key="frame" x="150" y="251" width="300" height="292"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -403,7 +403,7 @@ Tap line in table to select player
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQv-Oo-xyK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQv-Oo-xyK">
                                 <rect key="frame" x="212" y="463" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -434,13 +434,13 @@ Tap line in table to select player
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qo6-LJ-rBR">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qo6-LJ-rBR">
                                 <rect key="frame" x="325" y="151" width="251" height="282"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjT-8N-8k5">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjT-8N-8k5">
                                 <rect key="frame" x="24" y="151" width="251" height="282"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -495,7 +495,7 @@ Tap line in table to select player
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAQ-Y7-1fF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAQ-Y7-1fF">
                                 <rect key="frame" x="227" y="413" width="145" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -526,7 +526,7 @@ Tap line in table to select player
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="doJ-fy-ssh">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doJ-fy-ssh">
                                 <rect key="frame" x="24" y="165" width="552" height="216"/>
                             </pickerView>
                         </subviews>
@@ -976,7 +976,7 @@ Tap line in table to select player
                                             <action selector="continuing:" destination="WQa-37-duF" eventType="touchUpInside" id="ioc-nw-8nW"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGj-DL-t5L">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGj-DL-t5L">
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1175,7 +1175,7 @@ Tap line in table to select player
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD6-u5-mWa">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD6-u5-mWa">
                                 <rect key="frame" x="212" y="505" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1209,7 +1209,7 @@ Will the priest please wake up. I will now tell you if the Seducer is in play"</
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZb-3M-Xja">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iZb-3M-Xja">
                                 <rect key="frame" x="181" y="216" width="239" height="239"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iZb-3M-Xja" secondAttribute="height" multiplier="1:1" id="mR4-hh-Gwv"/>
@@ -1337,12 +1337,102 @@ Tap line in table to select player
                     </view>
                     <connections>
                         <outlet property="romeoTable" destination="oLA-OG-VCg" id="JGk-dm-dJO"/>
-                        <segue destination="mFI-qk-Rxb" kind="show" identifier="Wolves" id="tIZ-CF-FAq"/>
+                        <segue destination="wT8-dW-NaB" kind="show" identifier="Angel" id="kC3-g9-rf6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bbz-o4-Xk8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-469" y="2488"/>
+        </scene>
+        <!--Angel View Controller-->
+        <scene sceneID="vW2-WC-TFg">
+            <objects>
+                <viewController id="wT8-dW-NaB" customClass="AngelViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ttt-R9-EVN"/>
+                        <viewControllerLayoutGuide type="bottom" id="OdZ-b4-tAv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WlQ-uN-2m4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBG-2T-L7a">
+                                <rect key="frame" x="213" y="505" width="175" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Gxw-q8-jgS"/>
+                                    <constraint firstAttribute="width" constant="175" id="hIg-3h-eoJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Close your eyes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continuing:" destination="wT8-dW-NaB" eventType="touchUpInside" id="82B-vc-wMX"/>
+                                    <action selector="continuing:" destination="UVs-33-YpM" eventType="touchUpInside" id="fdO-vK-XKd"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cx1-5z-cWe">
+                                <rect key="frame" x="24" y="66" width="552" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="wmY-cI-wjv"/>
+                                </constraints>
+                                <string key="text">"Will the Guardian Angel please wake up. Please select a player to protect"
+
+Tap line in table to select player
+</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ifZ-wh-uHR">
+                                <rect key="frame" x="150" y="154" width="300" height="389"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="5Rc-hN-igU"/>
+                                </constraints>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYg-cH-QRO">
+                                <rect key="frame" x="242" y="8" width="117" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Kk9-8N-T2u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OdZ-b4-tAv" firstAttribute="top" secondItem="ifZ-wh-uHR" secondAttribute="bottom" constant="8" id="A3l-0i-Tfg"/>
+                            <constraint firstAttribute="centerX" secondItem="ifZ-wh-uHR" secondAttribute="centerX" id="HjV-70-nA0"/>
+                            <constraint firstAttribute="centerX" secondItem="CBG-2T-L7a" secondAttribute="centerX" id="Icw-ES-PQK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cx1-5z-cWe" secondAttribute="trailing" constant="8" id="MEv-uP-Dza"/>
+                            <constraint firstItem="cx1-5z-cWe" firstAttribute="leading" secondItem="WlQ-uN-2m4" secondAttribute="leadingMargin" constant="8" id="fKX-JF-SnL"/>
+                            <constraint firstAttribute="centerX" secondItem="UYg-cH-QRO" secondAttribute="centerX" id="jri-6w-FDG"/>
+                            <constraint firstItem="cx1-5z-cWe" firstAttribute="top" secondItem="UYg-cH-QRO" secondAttribute="bottom" constant="8" id="oZS-GN-jZO"/>
+                            <constraint firstItem="OdZ-b4-tAv" firstAttribute="top" secondItem="CBG-2T-L7a" secondAttribute="bottom" constant="8" id="uNh-GB-84e"/>
+                            <constraint firstItem="UYg-cH-QRO" firstAttribute="top" secondItem="WlQ-uN-2m4" secondAttribute="topMargin" constant="8" id="ut4-CY-9Zb"/>
+                            <constraint firstItem="ifZ-wh-uHR" firstAttribute="top" secondItem="cx1-5z-cWe" secondAttribute="bottom" constant="8" id="wQx-gR-c6Z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="guardedTable" destination="ifZ-wh-uHR" id="uGZ-UG-dT3"/>
+                        <segue destination="mFI-qk-Rxb" kind="show" identifier="Wolves" id="SAI-1c-LqY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DQt-vi-xhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="165" y="2506"/>
         </scene>
         <!--Wolves Setup View Controller-->
         <scene sceneID="lJH-UW-ASe">
@@ -1378,7 +1468,7 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mta-Uo-I0e">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mta-Uo-I0e">
                                 <rect key="frame" x="213" y="505" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1418,7 +1508,7 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0k-bZ-bS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="209" y="2482"/>
+            <point key="canvasLocation" x="809" y="2498"/>
         </scene>
         <!--Vampire Prep View Controller-->
         <scene sceneID="LHn-cC-dL0">
@@ -1454,7 +1544,7 @@ Please acknowledge eachother"</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrW-J3-pai">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrW-J3-pai">
                                 <rect key="frame" x="213" y="505" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1494,7 +1584,7 @@ Please acknowledge eachother"</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ny4-sX-9ys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904" y="2482"/>
+            <point key="canvasLocation" x="1528" y="2498"/>
         </scene>
         <!--Morning View Controller-->
         <scene sceneID="wme-vq-eTc">
@@ -1517,7 +1607,7 @@ Please acknowledge eachother"</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geS-cP-m3p">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geS-cP-m3p">
                                 <rect key="frame" x="213" y="505" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1610,7 +1700,7 @@ Please acknowledge eachother"</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XxY-mc-G8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1603" y="2488"/>
+            <point key="canvasLocation" x="2275" y="2498"/>
         </scene>
         <!--Ballot First Round View Controller-->
         <scene sceneID="Rsj-Hy-rID">
@@ -1624,7 +1714,7 @@ Please acknowledge eachother"</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIA-ZP-gJ4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIA-ZP-gJ4">
                                 <rect key="frame" x="225" y="505" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1693,7 +1783,7 @@ Please acknowledge eachother"</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAd-8B-uXJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2302" y="2482"/>
+            <point key="canvasLocation" x="2314" y="3216"/>
         </scene>
         <!--Healer View Controller-->
         <scene sceneID="8Qp-zd-1I9">
@@ -1868,7 +1958,7 @@ Please acknowledge eachother"</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygm-DY-KWQ">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygm-DY-KWQ">
                                 <rect key="frame" x="225" y="508" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1889,7 +1979,7 @@ Please acknowledge eachother"</string>
                                     <action selector="redoRound:" destination="6QH-fy-0OB" eventType="touchUpInside" id="hs8-Cw-4Oz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1x-Jy-PtR">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1x-Jy-PtR">
                                 <rect key="frame" x="225" y="554" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1942,7 +2032,7 @@ Please acknowledge eachother"</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ahs-yk-cuX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="909" y="3228"/>
+            <point key="canvasLocation" x="204" y="3216"/>
         </scene>
         <!--Ballot Second Round View Controller-->
         <scene sceneID="pfY-II-iN9">
@@ -1956,7 +2046,7 @@ Please acknowledge eachother"</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejk-Is-VnB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejk-Is-VnB">
                                 <rect key="frame" x="225" y="505" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2025,7 +2115,7 @@ Please acknowledge eachother"</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1N-Nd-gy9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1595" y="3227"/>
+            <point key="canvasLocation" x="913" y="3222"/>
         </scene>
         <!--Ballot First Round Results View Controller-->
         <scene sceneID="f5l-1h-W19">
@@ -2069,7 +2159,7 @@ Please acknowledge eachother"</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLZ-J2-tdT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLZ-J2-tdT">
                                 <rect key="frame" x="225" y="505" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2090,7 +2180,7 @@ Please acknowledge eachother"</string>
                                     <action selector="secondRound:" destination="5go-vW-ZN3" eventType="touchUpInside" id="GvN-tI-Fz7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY9-VI-Wz8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY9-VI-Wz8">
                                 <rect key="frame" x="225" y="459" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2111,7 +2201,7 @@ Please acknowledge eachother"</string>
                                     <action selector="redoRound:" destination="5go-vW-ZN3" eventType="touchUpInside" id="0nA-VF-fec"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fJs-K3-fjS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fJs-K3-fjS">
                                 <rect key="frame" x="175" y="205" width="250" height="246"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -2160,7 +2250,7 @@ Please acknowledge eachother"</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Dp-9r-mzF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2302" y="3222"/>
+            <point key="canvasLocation" x="1608" y="3216"/>
         </scene>
         <!--Vampire Hunter View Controller-->
         <scene sceneID="z5Z-IG-mNw">
@@ -2174,7 +2264,7 @@ Please acknowledge eachother"</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyW-im-UPe">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyW-im-UPe">
                                 <rect key="frame" x="212" y="505" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2195,7 +2285,7 @@ Please acknowledge eachother"</string>
                                     <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="EhZ-WV-wS2"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oT0-aG-EyF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oT0-aG-EyF">
                                 <rect key="frame" x="191" y="236" width="219" height="219"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oT0-aG-EyF" secondAttribute="height" multiplier="1:1" id="a8L-47-RoV"/>
@@ -2244,98 +2334,6 @@ Please acknowledge eachother"</string>
             </objects>
             <point key="canvasLocation" x="204" y="1724"/>
         </scene>
-        <!--Ballot First Round View Controller-->
-        <scene sceneID="4wg-Cm-Wbj">
-            <objects>
-                <viewController id="ITC-Ve-wQf" customClass="BallotFirstRoundViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wO9-j2-kvQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="HX6-Ro-CY1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="r1x-U4-TY8">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VE4-3N-6HS">
-                                <rect key="frame" x="225" y="505" width="150" height="38"/>
-                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="2Dk-bC-lgH"/>
-                                    <constraint firstAttribute="height" constant="38" id="YK7-Dt-p6U"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Submit votes">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="ballotTime:" destination="Evc-2u-N8Z" eventType="touchUpInside" id="UXk-pq-hy5"/>
-                                    <action selector="continue:" destination="bxA-gA-2oC" eventType="touchUpInside" id="8Lm-9q-s3v"/>
-                                    <action selector="continue:" destination="Rpa-WO-XyW" eventType="touchUpInside" id="Trd-F5-9MQ"/>
-                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="eIp-nd-Hhn"/>
-                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="633-75-a5X"/>
-                                    <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="ISg-BV-prY"/>
-                                    <action selector="continuing:" destination="pBX-wB-VeD" eventType="touchUpInside" id="X5t-Ax-LmR"/>
-                                    <action selector="continuing:" destination="35d-x7-cfY" eventType="touchUpInside" id="cni-lb-1Nx"/>
-                                    <action selector="continuing:" destination="mFI-qk-Rxb" eventType="touchUpInside" id="oGy-Pv-pQP"/>
-                                    <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="UfH-Nr-xOh"/>
-                                    <action selector="submitVotes:" destination="ITC-Ve-wQf" eventType="touchUpInside" id="gyE-Et-NMF"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votes for Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxp-T5-iS0">
-                                <rect key="frame" x="24" y="163" width="552" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Wa7-dc-hG2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ar-mR-GUB">
-                                <rect key="frame" x="250" y="201" width="100" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Idq-Ol-Ifh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initial Ballot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HM4-Wp-GjX">
-                                <rect key="frame" x="184" y="8" width="232" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="uh5-wi-r2d"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="oxp-T5-iS0" firstAttribute="top" secondItem="HM4-Wp-GjX" secondAttribute="bottom" constant="100" id="0po-1x-HDA"/>
-                            <constraint firstItem="HM4-Wp-GjX" firstAttribute="top" secondItem="r1x-U4-TY8" secondAttribute="topMargin" constant="8" id="90E-g7-Q78"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oxp-T5-iS0" secondAttribute="trailing" constant="8" id="KFS-0T-1ej"/>
-                            <constraint firstAttribute="centerX" secondItem="HM4-Wp-GjX" secondAttribute="centerX" id="McB-FF-yCC"/>
-                            <constraint firstItem="oxp-T5-iS0" firstAttribute="leading" secondItem="r1x-U4-TY8" secondAttribute="leadingMargin" constant="8" id="Mdx-Vz-6af"/>
-                            <constraint firstItem="HX6-Ro-CY1" firstAttribute="top" secondItem="VE4-3N-6HS" secondAttribute="bottom" constant="8" id="Upb-pU-Cdy"/>
-                            <constraint firstAttribute="centerX" secondItem="VE4-3N-6HS" secondAttribute="centerX" id="Z0K-4f-2ml"/>
-                            <constraint firstAttribute="centerX" secondItem="9ar-mR-GUB" secondAttribute="centerX" id="rlr-9X-w3o"/>
-                            <constraint firstItem="9ar-mR-GUB" firstAttribute="top" secondItem="oxp-T5-iS0" secondAttribute="bottom" constant="8" id="x3R-ms-1nm"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="playerVoteLabel" destination="oxp-T5-iS0" id="k0C-60-u7A"/>
-                        <outlet property="playerVotes" destination="9ar-mR-GUB" id="Mcx-nj-a9W"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OCI-B5-Rnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2302" y="2482"/>
-        </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
@@ -2343,7 +2341,7 @@ Please acknowledge eachother"</string>
     <inferredMetricsTieBreakers>
         <segue reference="b9F-be-3HY"/>
         <segue reference="jh8-2z-7i3"/>
-        <segue reference="zym-j9-WmI"/>
+        <segue reference="iU4-zQ-jWI"/>
         <segue reference="5Rx-Fr-hDL"/>
         <segue reference="4c7-IS-ucO"/>
     </inferredMetricsTieBreakers>

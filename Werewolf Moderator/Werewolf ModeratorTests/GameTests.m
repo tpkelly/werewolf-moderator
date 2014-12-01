@@ -460,6 +460,18 @@
     XCTAssertTrue(player.permanentProtection);
 }
 
+-(void)testThatGuardedIsChosenByAngel
+{
+    //Given:
+    Player *player = [[Player alloc] initWithName:@"Guarded" role:Farmer];
+    
+    //Expect:
+    [[self.mockGameState expect] setGuardedPlayer:player];
+    
+    //When:
+    [self.testGame angelPicksGuarded:player];
+}
+
 #pragma mark - It is morning
 
 -(void)testThatNobodyIsDestinedToDieAfterMorningArrives

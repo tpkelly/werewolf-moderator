@@ -149,6 +149,11 @@
     player.permanentProtection = YES;
 }
 
+-(void)angelPicksGuarded:(Player *)player
+{
+    _state.guardedPlayer = player;
+}
+
 #pragma mark - It is morning
 
 -(MorningNews *)transitionToMorning

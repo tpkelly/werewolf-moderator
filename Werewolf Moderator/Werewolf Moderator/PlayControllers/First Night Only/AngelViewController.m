@@ -1,40 +1,40 @@
 //
-//  JulietViewController.m
+//  AngelViewController.m
 //  Werewolf Moderator
 //
-//  Created by Thomas Kelly on 25/11/2014.
+//  Created by Thomas Kelly on 01/12/2014.
 //  Copyright (c) 2014 TKGames. All rights reserved.
 //
 
-#import "JulietViewController.h"
+#import "AngelViewController.h"
 #import "SingleGame.h"
 #import "GameState.h"
-#import "Game.h"
 #import "Player.h"
+#import "Game.h"
 
-@interface JulietViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface AngelViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
-@implementation JulietViewController
+@implementation AngelViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
     
-    if (![[SingleGame state] roleIsAlive:Juliet])
+    if (![[SingleGame state] roleIsAlive:GuardianAngel])
     {
-        self.romeoTable.hidden = YES;
+        self.guardedTable.hidden = YES;
         return;
     }
     
-    self.romeoTable.dataSource = self;
-    self.romeoTable.delegate = self;
+    self.guardedTable.dataSource = self;
+    self.guardedTable.delegate = self;
 }
 
 - (IBAction)continuing:(id)sender {
-    [self performSegueWithIdentifier:@"Angel" sender:self];
+    [self performSegueWithIdentifier:@"Wolves" sender:self];
 }
 
 #pragma mark - UITableView methods
@@ -51,10 +51,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"romeoPlayer"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"guardedPlayer"];
     if (!cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"romeoPlayer"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"guardedPlayer"];
         cell.backgroundColor = [UIColor clearColor];
     }
     
@@ -67,9 +67,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Player *playerAtIndex = [[SingleGame state].playersAlive objectAtIndex:indexPath.row];
-    self.romeoTable.hidden = YES;
+    self.guardedTable.hidden = YES;
     
-    [[SingleGame game] julietPicksRomeo:playerAtIndex];
+    [[SingleGame game] angelPicksGuarded:playerAtIndex];
 }
 
 @end

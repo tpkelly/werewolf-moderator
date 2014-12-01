@@ -27,6 +27,7 @@
 -(void)healerSavesPlayer:(Player*)player;
 
 -(void)julietPicksRomeo:(Player*)player;
+-(void)angelPicksGuarded:(Player*)player;
 
 // Returns whether the attack was successful
 -(BOOL)vampireAttackPlayer:(Player*)player;
