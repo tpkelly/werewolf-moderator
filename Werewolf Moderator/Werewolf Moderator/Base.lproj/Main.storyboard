@@ -676,6 +676,165 @@ Tap line in table to select player
             </objects>
             <point key="canvasLocation" x="2184" y="1764"/>
         </scene>
+        <!--Wolf Double Attack View Controller-->
+        <scene sceneID="dJs-1g-Cvl">
+            <objects>
+                <viewController id="dhw-yS-DIJ" customClass="WolfDoubleAttackViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3NG-h8-zhr"/>
+                        <viewControllerLayoutGuide type="bottom" id="nmh-5L-Cbo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E8J-mF-DkD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6KA-5p-kwi">
+                                <rect key="frame" x="16" y="248" width="288" height="249"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dOF-rZ-Lo3">
+                                        <rect key="frame" x="64" y="81" width="160" height="160"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="dOF-rZ-Lo3" secondAttribute="height" multiplier="1:1" id="7m6-jr-Rxr"/>
+                                            <constraint firstAttribute="width" constant="160" id="Cl8-Km-35l"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17F-fy-mlf">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="17F-fy-mlf" secondAttribute="centerX" id="Cir-yD-nlp"/>
+                                    <constraint firstAttribute="bottom" secondItem="17F-fy-mlf" secondAttribute="bottom" constant="8" id="Yxb-TB-auj"/>
+                                    <constraint firstAttribute="bottom" secondItem="dOF-rZ-Lo3" secondAttribute="bottom" constant="8" id="cS1-Rn-rbG"/>
+                                    <constraint firstAttribute="centerX" secondItem="dOF-rZ-Lo3" secondAttribute="centerX" id="ulO-j0-hep"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ejc-hb-pCr">
+                                <rect key="frame" x="312" y="248" width="288" height="249"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rah-9j-fvR">
+                                        <rect key="frame" x="64" y="81" width="160" height="160"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="I75-9X-4kd"/>
+                                            <constraint firstAttribute="width" secondItem="Rah-9j-fvR" secondAttribute="height" multiplier="1:1" id="Zam-vu-Uih"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saE-aw-8YN">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Rah-9j-fvR" secondAttribute="bottom" constant="8" id="3Aa-qo-tdP"/>
+                                    <constraint firstAttribute="centerX" secondItem="Rah-9j-fvR" secondAttribute="centerX" id="GWM-f5-OKf"/>
+                                    <constraint firstAttribute="centerX" secondItem="saE-aw-8YN" secondAttribute="centerX" id="dgw-EN-uJj"/>
+                                    <constraint firstAttribute="bottom" secondItem="saE-aw-8YN" secondAttribute="bottom" constant="8" id="qeK-gJ-16f"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zG8-ug-kWU">
+                                <rect key="frame" x="220" y="505" width="160" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="PV8-5i-aI1"/>
+                                    <constraint firstAttribute="height" constant="38" id="qjB-il-hbN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Close your eyes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continue:" destination="sLs-dd-xF3" eventType="touchUpInside" id="8D8-k3-Lm1"/>
+                                    <action selector="continuing:" destination="etn-hz-aJy" eventType="touchUpInside" id="0uH-rv-8dL"/>
+                                    <action selector="continuing:" destination="9Qo-8c-yYq" eventType="touchUpInside" id="MOM-QB-NaU"/>
+                                    <action selector="continuing:" destination="dhw-yS-DIJ" eventType="touchUpInside" id="fIH-7n-MPA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wolves" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwg-tQ-YNP">
+                                <rect key="frame" x="225" y="8" width="149" height="57"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HX2-yK-ius">
+                                <rect key="frame" x="24" y="73" width="552" height="175"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="Lf5-MD-SjE"/>
+                                </constraints>
+                                <string key="text">"Will the Wolves please wake up. Please select a target to eat tonight."
+
+Signal that two attacks are possible.Tap line in table to select player
+
+"Wolves close your eyes. If I tap you on the knee, you are destined to die. Please raise your hand"</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3G9-r4-jLh">
+                                <rect key="frame" x="24" y="256" width="280" height="241"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9s7-9W-Wws">
+                                <rect key="frame" x="312" y="256" width="280" height="241"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="HX2-yK-ius" secondAttribute="trailing" constant="8" id="BPP-kd-SSn"/>
+                            <constraint firstItem="HX2-yK-ius" firstAttribute="top" secondItem="gwg-tQ-YNP" secondAttribute="bottom" constant="8" id="Bl3-xf-CAN"/>
+                            <constraint firstItem="Ejc-hb-pCr" firstAttribute="top" secondItem="HX2-yK-ius" secondAttribute="bottom" id="Caw-ad-vaR"/>
+                            <constraint firstItem="Ejc-hb-pCr" firstAttribute="leading" secondItem="6KA-5p-kwi" secondAttribute="trailing" constant="8" id="EtS-DD-pGL"/>
+                            <constraint firstItem="Ejc-hb-pCr" firstAttribute="width" secondItem="6KA-5p-kwi" secondAttribute="width" id="Foi-8I-kza"/>
+                            <constraint firstItem="9s7-9W-Wws" firstAttribute="trailing" secondItem="E8J-mF-DkD" secondAttribute="trailingMargin" constant="8" id="KoX-1R-94i"/>
+                            <constraint firstItem="zG8-ug-kWU" firstAttribute="top" secondItem="9s7-9W-Wws" secondAttribute="bottom" constant="8" id="NKD-SR-aB7"/>
+                            <constraint firstItem="gwg-tQ-YNP" firstAttribute="top" secondItem="E8J-mF-DkD" secondAttribute="topMargin" constant="8" id="OHP-DV-RHD"/>
+                            <constraint firstItem="3G9-r4-jLh" firstAttribute="width" secondItem="9s7-9W-Wws" secondAttribute="width" id="PNO-Ug-M11"/>
+                            <constraint firstItem="6KA-5p-kwi" firstAttribute="top" secondItem="HX2-yK-ius" secondAttribute="bottom" id="Us8-8Z-hAs"/>
+                            <constraint firstAttribute="centerX" secondItem="zG8-ug-kWU" secondAttribute="centerX" id="XKj-kb-53M"/>
+                            <constraint firstItem="zG8-ug-kWU" firstAttribute="top" secondItem="3G9-r4-jLh" secondAttribute="bottom" constant="8" id="XYI-rW-YY5"/>
+                            <constraint firstItem="6KA-5p-kwi" firstAttribute="leading" secondItem="E8J-mF-DkD" secondAttribute="leadingMargin" id="XdI-g5-1uh"/>
+                            <constraint firstItem="3G9-r4-jLh" firstAttribute="leading" secondItem="E8J-mF-DkD" secondAttribute="leadingMargin" constant="8" id="Yo7-Bb-RQq"/>
+                            <constraint firstItem="HX2-yK-ius" firstAttribute="leading" secondItem="E8J-mF-DkD" secondAttribute="leadingMargin" constant="8" id="hZk-eb-z61"/>
+                            <constraint firstItem="zG8-ug-kWU" firstAttribute="top" secondItem="6KA-5p-kwi" secondAttribute="bottom" constant="8" id="kUf-cV-oF5"/>
+                            <constraint firstItem="9s7-9W-Wws" firstAttribute="leading" secondItem="3G9-r4-jLh" secondAttribute="trailing" constant="8" id="mm7-2D-yr9"/>
+                            <constraint firstItem="9s7-9W-Wws" firstAttribute="top" secondItem="HX2-yK-ius" secondAttribute="bottom" constant="8" id="oJ9-cE-kmF"/>
+                            <constraint firstItem="zG8-ug-kWU" firstAttribute="top" secondItem="Ejc-hb-pCr" secondAttribute="bottom" constant="8" id="qBW-hX-vjQ"/>
+                            <constraint firstItem="nmh-5L-Cbo" firstAttribute="top" secondItem="zG8-ug-kWU" secondAttribute="bottom" constant="8" id="snL-uX-Gpt"/>
+                            <constraint firstAttribute="centerX" secondItem="gwg-tQ-YNP" secondAttribute="centerX" id="udf-y7-QcQ"/>
+                            <constraint firstItem="3G9-r4-jLh" firstAttribute="top" secondItem="HX2-yK-ius" secondAttribute="bottom" constant="8" id="vA5-A2-80h"/>
+                            <constraint firstItem="Ejc-hb-pCr" firstAttribute="leading" secondItem="3G9-r4-jLh" secondAttribute="trailing" constant="8" id="wWG-gG-0Ky"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstPlayerImmunityImage" destination="dOF-rZ-Lo3" id="SnN-7m-O9q"/>
+                        <outlet property="firstPlayerTable" destination="3G9-r4-jLh" id="FcL-cA-hU5"/>
+                        <outlet property="secondPlayerImmunityImage" destination="Rah-9j-fvR" id="1l5-uh-piM"/>
+                        <outlet property="secondPlayerTable" destination="9s7-9W-Wws" id="PgT-JN-Eja"/>
+                        <outlet property="tapFirstPlayerLabel" destination="17F-fy-mlf" id="Flt-ha-y22"/>
+                        <outlet property="tapSecondPlayerLabel" destination="saE-aw-8YN" id="MU9-kn-uwn"/>
+                        <segue destination="WQa-37-duF" kind="show" identifier="Vampire" id="COg-eH-uaz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T57-ki-YE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3271" y="1044"/>
+        </scene>
         <!--Witch View Controller-->
         <scene sceneID="nc1-zr-UR7">
             <objects>
@@ -781,6 +940,7 @@ Tap line in table to select player
                         <outlet property="playerTable" destination="PJZ-j6-QPu" id="Pne-59-Ea9"/>
                         <outlet property="witchInPlayImage" destination="CDh-aA-Fsv" id="z93-P7-QhZ"/>
                         <segue destination="9Qo-8c-yYq" kind="show" identifier="Wolves" id="0UP-Hl-9G7"/>
+                        <segue destination="dhw-yS-DIJ" kind="show" identifier="WolvesDouble" id="KiY-hH-qv2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t0k-S1-WHD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -861,7 +1021,7 @@ Tap line in table to select player
                                             <action selector="continuing:" destination="9Qo-8c-yYq" eventType="touchUpInside" id="b13-BP-fza"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf5-GF-Ul4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf5-GF-Ul4">
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -974,7 +1134,7 @@ Tap line in table to select player
                                             <action selector="continuing:" destination="WQa-37-duF" eventType="touchUpInside" id="ioc-nw-8nW"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGj-DL-t5L">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGj-DL-t5L">
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1956,8 +2116,8 @@ Please acknowledge eachother"</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygm-DY-KWQ">
-                                <rect key="frame" x="225" y="508" width="150" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygm-DY-KWQ">
+                                <rect key="frame" x="225" y="459" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="0Ng-YT-wiG"/>
@@ -1977,8 +2137,8 @@ Please acknowledge eachother"</string>
                                     <action selector="redoRound:" destination="6QH-fy-0OB" eventType="touchUpInside" id="hs8-Cw-4Oz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1x-Jy-PtR">
-                                <rect key="frame" x="225" y="554" width="150" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1x-Jy-PtR">
+                                <rect key="frame" x="225" y="505" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="ZBx-rB-Z84"/>
@@ -2339,6 +2499,7 @@ Please acknowledge eachother"</string>
     <inferredMetricsTieBreakers>
         <segue reference="jh8-2z-7i3"/>
         <segue reference="b9F-be-3HY"/>
+        <segue reference="COg-eH-uaz"/>
         <segue reference="iU4-zQ-jWI"/>
         <segue reference="5Rx-Fr-hDL"/>
         <segue reference="4c7-IS-ucO"/>

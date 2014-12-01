@@ -34,7 +34,14 @@
 }
 
 - (IBAction)continuing:(id)sender {
-    [self performSegueWithIdentifier:@"Wolves" sender:self];
+    if ([SingleGame state].wolvesAttackTwice)
+    {
+        [self performSegueWithIdentifier:@"WolvesDouble" sender:self];
+    }
+    else
+    {
+        [self performSegueWithIdentifier:@"Wolves" sender:self];
+    }
 }
 
 #pragma mark - UITableView methods
