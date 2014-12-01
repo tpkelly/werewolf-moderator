@@ -157,6 +157,19 @@
     XCTAssertEqual(self.jester, burnedPlayer);
 }
 
+-(void)testThatJesterWinsIfBurned
+{
+    // Given:
+    NSArray *votes = @[[Vote forPlayer:self.jester voteCount:7]];
+    
+    //Expect
+    [[[self.mockGameState stub] andReturn:@[@(MadmanFaction)]] winningFactions];
+    [[self.mockGameState expect] setWinningFactions:@[@(MadmanFaction), @(JesterFaction)]];
+    
+    //When
+    [self.testBallot secondRoundResults:votes];
+}
+
 #pragma mark - Lover tests
 
 -(void)testThatBurningRomeoKillsJulietAtNight

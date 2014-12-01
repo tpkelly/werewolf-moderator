@@ -159,6 +159,10 @@
 -(MorningNews *)transitionToMorning
 {
     Player *madmanDestinedToDie = [_state playerWithRole:Madman inPlayerSet:_state.destinedToDie];
+    if (madmanDestinedToDie)
+    {
+        _state.winningFactions = [_state.winningFactions arrayByAddingObject:@(MadmanFaction)];
+    }
     _state.madmanMauledLastNight = (madmanDestinedToDie != nil);
     
     _state.wolvesAttackTwice = NO;

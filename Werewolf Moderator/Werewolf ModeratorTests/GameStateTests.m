@@ -80,6 +80,10 @@
     XCTAssertEqualObjects(allRoles, self.gameState.unassignedRoles);
 }
 
+-(void)testThatGameStartsWithNobodyWinning {
+    XCTAssertEqualObjects([NSArray array], self.gameState.winningFactions);
+}
+
 #pragma mark - Add Player
 
 -(void)testThatAddingPlayerAddsToLiveList

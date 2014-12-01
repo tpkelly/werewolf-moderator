@@ -24,6 +24,7 @@
         
         self.allPlayers = [NSArray array];
         self.destinedToDie = [NSArray array];
+        self.winningFactions = [NSArray array];
         
         NSArray *initialRoles = @[@(AlphaWolf),
                                   @(PackWolf),

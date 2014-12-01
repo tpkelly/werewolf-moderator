@@ -624,6 +624,20 @@
     [self.testGame transitionToMorning];
 }
 
+-(void)testThatMadmanWinsIfMaulled
+{
+    //Given:
+    Player *madman = [[Player alloc] initWithName:@"Madman" role:Madman];
+    
+    //Expect
+    [[[self.mockGameState stub] andReturn:madman] playerWithRole:Madman inPlayerSet:OCMOCK_ANY];
+    [[[self.mockGameState stub] andReturn:@[@(JesterFaction)]] winningFactions];
+    [[self.mockGameState expect] setWinningFactions:@[@(JesterFaction), @(MadmanFaction)]];
+    
+    //When
+    [self.testGame transitionToMorning];
+}
+
 -(void)testThatDoubleWolfAttackFlagIsReset
 {
     //Expect:
