@@ -10,8 +10,8 @@
 
 @interface MonkViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UITextView *firstUnassignedRole;
-@property (strong, nonatomic) IBOutlet UITextView *secondUnassignedRole;
+@property (strong, nonatomic) IBOutlet UILabel *firstUnassignedRole;
+@property (strong, nonatomic) IBOutlet UILabel *secondUnassignedRole;
 
 -(void)setupForFirstRole:(NSString*)firstRole secondRole:(NSString*)secondRole;
 

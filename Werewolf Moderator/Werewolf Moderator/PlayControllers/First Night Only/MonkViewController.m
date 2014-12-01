@@ -27,8 +27,8 @@
 {
     [super viewDidLoad];
     
-    self.firstUnassignedRole.text = [NSString stringWithFormat:@"\n\n\n\n\n\n%@", self.firstRole];
-    self.secondUnassignedRole.text = [NSString stringWithFormat:@"\n\n\n\n\n\n%@", self.secondRole];
+    self.firstUnassignedRole.text = self.firstRole;
+    self.secondUnassignedRole.text = self.secondRole;
 }
 
 - (IBAction)continuing:(id)sender {
