@@ -215,7 +215,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CLi-gS-EM3">
                                 <rect key="frame" x="150" y="231" width="300" height="311"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="0yT-FB-2ab"/>
                                 </constraints>
@@ -277,7 +277,7 @@ Tap line in table to select player
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Medium" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIE-QO-eSA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medium" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIE-QO-eSA">
                                 <rect key="frame" x="217" y="28" width="167" height="57"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -340,14 +340,14 @@ Tap line in table to select player
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FZh-ei-wT8">
                                 <rect key="frame" x="150" y="251" width="300" height="292"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="YaN-D6-ORN"/>
                                 </constraints>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysX-Sq-Ck5">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysX-Sq-Ck5">
                                 <rect key="frame" x="24" y="93" width="552" height="150"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -365,12 +365,15 @@ Tap line in table to select player
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="FZh-ei-wT8" secondAttribute="centerX" id="6Mw-bj-NJF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ysX-Sq-Ck5" secondAttribute="trailing" constant="8" id="6TD-TE-jWF"/>
                             <constraint firstItem="YIE-QO-eSA" firstAttribute="top" secondItem="guF-Ku-UFL" secondAttribute="bottom" constant="8" id="89H-pA-EIx"/>
+                            <constraint firstAttribute="centerX" secondItem="YIE-QO-eSA" secondAttribute="centerX" id="8VA-Cu-OXl"/>
                             <constraint firstItem="Ugz-E9-FGE" firstAttribute="top" secondItem="ysX-Sq-Ck5" secondAttribute="bottom" constant="8" id="FBp-IT-1VN"/>
                             <constraint firstItem="FZh-ei-wT8" firstAttribute="top" secondItem="ysX-Sq-Ck5" secondAttribute="bottom" constant="8" id="Iz6-CQ-Yea"/>
                             <constraint firstItem="ysX-Sq-Ck5" firstAttribute="leading" secondItem="snf-x5-dQw" secondAttribute="leadingMargin" constant="8" id="Shr-ar-RQT"/>
                             <constraint firstItem="mqJ-Mg-OMe" firstAttribute="top" secondItem="Ugz-E9-FGE" secondAttribute="bottom" constant="8" id="Ykv-SI-hLm"/>
                             <constraint firstItem="mqJ-Mg-OMe" firstAttribute="top" secondItem="FZh-ei-wT8" secondAttribute="bottom" constant="8" id="o1J-Ss-rGf"/>
+                            <constraint firstItem="ysX-Sq-Ck5" firstAttribute="leading" secondItem="snf-x5-dQw" secondAttribute="leadingMargin" constant="8" id="qnt-hg-Gxe"/>
                             <constraint firstAttribute="centerX" secondItem="Ugz-E9-FGE" secondAttribute="centerX" id="yOr-6k-4uh"/>
                             <constraint firstItem="ysX-Sq-Ck5" firstAttribute="top" secondItem="YIE-QO-eSA" secondAttribute="bottom" constant="8" id="zwD-va-adN"/>
                         </constraints>
@@ -643,7 +646,7 @@ Tap line in table to select player
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fUL-ag-VqB">
                                 <rect key="frame" x="150" y="243" width="300" height="300"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="aE9-jd-LvE"/>
                                 </constraints>
@@ -756,7 +759,7 @@ Tap line in table to select player
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PJZ-j6-QPu">
                                 <rect key="frame" x="150" y="251" width="300" height="292"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="BkA-Qf-oGR"/>
                                 </constraints>
@@ -2339,8 +2342,8 @@ Please acknowledge eachother"</string>
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b9F-be-3HY"/>
         <segue reference="jh8-2z-7i3"/>
+        <segue reference="b9F-be-3HY"/>
         <segue reference="iU4-zQ-jWI"/>
         <segue reference="5Rx-Fr-hDL"/>
         <segue reference="4c7-IS-ucO"/>

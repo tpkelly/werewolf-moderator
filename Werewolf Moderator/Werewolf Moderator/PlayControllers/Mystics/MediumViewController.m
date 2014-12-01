@@ -61,6 +61,7 @@
     
     Player *player = [[SingleGame state].playersDead objectAtIndex:indexPath.row];
     cell.textLabel.text = player.name;
+    cell.textLabel.textColor = [UIColor whiteColor];
     
     return cell;
 }

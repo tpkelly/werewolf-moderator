@@ -72,7 +72,9 @@
     
     if ([[SingleGame game] wolfAttackPlayer:playerAtIndex])
     {
-        self.tapPlayerLabel.text = [NSString stringWithFormat:@"Tap %@", playerAtIndex.name];
+        // Use the destinedToDie array to check, in case someone took their place
+        Player *attackedPlayer = [[SingleGame state].destinedToDie lastObject];
+        self.tapPlayerLabel.text = [NSString stringWithFormat:@"Tap %@", attackedPlayer.name];
     }
     else
     {

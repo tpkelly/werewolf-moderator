@@ -38,17 +38,24 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     MonkViewController *monk = segue.destinationViewController;
-    
     NSMutableArray *roles = [[self unassignedRoles] mutableCopy];
-    RoleType firstRole = [[roles objectAtIndex:[self.monkRolePicker selectedRowInComponent:0]] integerValue];
-    [roles removeObject:@(firstRole)];
-    RoleType secondRole = [[roles objectAtIndex:[self.monkRolePicker selectedRowInComponent:1]] integerValue];
     
-    [monk setupForFirstRole:[self nameForRoleType:firstRole] secondRole:[self nameForRoleType:secondRole]];
+    NSString *firstRoleName = [self nameForComponent:0 roles:roles];
+    NSString *secondRoleName = [self nameForComponent:1 roles:roles];
+    
+    [monk setupForFirstRole:firstRoleName secondRole:secondRoleName];
 }
 
--(NSString*)nameForRoleType:(RoleType)roleType
+-(NSString*)nameForComponent:(NSInteger)component roles:(NSMutableArray*)roles
 {
+    NSInteger roleIndex = [self.monkRolePicker selectedRowInComponent:0];
+    if (roleIndex >= roles.count)
+    {
+        return @"";
+    }
+    
+    RoleType roleType = [[roles objectAtIndex:roleIndex] integerValue];
+    [roles removeObject:@(roleType)];
     Role *role = [[Role alloc] initWithRole:roleType];
     return role.name;
 }

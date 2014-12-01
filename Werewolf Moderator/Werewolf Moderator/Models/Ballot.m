@@ -46,7 +46,7 @@
     NSArray *playersOnBallot = [mostVotedPlayers arrayByAddingObjectsFromArray:secondMostVotedPlayers];
 
     Player *guardianAngel = [self.state playerWithRole:GuardianAngel inPlayerSet:self.state.playersAlive];
-    if (guardianAngel && ![playersOnBallot containsObject:guardianAngel])
+    if (guardianAngel && ![playersOnBallot containsObject:guardianAngel] && [playersOnBallot containsObject:self.state.guardedPlayer])
     {
         NSUInteger guardedIndex = [playersOnBallot indexOfObject:self.state.guardedPlayer];
         
