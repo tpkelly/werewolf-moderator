@@ -60,6 +60,7 @@
 		47FED0D81A2C90A80084C43C /* HealerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0D71A2C90A80084C43C /* HealerViewController.m */; };
 		47FED0DB1A2CE6240084C43C /* AngelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0DA1A2CE6240084C43C /* AngelViewController.m */; };
 		47FED0DE1A2D066A0084C43C /* WolfDoubleAttackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0DD1A2D066A0084C43C /* WolfDoubleAttackViewController.m */; };
+		47FED0E11A2D3AF20084C43C /* GameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FED0E01A2D3AF20084C43C /* GameOverViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +167,8 @@
 		47FED0DA1A2CE6240084C43C /* AngelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AngelViewController.m; sourceTree = "<group>"; };
 		47FED0DC1A2D066A0084C43C /* WolfDoubleAttackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WolfDoubleAttackViewController.h; sourceTree = "<group>"; };
 		47FED0DD1A2D066A0084C43C /* WolfDoubleAttackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WolfDoubleAttackViewController.m; sourceTree = "<group>"; };
+		47FED0DF1A2D3AF20084C43C /* GameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewController.h; sourceTree = "<group>"; };
+		47FED0E01A2D3AF20084C43C /* GameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +313,8 @@
 				47FD6B7E1A25215600F445D0 /* First Night only */,
 				47FD6B821A25230800F445D0 /* MorningViewController.h */,
 				47FD6B831A25230800F445D0 /* MorningViewController.m */,
+				47FED0DF1A2D3AF20084C43C /* GameOverViewController.h */,
+				47FED0E01A2D3AF20084C43C /* GameOverViewController.m */,
 			);
 			path = PlayControllers;
 			sourceTree = "<group>";
@@ -512,6 +517,7 @@
 				47FD6B441A20D9E500F445D0 /* PlayViewController.m in Sources */,
 				47EF77361A182A00004E6DDD /* Vote.m in Sources */,
 				47FD6B841A25230800F445D0 /* MorningViewController.m in Sources */,
+				47FED0E11A2D3AF20084C43C /* GameOverViewController.m in Sources */,
 				47FED0D01A2BC8610084C43C /* WolfAttackViewController.m in Sources */,
 				47B4C1031A13E25900D30338 /* PlayStateViewController.m in Sources */,
 				47FED0C71A2B76180084C43C /* BallotSecondRoundViewController.m in Sources */,

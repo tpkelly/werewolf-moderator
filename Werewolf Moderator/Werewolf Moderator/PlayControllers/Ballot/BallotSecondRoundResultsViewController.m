@@ -11,6 +11,7 @@
 #import "Ballot.h"
 #import "SingleGame.h"
 #import "GameState.h"
+#import "Game.h"
 #import "Player.h"
 #import "Role.h"
 #import "BallotSecondRoundViewController.h"
@@ -25,6 +26,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if ([SingleGame game].gameIsOver)
+    {
+        [self performSegueWithIdentifier:@"GameOver" sender:self];
+    }
+    
     // Do any additional setup after loading the view.
     self.actualVotes.text = [NSString stringWithFormat:@"%lu", (unsigned long)[self actualVoteCount]];
     self.expectedVotes.text = [NSString stringWithFormat:@"%lu", (unsigned long)[self expectedVoteCount]];

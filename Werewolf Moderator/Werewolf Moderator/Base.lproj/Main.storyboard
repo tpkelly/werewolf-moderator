@@ -1854,6 +1854,7 @@ Please acknowledge eachother"</string>
                         <outlet property="morningtime" destination="wHV-Kv-m0g" id="Mk2-X1-bau"/>
                         <outlet property="newsFromTheInn" destination="I7M-zM-ZGV" id="czQ-4k-VQC"/>
                         <segue destination="glr-Kf-2ET" kind="show" identifier="Ballot" id="5Rx-Fr-hDL"/>
+                        <segue destination="sqc-hK-a3s" kind="show" identifier="GameOver" id="cC0-Gm-98B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XxY-mc-G8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1942,6 +1943,56 @@ Please acknowledge eachother"</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAd-8B-uXJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2314" y="3216"/>
+        </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="JIB-rW-dIC">
+            <objects>
+                <viewController id="sqc-hK-a3s" customClass="GameOverViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cuV-gy-WNK"/>
+                        <viewControllerLayoutGuide type="bottom" id="DDb-7H-dQc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NJA-7O-lo6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVa-p1-eRU">
+                                <rect key="frame" x="182" y="28" width="237" height="57"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eJP-E6-N5w">
+                                <rect key="frame" x="46" y="185" width="254" height="316"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RHy-h1-I0l">
+                                <rect key="frame" x="300" y="185" width="254" height="316"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="qVa-p1-eRU" secondAttribute="centerX" id="7KR-7H-IcD"/>
+                            <constraint firstItem="qVa-p1-eRU" firstAttribute="top" secondItem="cuV-gy-WNK" secondAttribute="bottom" constant="8" id="BAT-AQ-Fmp"/>
+                            <constraint firstItem="eJP-E6-N5w" firstAttribute="leading" secondItem="NJA-7O-lo6" secondAttribute="leadingMargin" constant="30" id="Lwh-mB-VKF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RHy-h1-I0l" secondAttribute="trailing" constant="30" id="O9C-6W-czN"/>
+                            <constraint firstItem="DDb-7H-dQc" firstAttribute="top" secondItem="eJP-E6-N5w" secondAttribute="bottom" constant="50" id="VGR-Mb-ZU6"/>
+                            <constraint firstItem="eJP-E6-N5w" firstAttribute="bottom" secondItem="RHy-h1-I0l" secondAttribute="bottom" id="Zbi-Sr-1mP"/>
+                            <constraint firstItem="RHy-h1-I0l" firstAttribute="leading" secondItem="eJP-E6-N5w" secondAttribute="trailing" id="beM-TK-DKc"/>
+                            <constraint firstItem="eJP-E6-N5w" firstAttribute="top" secondItem="RHy-h1-I0l" secondAttribute="top" id="mC4-ot-AwV"/>
+                            <constraint firstItem="RHy-h1-I0l" firstAttribute="width" secondItem="eJP-E6-N5w" secondAttribute="width" id="snh-LV-JYh"/>
+                            <constraint firstItem="eJP-E6-N5w" firstAttribute="top" secondItem="qVa-p1-eRU" secondAttribute="bottom" constant="100" id="wON-zJ-rdy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="factionTable" destination="eJP-E6-N5w" id="jeS-7O-ydH"/>
+                        <outlet property="factionWinTable" destination="RHy-h1-I0l" id="73i-ns-jV2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eYd-si-HKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2877" y="3874"/>
         </scene>
         <!--Healer View Controller-->
         <scene sceneID="8Qp-zd-1I9">
@@ -2186,6 +2237,7 @@ Please acknowledge eachother"</string>
                         <outlet property="expectedVotes" destination="e9u-vp-NCL" id="zPY-fK-d1X"/>
                         <segue destination="MVs-Jt-WB6" kind="show" identifier="Redo" id="zJm-yM-FWg"/>
                         <segue destination="Rpa-WO-XyW" kind="show" identifier="Clairvoyant" id="cQS-uw-swt"/>
+                        <segue destination="sqc-hK-a3s" kind="show" identifier="GameOver" id="enR-50-5Xl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ahs-yk-cuX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2502,6 +2554,7 @@ Please acknowledge eachother"</string>
         <segue reference="COg-eH-uaz"/>
         <segue reference="iU4-zQ-jWI"/>
         <segue reference="5Rx-Fr-hDL"/>
+        <segue reference="cC0-Gm-98B"/>
         <segue reference="4c7-IS-ucO"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -26,6 +26,11 @@
     // Do any additional setup after loading the view.
     MorningNews *news = [[SingleGame game] transitionToMorning];
     
+    if ([SingleGame game].gameIsOver)
+    {
+        [self performSegueWithIdentifier:@"GameOver" sender:self];
+    }
+    
     //Set off a timer to count how long we've been in the morning state
     self.entryTime = [NSDate date];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
