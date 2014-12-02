@@ -189,4 +189,53 @@
     return news;
 }
 
+-(BOOL)gameIsOver
+{
+    NSArray *factionsInPlay = [_state.playersAlive valueForKeyPath:@"role.faction"];
+    NSSet *factionSet = [NSSet setWithArray:factionsInPlay];
+    
+    //Wolf win
+    if ([factionSet isEqualToSet:[NSSet setWithArray:@[@(WolvesFaction)]]])
+        return YES;
+    
+    //Vampire win
+    if ([factionSet isEqualToSet:[NSSet setWithArray:@[@(VampireFaction)]]])
+        return YES;
+
+    //Village wins if no shadows in play
+    return ![self shadowsInPlay];
+}
+
+-(BOOL)shadowsInPlay
+{
+    NSPredicate *shadowFilter = [NSPredicate predicateWithBlock:^BOOL(Player *evaluatedObject, NSDictionary *bindings) {
+        return evaluatedObject.role.isShadow;
+    }];
+    NSArray *shadowsInPlay = [_state.playersAlive filteredArrayUsingPredicate:shadowFilter];
+    
+    return shadowsInPlay.count > 0;
+}
+
+-(NSSet*)factionsWhichWon
+{
+    if (![self gameIsOver])
+    {
+        return [NSSet set];
+    }
+    
+    NSArray *factionsInPlay = [_state.playersAlive valueForKeyPath:@"role.faction"];
+    
+    //Include dead madman/jester
+    factionsInPlay = [factionsInPlay arrayByAddingObjectsFromArray:_state.winningFactions];
+    
+    //Include village if no shadows in play (and not already included)
+    if (![self shadowsInPlay])
+    {
+        factionsInPlay = [factionsInPlay arrayByAddingObject:@(VillageFaction)];
+    }
+    
+    //Remove duplicates and ignore ordering
+    return [NSSet setWithArray:factionsInPlay];
+}
+
 @end

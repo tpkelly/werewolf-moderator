@@ -18,6 +18,7 @@
 
 @property (nonatomic, readonly) BOOL isMystic;
 @property (nonatomic, readonly) BOOL isCorrupt;
+@property (nonatomic, readonly) BOOL isShadow;
 @property (nonatomic, readonly) Faction faction;
 @property (nonatomic, readonly) RoleType roleType;
 @end

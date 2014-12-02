@@ -647,4 +647,191 @@
     [self.testGame transitionToMorning];
 }
 
+#pragma mark - Game Over
+
+-(void)testThatGameIsNotOverWhenMultipleFactionsInPlay
+{
+    //Given:
+    Player *wolf = [[Player alloc] initWithName:@"Wolf" role:AlphaWolf];
+    Player *vampire = [[Player alloc] initWithName:@"Vampire" role:Vampire];
+    Player *villager = [[Player alloc] initWithName:@"Villager" role:Farmer];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[wolf, vampire, villager]] playersAlive];
+    
+    //Then:
+    XCTAssertFalse([self.testGame gameIsOver]);
+}
+
+-(void)testThatWolvesDoNotWinWithLoversInPlay
+{
+    //Given:
+    Player *wolf = [[Player alloc] initWithName:@"Wolf" role:AlphaWolf];
+    Player *angel = [[Player alloc] initWithName:@"Angel" role:GuardianAngel];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[wolf, angel]] playersAlive];
+    
+    //Then:
+    XCTAssertFalse([self.testGame gameIsOver]);
+}
+
+-(void)testThatWolvesWinIfOnlyWolvesInPlay
+{
+    //Given:
+    Player *alpha = [[Player alloc] initWithName:@"Wolf" role:AlphaWolf];
+    Player *pack = [[Player alloc] initWithName:@"Wolf" role:PackWolf];
+    Player *pup = [[Player alloc] initWithName:@"Wolf" role:WolfPup];
+    Player *defector = [[Player alloc] initWithName:@"Wolf" role:Defector];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[alpha, pack, pup, defector]] playersAlive];
+    
+    //Then:
+    XCTAssertTrue([self.testGame gameIsOver]);
+}
+
+-(void)testThatVampiresWinIfOnlyVampiresInPlay
+{
+    //Given:
+    Player *vampire = [[Player alloc] initWithName:@"Vamp" role:Vampire];
+    Player *igor = [[Player alloc] initWithName:@"Igor" role:Igor];
+    Player *minion = [[Player alloc] initWithName:@"Minion" role:Minion];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[vampire, igor, minion]] playersAlive];
+    
+    //Then:
+    XCTAssertTrue([self.testGame gameIsOver]);
+}
+
+-(void)testThatMinionsCanWinOnTheirOwn
+{
+    //Given:
+    Player *minion1 = [[Player alloc] initWithName:@"Minion" role:Minion];
+    Player *minion2 = [[Player alloc] initWithName:@"Minion" role:Minion];
+    Player *minion3 = [[Player alloc] initWithName:@"Minion" role:Minion];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[minion1, minion2, minion3]] playersAlive];
+    
+    //Then:
+    XCTAssertTrue([self.testGame gameIsOver]);
+}
+
+-(void)testThatVillageWinsWithNonShadowElementsOfOtherFactions
+{
+    //Given:
+    Player *villager = [[Player alloc] initWithName:@"Villager" role:Farmer];
+    Player *defector = [[Player alloc] initWithName:@"Defector" role:Defector];
+    Player *igor = [[Player alloc] initWithName:@"Igor" role:Igor];
+    Player *madman = [[Player alloc] initWithName:@"Madman" role:Madman];
+    Player *jester = [[Player alloc] initWithName:@"Jester" role:Jester];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[villager, defector, igor, madman, jester]] playersAlive];
+    
+    //Then:
+    XCTAssertTrue([self.testGame gameIsOver]);
+}
+
+-(void)testThatNobodyHasWonIfGameIsNotOver
+{
+    //Given:
+    Player *wolf = [[Player alloc] initWithName:@"Wolf" role:AlphaWolf];
+    Player *angel = [[Player alloc] initWithName:@"Angel" role:GuardianAngel];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[wolf, angel]] playersAlive];
+    [[[self.mockGameState stub] andReturn:@[@(JesterFaction)]] winningFactions];
+    
+    //Then:
+    XCTAssertEqualObjects([NSSet set], [self.testGame factionsWhichWon]);
+}
+
+-(void)testThatWerewolvesWonIfOnlyWerewolvesSurvived
+{
+    //Given:
+    Player *alpha = [[Player alloc] initWithName:@"Wolf" role:AlphaWolf];
+    Player *pack = [[Player alloc] initWithName:@"Wolf" role:PackWolf];
+    Player *pup = [[Player alloc] initWithName:@"Wolf" role:WolfPup];
+    Player *defector = [[Player alloc] initWithName:@"Wolf" role:Defector];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[alpha, pack, pup, defector]] playersAlive];
+    
+    //Then:
+    NSSet *expectedFactions = [NSSet setWithObject:@(WolvesFaction)];
+    XCTAssertEqualObjects(expectedFactions, [self.testGame factionsWhichWon]);
+}
+
+-(void)testThatVampiresWonIfOnlyVampiresSurvived
+{
+    //Given:
+    Player *vampire = [[Player alloc] initWithName:@"Vamp" role:Vampire];
+    Player *igor = [[Player alloc] initWithName:@"Igor" role:Igor];
+    Player *minion = [[Player alloc] initWithName:@"Minion" role:Minion];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[vampire, igor, minion]] playersAlive];
+    
+    //Then:
+    NSSet *expectedFactions = [NSSet setWithObject:@(VampireFaction)];
+    XCTAssertEqualObjects(expectedFactions, [self.testGame factionsWhichWon]);
+}
+
+-(void)testThatVillagersWinIfOnlyVillagersRemain
+{
+    //Given:
+    Player *villager = [[Player alloc] initWithName:@"Villager" role:Farmer];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[villager]] playersAlive];
+    
+    //Then:
+    NSSet *expectedFactions = [NSSet setWithObject:@(VillageFaction)];
+    XCTAssertEqualObjects(expectedFactions, [self.testGame factionsWhichWon]);
+}
+
+-(void)testThatMadmanAndJesterStillWinWithTheVillage
+{
+    //Given:
+    Player *madman = [[Player alloc] initWithName:@"Madman" role:Madman];
+    Player *jester = [[Player alloc] initWithName:@"Jester" role:Jester];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[madman, jester]] playersAlive];
+    
+    //Then:
+    NSSet *expectedFactions = [NSSet setWithArray:@[@(MadmanFaction), @(JesterFaction), @(VillageFaction)]];
+    XCTAssertEqualObjects(expectedFactions, [self.testGame factionsWhichWon]);
+}
+
+-(void)testThatLoversWinWithTheVillage
+{
+    //Given:
+    Player *villager = [[Player alloc] initWithName:@"Villager" role:Juliet];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[villager]] playersAlive];
+    
+    //Then:
+    NSSet *expectedFactions = [NSSet setWithArray:@[@(VillageFaction), @(LoverFaction)]];
+    XCTAssertEqualObjects(expectedFactions, [self.testGame factionsWhichWon]);
+}
+
+-(void)testThatMadmanAndJesterWinIfPreviouslyWon
+{
+    //Given:
+    Player *villager = [[Player alloc] initWithName:@"Villager" role:Juliet];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[villager]] playersAlive];
+    [[[self.mockGameState stub] andReturn:@[@(MadmanFaction), @(JesterFaction)]] winningFactions];
+    
+    //Then:
+    NSSet *expectedFactions = [NSSet setWithArray:@[@(MadmanFaction), @(JesterFaction), @(VillageFaction), @(LoverFaction)]];
+    XCTAssertEqualObjects(expectedFactions, [self.testGame factionsWhichWon]);
+}
+
 @end

@@ -68,10 +68,10 @@
         case Seducer:
         case Vampire:
         case Minion:
-            return true;
+            return YES;
             
         default:
-            return false;
+            return NO;
     }
 }
 
@@ -84,10 +84,26 @@
         case Wizard:
         case Clairvoyant:
         case Medium:
-            return true;
+            return YES;
             
         default:
-            return false;
+            return NO;
+    }
+}
+
+-(BOOL)isShadow
+{
+    switch (self.roleType)
+    {
+        case AlphaWolf:
+        case PackWolf:
+        case WolfPup:
+        case Vampire:
+        case Minion:
+            return YES;
+            
+        default:
+            return NO;
     }
 }
 

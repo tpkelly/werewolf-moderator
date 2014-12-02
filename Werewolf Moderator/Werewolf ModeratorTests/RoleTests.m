@@ -27,6 +27,7 @@
     //Then
     XCTAssertTrue(alphaWolf.isCorrupt);
     XCTAssertFalse(alphaWolf.isMystic);
+    XCTAssertTrue(alphaWolf.isShadow);
     XCTAssertEqual(WolvesFaction, alphaWolf.faction);
 }
 
@@ -38,6 +39,7 @@
     //Then
     XCTAssertTrue(packWolf.isCorrupt);
     XCTAssertFalse(packWolf.isMystic);
+    XCTAssertTrue(packWolf.isShadow);
     XCTAssertEqual(WolvesFaction, packWolf.faction);
 }
 
@@ -49,6 +51,7 @@
     //Then
     XCTAssertTrue(wolfPup.isCorrupt);
     XCTAssertFalse(wolfPup.isMystic);
+    XCTAssertTrue(wolfPup.isShadow);
     XCTAssertEqual(WolvesFaction, wolfPup.faction);
 }
 
@@ -60,6 +63,7 @@
     //Then
     XCTAssertFalse(defector.isCorrupt);
     XCTAssertFalse(defector.isMystic);
+    XCTAssertFalse(defector.isShadow);
     XCTAssertEqual(WolvesFaction, defector.faction);
 }
 
@@ -73,6 +77,7 @@
     //Then
     XCTAssertTrue(vampire.isCorrupt);
     XCTAssertFalse(vampire.isMystic);
+    XCTAssertTrue(vampire.isShadow);
     XCTAssertEqual(VampireFaction, vampire.faction);
 }
 
@@ -84,6 +89,7 @@
     //Then
     XCTAssertTrue(minion.isCorrupt);
     XCTAssertFalse(minion.isMystic);
+    XCTAssertTrue(minion.isShadow);
     XCTAssertEqual(VampireFaction, minion.faction);
 }
 
@@ -95,6 +101,7 @@
     //Then
     XCTAssertFalse(igor.isCorrupt);
     XCTAssertFalse(igor.isMystic);
+    XCTAssertFalse(igor.isShadow);
     XCTAssertEqual(VampireFaction, igor.faction);
 }
 
@@ -108,6 +115,7 @@
     //Then
     XCTAssertFalse(juliet.isCorrupt);
     XCTAssertFalse(juliet.isMystic);
+    XCTAssertFalse(juliet.isShadow);
     XCTAssertEqual(LoverFaction, juliet.faction);
 }
 
@@ -119,6 +127,7 @@
     //Then
     XCTAssertFalse(guardianAngel.isCorrupt);
     XCTAssertFalse(guardianAngel.isMystic);
+    XCTAssertFalse(guardianAngel.isShadow);
     XCTAssertEqual(LoverFaction, guardianAngel.faction);
 }
 
@@ -132,6 +141,7 @@
     //Then
     XCTAssertFalse(madman.isCorrupt);
     XCTAssertFalse(madman.isMystic);
+    XCTAssertFalse(madman.isShadow);
     XCTAssertEqual(MadmanFaction, madman.faction);
 }
 
@@ -143,6 +153,7 @@
     //Then
     XCTAssertFalse(jester.isCorrupt);
     XCTAssertFalse(jester.isMystic);
+    XCTAssertFalse(jester.isShadow);
     XCTAssertEqual(JesterFaction, jester.faction);
 }
 
@@ -157,6 +168,7 @@
     //Then
     XCTAssertFalse(clairvoyant.isCorrupt);
     XCTAssertTrue(clairvoyant.isMystic);
+    XCTAssertFalse(clairvoyant.isShadow);
     XCTAssertEqual(VillageFaction, clairvoyant.faction);
 }
 
@@ -168,6 +180,7 @@
     //Then
     XCTAssertFalse(wizard.isCorrupt);
     XCTAssertTrue(wizard.isMystic);
+    XCTAssertFalse(wizard.isShadow);
     XCTAssertEqual(VillageFaction, wizard.faction);
 }
 
@@ -179,6 +192,7 @@
     //Then
     XCTAssertFalse(medium.isCorrupt);
     XCTAssertTrue(medium.isMystic);
+    XCTAssertFalse(medium.isShadow);
     XCTAssertEqual(VillageFaction, medium.faction);
 }
 
@@ -190,6 +204,7 @@
     //Then
     XCTAssertFalse(witch.isCorrupt);
     XCTAssertTrue(witch.isMystic);
+    XCTAssertFalse(witch.isShadow);
     XCTAssertEqual(VillageFaction, witch.faction);
 }
 
@@ -201,6 +216,7 @@
     //Then
     XCTAssertFalse(healer.isCorrupt);
     XCTAssertTrue(healer.isMystic);
+    XCTAssertFalse(healer.isShadow);
     XCTAssertEqual(VillageFaction, healer.faction);
 }
 
@@ -212,6 +228,7 @@
     //Then
     XCTAssertFalse(hunter.isCorrupt);
     XCTAssertFalse(hunter.isMystic);
+    XCTAssertFalse(hunter.isShadow);
     XCTAssertEqual(VillageFaction, hunter.faction);
 }
 
@@ -223,6 +240,7 @@
     //Then
     XCTAssertFalse(hermit.isCorrupt);
     XCTAssertFalse(hermit.isMystic);
+    XCTAssertFalse(hermit.isShadow);
     XCTAssertEqual(VillageFaction, hermit.faction);
 }
 
@@ -234,6 +252,7 @@
     //Then
     XCTAssertFalse(bard.isCorrupt);
     XCTAssertFalse(bard.isMystic);
+    XCTAssertFalse(bard.isShadow);
     XCTAssertEqual(VillageFaction, bard.faction);
 }
 
@@ -245,6 +264,7 @@
     //Then
     XCTAssertFalse(innkeeper.isCorrupt);
     XCTAssertFalse(innkeeper.isMystic);
+    XCTAssertFalse(innkeeper.isShadow);
     XCTAssertEqual(VillageFaction, innkeeper.faction);
 }
 
@@ -256,6 +276,7 @@
     //Then
     XCTAssertFalse(monk.isCorrupt);
     XCTAssertFalse(monk.isMystic);
+    XCTAssertFalse(monk.isShadow);
     XCTAssertEqual(VillageFaction, monk.faction);
 }
 
@@ -267,6 +288,7 @@
     //Then
     XCTAssertFalse(priest.isCorrupt);
     XCTAssertFalse(priest.isMystic);
+    XCTAssertFalse(priest.isShadow);
     XCTAssertEqual(VillageFaction, priest.faction);
 }
 
@@ -278,6 +300,7 @@
     //Then
     XCTAssertTrue(sinner.isCorrupt);
     XCTAssertFalse(sinner.isMystic);
+    XCTAssertFalse(sinner.isShadow);
     XCTAssertEqual(VillageFaction, sinner.faction);
 }
 
@@ -289,6 +312,7 @@
     //Then
     XCTAssertTrue(seducer.isCorrupt);
     XCTAssertFalse(seducer.isMystic);
+    XCTAssertFalse(seducer.isShadow);
     XCTAssertEqual(VillageFaction, seducer.faction);
 }
 
@@ -300,6 +324,7 @@
     //Then
     XCTAssertFalse(farmer.isCorrupt);
     XCTAssertFalse(farmer.isMystic);
+    XCTAssertFalse(farmer.isShadow);
     XCTAssertEqual(VillageFaction, farmer.faction);
 }
 

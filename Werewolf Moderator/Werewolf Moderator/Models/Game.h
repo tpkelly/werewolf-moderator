@@ -34,5 +34,7 @@
 -(BOOL)wolfAttackPlayer:(Player*)player;
 
 -(MorningNews*)transitionToMorning;
+-(BOOL)gameIsOver;
+-(NSSet*)factionsWhichWon;
 
 @end
