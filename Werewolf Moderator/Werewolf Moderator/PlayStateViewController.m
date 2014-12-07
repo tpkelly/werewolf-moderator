@@ -12,7 +12,11 @@
 #import "Player.h"
 #import "Role.h"
 
-@interface PlayStateViewController () <UITableViewDataSource, UIAlertViewDelegate>
+@interface PlayStateViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+
+@property (nonatomic, strong) UIAlertView *resetAlert;
+@property (nonatomic, strong) UIAlertView *alterPlayerAlert;
+@property (nonatomic, strong) Player *selectedPlayer;
 
 @end
 
@@ -21,8 +25,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.playerTable.delegate = self;
     self.playerTable.dataSource = self;
     self.playerTable.backgroundColor = [UIColor blackColor];
+    
+    self.resetAlert = [[UIAlertView alloc] initWithTitle:@"Reset Game" message:@"Are you sure you want to reset the game?" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:@"Confirm",nil];
+    self.alterPlayerAlert = [[UIAlertView alloc] initWithTitle:@"Alter Player" message:@"Set the new player state" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:@"Alive", @"Destined to Die", @"Dead",nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -34,20 +42,58 @@
 
 -(void)resetGame:(id)sender
 {
-    UIAlertView *yourAlert = [[UIAlertView alloc] initWithTitle:@"Reset Game" message:@"Are you sure you want to reset the game?" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:@"Confirm",nil];
-    [yourAlert show];
+
+    [self.resetAlert show];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex != 1)
+    NSString *buttonTitle = [alertView buttonTitleAtIndex:buttonIndex];
+    if ([buttonTitle isEqualToString:@"Dismiss"])
         return;
     
-    //Definitely going to reset the game
-    [SingleGame reset];
+    if (alertView == self.resetAlert)
+    {
+        //Definitely going to reset the game
+        [SingleGame reset];
+        
+        UIViewController *initial = [self.storyboard instantiateInitialViewController];
+        [self presentViewController:initial animated:NO completion:nil];
+    }
+    else if (alertView == self.alterPlayerAlert)
+    {
+        if ([buttonTitle isEqualToString:@"Alive"])
+        {
+            self.selectedPlayer.alive = YES;
+            [self player:self.selectedPlayer destinedToDie:NO];
+        }
+        else if ([buttonTitle isEqualToString:@"Destined to Die"])
+        {
+            self.selectedPlayer.alive = YES;
+            [self player:self.selectedPlayer destinedToDie:YES];
+        }
+        else if ([buttonTitle isEqualToString:@"Dead"]) {
+            self.selectedPlayer.alive = NO;
+            [self player:self.selectedPlayer destinedToDie:NO];
+        }
     
-    UIViewController *initial = [self.storyboard instantiateInitialViewController];
-    [self presentViewController:initial animated:NO completion:nil];
+        self.selectedPlayer = nil;
+        [self.playerTable reloadData];
+    }
+}
+
+-(void)player:(Player*)player destinedToDie:(BOOL)destinedToDie
+{
+    NSMutableArray *destined = [[SingleGame state].destinedToDie mutableCopy];
+    if (destinedToDie)
+    {
+        [destined addObject:self.selectedPlayer];
+    }
+    else
+    {
+        [destined removeObject:self.selectedPlayer];
+    }
+    [SingleGame state].destinedToDie = [destined copy];
 }
 
 #pragma mark - UITableView methods
@@ -76,6 +122,14 @@
     cell.textLabel.textColor = [self playerColor:player];
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedPlayer = [[SingleGame state].allPlayers objectAtIndex:indexPath.row];
+    [self.alterPlayerAlert show];
+    //Remove the highlighting
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 -(UIColor*)playerColor:(Player*)player
