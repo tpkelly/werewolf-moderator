@@ -319,6 +319,19 @@
     XCTAssertEqualObjects(expectedBallot, ballot);
 }
 
+-(void)testThatVotesForSeducerAreNotDirectlyAlteredInFirstRound
+{
+    //Given:
+    NSArray *votes = @[[Vote forPlayer:self.seducer voteCount:5]];
+    
+    //When
+    [self.testBallot firstRoundResults:votes];
+    
+    //Then
+    Vote *firstVote = [votes firstObject];
+    XCTAssertEqual(5, firstVote.voteCount);
+}
+
 -(void)testThatSeducerVotesAreReducedInSecondRound
 {
     //Given:
@@ -343,6 +356,19 @@
     
     //Then
     XCTAssertEqualObjects(self.seducer, burnedPlayer);
+}
+
+-(void)testThatVotesForSeducerAreNotDirectlyAlteredInSecondRound
+{
+    //Given:
+    NSArray *votes = @[[Vote forPlayer:self.seducer voteCount:5]];
+    
+    //When
+    [self.testBallot secondRoundResults:votes];
+    
+    //Then
+    Vote *firstVote = [votes firstObject];
+    XCTAssertEqual(5, firstVote.voteCount);
 }
 
 #pragma mark - Wolf pup

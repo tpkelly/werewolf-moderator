@@ -139,7 +139,8 @@
     
     Vote *seducerVote = [mutableVotes objectAtIndex:seducerIndex];
     //Halved, rounded up
-    seducerVote.voteCount = (seducerVote.voteCount+1)/2;
+    Vote *adjustedSeducerVote = [Vote forPlayer:seducerVote.player voteCount:(seducerVote.voteCount+1)/2];
+    [mutableVotes replaceObjectAtIndex:seducerIndex withObject:adjustedSeducerVote];
     
     // Return as immutable
     return [mutableVotes copy];
