@@ -22,6 +22,7 @@
 		47B4C1331A15514A00D30338 /* GameStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C1321A15514A00D30338 /* GameStateTests.m */; };
 		47B4C1361A16CC0800D30338 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C1351A16CC0800D30338 /* Game.m */; };
 		47B4C1381A16DE8700D30338 /* GameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C1371A16DE8700D30338 /* GameTests.m */; };
+		47C0376B1A3766E0002DEA48 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C0376A1A3766E0002DEA48 /* TabViewController.m */; };
 		47EF772E1A17CA48004E6DDD /* MorningNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EF772D1A17CA48004E6DDD /* MorningNews.m */; };
 		47EF77311A17F517004E6DDD /* Ballot.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EF77301A17F517004E6DDD /* Ballot.m */; };
 		47EF77331A180BF0004E6DDD /* BallotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EF77321A180BF0004E6DDD /* BallotTests.m */; };
@@ -103,6 +104,8 @@
 		47B4C1341A16CC0800D30338 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		47B4C1351A16CC0800D30338 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		47B4C1371A16DE8700D30338 /* GameTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTests.m; sourceTree = "<group>"; };
+		47C037691A3766E0002DEA48 /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
+		47C0376A1A3766E0002DEA48 /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
 		47EF772C1A17CA48004E6DDD /* MorningNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorningNews.h; sourceTree = "<group>"; };
 		47EF772D1A17CA48004E6DDD /* MorningNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorningNews.m; sourceTree = "<group>"; };
 		47EF772F1A17F517004E6DDD /* Ballot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ballot.h; sourceTree = "<group>"; };
@@ -227,6 +230,8 @@
 				47FAD2091A1E87E3004FB2F8 /* SingleGame.m */,
 				47FD6B421A20D9E500F445D0 /* PlayViewController.h */,
 				47FD6B431A20D9E500F445D0 /* PlayViewController.m */,
+				47C037691A3766E0002DEA48 /* TabViewController.h */,
+				47C0376A1A3766E0002DEA48 /* TabViewController.m */,
 			);
 			path = "Werewolf Moderator";
 			sourceTree = "<group>";
@@ -511,6 +516,7 @@
 				47EF772E1A17CA48004E6DDD /* MorningNews.m in Sources */,
 				47FED0CA1A2B7EA90084C43C /* BallotSecondRoundResultsViewController.m in Sources */,
 				47FD6B7A1A251E1C00F445D0 /* WolvesSetupViewController.m in Sources */,
+				47C0376B1A3766E0002DEA48 /* TabViewController.m in Sources */,
 				47FD6B631A2283FC00F445D0 /* MonkPrepViewController.m in Sources */,
 				47FD6B591A220F8100F445D0 /* MediumViewController.m in Sources */,
 				47FED0DE1A2D066A0084C43C /* WolfDoubleAttackViewController.m in Sources */,
