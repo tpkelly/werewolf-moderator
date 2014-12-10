@@ -13,8 +13,10 @@
 @property (nonatomic, strong) NSArray *playersOnBallot;
 
 @property (strong, nonatomic) IBOutlet UILabel *playerVoteLabel;
-@property (strong, nonatomic) IBOutlet UITextField *playerVotes;
+@property (strong, nonatomic) IBOutlet UILabel *voteCountLabel;
+@property (strong, nonatomic) IBOutlet UIStepper *voteStepper;
 
-- (IBAction)submitVotes:(id)sender;
+- (IBAction)voteStep;
+- (IBAction)submitVotes;
 
 @end

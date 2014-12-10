@@ -18,6 +18,8 @@
 @property (nonatomic, strong) NSNumberFormatter *formatter;
 @property (nonatomic, strong) Player *playerOnVote;
 
+@property (nonatomic, assign) NSInteger currentVoteCount;
+
 @end
 
 @implementation BallotSecondRoundViewController
@@ -32,20 +34,18 @@
     [self.formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     
     //Get the ball rolling
-    [self submitVotes:nil];
-    
-    //Allow "tap outside to dismiss keyboard"
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    tap.cancelsTouchesInView = NO;
-    [self.view addGestureRecognizer:tap];
+    [self submitVotes];
 }
 
-- (IBAction)submitVotes:(id)sender {
+- (IBAction)voteStep {
+    self.currentVoteCount = self.voteStepper.value;
+    self.voteCountLabel.text = [NSString stringWithFormat:@"%ld", self.currentVoteCount];
+}
+
+- (IBAction)submitVotes {
     if (self.playerOnVote)
     {
-        NSNumber *voteCount = [self.formatter numberFromString:self.playerVotes.text];
-        voteCount = (voteCount) ? voteCount : @0;
-        Vote *vote = [Vote forPlayer:self.playerOnVote voteCount:[voteCount integerValue]];
+        Vote *vote = [Vote forPlayer:self.playerOnVote voteCount:self.currentVoteCount];
         [self.votesForPlayers addObject:vote];
     }
     
@@ -59,12 +59,8 @@
     [self.playersWithoutVotes removeObject:self.playerOnVote];
     
     self.playerVoteLabel.text = [NSString stringWithFormat:@"Votes for %@", self.playerOnVote.name];
-    self.playerVotes.text = @"";
-}
-
--(void)dismissKeyboard
-{
-    [self.playerVotes resignFirstResponder];
+    self.voteStepper.value = 0;
+    [self voteStep];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

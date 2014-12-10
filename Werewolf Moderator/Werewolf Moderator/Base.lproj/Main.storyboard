@@ -578,7 +578,7 @@ Tap line in table to select player
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Drh-rY-9oV">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Drh-rY-9oV">
                                 <rect key="frame" x="150" y="243" width="300" height="300"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;I will now tell you if that player has mystical powers&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6V8-cP-jnk">
@@ -591,13 +591,13 @@ Tap line in table to select player
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDp-ek-W3k">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IDp-ek-W3k">
                                         <rect key="frame" x="63" y="63" width="175" height="175"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="IDp-ek-W3k" secondAttribute="height" multiplier="1:1" id="ffb-hf-xfI"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3al-m4-KEW">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3al-m4-KEW">
                                         <rect key="frame" x="63" y="262" width="175" height="38"/>
                                         <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -639,7 +639,7 @@ Tap line in table to select player
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fUL-ag-VqB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fUL-ag-VqB">
                                 <rect key="frame" x="150" y="243" width="300" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -979,7 +979,7 @@ Tap line in table to select player
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xDP-gy-Tsf">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDP-gy-Tsf">
                                 <rect key="frame" x="150" y="201" width="300" height="342"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="&quot;Wolves close your eyes. If I tap you on the knee, you are destined to die. Please raise your hand&quot;" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1Pa-UM-eBu">
@@ -992,13 +992,13 @@ Tap line in table to select player
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rzo-wC-zdj">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rzo-wC-zdj">
                                         <rect key="frame" x="70" y="136" width="160" height="160"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="rzo-wC-zdj" secondAttribute="height" multiplier="1:1" id="yZG-cd-orU"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcz-KC-dJr">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcz-KC-dJr">
                                         <rect key="frame" x="70" y="304" width="160" height="38"/>
                                         <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1043,7 +1043,7 @@ Tap line in table to select player
                                     <constraint firstAttribute="width" constant="300" id="zMI-as-18m"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gzA-h1-Zkj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gzA-h1-Zkj">
                                 <rect key="frame" x="150" y="201" width="300" height="342"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1091,7 +1091,7 @@ Tap line in table to select player
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="26F-uR-w7V">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="26F-uR-w7V">
                                 <rect key="frame" x="150" y="181" width="300" height="362"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="&quot;If I tap you on the knee, please wake up and acknowledge your Vampire master&quot;" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SO9-mk-TOt">
@@ -1104,13 +1104,13 @@ Tap line in table to select player
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gcj-93-vCQ">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gcj-93-vCQ">
                                         <rect key="frame" x="70" y="156" width="160" height="160"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Gcj-93-vCQ" secondAttribute="height" multiplier="1:1" id="xjd-mp-ABU"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRl-J7-vc8">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRl-J7-vc8">
                                         <rect key="frame" x="70" y="324" width="160" height="38"/>
                                         <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1162,7 +1162,7 @@ Tap line in table to select player
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LOG-74-4Ds">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LOG-74-4Ds">
                                 <rect key="frame" x="150" y="181" width="300" height="362"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1421,7 +1421,7 @@ Will the priest please wake up. I will now tell you if the Seducer is in play"</
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuI-HK-m0Q">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuI-HK-m0Q">
                                 <rect key="frame" x="213" y="505" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1451,7 +1451,7 @@ Will the priest please wake up. I will now tell you if the Seducer is in play"</
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oLA-OG-VCg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oLA-OG-VCg">
                                 <rect key="frame" x="150" y="174" width="300" height="369"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1891,7 +1891,7 @@ Please acknowledge eachother"</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="submitVotes:" destination="glr-Kf-2ET" eventType="touchUpInside" id="TRa-1Z-Uhy"/>
+                                    <action selector="submitVotes" destination="glr-Kf-2ET" eventType="touchUpInside" id="FM5-iV-Q5R"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votes for Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqA-2n-VmB">
@@ -1903,14 +1903,6 @@ Please acknowledge eachother"</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aef-DX-GfR">
-                                <rect key="frame" x="250" y="201" width="100" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="QQN-IU-6KU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initial Ballot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmv-OB-BEy">
                                 <rect key="frame" x="184" y="8" width="232" height="55"/>
                                 <constraints>
@@ -1920,23 +1912,38 @@ Please acknowledge eachother"</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="1Oa-e8-Gco">
+                                <rect key="frame" x="253" y="266" width="94" height="29"/>
+                                <connections>
+                                    <action selector="voteStep" destination="glr-Kf-2ET" eventType="valueChanged" id="nSS-wm-fuv"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6p-ZJ-Rev">
+                                <rect key="frame" x="287" y="201" width="27" height="57"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="1Oa-e8-Gco" secondAttribute="centerX" id="7cc-l4-2z7"/>
+                            <constraint firstAttribute="centerX" secondItem="E6p-ZJ-Rev" secondAttribute="centerX" id="DKq-5s-dGP"/>
                             <constraint firstItem="Qmv-OB-BEy" firstAttribute="top" secondItem="gEI-0C-XhJ" secondAttribute="topMargin" constant="8" id="DtN-2O-ROw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dqA-2n-VmB" secondAttribute="trailing" constant="8" id="MyC-yA-MOR"/>
                             <constraint firstItem="sVE-tU-fwb" firstAttribute="top" secondItem="IIA-ZP-gJ4" secondAttribute="bottom" constant="8" id="Rh4-M4-1fj"/>
                             <constraint firstAttribute="centerX" secondItem="IIA-ZP-gJ4" secondAttribute="centerX" id="Udk-QL-n7I"/>
-                            <constraint firstAttribute="centerX" secondItem="aef-DX-GfR" secondAttribute="centerX" id="YZ2-BM-Z3J"/>
+                            <constraint firstItem="1Oa-e8-Gco" firstAttribute="top" secondItem="E6p-ZJ-Rev" secondAttribute="bottom" constant="8" id="Wai-nB-O0N"/>
                             <constraint firstAttribute="centerX" secondItem="Qmv-OB-BEy" secondAttribute="centerX" id="bpW-eP-58S"/>
-                            <constraint firstItem="aef-DX-GfR" firstAttribute="top" secondItem="dqA-2n-VmB" secondAttribute="bottom" constant="8" id="k8V-4Z-DIQ"/>
+                            <constraint firstItem="E6p-ZJ-Rev" firstAttribute="top" secondItem="dqA-2n-VmB" secondAttribute="bottom" constant="8" id="h0u-gZ-QIU"/>
                             <constraint firstItem="dqA-2n-VmB" firstAttribute="leading" secondItem="gEI-0C-XhJ" secondAttribute="leadingMargin" constant="8" id="kCJ-PR-n8y"/>
                             <constraint firstItem="dqA-2n-VmB" firstAttribute="top" secondItem="Qmv-OB-BEy" secondAttribute="bottom" constant="100" id="r1a-Rd-Mph"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="playerVoteLabel" destination="dqA-2n-VmB" id="aZb-Mj-mkB"/>
-                        <outlet property="playerVotes" destination="aef-DX-GfR" id="Vta-hE-uA9"/>
+                        <outlet property="voteCountLabel" destination="E6p-ZJ-Rev" id="ECr-ag-JQY"/>
+                        <outlet property="voteStepper" destination="1Oa-e8-Gco" id="Lte-KI-vS8"/>
                         <segue destination="5go-vW-ZN3" kind="show" identifier="FirstRound" id="mhk-vv-tGH"/>
                     </connections>
                 </viewController>
@@ -2274,7 +2281,7 @@ Please acknowledge eachother"</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="submitVotes:" destination="MVs-Jt-WB6" eventType="touchUpInside" id="X5l-hq-wAX"/>
+                                    <action selector="submitVotes" destination="MVs-Jt-WB6" eventType="touchUpInside" id="BfD-L3-6Nk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votes for Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBq-PN-Woy">
@@ -2286,14 +2293,6 @@ Please acknowledge eachother"</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zP3-tc-G5y">
-                                <rect key="frame" x="250" y="221" width="100" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="noI-Y3-LCi"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Ballot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ID-iz-IU6">
                                 <rect key="frame" x="188" y="28" width="224" height="55"/>
                                 <constraints>
@@ -2303,23 +2302,38 @@ Please acknowledge eachother"</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="4o2-ak-yHU">
+                                <rect key="frame" x="253" y="286" width="94" height="29"/>
+                                <connections>
+                                    <action selector="voteStep" destination="MVs-Jt-WB6" eventType="valueChanged" id="RgC-oZ-Lvt"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3U-LE-lSs">
+                                <rect key="frame" x="287" y="221" width="27" height="57"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aBq-PN-Woy" firstAttribute="top" secondItem="4ID-iz-IU6" secondAttribute="bottom" constant="100" id="0F2-FT-xcu"/>
+                            <constraint firstAttribute="centerX" secondItem="4o2-ak-yHU" secondAttribute="centerX" id="14X-YP-pmk"/>
                             <constraint firstAttribute="centerX" secondItem="Ejk-Is-VnB" secondAttribute="centerX" id="HbW-Gt-iyX"/>
                             <constraint firstItem="aBq-PN-Woy" firstAttribute="top" secondItem="4ID-iz-IU6" secondAttribute="bottom" constant="100" id="K5R-MP-Euk"/>
-                            <constraint firstItem="zP3-tc-G5y" firstAttribute="top" secondItem="aBq-PN-Woy" secondAttribute="bottom" constant="8" id="Uaq-Xj-xEs"/>
                             <constraint firstAttribute="centerX" secondItem="aBq-PN-Woy" secondAttribute="centerX" id="WdE-2F-INH"/>
+                            <constraint firstItem="k3U-LE-lSs" firstAttribute="top" secondItem="aBq-PN-Woy" secondAttribute="bottom" constant="8" id="cVR-eJ-IYu"/>
+                            <constraint firstAttribute="centerX" secondItem="k3U-LE-lSs" secondAttribute="centerX" id="cgf-JH-Ke2"/>
                             <constraint firstItem="4ID-iz-IU6" firstAttribute="top" secondItem="i0A-r8-8BU" secondAttribute="bottom" constant="8" id="f4T-gl-opX"/>
+                            <constraint firstItem="4o2-ak-yHU" firstAttribute="top" secondItem="k3U-LE-lSs" secondAttribute="bottom" constant="8" id="fEE-jk-DQA"/>
                             <constraint firstItem="I3k-0c-A6E" firstAttribute="top" secondItem="Ejk-Is-VnB" secondAttribute="bottom" constant="8" id="wSc-P8-s8G"/>
                             <constraint firstAttribute="centerX" secondItem="4ID-iz-IU6" secondAttribute="centerX" id="wjt-za-p1Y"/>
-                            <constraint firstAttribute="centerX" secondItem="zP3-tc-G5y" secondAttribute="centerX" id="xj9-bG-Zcw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="playerVoteLabel" destination="aBq-PN-Woy" id="9TJ-N9-4es"/>
-                        <outlet property="playerVotes" destination="zP3-tc-G5y" id="HFL-Da-dDK"/>
+                        <outlet property="voteCountLabel" destination="k3U-LE-lSs" id="8ss-oO-0Af"/>
+                        <outlet property="voteStepper" destination="4o2-ak-yHU" id="UO5-3m-vma"/>
                         <segue destination="6QH-fy-0OB" kind="show" identifier="Results" id="VnR-Yl-Eb1"/>
                     </connections>
                 </viewController>
@@ -2549,12 +2563,12 @@ Please acknowledge eachother"</string>
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="b9F-be-3HY"/>
         <segue reference="jh8-2z-7i3"/>
-        <segue reference="cQS-uw-swt"/>
-        <segue reference="4c7-IS-ucO"/>
-        <segue reference="5Rx-Fr-hDL"/>
+        <segue reference="COg-eH-uaz"/>
         <segue reference="iU4-zQ-jWI"/>
         <segue reference="cC0-Gm-98B"/>
-        <segue reference="COg-eH-uaz"/>
+        <segue reference="5Rx-Fr-hDL"/>
+        <segue reference="4c7-IS-ucO"/>
     </inferredMetricsTieBreakers>
 </document>
