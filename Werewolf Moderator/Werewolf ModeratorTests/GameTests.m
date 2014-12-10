@@ -391,6 +391,27 @@
     XCTAssertTrue(attackSucceeded);
 }
 
+-(void)testThatWolfAttackOnGuardedRomeoOnlyKillsAngelAndJuliet
+{
+    //Given:
+    Player *guardedRomeo = [[Player alloc] initWithName:@"Romeo" role:Farmer];
+    Player *angel = [[Player alloc] initWithName:@"Angel" role:GuardianAngel];
+    Player *juliet = [[Player alloc] initWithName:@"Juliet" role:Juliet];
+    
+    //Expect
+    [[[self.mockGameState stub] andReturn:guardedRomeo] guardedPlayer];
+    [[[self.mockGameState stub] andReturn:guardedRomeo] romeoPlayer];
+    [[[self.mockGameState stub] andReturn:angel] playerWithRole:GuardianAngel inPlayerSet:OCMOCK_ANY];
+    [[[self.mockGameState stub] andReturn:juliet] playerWithRole:Juliet inPlayerSet:OCMOCK_ANY];
+    [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
+    [[self.mockGameState expect] setDestinedToDie:@[angel, juliet]];
+    
+    // When
+    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:juliet];
+    
+    // Then
+    XCTAssertTrue(attackSucceeded);
+}
 
 -(void)testThatWolfAttackOnVampireKillsIgorInstead
 {

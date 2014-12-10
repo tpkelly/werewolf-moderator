@@ -83,8 +83,8 @@
     }
     
     Player *playerToBurn = [mostVotedPlayers firstObject];
+    Player *destinedPlayer;
     
-    // Cancel next ballot if jester is burned
     if (playerToBurn == self.state.guardedPlayer)
     {
         Player *guardianAngel = [self.state playerWithRole:GuardianAngel inPlayerSet:self.state.playersAlive];
@@ -101,6 +101,7 @@
         }
     }
     
+    // Cancel next ballot if jester is burned
     if (playerToBurn.role.roleType == Jester)
     {
         self.state.jesterBurnedLastNight = YES;
@@ -108,7 +109,13 @@
     }
     else if (playerToBurn.role.roleType == Juliet)
     {
-        self.state.destinedToDie = [self.state.destinedToDie arrayByAddingObject:self.state.romeoPlayer];
+        destinedPlayer = self.state.romeoPlayer;
+
+        if (self.state.romeoPlayer == self.state.guardedPlayer)
+        {
+            Player *guardianAngel = [self.state playerWithRole:GuardianAngel inPlayerSet:self.state.playersAlive];
+            destinedPlayer = (guardianAngel) ? guardianAngel : destinedPlayer;
+        }
     }
     else if (playerToBurn.role.roleType == WolfPup)
     {
@@ -122,6 +129,11 @@
     
     // No hope left, kill the player!
     playerToBurn.alive = NO;
+    
+    if (destinedPlayer)
+    {
+        self.state.destinedToDie = [self.state.destinedToDie arrayByAddingObject:destinedPlayer];
+    }
     
     return playerToBurn;
 }

@@ -96,12 +96,6 @@
     {
         [destinedToDie addObject:_state.romeoPlayer];
     }
-    // Guardian angel takes Guarded's place, if possible.
-    else if (player == _state.guardedPlayer)
-    {
-        Player *guardianAngel = [_state playerWithRole:GuardianAngel inPlayerSet:_state.playersAlive];
-        player = (guardianAngel) ? guardianAngel : player;
-    }
     else if (player.role.roleType == Vampire)
     {
         Player *igor = [_state playerWithRole:Igor inPlayerSet:_state.playersAlive];
@@ -110,8 +104,15 @@
     
     // Kill target
     [destinedToDie addObject:player];
-    _state.destinedToDie = destinedToDie;
     
+    Player *guardianAngel = [_state playerWithRole:GuardianAngel inPlayerSet:_state.playersAlive];
+    NSUInteger guardedIndex = [destinedToDie indexOfObject:_state.guardedPlayer];
+    if (guardianAngel && guardedIndex != NSNotFound)
+    {
+        [destinedToDie replaceObjectAtIndex:guardedIndex withObject:guardianAngel];
+    }
+    
+    _state.destinedToDie = destinedToDie;
     return YES;
 }
 

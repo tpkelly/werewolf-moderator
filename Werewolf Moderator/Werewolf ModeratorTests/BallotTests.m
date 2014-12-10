@@ -30,6 +30,8 @@
 @property (nonatomic, strong) Player *vampire;
 @property (nonatomic, strong) Player *igor;
 
+@property (nonatomic, strong) NSArray *allPlayers;
+
 @end
 
 @implementation BallotTests
@@ -49,8 +51,8 @@
     
     self.mockGameState = [OCMockObject niceMockForClass:[GameState class]];
     
-    NSArray *allPlayers = @[self.seducer, self.juliet, self.romeo, self.angel, self.guarded, self.wolfPup, self.jester, self.vampire, self.igor];
-    [[[self.mockGameState stub] andReturn:allPlayers] playersAlive];
+    self.allPlayers = @[self.seducer, self.juliet, self.romeo, self.angel, self.guarded, self.wolfPup, self.jester, self.vampire, self.igor];
+    [[[self.mockGameState stub] andReturn:self.allPlayers] playersAlive];
     [[[self.mockGameState stub] andReturn:self.romeo] romeoPlayer];
     [[[self.mockGameState stub] andReturn:self.guarded] guardedPlayer];
 
@@ -285,6 +287,26 @@
     
     //Then:
     XCTAssertEqualObjects(self.guarded, burnedPlayer);
+}
+
+-(void)testThatGuardedRomeoIsReplacedByAngelAsDestinedToDieIfJulietIsBurned
+{
+    //Given:
+    NSArray *votes = @[[Vote forPlayer:self.juliet voteCount:5]];
+    self.mockGameState = [OCMockObject niceMockForClass:[GameState class]];
+    self.testBallot = [[Ballot alloc] initWithState:self.mockGameState];
+    
+    //Expect
+    [[[self.mockGameState stub] andReturn:self.allPlayers] playersAlive];
+    [[[self.mockGameState stub] andReturn:self.romeo] romeoPlayer];
+    [[[self.mockGameState stub] andReturn:self.romeo] guardedPlayer];
+    [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
+    [[[self.mockGameState stub] andReturn:self.angel] playerWithRole:GuardianAngel inPlayerSet:OCMOCK_ANY];
+    [[self.mockGameState expect] setDestinedToDie:@[self.angel]];
+    
+    
+    //When
+    [self.testBallot secondRoundResults:votes];
 }
 
 #pragma mark - Seducer
