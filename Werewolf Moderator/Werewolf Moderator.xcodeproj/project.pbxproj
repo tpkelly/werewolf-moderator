@@ -13,7 +13,6 @@
 		47B4C1031A13E25900D30338 /* PlayStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C1021A13E25900D30338 /* PlayStateViewController.m */; };
 		47B4C1061A13E25900D30338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B4C1041A13E25900D30338 /* Main.storyboard */; };
 		47B4C1081A13E25900D30338 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B4C1071A13E25900D30338 /* Images.xcassets */; };
-		47B4C10B1A13E25900D30338 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47B4C1091A13E25900D30338 /* LaunchScreen.xib */; };
 		47B4C1241A13E2ED00D30338 /* Role.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C1231A13E2ED00D30338 /* Role.m */; };
 		47B4C1261A14270D00D30338 /* RoleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C1251A14270D00D30338 /* RoleTests.m */; };
 		47B4C12B1A153AAC00D30338 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4C12A1A153AAC00D30338 /* Player.m */; };
@@ -86,7 +85,6 @@
 		47B4C1021A13E25900D30338 /* PlayStateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayStateViewController.m; sourceTree = "<group>"; };
 		47B4C1051A13E25900D30338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		47B4C1071A13E25900D30338 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		47B4C10A1A13E25900D30338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		47B4C1101A13E25900D30338 /* Werewolf ModeratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Werewolf ModeratorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B4C1151A13E25900D30338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47B4C1221A13E2ED00D30338 /* Role.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Role.h; sourceTree = "<group>"; };
@@ -224,7 +222,6 @@
 				47B4C1021A13E25900D30338 /* PlayStateViewController.m */,
 				47B4C1041A13E25900D30338 /* Main.storyboard */,
 				47B4C1071A13E25900D30338 /* Images.xcassets */,
-				47B4C1091A13E25900D30338 /* LaunchScreen.xib */,
 				47B4C0F71A13E25900D30338 /* Supporting Files */,
 				47FAD2081A1E87E3004FB2F8 /* SingleGame.h */,
 				47FAD2091A1E87E3004FB2F8 /* SingleGame.m */,
@@ -479,7 +476,6 @@
 				47FD6B741A2509C200F445D0 /* seducer.png in Resources */,
 				47FD6B601A221CC900F445D0 /* nonmystic.png in Resources */,
 				47FD6B521A21416600F445D0 /* corrupt.png in Resources */,
-				47B4C10B1A13E25900D30338 /* LaunchScreen.xib in Resources */,
 				47FAD2071A1E8774004FB2F8 /* werewolf.jpg in Resources */,
 				47B4C1081A13E25900D30338 /* Images.xcassets in Resources */,
 				47FD6B561A2209AF00F445D0 /* notInPlay.png in Resources */,
@@ -574,14 +570,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		47B4C1091A13E25900D30338 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				47B4C10A1A13E25900D30338 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -667,6 +655,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Werewolf Moderator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -679,6 +668,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Werewolf Moderator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
