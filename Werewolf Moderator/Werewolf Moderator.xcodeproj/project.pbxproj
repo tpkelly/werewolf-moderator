@@ -439,6 +439,7 @@
 				TargetAttributes = {
 					47B4C0F31A13E25900D30338 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = PXMNWN79YN;
 					};
 					47B4C10F1A13E25900D30338 = {
 						CreatedOnToolsVersion = 6.1;
@@ -656,9 +657,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Werewolf Moderator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "72d3b7d5-a046-4e9a-91eb-f2a1a459403d";
 				STRIP_STYLE = "non-global";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -669,9 +672,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				INFOPLIST_FILE = "Werewolf Moderator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "72d3b7d5-a046-4e9a-91eb-f2a1a459403d";
 				STRIP_STYLE = "non-global";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

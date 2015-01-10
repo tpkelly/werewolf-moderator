@@ -17,6 +17,8 @@
 @implementation PriestViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
+    
     NSString *imageName;
     
     if (![[SingleGame state] roleIsAlive:Priest])

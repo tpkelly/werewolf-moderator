@@ -39,7 +39,7 @@
 
 - (IBAction)voteStep {
     self.currentVoteCount = self.voteStepper.value;
-    self.voteCountLabel.text = [NSString stringWithFormat:@"%ld", self.currentVoteCount];
+    self.voteCountLabel.text = [NSString stringWithFormat:@"%ld", (long)self.currentVoteCount];
 }
 
 - (IBAction)submitVotes {
