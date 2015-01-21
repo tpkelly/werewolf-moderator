@@ -89,6 +89,11 @@
         return NO;
     }
     
+    if (player.role.roleType == Defector)
+    {
+        return NO;
+    }
+    
     NSMutableArray *destinedToDie = [_state.destinedToDie mutableCopy];
     
     // Kill romeo with juliet - Romeo is immune to shadow attacks, so this only happens one way around.
@@ -125,7 +130,7 @@
     }
     
     // Critical mission failure - Kill the vampire/igor off
-    if (player.role.roleType == VampireHunter || player.role.faction == WolvesFaction)
+    if (player.role.roleType == VampireHunter || (player.role.faction == WolvesFaction && player.role.roleType != Defector))
     {
         //Kill igor if they are in play, or the vampire if not
         Player *playerToKill = [_state playerWithRole:Igor inPlayerSet:_state.playersAlive];

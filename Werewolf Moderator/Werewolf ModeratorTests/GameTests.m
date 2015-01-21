@@ -275,7 +275,7 @@
 -(void)testThatVampireDiesWhenAttackingWolves
 {
     // Given:
-    Player *wolf = [[Player alloc] initWithName:@"Rex" role:Defector];
+    Player *wolf = [[Player alloc] initWithName:@"Rex" role:AlphaWolf];
     Player *vampire = [[Player alloc] initWithName:@"Dracula" role:Vampire];
     
     // Expect:
@@ -291,10 +291,40 @@
     XCTAssertFalse(attackSucceeded);
 }
 
+-(void)testThatVampireLivesWhenAttackingDefector
+{
+    // Given:
+    Player *defector = [[Player alloc] initWithName:@"Rex" role:Defector];
+    Player *vampire = [[Player alloc] initWithName:@"Dracula" role:Vampire];
+    
+    // Expect:
+    [[[self.mockGameState stub] andReturn:vampire] playerWithRole:Vampire inPlayerSet:OCMOCK_ANY];
+    [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
+    [[self.mockGameState reject] setDestinedToDie:OCMOCK_ANY];
+    
+    // When:
+    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:defector];
+    
+    // Then:
+    XCTAssertTrue(attackSucceeded);
+}
+
+-(void)testThatDefectorBecomesMinionInVampireAttack
+{
+    // Given:
+    Player *defector = [[Player alloc] initWithName:@"Defector" role:Defector];
+    
+    // When
+    [self.testGame vampireAttackPlayer:defector];
+    
+    // Then
+    XCTAssertEqual(Minion, defector.role.roleType);
+}
+
 -(void)testThatIgorDiesInVampiresPlaceDuringVampireAttackPhase
 {
     // Given:
-    Player *wolf = [[Player alloc] initWithName:@"Rex" role:Defector];
+    Player *wolf = [[Player alloc] initWithName:@"Rex" role:AlphaWolf];
     Player *igor = [[Player alloc] initWithName:@"Igor" role:Igor];
     
     // Expect:
@@ -459,6 +489,18 @@
     
     // When
     BOOL attackSucceeded = [self.testGame wolfAttackPlayer:wolfTarget];
+    
+    // Then
+    XCTAssertFalse(attackSucceeded);
+}
+
+-(void)testThatWolfAttackOnDefectorDoesNotKillDefector
+{
+    // Given
+    Player *defector = [[Player alloc] initWithName:@"Defector" role:Defector];
+    
+    // When
+    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:defector];
     
     // Then
     XCTAssertFalse(attackSucceeded);
