@@ -856,30 +856,48 @@
     XCTAssertEqualObjects(expectedFactions, [self.testGame factionsWhichWon]);
 }
 
--(void)testThatMadmanAndJesterStillWinWithTheVillage
+-(void)testThatMadmanAndJesterDoNotWinIfAlive
 {
     //Given:
     Player *madman = [[Player alloc] initWithName:@"Madman" role:Madman];
     Player *jester = [[Player alloc] initWithName:@"Jester" role:Jester];
+    Player *farmer = [[Player alloc] initWithName:@"Farmer" role:Farmer];
     
     //Expect:
-    [[[self.mockGameState stub] andReturn:@[madman, jester]] playersAlive];
+    [[[self.mockGameState stub] andReturn:@[madman, jester, farmer]] playersAlive];
     
     //Then:
-    NSSet *expectedFactions = [NSSet setWithArray:@[@(MadmanFaction), @(JesterFaction), @(VillageFaction)]];
+    NSSet *expectedFactions = [NSSet setWithArray:@[@(VillageFaction)]];
     XCTAssertEqualObjects(expectedFactions, [self.testGame factionsWhichWon]);
 }
 
--(void)testThatLoversWinWithTheVillage
+-(void)testThatGameIsOverWhenLoversAreLeft
+{
+    //Given:
+    Player *romeo = [[Player alloc] initWithName:@"Romeo" role:AlphaWolf];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:romeo] romeoPlayer];
+    [[[self.mockGameState stub] andReturnValue:@YES] roleIsAlive:Juliet];
+    
+    //Then:
+    XCTAssertTrue([self.testGame gameIsOver]);
+}
+
+-(void)testThatLoversWinWhenBothAreAlive
 {
     //Given:
     Player *villager = [[Player alloc] initWithName:@"Villager" role:Juliet];
+    Player *romeo = [[Player alloc] initWithName:@"Romeo" role:AlphaWolf];
     
     //Expect:
-    [[[self.mockGameState stub] andReturn:@[villager]] playersAlive];
+    [[[self.mockGameState stub] andReturn:romeo] romeoPlayer];
+    [[[self.mockGameState stub] andReturnValue:@YES] roleIsAlive:Juliet];
+    [[[self.mockGameState stub] andReturn:@[villager, romeo]] playersAlive];
+
     
     //Then:
-    NSSet *expectedFactions = [NSSet setWithArray:@[@(VillageFaction), @(LoverFaction)]];
+    NSSet *expectedFactions = [NSSet setWithArray:@[@(WolvesFaction), @(LoverFaction)]];
     XCTAssertEqualObjects(expectedFactions, [self.testGame factionsWhichWon]);
 }
 
@@ -893,7 +911,7 @@
     [[[self.mockGameState stub] andReturn:@[@(MadmanFaction), @(JesterFaction)]] winningFactions];
     
     //Then:
-    NSSet *expectedFactions = [NSSet setWithArray:@[@(MadmanFaction), @(JesterFaction), @(VillageFaction), @(LoverFaction)]];
+    NSSet *expectedFactions = [NSSet setWithArray:@[@(MadmanFaction), @(JesterFaction), @(VillageFaction)]];
     XCTAssertEqualObjects(expectedFactions, [self.testGame factionsWhichWon]);
 }
 

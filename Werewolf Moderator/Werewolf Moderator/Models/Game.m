@@ -208,6 +208,16 @@
     if ([factionSet isEqualToSet:[NSSet setWithArray:@[@(VampireFaction)]]])
         return YES;
 
+    //Lovers win
+    if (_state.playersAlive.count == 2)
+    {
+        if (([_state roleIsAlive:Juliet] && [_state.romeoPlayer alive])
+            || ([_state roleIsAlive:GuardianAngel] && [_state.guardedPlayer alive]))
+        {
+            return YES;
+        }
+    }
+    
     //Village wins if no shadows in play
     return ![self shadowsInPlay];
 }
@@ -229,19 +239,31 @@
         return [NSSet set];
     }
     
-    NSArray *factionsInPlay = [_state.playersAlive valueForKeyPath:@"role.faction"];
-    
-    //Include dead madman/jester
-    factionsInPlay = [factionsInPlay arrayByAddingObjectsFromArray:_state.winningFactions];
+    NSArray *winningFactions;
+   
     
     //Include village if no shadows in play (and not already included)
     if (![self shadowsInPlay])
     {
-        factionsInPlay = [factionsInPlay arrayByAddingObject:@(VillageFaction)];
+        winningFactions = @[@(VillageFaction)];
+    }
+    else
+    {
+        winningFactions = [_state.playersAlive valueForKeyPath:@"role.faction"];
+    }
+    
+    //Include dead madman/jester
+    winningFactions = [winningFactions arrayByAddingObjectsFromArray:_state.winningFactions];
+
+    //Include lovers
+    if (([_state roleIsAlive:Juliet] && [_state.romeoPlayer alive])
+        || ([_state roleIsAlive:GuardianAngel] && [_state.guardedPlayer alive]))
+    {
+        winningFactions = [winningFactions arrayByAddingObject:@(LoverFaction)];
     }
     
     //Remove duplicates and ignore ordering
-    return [NSSet setWithArray:factionsInPlay];
+    return [NSSet setWithArray:winningFactions];
 }
 
 @end
