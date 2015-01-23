@@ -27,15 +27,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if ([SingleGame game].gameIsOver)
-    {
-        [self performSegueWithIdentifier:@"GameOver" sender:self];
-    }
-    
     // Do any additional setup after loading the view.
     self.actualVotes.text = [NSString stringWithFormat:@"%lu", (unsigned long)[self actualVoteCount]];
     self.expectedVotes.text = [NSString stringWithFormat:@"%lu", (unsigned long)[self expectedVoteCount]];
     self.ballotResult.text = [self burnedPlayerName];
+    
+    if ([SingleGame game].gameIsOver)
+    {
+        [self performSegueWithIdentifier:@"GameOver" sender:self];
+    }
 }
 
 -(NSUInteger)expectedVoteCount
