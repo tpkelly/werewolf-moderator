@@ -1044,7 +1044,7 @@ Tap line in table to select player
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gzA-h1-Zkj">
-                                <rect key="frame" x="150" y="201" width="300" height="342"/>
+                                <rect key="frame" x="150" y="201" width="300" height="297"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="443-jm-CBP"/>
@@ -1059,7 +1059,7 @@ Tap line in table to select player
                             <constraint firstItem="gzA-h1-Zkj" firstAttribute="top" secondItem="Lit-en-58Q" secondAttribute="bottom" constant="8" id="9Jl-4R-h4x"/>
                             <constraint firstItem="xDP-gy-Tsf" firstAttribute="top" secondItem="Lit-en-58Q" secondAttribute="bottom" constant="8" id="GXl-g7-uF7"/>
                             <constraint firstAttribute="centerX" secondItem="gzA-h1-Zkj" secondAttribute="centerX" id="LvI-s1-bbI"/>
-                            <constraint firstItem="82x-cm-hBX" firstAttribute="top" secondItem="gzA-h1-Zkj" secondAttribute="bottom" constant="8" id="OH2-MU-8QF"/>
+                            <constraint firstItem="82x-cm-hBX" firstAttribute="top" secondItem="gzA-h1-Zkj" secondAttribute="bottom" constant="53" id="OH2-MU-8QF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Lit-en-58Q" secondAttribute="trailing" constant="8" id="PXT-tj-nHz"/>
                             <constraint firstItem="82x-cm-hBX" firstAttribute="top" secondItem="xDP-gy-Tsf" secondAttribute="bottom" constant="8" id="VZh-MF-pDD"/>
                             <constraint firstAttribute="centerX" secondItem="xDP-gy-Tsf" secondAttribute="centerX" id="dXw-C0-kth"/>
@@ -1421,7 +1421,7 @@ Will the priest please wake up. I will now tell you if the Seducer is in play"</
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuI-HK-m0Q">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuI-HK-m0Q">
                                 <rect key="frame" x="213" y="505" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1451,7 +1451,7 @@ Will the priest please wake up. I will now tell you if the Seducer is in play"</
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oLA-OG-VCg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oLA-OG-VCg">
                                 <rect key="frame" x="150" y="174" width="300" height="369"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1873,7 +1873,7 @@ Please acknowledge eachother"</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIA-ZP-gJ4">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIA-ZP-gJ4">
                                 <rect key="frame" x="225" y="505" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1940,6 +1940,7 @@ Please acknowledge eachother"</string>
                             <constraint firstItem="dqA-2n-VmB" firstAttribute="top" secondItem="Qmv-OB-BEy" secondAttribute="bottom" constant="100" id="r1a-Rd-Mph"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5Wa-BO-PUi"/>
                     <connections>
                         <outlet property="playerVoteLabel" destination="dqA-2n-VmB" id="aZb-Mj-mkB"/>
                         <outlet property="voteCountLabel" destination="E6p-ZJ-Rev" id="ECr-ag-JQY"/>
@@ -2174,7 +2175,7 @@ Please acknowledge eachother"</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygm-DY-KWQ">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygm-DY-KWQ">
                                 <rect key="frame" x="225" y="459" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2195,7 +2196,7 @@ Please acknowledge eachother"</string>
                                     <action selector="redoRound:" destination="6QH-fy-0OB" eventType="touchUpInside" id="hs8-Cw-4Oz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1x-Jy-PtR">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1x-Jy-PtR">
                                 <rect key="frame" x="225" y="505" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2263,7 +2264,7 @@ Please acknowledge eachother"</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejk-Is-VnB">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejk-Is-VnB">
                                 <rect key="frame" x="225" y="505" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2383,7 +2384,7 @@ Please acknowledge eachother"</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLZ-J2-tdT">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLZ-J2-tdT">
                                 <rect key="frame" x="225" y="505" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2404,7 +2405,7 @@ Please acknowledge eachother"</string>
                                     <action selector="secondRound:" destination="5go-vW-ZN3" eventType="touchUpInside" id="GvN-tI-Fz7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY9-VI-Wz8">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY9-VI-Wz8">
                                 <rect key="frame" x="225" y="459" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2425,7 +2426,7 @@ Please acknowledge eachother"</string>
                                     <action selector="redoRound:" destination="5go-vW-ZN3" eventType="touchUpInside" id="0nA-VF-fec"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fJs-K3-fjS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fJs-K3-fjS">
                                 <rect key="frame" x="175" y="205" width="250" height="246"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -2452,7 +2453,7 @@ Please acknowledge eachother"</string>
                             <constraint firstItem="lx6-uF-KSN" firstAttribute="top" secondItem="ZEo-dK-FiZ" secondAttribute="top" id="M8c-sA-q1Q"/>
                             <constraint firstAttribute="centerX" secondItem="fJs-K3-fjS" secondAttribute="centerX" id="MEg-PH-fHk"/>
                             <constraint firstItem="BIZ-Fq-g7M" firstAttribute="top" secondItem="cLZ-J2-tdT" secondAttribute="bottom" constant="8" id="Ord-wG-L0v"/>
-                            <constraint firstItem="eY9-VI-Wz8" firstAttribute="top" secondItem="fJs-K3-fjS" secondAttribute="bottom" constant="8" id="VSx-Vl-Dlg"/>
+                            <constraint firstItem="eY9-VI-Wz8" firstAttribute="top" secondItem="fJs-K3-fjS" secondAttribute="bottom" constant="24" id="VSx-Vl-Dlg"/>
                             <constraint firstItem="A7p-sU-r4K" firstAttribute="trailing" secondItem="lx6-uF-KSN" secondAttribute="trailing" id="ViB-7u-fYj"/>
                             <constraint firstItem="A7p-sU-r4K" firstAttribute="top" secondItem="lx6-uF-KSN" secondAttribute="bottom" constant="8" id="Y6D-y2-51b"/>
                             <constraint firstAttribute="centerX" secondItem="Ddz-A3-39I" secondAttribute="centerX" id="eoL-P8-yvP"/>
@@ -2468,7 +2469,7 @@ Please acknowledge eachother"</string>
                         <outlet property="actualVotesLabel" destination="iqS-GG-3iv" id="lyO-Yq-bkS"/>
                         <outlet property="expectedVotesLabel" destination="ZEo-dK-FiZ" id="gx3-j4-Cwi"/>
                         <outlet property="playersOnBallotTable" destination="fJs-K3-fjS" id="nle-A8-Kw6"/>
-                        <segue destination="glr-Kf-2ET" kind="showDetail" identifier="Redo" id="SQT-nX-Qle"/>
+                        <segue destination="glr-Kf-2ET" kind="show" identifier="Redo" id="SQT-nX-Qle"/>
                         <segue destination="MVs-Jt-WB6" kind="show" identifier="SecondRound" id="4c7-IS-ucO"/>
                     </connections>
                 </viewController>
@@ -2563,12 +2564,12 @@ Please acknowledge eachother"</string>
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b9F-be-3HY"/>
-        <segue reference="jh8-2z-7i3"/>
-        <segue reference="COg-eH-uaz"/>
+        <segue reference="zJm-yM-FWg"/>
+        <segue reference="cQS-uw-swt"/>
+        <segue reference="enR-50-5Xl"/>
+        <segue reference="x91-Gc-kFo"/>
         <segue reference="iU4-zQ-jWI"/>
-        <segue reference="cC0-Gm-98B"/>
-        <segue reference="5Rx-Fr-hDL"/>
-        <segue reference="4c7-IS-ucO"/>
+        <segue reference="OiL-Gy-HQE"/>
+        <segue reference="SQT-nX-Qle"/>
     </inferredMetricsTieBreakers>
 </document>
