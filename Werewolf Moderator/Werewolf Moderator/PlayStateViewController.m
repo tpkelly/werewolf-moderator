@@ -31,12 +31,29 @@
     
     self.resetAlert = [[UIAlertView alloc] initWithTitle:@"Reset Game" message:@"Are you sure you want to reset the game?" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:@"Confirm",nil];
     self.alterPlayerAlert = [[UIAlertView alloc] initWithTitle:@"Alter Player" message:@"Set the new player state" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:@"Alive", @"Destined to Die", @"Dead",nil];
+    
+    [self.doneButton addTarget:self action:@selector(donePressed) forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.playerTable reloadData];
+    [self donePressed];
+}
+
+#pragma mark - Editing table
+
+-(void)beginEditing
+{
+    self.doneButton.hidden = NO;
+    self.playerTable.editing = YES;
+}
+
+-(void)donePressed
+{
+    self.doneButton.hidden = YES;
+    self.playerTable.editing = NO;
 }
 
 #pragma mark - Game Reset
@@ -116,6 +133,9 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"player"];
         cell.backgroundColor = [UIColor clearColor];
+        
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(beginEditing)];
+        [cell addGestureRecognizer:longPress];
     }
     
     Player *player = [[SingleGame state].allPlayers objectAtIndex:indexPath.row];
@@ -131,6 +151,26 @@
     [self.alterPlayerAlert show];
     //Remove the highlighting
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        NSMutableArray *playersCopy = [[SingleGame state].allPlayers mutableCopy];
+        
+        Player *deletedPlayer = [playersCopy objectAtIndex:indexPath.row];
+        [[SingleGame state].unassignedRoles addObject:@(deletedPlayer.role.roleType)];
+        
+        [playersCopy removeObjectAtIndex:indexPath.row];
+        [SingleGame state].allPlayers = [playersCopy copy];
+        [tableView reloadData];
+    }
 }
 
 -(UIColor*)playerColor:(Player*)player

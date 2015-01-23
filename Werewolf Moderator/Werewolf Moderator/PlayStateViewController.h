@@ -11,6 +11,7 @@
 @interface PlayStateViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITableView *playerTable;
+@property (strong, nonatomic) IBOutlet UIButton *doneButton;
 
 - (IBAction)resetGame:(id)sender;
 

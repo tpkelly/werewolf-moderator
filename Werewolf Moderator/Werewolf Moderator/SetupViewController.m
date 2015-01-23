@@ -37,6 +37,12 @@
     [self.view addGestureRecognizer:tap];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.rolePicker reloadAllComponents];
+}
+
 #pragma mark - UITextField methods
 
 -(void)dismissKeyboard

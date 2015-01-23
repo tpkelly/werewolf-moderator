@@ -1252,11 +1252,19 @@ Tap line in table to select player
                                     <action selector="startGame:" destination="09p-Ll-7ZI" eventType="touchUpInside" id="dQZ-sx-KNg"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47Q-dG-siD">
+                                <rect key="frame" x="530" y="0.0" width="46" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EXd-rC-lyC" firstAttribute="top" secondItem="PGz-wW-fke" secondAttribute="topMargin" constant="30" id="6a1-EP-wxM"/>
                             <constraint firstItem="EXd-rC-lyC" firstAttribute="leading" secondItem="PGz-wW-fke" secondAttribute="leadingMargin" constant="8" id="Id2-S6-IMq"/>
+                            <constraint firstItem="EXd-rC-lyC" firstAttribute="top" secondItem="47Q-dG-siD" secondAttribute="bottom" id="KEa-zi-daY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="47Q-dG-siD" secondAttribute="trailing" constant="8" id="W5x-Ka-rhU"/>
                             <constraint firstAttribute="centerX" secondItem="deQ-Te-3mq" secondAttribute="centerX" id="hW5-9x-G8p"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EXd-rC-lyC" secondAttribute="trailing" constant="8" id="kmt-Zr-t5s"/>
                             <constraint firstItem="deQ-Te-3mq" firstAttribute="top" secondItem="EXd-rC-lyC" secondAttribute="bottom" constant="8" id="nd6-BC-YXw"/>
@@ -1265,6 +1273,7 @@ Tap line in table to select player
                     </view>
                     <tabBarItem key="tabBarItem" title="State of Play" image="first" id="FXX-F8-7JJ"/>
                     <connections>
+                        <outlet property="doneButton" destination="47Q-dG-siD" id="SaU-iJ-uYV"/>
                         <outlet property="playerTable" destination="EXd-rC-lyC" id="FiB-5r-d6b"/>
                     </connections>
                 </viewController>
