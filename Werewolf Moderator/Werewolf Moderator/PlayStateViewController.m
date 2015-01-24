@@ -12,7 +12,7 @@
 #import "Player.h"
 #import "Role.h"
 
-@interface PlayStateViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+@interface PlayStateViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIAlertView *resetAlert;
 @property (nonatomic, strong) UIAlertView *alterPlayerAlert;
@@ -135,6 +135,7 @@
         cell.backgroundColor = [UIColor clearColor];
         
         UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(beginEditing)];
+        longPress.delegate = self;
         [cell addGestureRecognizer:longPress];
     }
     
@@ -155,7 +156,16 @@
 
 -(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
+    NSMutableArray *allPlayers = [[SingleGame state].allPlayers mutableCopy];
+    Player *playerToMove = [allPlayers objectAtIndex:sourceIndexPath.row];
     
+    NSUInteger destIndex = destinationIndexPath.row;
+    //if (sourceIndexPath.row < destIndex)
+    //    destIndex--;
+    
+    [allPlayers removeObject:playerToMove];
+    [allPlayers insertObject:playerToMove atIndex:destIndex];
+    [SingleGame state].allPlayers = [allPlayers copy];
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -180,6 +190,13 @@
     
     UIColor *werewolfGreen = [UIColor colorWithRed:42.0/255 green:162.0/255 blue:95.0/255 alpha:1.0];
     return (player.alive) ? werewolfGreen : [UIColor redColor];
+}
+
+#pragma mark - Gesture Delegates
+
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    return !self.playerTable.editing;
 }
 
 @end
