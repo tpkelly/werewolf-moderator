@@ -9,6 +9,9 @@
 #import "Game.h"
 #import "Player.h"
 #import "Role.h"
+#import "MinionRole.h"
+#import "RomeoRole.h"
+#import "GuardedRole.h"
 #import "GameState.h"
 #import "MorningNews.h"
 
@@ -143,7 +146,7 @@
     }
     
     // Just as planned...
-    player.role = [[Role alloc] initWithRole:Minion];
+    player.role = [[MinionRole alloc] initWithPreviousRole:player.role];
     return YES;
 }
 
@@ -152,12 +155,14 @@
 -(void)julietPicksRomeo:(Player *)player
 {
     _state.romeoPlayer = player;
+    player.role = [[RomeoRole alloc] initWithPreviousRole:player.role];
     player.permanentProtection = YES;
 }
 
 -(void)angelPicksGuarded:(Player *)player
 {
     _state.guardedPlayer = player;
+    player.role = [[GuardedRole alloc] initWithPreviousRole:player.role];
 }
 
 #pragma mark - It is morning

@@ -199,6 +199,18 @@
     XCTAssertTrue(attackSucceeded);
 }
 
+-(void)testThatNewlyCreatedMinionHasOldNameIncluded
+{
+    // Given:
+    Player *farmer = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    
+    // When:
+    [self.testGame vampireAttackPlayer:farmer];
+    
+    // Then:
+    XCTAssertEqualObjects(@"Minion, ex-Farmer", farmer.role.name);
+}
+
 -(void)testThatVampireCannotAttackHermit
 {
     // Given:
@@ -523,6 +535,18 @@
     XCTAssertTrue(player.permanentProtection);
 }
 
+-(void)testThatRomeoIsNamedAsSuch
+{
+    //Given:
+    Player *player = [[Player alloc] initWithName:@"Player" role:Farmer];
+    
+    //When:
+    [self.testGame julietPicksRomeo:player];
+    
+    //Then:
+    XCTAssertEqualObjects(@"Farmer, Romeo", player.role.name);
+}
+
 -(void)testThatGuardedIsChosenByAngel
 {
     //Given:
@@ -533,6 +557,18 @@
     
     //When:
     [self.testGame angelPicksGuarded:player];
+}
+
+-(void)testThatGuardedIsNamedAsSuch
+{
+    //Given:
+    Player *player = [[Player alloc] initWithName:@"Player" role:Farmer];
+    
+    //When:
+    [self.testGame angelPicksGuarded:player];
+    
+    //Then:
+    XCTAssertEqualObjects(@"Farmer, Guarded", player.role.name);
 }
 
 #pragma mark - It is morning
