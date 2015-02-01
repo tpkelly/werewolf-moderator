@@ -2017,41 +2017,40 @@ Please acknowledge eachother"</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eJP-E6-N5w">
-                                <rect key="frame" x="46" y="78" width="114" height="275"/>
+                                <rect key="frame" x="46" y="144" width="228" height="259"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="275" id="aMl-NT-8Z4"/>
-                                </constraints>
-                            </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RHy-h1-I0l">
-                                <rect key="frame" x="160" y="78" width="114" height="275"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="275" id="Cte-fP-Sl4"/>
-                                </constraints>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVa-p1-eRU">
                                 <rect key="frame" x="42" y="8" width="237" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="ISr-G2-iLl"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winning Factions:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6u-5R-eOT">
+                                <rect key="frame" x="24" y="115" width="272" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="qVa-p1-eRU" secondAttribute="centerX" id="7KR-7H-IcD"/>
-                            <constraint firstItem="eJP-E6-N5w" firstAttribute="leading" secondItem="NJA-7O-lo6" secondAttribute="leadingMargin" constant="30" id="Lwh-mB-VKF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="RHy-h1-I0l" secondAttribute="trailing" constant="30" id="O9C-6W-czN"/>
-                            <constraint firstAttribute="centerY" secondItem="eJP-E6-N5w" secondAttribute="centerY" id="aZO-Uf-iRp"/>
-                            <constraint firstItem="RHy-h1-I0l" firstAttribute="leading" secondItem="eJP-E6-N5w" secondAttribute="trailing" id="beM-TK-DKc"/>
-                            <constraint firstItem="RHy-h1-I0l" firstAttribute="width" secondItem="eJP-E6-N5w" secondAttribute="width" id="snh-LV-JYh"/>
-                            <constraint firstAttribute="centerY" secondItem="RHy-h1-I0l" secondAttribute="centerY" id="ySn-Fm-BN8"/>
-                            <constraint firstItem="qVa-p1-eRU" firstAttribute="top" secondItem="NJA-7O-lo6" secondAttribute="topMargin" constant="8" id="zce-Tk-Wt9"/>
+                            <constraint firstItem="eJP-E6-N5w" firstAttribute="top" secondItem="m6u-5R-eOT" secondAttribute="bottom" constant="8" id="GTn-E7-Un8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eJP-E6-N5w" secondAttribute="trailing" constant="30" id="HFw-4r-DVd"/>
+                            <constraint firstItem="DDb-7H-dQc" firstAttribute="top" secondItem="eJP-E6-N5w" secondAttribute="bottom" constant="28" id="LiT-Ap-1yl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="m6u-5R-eOT" secondAttribute="trailing" constant="8" id="SJD-Kp-TJe"/>
+                            <constraint firstItem="m6u-5R-eOT" firstAttribute="top" secondItem="qVa-p1-eRU" secondAttribute="bottom" constant="50" id="UqG-f5-Bnv"/>
+                            <constraint firstAttribute="centerX" secondItem="qVa-p1-eRU" secondAttribute="centerX" id="fkZ-Fd-Bxm"/>
+                            <constraint firstItem="eJP-E6-N5w" firstAttribute="leading" secondItem="NJA-7O-lo6" secondAttribute="leadingMargin" constant="30" id="mxQ-5b-842"/>
+                            <constraint firstItem="m6u-5R-eOT" firstAttribute="leading" secondItem="NJA-7O-lo6" secondAttribute="leadingMargin" constant="8" id="xAO-1R-Pt0"/>
+                            <constraint firstItem="qVa-p1-eRU" firstAttribute="top" secondItem="NJA-7O-lo6" secondAttribute="topMargin" constant="8" id="xIi-6O-yth"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="factionTable" destination="eJP-E6-N5w" id="jeS-7O-ydH"/>
-                        <outlet property="factionWinTable" destination="RHy-h1-I0l" id="73i-ns-jV2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYd-si-HKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
