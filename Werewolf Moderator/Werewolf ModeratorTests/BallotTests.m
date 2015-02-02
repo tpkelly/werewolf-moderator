@@ -409,7 +409,7 @@
 
 #pragma mark - Vampires
 
--(void)testThatVampireIsProtectedFromStakeByIgor
+-(void)testThatVampireIsNotProtectedFromStakeByIgor
 {
     // Given
     NSArray *votes = @[[Vote forPlayer:self.vampire voteCount:7]];
@@ -420,7 +420,7 @@
     //When
     Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
     
-    XCTAssertEqual(self.igor, burnedPlayer);
+    XCTAssertEqual(self.vampire, burnedPlayer);
 }
 
 -(void)testThatVampireIsBurnedIfIgorIsNotAlive

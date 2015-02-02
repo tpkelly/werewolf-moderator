@@ -10,12 +10,12 @@ Some rules and situations have been hard-coded into the app, which have resulted
 - Minion Juliet will not be destined to die if Romeo burns at the stake.
 - The Guardian Angel will take the place of the Guarded in the first round of voting if possible, as well as the second.
 - The Guardian Angel cannot save the Guarded from the Ballot if the Angel is already on the ballot.
-- Igor dies in the Vampire's place at any point where the Vampire is about to die.
+- Igor only dies in the Vampire's place as a result of the Vampire's actions during the night.
 - The second round ballot will feature players who were given the highest and second highest number of votes in the first round, even in the event of tying for highest.
   - E.g. Votes = A:5, B:5, C:3, D:3, E:1. Ballot = [A, B, C, D] even though A and B were tied.
 - If the second round ballot is a tie, nobody dies.
 - Farmer as no powers. We don't play the Hero/Regular/Wolf Farmer types.
-- The village receives news so long as the reelvant news role (bard/innkeeper) are alive and the clairvoyant was alive to check. News still comes out if the clairvoyant checked for corruption then died before dawn.
+- The village receives news so long as the relevant news role (bard/innkeeper) are alive and the clairvoyant was alive to check. News still comes out if the clairvoyant checked for corruption then died before dawn.
 - Healers cannot save anybody if they are destined to die, even if they are not trying to save themselves.
 
 As with most things I write, these are tested explicitly so should always hold true in any release! (Hopefully).

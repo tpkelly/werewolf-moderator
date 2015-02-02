@@ -455,7 +455,7 @@
     XCTAssertTrue(attackSucceeded);
 }
 
--(void)testThatWolfAttackOnVampireKillsIgorInstead
+-(void)testThatWolfAttackOnVampireDoesNotKillIgor
 {
     // Given
     Player *igor = [[Player alloc] initWithName:@"Farmer Joe" role:Igor];
@@ -464,7 +464,7 @@
     // Expect
     [[[self.mockGameState stub] andReturn:igor] playerWithRole:Igor inPlayerSet:OCMOCK_ANY];
     [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
-    [[self.mockGameState expect] setDestinedToDie:@[igor]];
+    [[self.mockGameState expect] setDestinedToDie:@[vampire]];
     
     // When
     BOOL attackSucceeded = [self.testGame wolfAttackPlayer:vampire];
