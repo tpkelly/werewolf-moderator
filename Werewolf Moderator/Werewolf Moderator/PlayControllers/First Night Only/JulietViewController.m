@@ -10,9 +10,12 @@
 #import "SingleGame.h"
 #import "GameState.h"
 #import "Game.h"
+#import "Role.h"
 #import "Player.h"
 
 @interface JulietViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) NSArray *availablePlayers;
 
 @end
 
@@ -29,6 +32,7 @@
         return;
     }
     
+    self.availablePlayers = [self suitors];
     self.romeoTable.dataSource = self;
     self.romeoTable.delegate = self;
 }
@@ -46,7 +50,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [SingleGame state].playersAlive.count;
+    return self.availablePlayers.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -58,7 +62,7 @@
         cell.backgroundColor = [UIColor clearColor];
     }
     
-    Player *player = [[SingleGame state].playersAlive objectAtIndex:indexPath.row];
+    Player *player = [self.availablePlayers objectAtIndex:indexPath.row];
     cell.textLabel.text = player.name;
     
     return cell;
@@ -66,10 +70,19 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Player *playerAtIndex = [[SingleGame state].playersAlive objectAtIndex:indexPath.row];
+    Player *playerAtIndex = [self.availablePlayers objectAtIndex:indexPath.row];
     self.romeoTable.hidden = YES;
     
     [[SingleGame game] julietPicksRomeo:playerAtIndex];
+}
+
+-(NSArray*)suitors
+{
+    NSArray *allPlayers = [SingleGame state].playersAlive;
+    NSArray *protectablePlayers = [allPlayers filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(Player *player, NSDictionary *bindings) {
+        return player.role.roleType != Juliet;
+    }]];
+    return protectablePlayers;
 }
 
 @end

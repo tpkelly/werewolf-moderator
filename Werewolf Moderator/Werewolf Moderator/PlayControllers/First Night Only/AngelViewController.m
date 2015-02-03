@@ -10,9 +10,12 @@
 #import "SingleGame.h"
 #import "GameState.h"
 #import "Player.h"
+#import "Role.h"
 #import "Game.h"
 
 @interface AngelViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) NSArray *possibleGuarded;
 
 @end
 
@@ -29,6 +32,7 @@
         return;
     }
     
+    self.possibleGuarded = [self potentialGuarded];
     self.guardedTable.dataSource = self;
     self.guardedTable.delegate = self;
 }
@@ -46,7 +50,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [SingleGame state].playersAlive.count;
+    return self.possibleGuarded.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -58,7 +62,7 @@
         cell.backgroundColor = [UIColor clearColor];
     }
     
-    Player *player = [[SingleGame state].playersAlive objectAtIndex:indexPath.row];
+    Player *player = [self.possibleGuarded objectAtIndex:indexPath.row];
     cell.textLabel.text = player.name;
     
     return cell;
@@ -66,10 +70,19 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Player *playerAtIndex = [[SingleGame state].playersAlive objectAtIndex:indexPath.row];
+    Player *playerAtIndex = [self.possibleGuarded objectAtIndex:indexPath.row];
     self.guardedTable.hidden = YES;
     
     [[SingleGame game] angelPicksGuarded:playerAtIndex];
+}
+
+-(NSArray*)potentialGuarded
+{
+    NSArray *allPlayers = [SingleGame state].playersAlive;
+    NSArray *protectablePlayers = [allPlayers filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(Player *player, NSDictionary *bindings) {
+        return player.role.roleType != GuardianAngel;
+    }]];
+    return protectablePlayers;
 }
 
 @end

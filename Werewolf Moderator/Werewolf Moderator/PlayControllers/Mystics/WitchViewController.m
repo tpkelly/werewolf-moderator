@@ -86,7 +86,7 @@
 
 -(NSArray*)allProtectablePlayers
 {
-    NSMutableArray *allPlayers = [[SingleGame state].playersAlive mutableCopy];
+    NSArray *allPlayers = [SingleGame state].playersAlive;
     NSArray *protectablePlayers = [allPlayers filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(Player *player, NSDictionary *bindings) {
         return player.role.roleType != Witch;
     }]];
