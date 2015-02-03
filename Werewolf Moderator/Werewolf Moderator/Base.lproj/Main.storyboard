@@ -1557,6 +1557,16 @@ Tap line in table to select player
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="&quot;If I tap you on the knee, keep your eyes closed but you are now guarded&quot;" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Uwz-gT-uOz">
+                                <rect key="frame" x="10" y="166" width="300" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="DAo-KC-32g"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBG-2T-L7a">
                                 <rect key="frame" x="73" y="385" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -1614,11 +1624,15 @@ Tap line in table to select player
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Uwz-gT-uOz" secondAttribute="centerY" id="7ag-Af-ZK0"/>
+                            <constraint firstItem="Uwz-gT-uOz" firstAttribute="trailing" secondItem="ifZ-wh-uHR" secondAttribute="trailing" id="8ba-kT-5mo"/>
                             <constraint firstItem="OdZ-b4-tAv" firstAttribute="top" secondItem="ifZ-wh-uHR" secondAttribute="bottom" constant="8" id="A3l-0i-Tfg"/>
                             <constraint firstAttribute="centerX" secondItem="ifZ-wh-uHR" secondAttribute="centerX" id="HjV-70-nA0"/>
                             <constraint firstAttribute="centerX" secondItem="CBG-2T-L7a" secondAttribute="centerX" id="Icw-ES-PQK"/>
+                            <constraint firstItem="Uwz-gT-uOz" firstAttribute="leading" secondItem="ifZ-wh-uHR" secondAttribute="leading" id="Ldg-hd-Evh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cx1-5z-cWe" secondAttribute="trailing" constant="8" id="MEv-uP-Dza"/>
                             <constraint firstItem="cx1-5z-cWe" firstAttribute="leading" secondItem="WlQ-uN-2m4" secondAttribute="leadingMargin" constant="8" id="fKX-JF-SnL"/>
+                            <constraint firstAttribute="centerX" secondItem="Uwz-gT-uOz" secondAttribute="centerX" id="iih-II-oPe"/>
                             <constraint firstAttribute="centerX" secondItem="UYg-cH-QRO" secondAttribute="centerX" id="jri-6w-FDG"/>
                             <constraint firstItem="cx1-5z-cWe" firstAttribute="top" secondItem="UYg-cH-QRO" secondAttribute="bottom" constant="8" id="oZS-GN-jZO"/>
                             <constraint firstItem="OdZ-b4-tAv" firstAttribute="top" secondItem="CBG-2T-L7a" secondAttribute="bottom" constant="8" id="uNh-GB-84e"/>
