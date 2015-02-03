@@ -10,9 +10,12 @@
 #import "SingleGame.h"
 #import "GameState.h"
 #import "Player.h"
+#import "Role.h"
 #import "Game.h"
 
 @interface WitchViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) NSArray *protectablePlayers;
 
 @end
 
@@ -23,6 +26,7 @@
     // Do any additional setup after loading the view.
     if ([[SingleGame state] roleIsAlive:Witch])
     {
+        self.protectablePlayers = [self allProtectablePlayers];
         self.playerTable.dataSource = self;
         self.playerTable.delegate = self;
     }
@@ -53,7 +57,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [SingleGame state].playersAlive.count;
+    return self.protectablePlayers.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -65,7 +69,7 @@
         cell.backgroundColor = [UIColor clearColor];
     }
     
-    Player *player = [[SingleGame state].playersAlive objectAtIndex:indexPath.row];
+    Player *player = [self.protectablePlayers objectAtIndex:indexPath.row];
     cell.textLabel.text = player.name;
     cell.textLabel.textColor = [UIColor whiteColor];
     
@@ -74,10 +78,19 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Player *playerAtIndex = [[SingleGame state].playersAlive objectAtIndex:indexPath.row];
+    Player *playerAtIndex = [self.protectablePlayers objectAtIndex:indexPath.row];
     self.playerTable.hidden = YES;
     
     [[SingleGame game] witchProtectPlayer:playerAtIndex];
+}
+
+-(NSArray*)allProtectablePlayers
+{
+    NSMutableArray *allPlayers = [[SingleGame state].playersAlive mutableCopy];
+    NSArray *protectablePlayers = [allPlayers filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(Player *player, NSDictionary *bindings) {
+        return player.role.roleType != Witch;
+    }]];
+    return protectablePlayers;
 }
 
 @end
