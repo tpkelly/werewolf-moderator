@@ -712,7 +712,7 @@ Tap line in table to select player
                                             <constraint firstAttribute="width" constant="160" id="Cl8-Km-35l"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17F-fy-mlf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17F-fy-mlf">
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -736,7 +736,7 @@ Tap line in table to select player
                                             <constraint firstAttribute="width" secondItem="Rah-9j-fvR" secondAttribute="height" multiplier="1:1" id="Zam-vu-Uih"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saE-aw-8YN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saE-aw-8YN">
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1034,7 +1034,7 @@ Tap line in table to select player
                                             <action selector="continuing:" destination="9Qo-8c-yYq" eventType="touchUpInside" id="b13-BP-fza"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf5-GF-Ul4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf5-GF-Ul4">
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1157,7 +1157,7 @@ Tap line in table to select player
                                             <action selector="continuing:" destination="WQa-37-duF" eventType="touchUpInside" id="ioc-nw-8nW"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGj-DL-t5L">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGj-DL-t5L">
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1189,7 +1189,7 @@ Tap line in table to select player
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LOG-74-4Ds">
-                                <rect key="frame" x="10" y="181" width="300" height="242"/>
+                                <rect key="frame" x="10" y="181" width="300" height="203"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="vD7-oM-KxO"/>
@@ -1218,7 +1218,7 @@ Tap line in table to select player
                             <constraint firstItem="p25-jR-Wec" firstAttribute="top" secondItem="26F-uR-w7V" secondAttribute="bottom" constant="8" id="2Mk-eg-kve"/>
                             <constraint firstItem="vRX-8Y-2Yl" firstAttribute="top" secondItem="6vc-Us-buL" secondAttribute="topMargin" constant="8" id="3Wz-hK-sWJ"/>
                             <constraint firstItem="26F-uR-w7V" firstAttribute="top" secondItem="FSZ-uW-oPC" secondAttribute="bottom" constant="8" id="AeL-I1-NlX"/>
-                            <constraint firstItem="p25-jR-Wec" firstAttribute="top" secondItem="LOG-74-4Ds" secondAttribute="bottom" constant="8" id="Eio-Xl-cV0"/>
+                            <constraint firstItem="p25-jR-Wec" firstAttribute="top" secondItem="LOG-74-4Ds" secondAttribute="bottom" constant="47" id="Eio-Xl-cV0"/>
                             <constraint firstAttribute="centerX" secondItem="LOG-74-4Ds" secondAttribute="centerX" id="Ihr-xA-aej"/>
                             <constraint firstAttribute="centerX" secondItem="26F-uR-w7V" secondAttribute="centerX" id="Mmj-I2-BQQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FSZ-uW-oPC" secondAttribute="trailing" constant="8" id="dVx-WJ-Ml0"/>
