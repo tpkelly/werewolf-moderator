@@ -328,4 +328,18 @@
     XCTAssertEqual(VillageFaction, farmer.faction);
 }
 
+#pragma mark - Loner roles
+
+-(void)testThatTheHagIsACorruptMystic
+{
+    // Given
+    Role *hag = [[Role alloc] initWithRole:Hag];
+    
+    // Then
+    XCTAssertTrue(hag.isCorrupt);
+    XCTAssertTrue(hag.isMystic);
+    XCTAssertTrue(hag.isShadow);
+    XCTAssertEqual(VillageFaction, hag.faction);
+}
+
 @end

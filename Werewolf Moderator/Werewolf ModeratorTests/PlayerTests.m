@@ -337,5 +337,16 @@
     XCTAssertFalse(player.temporaryProtection);
 }
 
+-(void)testThatTheHagPlayerIsAliveAndUnprotected
+{
+    // Given
+    Player *player = [[Player alloc] initWithName:@"Player" role:Hag];
+    
+    //Then
+    XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.permanentProtection);
+    XCTAssertFalse(player.temporaryProtection);
+}
 
 @end

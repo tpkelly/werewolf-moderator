@@ -50,7 +50,8 @@
                                   @(GuardianAngel),
                                   @(Vampire),
                                   @(Igor),
-                                  @(VampireHunter)
+                                  @(VampireHunter),
+                                  @(Hag)
                                   ];
         
         self.unassignedRoles = [NSCountedSet setWithArray:initialRoles];

@@ -33,5 +33,6 @@ typedef NS_ENUM(NSInteger, RoleType) {
     Vampire,
     Minion,
     Igor,
-    VampireHunter
+    VampireHunter,
+    Hag
 };

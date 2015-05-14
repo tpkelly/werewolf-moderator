@@ -74,7 +74,7 @@
 
 - (void)testThatGameStartsWithAllRolesUnassigned {
     // Given
-    NSSet *allRoles = [NSCountedSet setWithArray:@[@(AlphaWolf), @(PackWolf), @(WolfPup), @(Defector), @(Clairvoyant), @(Medium), @(Wizard), @(Witch), @(Healer), @(Farmer), @(Farmer), @(Hermit), @(Bard), @(Innkeeper), @(Monk), @(Priest), @(Sinner), @(Seducer), @(Madman), @(Jester), @(Juliet), @(GuardianAngel), @(Vampire), @(Igor), @(VampireHunter)]];
+    NSSet *allRoles = [NSCountedSet setWithArray:@[@(AlphaWolf), @(PackWolf), @(WolfPup), @(Defector), @(Clairvoyant), @(Medium), @(Wizard), @(Witch), @(Healer), @(Farmer), @(Farmer), @(Hermit), @(Bard), @(Innkeeper), @(Monk), @(Priest), @(Sinner), @(Seducer), @(Madman), @(Jester), @(Juliet), @(GuardianAngel), @(Vampire), @(Igor), @(VampireHunter), @(Hag)]];
     
     // Then
     XCTAssertEqualObjects(allRoles, self.gameState.unassignedRoles);
@@ -127,7 +127,7 @@
 {
     // Given
     Player *newPlayer = [[Player alloc] initWithName:@"Bob" role:Monk];
-    NSSet *allRolesMinusMonk = [NSCountedSet setWithArray:@[@(AlphaWolf), @(PackWolf), @(WolfPup), @(Defector), @(Clairvoyant), @(Medium), @(Wizard), @(Witch), @(Healer), @(Farmer), @(Farmer), @(Hermit), @(Bard), @(Innkeeper), @(Priest), @(Sinner), @(Seducer), @(Madman), @(Jester), @(Juliet), @(GuardianAngel), @(Vampire), @(Igor), @(VampireHunter)]];
+    NSSet *allRolesMinusMonk = [NSCountedSet setWithArray:@[@(AlphaWolf), @(PackWolf), @(WolfPup), @(Defector), @(Clairvoyant), @(Medium), @(Wizard), @(Witch), @(Healer), @(Farmer), @(Farmer), @(Hermit), @(Bard), @(Innkeeper), @(Priest), @(Sinner), @(Seducer), @(Madman), @(Jester), @(Juliet), @(GuardianAngel), @(Vampire), @(Igor), @(VampireHunter), @(Hag)]];
     
     // When
     [self.gameState addPlayer:newPlayer];
@@ -140,7 +140,7 @@
 {
     // Given
     Player *newPlayer = [[Player alloc] initWithName:@"Bob" role:Farmer];
-    NSSet *allRolesMinusFarmer = [NSCountedSet setWithArray:@[@(AlphaWolf), @(PackWolf), @(WolfPup), @(Defector), @(Clairvoyant), @(Medium), @(Wizard), @(Witch), @(Healer), @(Farmer), @(Monk), @(Hermit), @(Bard), @(Innkeeper), @(Priest), @(Sinner), @(Seducer), @(Madman), @(Jester), @(Juliet), @(GuardianAngel), @(Vampire), @(Igor), @(VampireHunter)]];
+    NSSet *allRolesMinusFarmer = [NSCountedSet setWithArray:@[@(AlphaWolf), @(PackWolf), @(WolfPup), @(Defector), @(Clairvoyant), @(Medium), @(Wizard), @(Witch), @(Healer), @(Farmer), @(Monk), @(Hermit), @(Bard), @(Innkeeper), @(Priest), @(Sinner), @(Seducer), @(Madman), @(Jester), @(Juliet), @(GuardianAngel), @(Vampire), @(Igor), @(VampireHunter), @(Hag)]];
     
     // When
     [self.gameState addPlayer:newPlayer];

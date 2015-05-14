@@ -54,6 +54,7 @@
         case Minion: return @"Minion";
         case Igor: return @"Igor";
         case VampireHunter: return @"Vampire Hunter";
+        case Hag: return @"Hag";
     }
 }
 
@@ -68,6 +69,7 @@
         case Seducer:
         case Vampire:
         case Minion:
+        case Hag:
             return YES;
             
         default:
@@ -84,6 +86,7 @@
         case Wizard:
         case Clairvoyant:
         case Medium:
+        case Hag:
             return YES;
             
         default:
@@ -100,6 +103,7 @@
         case WolfPup:
         case Vampire:
         case Minion:
+        case Hag:
             return YES;
             
         default:
