@@ -712,7 +712,8 @@ Tap line in table to select player
                                             <constraint firstAttribute="width" constant="160" id="Cl8-Km-35l"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17F-fy-mlf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17F-fy-mlf">
+                                        <rect key="frame" x="74" y="121" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -736,7 +737,8 @@ Tap line in table to select player
                                             <constraint firstAttribute="width" secondItem="Rah-9j-fvR" secondAttribute="height" multiplier="1:1" id="Zam-vu-Uih"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saE-aw-8YN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saE-aw-8YN">
+                                        <rect key="frame" x="74" y="121" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1034,7 +1036,8 @@ Tap line in table to select player
                                             <action selector="continuing:" destination="9Qo-8c-yYq" eventType="touchUpInside" id="b13-BP-fza"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf5-GF-Ul4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf5-GF-Ul4">
+                                        <rect key="frame" x="150" y="121" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1157,7 +1160,8 @@ Tap line in table to select player
                                             <action selector="continuing:" destination="WQa-37-duF" eventType="touchUpInside" id="ioc-nw-8nW"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGj-DL-t5L">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGj-DL-t5L">
+                                        <rect key="frame" x="150" y="121" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2271,8 +2275,8 @@ Please acknowledge eachother"</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQE-mw-oHI">
-                                <rect key="frame" x="85" y="334" width="150" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQE-mw-oHI">
+                                <rect key="frame" x="85" y="339" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="1oB-XV-b2I"/>
@@ -2296,6 +2300,7 @@ Please acknowledge eachother"</string>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="dQE-mw-oHI" secondAttribute="centerX" id="2Vk-0L-Hzv"/>
                             <constraint firstAttribute="centerX" secondItem="GTN-dC-ctw" secondAttribute="centerX" id="6bf-Xe-Uok"/>
                             <constraint firstItem="bih-iG-Vbg" firstAttribute="top" secondItem="nDL-x1-9zp" secondAttribute="bottom" constant="50" id="EEl-gn-xHY"/>
                             <constraint firstItem="nDL-x1-9zp" firstAttribute="top" secondItem="qJB-vK-laX" secondAttribute="topMargin" constant="8" id="KBn-4n-Opn"/>
@@ -2305,6 +2310,7 @@ Please acknowledge eachother"</string>
                             <constraint firstItem="KHW-sF-2QF" firstAttribute="leading" secondItem="u6J-fD-2o7" secondAttribute="trailing" constant="20" id="Svo-qf-OsA"/>
                             <constraint firstItem="bih-iG-Vbg" firstAttribute="leading" secondItem="qJB-vK-laX" secondAttribute="leadingMargin" constant="8" id="UEp-Vy-FrX"/>
                             <constraint firstItem="u6J-fD-2o7" firstAttribute="top" secondItem="bih-iG-Vbg" secondAttribute="bottom" constant="8" id="WIb-w1-09I"/>
+                            <constraint firstItem="M1x-Jy-PtR" firstAttribute="top" secondItem="dQE-mw-oHI" secondAttribute="bottom" constant="8" id="YdX-xS-YQw"/>
                             <constraint firstItem="e9u-vp-NCL" firstAttribute="leading" secondItem="bih-iG-Vbg" secondAttribute="trailing" constant="20" id="YuB-4T-h2z"/>
                             <constraint firstAttribute="centerX" secondItem="nDL-x1-9zp" secondAttribute="centerX" id="a3h-7m-ayb"/>
                             <constraint firstItem="u6J-fD-2o7" firstAttribute="trailing" secondItem="bih-iG-Vbg" secondAttribute="trailing" id="ayP-zz-C8P"/>
@@ -2649,6 +2655,6 @@ Please acknowledge eachother"</string>
         <segue reference="enR-50-5Xl"/>
         <segue reference="x91-Gc-kFo"/>
         <segue reference="iU4-zQ-jWI"/>
-        <segue reference="OiL-Gy-HQE"/>
+        <segue reference="COg-eH-uaz"/>
     </inferredMetricsTieBreakers>
 </document>
