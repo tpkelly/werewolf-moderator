@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NewsFromTheInn.h"
+#import "AttackResult.h"
 
 @class GameState;
 @class Player;
@@ -30,8 +31,8 @@
 -(void)angelPicksGuarded:(Player*)player;
 
 // Returns whether the attack was successful
--(BOOL)vampireAttackPlayer:(Player*)player;
--(BOOL)wolfAttackPlayer:(Player*)player;
+-(AttackResult)vampireAttackPlayer:(Player*)player;
+-(AttackResult)wolfAttackPlayer:(Player*)player;
 
 -(MorningNews*)transitionToMorning;
 -(BOOL)gameIsOver;

@@ -78,23 +78,23 @@
 
 #pragma mark - Nightly attacks
 
--(BOOL)wolfAttackPlayer:(Player *)player
+-(AttackResult)wolfAttackPlayer:(Player *)player
 {
     // Madman blocks attacks
     if (_state.madmanMauledLastNight)
     {
-        return NO;
+        return TargetImmune;
     }
     
     // Protected from shadow attacks
     if (player.temporaryProtection || player.permanentProtection)
     {
-        return NO;
+        return TargetImmune;
     }
     
     if (player.role.roleType == Defector)
     {
-        return NO;
+        return TargetInformed;
     }
     
     NSMutableArray *destinedToDie = [_state.destinedToDie mutableCopy];
@@ -116,15 +116,15 @@
     }
     
     _state.destinedToDie = destinedToDie;
-    return YES;
+    return Success;
 }
 
--(BOOL)vampireAttackPlayer:(Player *)player
+-(AttackResult)vampireAttackPlayer:(Player *)player
 {
     // Protected from vampire attacks
     if (player.temporaryProtection || player.permanentProtection || player.role.isMystic)
     {
-        return NO;
+        return TargetImmune;
     }
     
     // Critical mission failure - Kill the vampire/igor off
@@ -137,12 +137,20 @@
             playerToKill = [_state playerWithRole:Vampire inPlayerSet:_state.playersAlive];
         }
         _state.destinedToDie = [_state.destinedToDie arrayByAddingObject:playerToKill];
-        return NO;
+        
+        if (player.role.roleType == VampireHunter)
+        {
+            return TargetInformed;
+        }
+        else
+        {
+            return TargetImmune;
+        }
     }
     
     // Just as planned...
     player.role = [[MinionRole alloc] initWithPreviousRole:player.role];
-    return YES;
+    return Success;
 }
 
 #pragma mark - First night actions

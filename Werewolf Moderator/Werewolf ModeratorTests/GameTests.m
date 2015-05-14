@@ -192,11 +192,11 @@
     Player *farmer = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
     
     // When:
-    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:farmer];
+    AttackResult result = [self.testGame vampireAttackPlayer:farmer];
     
     // Then:
     XCTAssertEqual(Minion, farmer.role.roleType);
-    XCTAssertTrue(attackSucceeded);
+    XCTAssertEqual(Success, result);
 }
 
 -(void)testThatNewlyCreatedMinionHasOldNameIncluded
@@ -217,11 +217,11 @@
     Player *player = [[Player alloc] initWithName:@"Farmer Joe" role:Hermit];
     
     // When:
-    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:player];
+    AttackResult result = [self.testGame vampireAttackPlayer:player];
     
     // Then:
     XCTAssertEqual(Hermit, player.role.roleType);
-    XCTAssertFalse(attackSucceeded);
+    XCTAssertEqual(TargetImmune, result);
 }
 
 -(void)testThatVampireCannotAttackProtectedPlayer
@@ -231,11 +231,11 @@
     player.temporaryProtection = YES;
     
     // When:
-    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:player];
+    AttackResult result = [self.testGame vampireAttackPlayer:player];
     
     // Then:
     XCTAssertEqual(Farmer, player.role.roleType);
-    XCTAssertFalse(attackSucceeded);
+    XCTAssertEqual(TargetImmune, result);
 }
 
 -(void)testThatVampireCannotAttackRomeo
@@ -245,11 +245,11 @@
     [self.testGame julietPicksRomeo:player];
     
     // When:
-    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:player];
+    AttackResult result = [self.testGame vampireAttackPlayer:player];
     
     // Then:
     XCTAssertEqual(Farmer, player.role.roleType);
-    XCTAssertFalse(attackSucceeded);
+    XCTAssertEqual(TargetImmune, result);
 }
 
 -(void)testThatVampireCannotAttackMystics
@@ -258,11 +258,11 @@
     Player *player = [[Player alloc] initWithName:@"Farmer Joe" role:Wizard];
     
     // When:
-    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:player];
+    AttackResult result = [self.testGame vampireAttackPlayer:player];
     
     // Then:
     XCTAssertEqual(Wizard, player.role.roleType);
-    XCTAssertFalse(attackSucceeded);
+    XCTAssertEqual(TargetImmune, result);
 }
 
 -(void)testThatVampireDiesWhenAttackingVampireHunter
@@ -278,10 +278,10 @@
     [[self.mockGameState expect] setDestinedToDie:destinedToDie];
     
     // When:
-    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:hunter];
+    AttackResult result = [self.testGame vampireAttackPlayer:hunter];
     
     // Then:
-    XCTAssertFalse(attackSucceeded);
+    XCTAssertEqual(TargetInformed, result);
 }
 
 -(void)testThatVampireDiesWhenAttackingWolves
@@ -297,10 +297,10 @@
     [[self.mockGameState expect] setDestinedToDie:destinedToDie];
     
     // When:
-    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:wolf];
+    AttackResult result = [self.testGame vampireAttackPlayer:wolf];
     
     // Then:
-    XCTAssertFalse(attackSucceeded);
+    XCTAssertEqual(TargetImmune, result);
 }
 
 -(void)testThatVampireLivesWhenAttackingDefector
@@ -315,10 +315,10 @@
     [[self.mockGameState reject] setDestinedToDie:OCMOCK_ANY];
     
     // When:
-    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:defector];
+    AttackResult result = [self.testGame vampireAttackPlayer:defector];
     
     // Then:
-    XCTAssertTrue(attackSucceeded);
+    XCTAssertEqual(Success, result);
 }
 
 -(void)testThatDefectorBecomesMinionInVampireAttack
@@ -346,10 +346,10 @@
     [[self.mockGameState expect] setDestinedToDie:destinedToDie];
     
     // When:
-    BOOL attackSucceeded = [self.testGame vampireAttackPlayer:wolf];
+    AttackResult result = [self.testGame vampireAttackPlayer:wolf];
     
     //Then:
-    XCTAssertFalse(attackSucceeded);
+    XCTAssertEqual(TargetImmune, result);
 }
 
 #pragma mark - Wolf attacks
@@ -365,10 +365,10 @@
     [[self.mockGameState expect] setDestinedToDie:@[dyingPlayer, wolfTarget]];
     
     // When
-    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:wolfTarget];
+    AttackResult result = [self.testGame wolfAttackPlayer:wolfTarget];
     
     // Then
-    XCTAssertTrue(attackSucceeded);
+    XCTAssertEqual(Success, result);
 }
 
 -(void)testThatWolfAttackFailsOnProtectedTarget
@@ -378,10 +378,10 @@
     wolfTarget.temporaryProtection = YES;
     
     // When
-    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:wolfTarget];
+    AttackResult result = [self.testGame wolfAttackPlayer:wolfTarget];
     
     // Then
-    XCTAssertFalse(attackSucceeded);
+    XCTAssertEqual(TargetImmune, result);
 }
 
 -(void)testThatWolfAttackFailsOnImmuneTarget
@@ -390,10 +390,10 @@
     Player *wolfTarget = [[Player alloc] initWithName:@"Farmer Joe" role:Hermit];
     
     // When
-    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:wolfTarget];
+    AttackResult result = [self.testGame wolfAttackPlayer:wolfTarget];
     
     // Then
-    XCTAssertFalse(attackSucceeded);
+    XCTAssertEqual(TargetImmune, result);
 }
 
 -(void)testThatWolfAttackOnJulietKillsRomeoToo
@@ -408,10 +408,10 @@
     [[self.mockGameState expect] setDestinedToDie:@[romeo, juliet]];
     
     // When
-    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:juliet];
+    AttackResult result = [self.testGame wolfAttackPlayer:juliet];
     
     // Then
-    XCTAssertTrue(attackSucceeded);
+    XCTAssertEqual(Success, result);
 }
 
 -(void)testThatWolfAttackOnGuardedKillsAngelInstead
@@ -427,10 +427,10 @@
     [[self.mockGameState expect] setDestinedToDie:@[angel]];
     
     // When
-    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:guarded];
+    AttackResult result = [self.testGame wolfAttackPlayer:guarded];
     
     // Then
-    XCTAssertTrue(attackSucceeded);
+    XCTAssertEqual(Success, result);
 }
 
 -(void)testThatWolfAttackOnGuardedRomeoOnlyKillsAngelAndJuliet
@@ -449,10 +449,10 @@
     [[self.mockGameState expect] setDestinedToDie:@[angel, juliet]];
     
     // When
-    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:juliet];
+    AttackResult result = [self.testGame wolfAttackPlayer:juliet];
     
     // Then
-    XCTAssertTrue(attackSucceeded);
+    XCTAssertEqual(Success, result);
 }
 
 -(void)testThatWolfAttackOnVampireDoesNotKillIgor
@@ -467,10 +467,10 @@
     [[self.mockGameState expect] setDestinedToDie:@[vampire]];
     
     // When
-    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:vampire];
+    AttackResult result = [self.testGame wolfAttackPlayer:vampire];
     
     // Then
-    XCTAssertTrue(attackSucceeded);
+    XCTAssertEqual(Success, result);
 }
 
 -(void)testThatWolfAttackOnVampireWithoutIgorKillsVampire
@@ -483,10 +483,10 @@
     [[self.mockGameState expect] setDestinedToDie:@[vampire]];
     
     // When
-    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:vampire];
+    AttackResult result = [self.testGame wolfAttackPlayer:vampire];
     
     // Then
-    XCTAssertTrue(attackSucceeded);
+    XCTAssertEqual(Success, result);
 }
 
 -(void)testThatWolfAttackCancelledIfMadmanMaulledLastNight
@@ -500,22 +500,22 @@
     [[self.mockGameState reject] setDestinedToDie:OCMOCK_ANY];
     
     // When
-    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:wolfTarget];
+    AttackResult result = [self.testGame wolfAttackPlayer:wolfTarget];
     
     // Then
-    XCTAssertFalse(attackSucceeded);
+    XCTAssertEqual(TargetImmune, result);
 }
 
--(void)testThatWolfAttackOnDefectorDoesNotKillDefector
+-(void)testThatWolfAttackOnDefectorInformsDefector
 {
     // Given
     Player *defector = [[Player alloc] initWithName:@"Defector" role:Defector];
     
     // When
-    BOOL attackSucceeded = [self.testGame wolfAttackPlayer:defector];
+    AttackResult result = [self.testGame wolfAttackPlayer:defector];
     
     // Then
-    XCTAssertFalse(attackSucceeded);
+    XCTAssertEqual(TargetInformed, result);
 }
 
 #pragma mark - First night actions
