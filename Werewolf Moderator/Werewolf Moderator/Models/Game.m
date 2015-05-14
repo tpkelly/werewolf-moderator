@@ -186,7 +186,10 @@
     news.diedLastNight = _state.destinedToDie;
 
     //Kill them all!
-    [_state.destinedToDie makeObjectsPerformSelector:@selector(setAlive:) withObject:@NO];
+    for (Player *player in _state.destinedToDie)
+    {
+        player.alive = NO;
+    }
     _state.destinedToDie = @[];
     
     // Find news from the inn
