@@ -44,6 +44,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -55,6 +56,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -66,6 +68,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -77,6 +80,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -88,6 +92,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -99,6 +104,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -110,6 +116,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -121,6 +128,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -132,6 +140,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -143,6 +152,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -154,6 +164,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertTrue(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -165,6 +176,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -176,6 +188,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -187,6 +200,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -198,6 +212,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -209,6 +224,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -220,6 +236,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -231,6 +248,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -242,6 +260,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -253,6 +272,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -264,6 +284,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -275,6 +296,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -286,6 +308,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -297,6 +320,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -308,6 +332,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.cursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }

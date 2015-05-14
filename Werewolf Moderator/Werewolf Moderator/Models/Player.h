@@ -19,6 +19,7 @@
 @property (nonatomic, strong) Role *role;
 @property (nonatomic, assign) BOOL alive;
 
+@property (nonatomic, assign) BOOL cursed;
 @property (nonatomic, assign) BOOL temporaryProtection;
 @property (nonatomic, assign) BOOL permanentProtection;
 
