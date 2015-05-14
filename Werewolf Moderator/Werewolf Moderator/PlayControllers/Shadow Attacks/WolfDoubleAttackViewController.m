@@ -73,22 +73,27 @@
 {
     Player *playerAtIndex = [[SingleGame state].playersAlive objectAtIndex:indexPath.row];
     tableView.hidden = YES;
-    
-    if ([[SingleGame game] wolfAttackPlayer:playerAtIndex])
+    UILabel *tapLabel = (tableView == self.firstPlayerTable) ? self.tapFirstPlayerLabel : self.tapSecondPlayerLabel;
+
+    AttackResult result = [[SingleGame game] wolfAttackPlayer:playerAtIndex];
+    if (result == Success)
     {
         // Stop us killing the same person twice
         [self.firstPlayerTable reloadData];
         [self.secondPlayerTable reloadData];
         
-        UILabel *tapLabel = (tableView == self.firstPlayerTable) ? self.tapFirstPlayerLabel : self.tapSecondPlayerLabel;
         // Use the destinedToDie array to check, in case someone took their place
         Player *attackedPlayer = [[SingleGame state].destinedToDie lastObject];
         tapLabel.text = [NSString stringWithFormat:@"Tap %@", attackedPlayer.name];
     }
-    else
+    else if (result == TargetImmune)
     {
         UIImageView *immunityImage = (tableView == self.firstPlayerTable) ? self.firstPlayerImmunityImage : self.secondPlayerImmunityImage;
         [immunityImage setImage:[UIImage imageNamed:@"immune.png"]];
+    }
+    else
+    {
+        tapLabel.text = [NSString stringWithFormat:@"Wake Defector: %@", playerAtIndex.name];
     }
 }
 

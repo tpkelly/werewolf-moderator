@@ -70,15 +70,20 @@
     Player *playerAtIndex = [[SingleGame state].playersAlive objectAtIndex:indexPath.row];
     self.playerTable.hidden = YES;
     
-    if ([[SingleGame game] wolfAttackPlayer:playerAtIndex])
+    AttackResult result = [[SingleGame game] wolfAttackPlayer:playerAtIndex];
+    if (result == Success)
     {
         // Use the destinedToDie array to check, in case someone took their place
         Player *attackedPlayer = [[SingleGame state].destinedToDie lastObject];
         self.tapPlayerLabel.text = [NSString stringWithFormat:@"Tap %@", attackedPlayer.name];
     }
-    else
+    else if (result == TargetImmune)
     {
         [self.playerImmunityImage setImage:[UIImage imageNamed:@"immune.png"]];
+    }
+    else
+    {
+        self.tapPlayerLabel.text = [NSString stringWithFormat:@"Wake Defector: %@", playerAtIndex.name];
     }
 }
 

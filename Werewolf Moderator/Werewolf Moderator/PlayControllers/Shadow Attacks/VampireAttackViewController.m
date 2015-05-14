@@ -70,13 +70,18 @@
     Player *playerAtIndex = [[SingleGame state].playersAlive objectAtIndex:indexPath.row];
     self.playerTable.hidden = YES;
     
-    if ([[SingleGame game] vampireAttackPlayer:playerAtIndex])
+    AttackResult result = [[SingleGame game] vampireAttackPlayer:playerAtIndex];
+    if (result == Success)
     {
-        self.tapPlayerLabel.text = [NSString stringWithFormat:@"Tap %@", playerAtIndex.name];
+        self.tapPlayerLabel.text = [NSString stringWithFormat:@"Wake up %@", playerAtIndex.name];
+    }
+    else if (result == TargetImmune)
+    {
+        [self.playerImmunityImage setImage:[UIImage imageNamed:@"immune.png"]];
     }
     else
     {
-        [self.playerImmunityImage setImage:[UIImage imageNamed:@"immune.png"]];
+        self.tapPlayerLabel.text = [NSString stringWithFormat:@"Inform but don't wake %@", playerAtIndex.name];
     }
 }
 
