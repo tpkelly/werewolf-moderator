@@ -37,9 +37,11 @@
     }
     
     // Kill now
-    if (reason == BurnedAtStake)
+    if (reason == BurnedAtStake || reason == ItIsMorning)
     {
+        player.isCursed = NO;
         player.alive = NO;
+        [self checkLiftCurses:player state:state];
     }
     // Kill later
     else
@@ -50,6 +52,18 @@
     }
     
     return player;
+}
+
++(void)checkLiftCurses:(Player*)player state:(GameState*)state
+{
+    // Killing the hag lifts all curses
+    if (player.role.roleType == Hag)
+    {
+        for (Player *player in state.playersAlive)
+        {
+            player.isCursed = NO;
+        }
+    }
 }
 
 @end

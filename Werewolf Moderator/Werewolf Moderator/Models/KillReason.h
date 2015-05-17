@@ -8,6 +8,7 @@
 
 typedef NS_ENUM(NSInteger, KillReason)
 {
+    ItIsMorning,
     BurnedAtStake,
     EatenByWolves,
     RomeoJulietSuicide,

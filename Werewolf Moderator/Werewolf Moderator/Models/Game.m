@@ -205,7 +205,7 @@
     //Kill them all!
     for (Player *player in _state.destinedToDie)
     {
-        player.alive = NO;
+        [AttackUtility killPlayer:player reason:ItIsMorning state:_state];
     }
     _state.destinedToDie = @[];
     

@@ -15,6 +15,7 @@
 #import "Player.h"
 #import "Role.h"
 #import "MorningNews.h"
+#import "AttackUtility.h"
 
 @interface GameTests : XCTestCase
 
@@ -389,6 +390,105 @@
     // Then
     XCTAssertFalse(checkCursed);
     XCTAssertFalse(checkUncursed);
+}
+
+-(void)testThatCursedPlayerLosesCurseOnDeath
+{
+    // Given
+    Player *cursed = [[Player alloc] initWithName:@"Cursed" role:Farmer];
+    cursed.isCursed = YES;
+    
+    // When
+    [AttackUtility killPlayer:cursed reason:BurnedAtStake state:self.mockGameState];
+    
+    // Then
+    XCTAssertFalse(cursed.isCursed);
+}
+
+-(void)testThatCursedPlayerDoesNotLoseCurseAtMorningIfAlive
+{
+    // Given
+    Player *cursed = [[Player alloc] initWithName:@"Cursed" role:Farmer];
+    cursed.isCursed = YES;
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
+    
+    // When
+    [self.testGame transitionToMorning];
+    
+    // Then
+    XCTAssertTrue(cursed.isCursed);
+}
+
+-(void)testThatCursedPlayerLosesCurseOnDeathByMorning
+{
+    // Given
+    Player *cursed = [[Player alloc] initWithName:@"Cursed" role:Farmer];
+    cursed.isCursed = YES;
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:@[cursed]] destinedToDie];
+    
+    // When
+    [self.testGame transitionToMorning];
+    
+    // Then
+    XCTAssertFalse(cursed.isCursed);
+}
+
+-(void)testThatCursesAreLiftedWhenTheHagDies
+{
+    // Given
+    Player *cursed = [[Player alloc] initWithName:@"Cursed" role:Farmer];
+    Player *hag = [[Player alloc] initWithName:@"Hag" role:Hag];
+    cursed.isCursed = YES;
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:hag] playerWithRole:Hag inPlayerSet:OCMOCK_ANY];
+    [[[self.mockGameState stub] andReturn:@[hag, cursed]] playersAlive];
+    
+    // When
+    [AttackUtility killPlayer:hag reason:BurnedAtStake state:self.mockGameState];
+    
+    // Then
+    XCTAssertFalse(cursed.isCursed);
+}
+
+-(void)testThatCursedPlayerDoesNotLoseCurseAtMorningIfHagAlive
+{
+    // Given
+    Player *cursed = [[Player alloc] initWithName:@"Cursed" role:Farmer];
+    Player *hag = [[Player alloc] initWithName:@"Hag" role:Hag];
+    cursed.isCursed = YES;
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
+    [[[self.mockGameState stub] andReturn:@[cursed, hag]] playersAlive];
+    
+    // When
+    [self.testGame transitionToMorning];
+    
+    // Then
+    XCTAssertTrue(cursed.isCursed);
+}
+
+-(void)testThatCursedPlayerLosesCurseOnHagDeathByMorning
+{
+    // Given
+    Player *cursed = [[Player alloc] initWithName:@"Cursed" role:Farmer];
+    Player *hag = [[Player alloc] initWithName:@"Hag" role:Hag];
+    cursed.isCursed = YES;
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:@[hag]] destinedToDie];
+    [[[self.mockGameState stub] andReturn:@[cursed, hag]] playersAlive];
+    
+    // When
+    [self.testGame transitionToMorning];
+    
+    // Then
+    XCTAssertFalse(cursed.isCursed);
 }
 
 #pragma mark - Vampire Attacks
