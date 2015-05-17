@@ -44,7 +44,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -56,7 +56,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -68,7 +68,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -80,7 +80,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -92,7 +92,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -104,7 +104,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -116,7 +116,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -128,7 +128,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -140,7 +140,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -152,7 +152,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -164,7 +164,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertTrue(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -176,7 +176,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -188,7 +188,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -200,7 +200,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -212,7 +212,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -224,7 +224,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -236,7 +236,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -248,7 +248,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -260,7 +260,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -272,7 +272,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -284,7 +284,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -296,7 +296,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -308,7 +308,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -320,7 +320,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -332,7 +332,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }
@@ -344,7 +344,7 @@
     
     //Then
     XCTAssertTrue(player.alive);
-    XCTAssertFalse(player.cursed);
+    XCTAssertFalse(player.isCursed);
     XCTAssertFalse(player.permanentProtection);
     XCTAssertFalse(player.temporaryProtection);
 }

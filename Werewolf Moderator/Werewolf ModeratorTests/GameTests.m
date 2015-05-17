@@ -184,6 +184,163 @@
     [self.testGame healerSavesPlayer:chosenToDie];
 }
 
+#pragma mark - Cursed mystics
+
+-(void)testThatClairvoyantIsCursedByCheckingTheHag
+{
+    // Given
+    Player *clairvoyant = [[Player alloc] initWithName:@"Clairvoyant" role:Clairvoyant];
+    Player *hag = [[Player alloc] initWithName:@"Hag" role:Hag];
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:clairvoyant] playerWithRole:Clairvoyant inPlayerSet:OCMOCK_ANY];
+    [[[self.mockGameState stub] andReturn:hag] playerWithRole:Hag inPlayerSet:OCMOCK_ANY];
+    
+    
+    // When
+    BOOL corruption = [self.testGame clairvoyantChecksPlayer:hag];
+    
+    // Then
+    XCTAssertTrue(clairvoyant.isCursed);
+    XCTAssertTrue(corruption);
+}
+
+-(void)testThatWizardIsCursedByCheckingTheHag
+{
+    // Given
+    Player *wizard = [[Player alloc] initWithName:@"Wizard" role:Wizard];
+    Player *hag = [[Player alloc] initWithName:@"Hag" role:Hag];
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:wizard] playerWithRole:Wizard inPlayerSet:OCMOCK_ANY];
+    [[[self.mockGameState stub] andReturn:hag] playerWithRole:Hag inPlayerSet:OCMOCK_ANY];
+    
+    
+    // When
+    BOOL mysticism = [self.testGame wizardChecksPlayer:hag];
+    
+    // Then
+    XCTAssertTrue(wizard.isCursed);
+    XCTAssertTrue(mysticism);
+}
+
+-(void)testThatWitchIsCursedByProtectingTheHag
+{
+    // Given
+    Player *witch = [[Player alloc] initWithName:@"Witch" role:Witch];
+    Player *hag = [[Player alloc] initWithName:@"Hag" role:Hag];
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:witch] playerWithRole:Witch inPlayerSet:OCMOCK_ANY];
+    [[[self.mockGameState stub] andReturn:hag] playerWithRole:Hag inPlayerSet:OCMOCK_ANY];
+    
+    
+    // When
+    [self.testGame witchProtectPlayer:hag];
+    
+    // Then
+    XCTAssertTrue(witch.isCursed);
+    XCTAssertTrue(hag.temporaryProtection);
+}
+
+-(void)testThatHealerIsCursedBySavingTheHag
+{
+    // Given
+    Player *healer = [[Player alloc] initWithName:@"Healer" role:Healer];
+    Player *hag = [[Player alloc] initWithName:@"Hag" role:Hag];
+    
+    // Expect
+    BOOL healerCanHeal = YES;
+    NSArray *alivePlayers = @[healer, hag];
+    [[[self.mockGameState stub] andReturn:alivePlayers] playersAlive];
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(healerCanHeal)] healerHasPowers];
+    [[[self.mockGameState stub] andReturn:healer] playerWithRole:Healer inPlayerSet:[self.mockGameState playersAlive]];
+    [[[self.mockGameState stub] andReturn:hag] playerWithRole:Hag inPlayerSet:OCMOCK_ANY];
+    
+    
+    // When
+    [self.testGame healerSavesPlayer:hag];
+    
+    // Then
+    XCTAssertTrue(healer.isCursed);
+}
+
+-(void)testThatMediumIsNotCursedByCheckingTheHag
+{
+    // Given
+    Player *medium = [[Player alloc] initWithName:@"Medium" role:Medium];
+    Player *hag = [[Player alloc] initWithName:@"Hag" role:Hag];
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:medium] playerWithRole:Medium inPlayerSet:OCMOCK_ANY];
+    [[[self.mockGameState stub] andReturn:hag] playerWithRole:Hag inPlayerSet:OCMOCK_ANY];
+    
+    
+    // When
+    BOOL corruption = [self.testGame mediumChecksPlayer:hag];
+    
+    // Then
+    XCTAssertFalse(medium.isCursed);
+    XCTAssertTrue(corruption);
+}
+
+-(void)testThatCursedClairvoyantDoesNotSeeCorruption
+{
+    // Given
+    Player *clairvoyant = [[Player alloc] initWithName:@"Clairvoyant" role:Clairvoyant];
+    Player *corruptPlayer = [[Player alloc] initWithName:@"Corrupt" role:AlphaWolf];
+    Player *noncorruptPlayer = [[Player alloc] initWithName:@"Noncorrupt" role:Hermit];
+    clairvoyant.isCursed = YES;
+ 
+    // Expect
+    [[[self.mockGameState stub] andReturn:clairvoyant] playerWithRole:Clairvoyant inPlayerSet:OCMOCK_ANY];
+    
+    // When
+    BOOL checkCorrupt = [self.testGame clairvoyantChecksPlayer:corruptPlayer];
+    BOOL checkNoncorrupt = [self.testGame clairvoyantChecksPlayer:noncorruptPlayer];
+    
+    // Then
+    XCTAssertFalse(checkCorrupt);
+    XCTAssertFalse(checkNoncorrupt);
+}
+
+-(void)testThatCursedWizardDoesNotSeeMystics
+{
+    // Given
+    Player *wizard = [[Player alloc] initWithName:@"Wizard" role:Wizard];
+    Player *mystic = [[Player alloc] initWithName:@"Mystic" role:Medium];
+    Player *nonmystic = [[Player alloc] initWithName:@"Nonmystic" role:Hermit];
+    wizard.isCursed = YES;
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:wizard] playerWithRole:Wizard inPlayerSet:OCMOCK_ANY];
+    
+    // When
+    BOOL checkMystic = [self.testGame wizardChecksPlayer:mystic];
+    BOOL checkNonmystic = [self.testGame wizardChecksPlayer:nonmystic];
+    
+    // Then
+    XCTAssertFalse(checkMystic);
+    XCTAssertFalse(checkNonmystic);
+}
+
+-(void)testThatCursedWitchCannotOfferProtection
+{
+    //Given
+    Player *witch = [[Player alloc] initWithName:@"Witch" role:Witch];
+    Player *farmer = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
+    witch.isCursed = YES;
+    
+    //Expect
+    [[[self.mockGameState stub] andReturn:witch] playerWithRole:Witch inPlayerSet:OCMOCK_ANY];
+    
+    //When
+    [self.testGame witchProtectPlayer:farmer];
+    
+    //Then
+    XCTAssertFalse(farmer.temporaryProtection);
+}
+
 #pragma mark - Vampire Attacks
 
 -(void)testThatVampireTurnsTargetIntoMinion

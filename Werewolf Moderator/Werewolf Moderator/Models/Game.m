@@ -27,6 +27,24 @@
     return self;
 }
 
+-(BOOL)hagCheck:(Player*)potentialHag forMystic:(RoleType)mysticRole
+{
+    Player *mystic = [_state playerWithRole:mysticRole inPlayerSet:_state.playersAlive];
+    
+    if (mystic.isCursed)
+    {
+        return NO;
+    }
+    
+    if (potentialHag.role.roleType == Hag)
+    {
+        Player *mystic = [_state playerWithRole:mysticRole inPlayerSet:_state.playersAlive];
+        mystic.isCursed = YES;
+    }
+    
+    return YES;
+}
+
 #pragma mark - Mystic Abilities
 
 -(BOOL)clairvoyantChecksPlayer:(Player *)player
@@ -34,8 +52,10 @@
     BOOL checkedPlayerWasCorrupt = player.role.isCorrupt;
     
     _state.newsFromTheInn = (checkedPlayerWasCorrupt) ? FoundCorrupt : FoundNonCorrupt;
-
-    return checkedPlayerWasCorrupt;
+    
+    BOOL checkSucceeds = [self hagCheck:player forMystic:Clairvoyant];
+    
+    return checkSucceeds && checkedPlayerWasCorrupt;
 }
 
 -(BOOL)mediumChecksPlayer:(Player *)player
@@ -45,12 +65,14 @@
 
 -(BOOL)wizardChecksPlayer:(Player *)player
 {
-    return player.role.isMystic;
+    BOOL checkSucceeds = [self hagCheck:player forMystic:Wizard];
+    return checkSucceeds && player.role.isMystic;
 }
 
 -(void)witchProtectPlayer:(Player *)player
 {
-    player.temporaryProtection = YES;
+    BOOL protectionSuceeds = [self hagCheck:player forMystic:Witch];
+    player.temporaryProtection = protectionSuceeds;
 }
 
 -(void)healerSavesPlayer:(Player *)player
@@ -69,6 +91,13 @@
         return;
     }
     
+    BOOL healSucceeds = [self hagCheck:player forMystic:Healer];
+    
+    if (!healSucceeds)
+    {
+        return;
+    }
+
     //Let him be saaaved!
     [destinedToDie removeObject:player];
     
