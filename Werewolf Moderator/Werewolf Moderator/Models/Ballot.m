@@ -11,6 +11,7 @@
 #import "GameState.h"
 #import "Player.h"
 #import "Role.h"
+#import "AttackUtility.h"
 
 @interface Ballot ()
 
@@ -82,55 +83,20 @@
         return nil;
     }
     
-    Player *playerToBurn = [mostVotedPlayers firstObject];
-    Player *destinedPlayer;
+    Player *mostVotedPlayer = [mostVotedPlayers firstObject];
+    Player *burnedPlayer = [AttackUtility killPlayer:mostVotedPlayer reason:BurnedAtStake state:_state];
     
-    if (playerToBurn == self.state.guardedPlayer)
+    if (burnedPlayer.role.roleType == WolfPup)
     {
-        Player *guardianAngel = [self.state playerWithRole:GuardianAngel inPlayerSet:self.state.playersAlive];
-        playerToBurn = (guardianAngel) ? guardianAngel : playerToBurn;
+        self.state.wolvesAttackTwice = YES;
     }
-    if (playerToBurn == self.state.romeoPlayer)
-    {
-        Player *juliet = [self.state playerWithRole:Juliet inPlayerSet:self.state.playersAlive];
-        
-        // The Juliet role may no longer be in the game, if Juliet was turned into a Minion!
-        if (juliet)
-        {
-            self.state.destinedToDie = [self.state.destinedToDie arrayByAddingObject:juliet];
-        }
-    }
-    
-    // Cancel next ballot if jester is burned
-    if (playerToBurn.role.roleType == Jester)
+    else if (burnedPlayer.role.roleType == Jester)
     {
         self.state.jesterBurnedLastNight = YES;
         self.state.winningFactions = [self.state.winningFactions arrayByAddingObject:@(JesterFaction)];
     }
-    else if (playerToBurn.role.roleType == Juliet)
-    {
-        destinedPlayer = self.state.romeoPlayer;
-
-        if (self.state.romeoPlayer == self.state.guardedPlayer)
-        {
-            Player *guardianAngel = [self.state playerWithRole:GuardianAngel inPlayerSet:self.state.playersAlive];
-            destinedPlayer = (guardianAngel) ? guardianAngel : destinedPlayer;
-        }
-    }
-    else if (playerToBurn.role.roleType == WolfPup)
-    {
-        self.state.wolvesAttackTwice = YES;
-    }
-        
-    // No hope left, kill the player!
-    playerToBurn.alive = NO;
     
-    if (destinedPlayer)
-    {
-        self.state.destinedToDie = [self.state.destinedToDie arrayByAddingObject:destinedPlayer];
-    }
-    
-    return playerToBurn;
+    return burnedPlayer;
 }
 
 -(NSArray*)votesWithSeducerVotes:(NSArray*)votes

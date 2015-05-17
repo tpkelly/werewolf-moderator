@@ -14,6 +14,7 @@
 #import "GuardedRole.h"
 #import "GameState.h"
 #import "MorningNews.h"
+#import "AttackUtility.h"
 
 @implementation Game
 
@@ -26,6 +27,8 @@
     }
     return self;
 }
+
+#pragma mark - Utility Methods
 
 -(BOOL)hagCheck:(Player*)potentialHag forMystic:(RoleType)mysticRole
 {
@@ -126,25 +129,8 @@
         return TargetInformed;
     }
     
-    NSMutableArray *destinedToDie = [_state.destinedToDie mutableCopy];
+    [AttackUtility killPlayer:player reason:EatenByWolves state:_state];
     
-    // Kill romeo with juliet - Romeo is immune to shadow attacks, so this only happens one way around.
-    if (player.role.roleType == Juliet)
-    {
-        [destinedToDie addObject:_state.romeoPlayer];
-    }
-        
-    // Kill target
-    [destinedToDie addObject:player];
-    
-    Player *guardianAngel = [_state playerWithRole:GuardianAngel inPlayerSet:_state.playersAlive];
-    NSUInteger guardedIndex = [destinedToDie indexOfObject:_state.guardedPlayer];
-    if (guardianAngel && guardedIndex != NSNotFound)
-    {
-        [destinedToDie replaceObjectAtIndex:guardedIndex withObject:guardianAngel];
-    }
-    
-    _state.destinedToDie = destinedToDie;
     return Success;
 }
 
@@ -165,7 +151,8 @@
         {
             playerToKill = [_state playerWithRole:Vampire inPlayerSet:_state.playersAlive];
         }
-        _state.destinedToDie = [_state.destinedToDie arrayByAddingObject:playerToKill];
+        
+        [AttackUtility killPlayer:playerToKill reason:VampireAttackGoneWrong state:_state];
         
         if (player.role.roleType == VampireHunter)
         {

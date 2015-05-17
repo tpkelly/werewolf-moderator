@@ -556,12 +556,14 @@
 -(void)testThatWolfAttackOnJulietKillsRomeoToo
 {
     // Given
-    Player *romeo = [[Player alloc] initWithName:@"Farmer Joe" role:Farmer];
-    Player *juliet = [[Player alloc] initWithName:@"Farmer Joe" role:Juliet];
+    Player *romeo = [[Player alloc] initWithName:@"Romeo" role:Farmer];
+    Player *juliet = [[Player alloc] initWithName:@"Juliet" role:Juliet];
     
     // Expect
     [[[self.mockGameState stub] andReturn:romeo] romeoPlayer];
-    [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
+    [[[self.mockGameState expect] andReturn:@[]] destinedToDie];
+    [[self.mockGameState expect] setDestinedToDie:@[romeo]];
+    [[[self.mockGameState expect] andReturn:@[romeo]] destinedToDie];
     [[self.mockGameState expect] setDestinedToDie:@[romeo, juliet]];
     
     // When
@@ -602,7 +604,9 @@
     [[[self.mockGameState stub] andReturn:guardedRomeo] romeoPlayer];
     [[[self.mockGameState stub] andReturn:angel] playerWithRole:GuardianAngel inPlayerSet:OCMOCK_ANY];
     [[[self.mockGameState stub] andReturn:juliet] playerWithRole:Juliet inPlayerSet:OCMOCK_ANY];
-    [[[self.mockGameState stub] andReturn:@[]] destinedToDie];
+    [[[self.mockGameState expect] andReturn:@[]] destinedToDie];
+    [[self.mockGameState expect] setDestinedToDie:@[angel]];
+    [[[self.mockGameState expect] andReturn:@[angel]] destinedToDie];
     [[self.mockGameState expect] setDestinedToDie:@[angel, juliet]];
     
     // When
