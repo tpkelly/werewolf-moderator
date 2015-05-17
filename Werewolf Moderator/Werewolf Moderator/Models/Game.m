@@ -52,7 +52,7 @@
 
 -(BOOL)clairvoyantChecksPlayer:(Player *)player
 {
-    BOOL checkedPlayerWasCorrupt = player.role.isCorrupt;
+    BOOL checkedPlayerWasCorrupt = player.role.isCorrupt || player.isCursed;
     
     _state.newsFromTheInn = (checkedPlayerWasCorrupt) ? FoundCorrupt : FoundNonCorrupt;
     
@@ -72,10 +72,11 @@
     return checkSucceeds && player.role.isMystic;
 }
 
--(void)witchProtectPlayer:(Player *)player
+-(BOOL)witchProtectPlayer:(Player *)player
 {
     BOOL protectionSuceeds = [self hagCheck:player forMystic:Witch];
     player.temporaryProtection = protectionSuceeds;
+    return protectionSuceeds && player.isCursed;
 }
 
 -(void)healerSavesPlayer:(Player *)player

@@ -24,7 +24,7 @@
 -(BOOL)wizardChecksPlayer:(Player*)player;
 -(BOOL)mediumChecksPlayer:(Player*)player;
 
--(void)witchProtectPlayer:(Player*)player;
+-(BOOL)witchProtectPlayer:(Player*)player;
 -(void)healerSavesPlayer:(Player*)player;
 
 -(void)julietPicksRomeo:(Player*)player;

@@ -341,6 +341,56 @@
     XCTAssertFalse(farmer.temporaryProtection);
 }
 
+-(void)testThatUncursedClairvoyantSeesCursedAsCorrupt
+{
+    // Given
+    Player *cursed = [[Player alloc] initWithName:@"Cursed" role:Farmer];
+    cursed.isCursed = YES;
+    
+    // When
+    BOOL isCorrupt = [self.testGame clairvoyantChecksPlayer:cursed];
+
+    // Then
+    XCTAssertTrue(isCorrupt);
+}
+
+-(void)testThatWitchCanDetectCurses
+{
+    // Given
+    Player *cursed = [[Player alloc] initWithName:@"Cursed" role:Farmer];
+    Player *uncursed = [[Player alloc] initWithName:@"Uncursed" role:Farmer];
+    cursed.isCursed = YES;
+    
+    // When
+    BOOL checkCursed = [self.testGame witchProtectPlayer:cursed];
+    BOOL checkUncursed = [self.testGame witchProtectPlayer:uncursed];
+    
+    // Then
+    XCTAssertTrue(checkCursed);
+    XCTAssertFalse(checkUncursed);
+}
+
+-(void)testThatCursedWitchCannotDetectCurses
+{
+    // Given
+    Player *witch = [[Player alloc] initWithName:@"Witch" role:Witch];
+    Player *cursed = [[Player alloc] initWithName:@"Cursed" role:Farmer];
+    Player *uncursed = [[Player alloc] initWithName:@"Uncursed" role:Farmer];
+    cursed.isCursed = YES;
+    witch.isCursed = YES;
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:witch] playerWithRole:Witch inPlayerSet:OCMOCK_ANY];
+    
+    // When
+    BOOL checkCursed = [self.testGame witchProtectPlayer:cursed];
+    BOOL checkUncursed = [self.testGame witchProtectPlayer:uncursed];
+    
+    // Then
+    XCTAssertFalse(checkCursed);
+    XCTAssertFalse(checkUncursed);
+}
+
 #pragma mark - Vampire Attacks
 
 -(void)testThatVampireTurnsTargetIntoMinion
