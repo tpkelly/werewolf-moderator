@@ -11,8 +11,11 @@
 typedef NS_ENUM(NSInteger, Faction) {
     WolvesFaction,
     VillageFaction,
-    MadmanFaction,
-    JesterFaction,
+    Factionless,
     LoverFaction,
-    VampireFaction
+    VampireFaction,
+    
+    // Reserved for winning conditions
+    JesterFaction,
+    MadmanFaction
 };

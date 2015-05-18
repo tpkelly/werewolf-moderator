@@ -64,7 +64,7 @@
     XCTAssertFalse(defector.isCorrupt);
     XCTAssertFalse(defector.isMystic);
     XCTAssertFalse(defector.isShadow);
-    XCTAssertEqual(WolvesFaction, defector.faction);
+    XCTAssertEqual(Factionless, defector.faction);
 }
 
 #pragma mark - Vampires
@@ -102,7 +102,7 @@
     XCTAssertFalse(igor.isCorrupt);
     XCTAssertFalse(igor.isMystic);
     XCTAssertFalse(igor.isShadow);
-    XCTAssertEqual(VampireFaction, igor.faction);
+    XCTAssertEqual(Factionless, igor.faction);
 }
 
 #pragma mark - Lovers
@@ -142,7 +142,7 @@
     XCTAssertFalse(madman.isCorrupt);
     XCTAssertFalse(madman.isMystic);
     XCTAssertFalse(madman.isShadow);
-    XCTAssertEqual(MadmanFaction, madman.faction);
+    XCTAssertEqual(Factionless, madman.faction);
 }
 
 -(void)testThatJesterIsOnTheirOwnTeam
@@ -154,7 +154,7 @@
     XCTAssertFalse(jester.isCorrupt);
     XCTAssertFalse(jester.isMystic);
     XCTAssertFalse(jester.isShadow);
-    XCTAssertEqual(JesterFaction, jester.faction);
+    XCTAssertEqual(Factionless, jester.faction);
 }
 
 
@@ -339,7 +339,7 @@
     XCTAssertTrue(hag.isCorrupt);
     XCTAssertTrue(hag.isMystic);
     XCTAssertTrue(hag.isShadow);
-    XCTAssertEqual(VillageFaction, hag.faction);
+    XCTAssertEqual(Factionless, hag.faction);
 }
 
 @end

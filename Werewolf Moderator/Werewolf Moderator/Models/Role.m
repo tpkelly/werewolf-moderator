@@ -118,19 +118,18 @@
         case AlphaWolf:
         case PackWolf:
         case WolfPup:
-        case Defector:
             return WolvesFaction;
             
         case Vampire:
-        case Igor:
         case Minion:
             return VampireFaction;
             
         case Jester:
-            return JesterFaction;
-            
         case Madman:
-            return MadmanFaction;
+        case Defector:
+        case Hag:
+        case Igor:
+            return Factionless;
             
         case Juliet:
         case GuardianAngel:

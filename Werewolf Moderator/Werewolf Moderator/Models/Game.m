@@ -144,7 +144,7 @@
     }
     
     // Critical mission failure - Kill the vampire/igor off
-    if (player.role.roleType == VampireHunter || (player.role.faction == WolvesFaction && player.role.roleType != Defector))
+    if (player.role.roleType == VampireHunter || player.role.faction == WolvesFaction)
     {
         //Kill igor if they are in play, or the vampire if not
         Player *playerToKill = [_state playerWithRole:Igor inPlayerSet:_state.playersAlive];
@@ -223,9 +223,18 @@
     return news;
 }
 
+-(NSArray*)factionlessPlayers
+{
+    NSPredicate *factionless = [NSPredicate predicateWithBlock:^BOOL(Player *player, NSDictionary *bindings) {
+        return player.role.faction != Factionless;
+    }];
+    return [_state.playersAlive filteredArrayUsingPredicate:factionless];
+}
+
 -(BOOL)gameIsOver
 {
-    NSArray *factionsInPlay = [_state.playersAlive valueForKeyPath:@"role.faction"];
+
+    NSArray *factionsInPlay = [[self factionlessPlayers] valueForKeyPath:@"role.faction"];
     NSSet *factionSet = [NSSet setWithArray:factionsInPlay];
     
     //Wolf win
@@ -252,10 +261,10 @@
 
 -(BOOL)shadowsInPlay
 {
-    NSPredicate *shadowFilter = [NSPredicate predicateWithBlock:^BOOL(Player *evaluatedObject, NSDictionary *bindings) {
-        return evaluatedObject.role.isShadow;
+    NSPredicate *shadowFilter = [NSPredicate predicateWithBlock:^BOOL(Player *player, NSDictionary *bindings) {
+        return player.role.isShadow || player.isCursed;
     }];
-    NSArray *shadowsInPlay = [_state.playersAlive filteredArrayUsingPredicate:shadowFilter];
+    NSArray *shadowsInPlay = [[self factionlessPlayers] filteredArrayUsingPredicate:shadowFilter];
     
     return shadowsInPlay.count > 0;
 }
@@ -277,12 +286,12 @@
     }
     else
     {
-        winningFactions = [_state.playersAlive valueForKeyPath:@"role.faction"];
+        winningFactions = [[self factionlessPlayers] valueForKeyPath:@"role.faction"];
     }
     
     //Include dead madman/jester
     winningFactions = [winningFactions arrayByAddingObjectsFromArray:_state.winningFactions];
-
+    
     //Include lovers
     if (([_state roleIsAlive:Juliet] && [_state.romeoPlayer alive])
         || ([_state roleIsAlive:GuardianAngel] && [_state.guardedPlayer alive]))

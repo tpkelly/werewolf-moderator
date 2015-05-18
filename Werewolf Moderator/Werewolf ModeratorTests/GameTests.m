@@ -1262,4 +1262,57 @@
     XCTAssertEqualObjects(expectedFactions, [self.testGame factionsWhichWon]);
 }
 
+-(void)testThatHagWinsWithWolves
+{
+    // Given
+    Player *hag = [[Player alloc] initWithName:@"Hag" role:Hag];
+    Player *wolf = [[Player alloc] initWithName:@"Wolf" role:AlphaWolf];
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:@[hag, wolf]] playersAlive];
+    
+    // Then
+    XCTAssertTrue([self.testGame gameIsOver]);
+}
+
+-(void)testThatHagWinsWithVampire
+{
+    // Given
+    Player *hag = [[Player alloc] initWithName:@"Hag" role:Hag];
+    Player *vampire = [[Player alloc] initWithName:@"Vampire" role:Vampire];
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:@[hag, vampire]] playersAlive];
+    
+    // Then
+    XCTAssertTrue([self.testGame gameIsOver]);
+}
+
+-(void)testThatGameEndsWhenHagIsOnlyRemainingShadow
+{
+    // Given
+    Player *hag = [[Player alloc] initWithName:@"Hag" role:Hag];
+    Player *farmer = [[Player alloc] initWithName:@"Farmer" role:Farmer];
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:@[hag, farmer]] playersAlive];
+    
+    // Then
+    XCTAssertTrue([self.testGame gameIsOver]);
+}
+
+-(void)testThatVillageDoesNotWinWithACursedPlayerRemaining
+{
+    // Given
+    Player *cursed = [[Player alloc] initWithName:@"Cursed" role:Farmer];
+    Player *farmer = [[Player alloc] initWithName:@"Farmer" role:Farmer];
+    cursed.isCursed = YES;
+    
+    // Expect
+    [[[self.mockGameState stub] andReturn:@[cursed, farmer]] playersAlive];
+    
+    // Then
+    XCTAssertFalse([self.testGame gameIsOver]);
+}
+
 @end
