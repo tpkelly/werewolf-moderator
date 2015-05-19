@@ -14,6 +14,7 @@ typedef NS_ENUM(NSInteger, Faction) {
     Factionless,
     LoverFaction,
     VampireFaction,
+    InquisitionFaction,
     
     // Reserved for winning conditions
     JesterFaction,

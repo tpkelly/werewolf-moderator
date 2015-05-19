@@ -55,6 +55,9 @@
         case Igor: return @"Igor";
         case VampireHunter: return @"Vampire Hunter";
         case Hag: return @"Hag";
+        case Inquisitor: return @"Inquisitor";
+        case Executioner: return @"Executioner";
+        case Templar: return @"Templar";
     }
 }
 
@@ -70,6 +73,7 @@
         case Vampire:
         case Minion:
         case Hag:
+        case Executioner:
             return YES;
             
         default:
@@ -134,6 +138,11 @@
         case Juliet:
         case GuardianAngel:
             return LoverFaction;
+            
+        case Inquisitor:
+        case Executioner:
+        case Templar:
+            return InquisitionFaction;
             
         default:
             return VillageFaction;

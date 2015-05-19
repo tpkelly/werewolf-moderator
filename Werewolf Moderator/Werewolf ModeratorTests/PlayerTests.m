@@ -349,4 +349,40 @@
     XCTAssertFalse(player.temporaryProtection);
 }
 
+-(void)testThatTheInquisitorPlayerIsAliveAndUnprotected
+{
+    // Given
+    Player *player = [[Player alloc] initWithName:@"Player" role:Inquisitor];
+    
+    //Then
+    XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.isCursed);
+    XCTAssertFalse(player.permanentProtection);
+    XCTAssertFalse(player.temporaryProtection);
+}
+
+-(void)testThatTheExecutionerPlayerIsAliveAndUnprotected
+{
+    // Given
+    Player *player = [[Player alloc] initWithName:@"Player" role:Executioner];
+    
+    //Then
+    XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.isCursed);
+    XCTAssertFalse(player.permanentProtection);
+    XCTAssertFalse(player.temporaryProtection);
+}
+
+-(void)testThatTheTemplarPlayerIsAliveAndUnprotected
+{
+    // Given
+    Player *player = [[Player alloc] initWithName:@"Player" role:Templar];
+    
+    //Then
+    XCTAssertTrue(player.alive);
+    XCTAssertFalse(player.isCursed);
+    XCTAssertFalse(player.permanentProtection);
+    XCTAssertFalse(player.temporaryProtection);
+}
+
 @end

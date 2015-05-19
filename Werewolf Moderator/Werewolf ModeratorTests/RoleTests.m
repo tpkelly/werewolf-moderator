@@ -328,6 +328,44 @@
     XCTAssertEqual(VillageFaction, farmer.faction);
 }
 
+#pragma mark - Inquisition roles
+
+-(void)testThatTheInquisitorHasNoPowers
+{
+    // Given
+    Role *inquisitor = [[Role alloc] initWithRole:Inquisitor];
+    
+    // Then
+    XCTAssertFalse(inquisitor.isCorrupt);
+    XCTAssertFalse(inquisitor.isMystic);
+    XCTAssertFalse(inquisitor.isShadow);
+    XCTAssertEqual(InquisitionFaction, inquisitor.faction);
+}
+
+-(void)testThatTheExecutionerIsCorrupt
+{
+    // Given
+    Role *executioner = [[Role alloc] initWithRole:Executioner];
+    
+    // Then
+    XCTAssertTrue(executioner.isCorrupt);
+    XCTAssertFalse(executioner.isMystic);
+    XCTAssertFalse(executioner.isShadow);
+    XCTAssertEqual(InquisitionFaction, executioner.faction);
+}
+
+-(void)testThatTheTemplarHasNoPowers
+{
+    // Given
+    Role *templar = [[Role alloc] initWithRole:Templar];
+    
+    // Then
+    XCTAssertFalse(templar.isCorrupt);
+    XCTAssertFalse(templar.isMystic);
+    XCTAssertFalse(templar.isShadow);
+    XCTAssertEqual(InquisitionFaction, templar.faction);
+}
+
 #pragma mark - Loner roles
 
 -(void)testThatTheHagIsACorruptMystic
