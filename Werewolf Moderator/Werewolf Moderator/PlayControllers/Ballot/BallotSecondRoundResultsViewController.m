@@ -8,12 +8,13 @@
 
 #import "BallotSecondRoundResultsViewController.h"
 #import "Vote.h"
-#import "Ballot.h"
+#import "BallotManager.h"
 #import "SingleGame.h"
 #import "GameState.h"
 #import "Game.h"
 #import "Player.h"
 #import "Role.h"
+#import "Ballot.h"
 #import "BallotSecondRoundViewController.h"
 
 @interface BallotSecondRoundResultsViewController ()
@@ -40,22 +41,23 @@
 
 -(NSUInteger)expectedVoteCount
 {
-    NSUInteger seducerAdjustment = 0;
-    for (Vote *vote in self.voteResults)
+    NSUInteger totalVotes = 0;
+    for (Vote *vote in self.voteResults.votes)
     {
+        totalVotes++;
         if (vote.player.role.roleType == Seducer)
         {
-            seducerAdjustment++;
+            totalVotes--;
         }
     }
     
-    return [SingleGame state].playersAlive.count - self.voteResults.count + seducerAdjustment;
+    return [SingleGame state].playersAlive.count - totalVotes;
 }
 
 -(NSUInteger)actualVoteCount
 {
     NSUInteger total = 0;
-    for (Vote *vote in self.voteResults)
+    for (Vote *vote in self.voteResults.votes)
     {
         total += vote.voteCount;
     }
@@ -64,7 +66,7 @@
 
 -(NSString*)burnedPlayerName
 {
-    Ballot *ballot = [[Ballot alloc] initWithState:[SingleGame state]];
+    BallotManager *ballot = [[BallotManager alloc] initWithState:[SingleGame state]];
     self.burnedPlayer = [ballot secondRoundResults:self.voteResults];
     
     if (self.burnedPlayer)
@@ -91,7 +93,7 @@
         BallotSecondRoundViewController *nextViewController = segue.destinationViewController;
         
         NSMutableArray *allPlayers = [NSMutableArray array];
-        for (Vote *vote in self.voteResults)
+        for (Vote *vote in self.voteResults.votes)
         {
             [allPlayers addObject:vote.player];
         }

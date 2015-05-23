@@ -2,21 +2,18 @@
 //  Ballot.h
 //  Werewolf Moderator
 //
-//  Created by Thomas Kelly on 15/11/2014.
-//  Copyright (c) 2014 TKGames. All rights reserved.
+//  Created by Thomas Kelly on 23/05/2015.
+//  Copyright (c) 2015 TKGames. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@class GameState;
 @class Player;
 
 @interface Ballot : NSObject
 
--(instancetype)initWithState:(GameState*)state;
+@property (nonatomic, strong) NSArray *votes;
 
-//Takes arrays of Vote objects
--(NSArray*)firstRoundResults:(NSArray*)votes;
--(Player*)secondRoundResults:(NSArray*)votes;
++(instancetype)ballotWithVotes:(NSArray*)votes;
 
 @end

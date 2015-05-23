@@ -9,16 +9,17 @@
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
 
-#import "Ballot.h"
+#import "BallotManager.h"
 #import "GameState.h"
 #import "Player.h"
 #import "Vote.h"
+#import "Ballot.h"
 #import "Role.h"
 
 @interface BallotTests : XCTestCase
 
 @property (nonatomic, strong) id mockGameState;
-@property (nonatomic, strong) Ballot *testBallot;
+@property (nonatomic, strong) BallotManager *testBallot;
 
 @property (nonatomic, strong) Player *seducer;
 @property (nonatomic, strong) Player *juliet;
@@ -56,7 +57,7 @@
     [[[self.mockGameState stub] andReturn:self.romeo] romeoPlayer];
     [[[self.mockGameState stub] andReturn:self.guarded] guardedPlayer];
 
-    self.testBallot = [[Ballot alloc] initWithState:self.mockGameState];
+    self.testBallot = [[BallotManager alloc] initWithState:self.mockGameState];
 }
 
 - (void)tearDown {
@@ -78,7 +79,7 @@
                        [Vote forPlayer:self.guarded voteCount:0],
                        [Vote forPlayer:self.seducer voteCount:0]];
     // When
-    NSArray *observedBallot = [self.testBallot firstRoundResults:votes];
+    NSArray *observedBallot = [self.testBallot firstRoundResults:[Ballot ballotWithVotes:votes]];
     
     // Then
     NSArray *expectedBallot = @[self.jester, self.romeo, self.wolfPup, self.juliet];
@@ -93,7 +94,7 @@
                        [Vote forPlayer:self.angel voteCount:1]];
     
     //When
-    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    Player *burnedPlayer = [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
     
     //Then:
     XCTAssertEqual(self.jester, burnedPlayer);
@@ -107,7 +108,7 @@
                        [Vote forPlayer:self.angel voteCount:1]];
     
     //When
-    [self.testBallot secondRoundResults:votes];
+    [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
     
     //Then:
     XCTAssertFalse(self.jester.alive);
@@ -121,7 +122,7 @@
                        [Vote forPlayer:self.angel voteCount:1]];
     
     //When
-    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    Player *burnedPlayer = [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
     
     //Then:
     XCTAssertNil(burnedPlayer);
@@ -139,7 +140,7 @@
     [[self.mockGameState expect] setJesterBurnedLastNight:NO];
 
     //When:
-    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    Player *burnedPlayer = [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
     
     //Then:
     XCTAssertNil(burnedPlayer);
@@ -153,7 +154,7 @@
     [[self.mockGameState expect] setJesterBurnedLastNight:YES];
     
     //When:
-    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    Player *burnedPlayer = [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
     
     //Then:
     XCTAssertEqual(self.jester, burnedPlayer);
@@ -169,7 +170,7 @@
     [[self.mockGameState expect] setWinningFactions:@[@(MadmanFaction), @(JesterFaction)]];
     
     //When
-    [self.testBallot secondRoundResults:votes];
+    [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
 }
 
 #pragma mark - Lover tests
@@ -185,7 +186,7 @@
     [[self.mockGameState expect] setDestinedToDie:@[self.juliet]];
     
     //When
-    [self.testBallot secondRoundResults:votes];
+    [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
 }
 
 -(void)testThatBurningJulietKillsRomeoAtNight
@@ -198,7 +199,7 @@
     [[self.mockGameState expect] setDestinedToDie:@[self.romeo]];
     
     //When
-    [self.testBallot secondRoundResults:votes];
+    [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
 }
 
 -(void)testThatBurningRomeoDoesNotKillMinionJulietAtNight
@@ -212,7 +213,7 @@
     [[self.mockGameState reject] setDestinedToDie:@[self.juliet]];
     
     //When
-    [self.testBallot secondRoundResults:votes];
+    [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
 }
 
 -(void)testThatGuardianAngelTakesPlaceOfGuardedOnBallot
@@ -224,7 +225,7 @@
     [[[self.mockGameState stub] andReturn:self.angel] playerWithRole:GuardianAngel inPlayerSet:OCMOCK_ANY];
     
     //When
-    NSArray *firstBallot = [self.testBallot firstRoundResults:votes];
+    NSArray *firstBallot = [self.testBallot firstRoundResults:[Ballot ballotWithVotes:votes]];
     
     //Then:
     NSArray *expectedBallot = @[self.angel];
@@ -238,7 +239,7 @@
     self.angel.role = [[Role alloc] initWithRole:Minion];
     
     //When
-    NSArray *firstBallot = [self.testBallot firstRoundResults:votes];
+    NSArray *firstBallot = [self.testBallot firstRoundResults:[Ballot ballotWithVotes:votes]];
     
     //Then:
     NSArray *expectedBallot = @[self.guarded];
@@ -254,7 +255,7 @@
     [[[self.mockGameState stub] andReturn:self.angel] playerWithRole:GuardianAngel inPlayerSet:OCMOCK_ANY];
     
     //When
-    NSArray *firstBallot = [self.testBallot firstRoundResults:votes];
+    NSArray *firstBallot = [self.testBallot firstRoundResults:[Ballot ballotWithVotes:votes]];
     
     //Then:
     NSArray *expectedBallot = @[self.guarded, self.angel];
@@ -270,7 +271,7 @@
     [[[self.mockGameState stub] andReturn:self.angel] playerWithRole:GuardianAngel inPlayerSet:OCMOCK_ANY];
     
     //When
-    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    Player *burnedPlayer = [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
     
     //Then:
     XCTAssertEqualObjects(self.angel, burnedPlayer);
@@ -283,7 +284,7 @@
     self.angel.role = [[Role alloc] initWithRole:Minion];
     
     //When
-    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    Player *burnedPlayer = [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
     
     //Then:
     XCTAssertEqualObjects(self.guarded, burnedPlayer);
@@ -294,7 +295,7 @@
     //Given:
     NSArray *votes = @[[Vote forPlayer:self.juliet voteCount:5]];
     self.mockGameState = [OCMockObject niceMockForClass:[GameState class]];
-    self.testBallot = [[Ballot alloc] initWithState:self.mockGameState];
+    self.testBallot = [[BallotManager alloc] initWithState:self.mockGameState];
     
     //Expect
     [[[self.mockGameState stub] andReturn:self.allPlayers] playersAlive];
@@ -306,7 +307,7 @@
     
     
     //When
-    [self.testBallot secondRoundResults:votes];
+    [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
 }
 
 #pragma mark - Seducer
@@ -319,7 +320,7 @@
                        [Vote forPlayer:self.seducer voteCount:4]];
     
     //When
-    NSArray *ballot = [self.testBallot firstRoundResults:votes];
+    NSArray *ballot = [self.testBallot firstRoundResults:[Ballot ballotWithVotes:votes]];
     
     //Then
     NSArray *expectedBallot = @[self.romeo, self.angel];
@@ -334,7 +335,7 @@
                        [Vote forPlayer:self.seducer voteCount:5]];
     
     //When
-    NSArray *ballot = [self.testBallot firstRoundResults:votes];
+    NSArray *ballot = [self.testBallot firstRoundResults:[Ballot ballotWithVotes:votes]];
     
     //Then
     NSArray *expectedBallot = @[self.romeo, self.seducer];
@@ -347,7 +348,7 @@
     NSArray *votes = @[[Vote forPlayer:self.seducer voteCount:5]];
     
     //When
-    [self.testBallot firstRoundResults:votes];
+    [self.testBallot firstRoundResults:[Ballot ballotWithVotes:votes]];
     
     //Then
     Vote *firstVote = [votes firstObject];
@@ -361,7 +362,7 @@
                        [Vote forPlayer:self.seducer voteCount:10]];
     
     //When
-    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    Player *burnedPlayer = [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
     
     //Then
     XCTAssertEqualObjects(self.angel, burnedPlayer);
@@ -374,7 +375,7 @@
                        [Vote forPlayer:self.seducer voteCount:11]];
     
     //When
-    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    Player *burnedPlayer = [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
     
     //Then
     XCTAssertEqualObjects(self.seducer, burnedPlayer);
@@ -386,7 +387,7 @@
     NSArray *votes = @[[Vote forPlayer:self.seducer voteCount:5]];
     
     //When
-    [self.testBallot secondRoundResults:votes];
+    [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
     
     //Then
     Vote *firstVote = [votes firstObject];
@@ -404,7 +405,7 @@
     [[self.mockGameState expect] setWolvesAttackTwice:YES];
     
     //When
-    [self.testBallot secondRoundResults:votes];
+    [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
 }
 
 #pragma mark - Vampires
@@ -418,7 +419,7 @@
     [[[self.mockGameState stub] andReturn:self.igor] playerWithRole:Igor inPlayerSet:OCMOCK_ANY];
     
     //When
-    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    Player *burnedPlayer = [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
     
     XCTAssertEqual(self.vampire, burnedPlayer);
 }
@@ -429,7 +430,7 @@
     NSArray *votes = @[[Vote forPlayer:self.vampire voteCount:7]];
     
     //When
-    Player *burnedPlayer = [self.testBallot secondRoundResults:votes];
+    Player *burnedPlayer = [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
     
     XCTAssertEqual(self.vampire, burnedPlayer);
 }

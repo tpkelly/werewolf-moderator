@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Ballot;
 
 @interface BallotSecondRoundResultsViewController : UIViewController
 
-@property (nonatomic, strong) NSArray *voteResults;
+@property (nonatomic, strong) Ballot *voteResults;
 
 @property (strong, nonatomic) IBOutlet UILabel *ballotResult;
 @property (strong, nonatomic) IBOutlet UILabel *expectedVotes;
