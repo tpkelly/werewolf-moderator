@@ -73,7 +73,7 @@
     {
         BallotFirstRoundResultsViewController *nextViewController = segue.destinationViewController;
         BallotManager *ballot = [[BallotManager alloc] initWithState:[SingleGame state]];
-        nextViewController.voteResults = [ballot firstRoundResults:self.ballot];
+        nextViewController.playersOnBallot = [ballot firstRoundResults:self.ballot];
         nextViewController.actualVoteCount = [self actualVoteCount];
     }
 }

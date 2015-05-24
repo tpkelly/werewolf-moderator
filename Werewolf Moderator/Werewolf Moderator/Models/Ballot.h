@@ -13,6 +13,7 @@
 @interface Ballot : NSObject
 
 @property (nonatomic, strong) NSArray *votes;
+@property (nonatomic, strong) Player *inquisitionTarget;
 
 +(instancetype)ballotWithVotes:(NSArray*)votes;
 

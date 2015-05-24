@@ -61,6 +61,11 @@
         playersOnBallot = [mutableBallot copy];
     }
     
+    if (ballot.inquisitionTarget.role.isMystic && ![playersOnBallot containsObject:ballot.inquisitionTarget])
+    {
+        playersOnBallot = [playersOnBallot arrayByAddingObject:ballot.inquisitionTarget];
+    }
+    
     return playersOnBallot;
 }
 
@@ -76,6 +81,14 @@
     {
         return nil;
     }
+
+    if (ballot.inquisitionTarget.role.isMystic || ballot.inquisitionTarget.role.isShadow)
+    {
+        // Set all other votes to 0 (may result in an empty list if ballot.inquisitionTarget got no votes)
+        votes = [votes filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(Vote *vote, NSDictionary *bindings) {
+            return vote.player == ballot.inquisitionTarget;
+        }]];
+    }
     
     NSArray *mostVotedPlayers = [self mostVotedPlayers:votes];
     
@@ -86,6 +99,7 @@
     }
     
     Player *mostVotedPlayer = [mostVotedPlayers firstObject];
+   
     Player *burnedPlayer = [AttackUtility killPlayer:mostVotedPlayer reason:BurnedAtStake state:_state];
     
     if (burnedPlayer.role.roleType == WolfPup)

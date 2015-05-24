@@ -435,4 +435,118 @@
     XCTAssertEqual(self.vampire, burnedPlayer);
 }
 
+#pragma mark - Inquisition
+
+-(void)testThatMysticsArePutOnTheBallotByTheInquisitor
+{
+    // Given
+    Player *mystic = [[Player alloc] initWithName:@"Mystic" role:Healer];
+    Ballot *ballot = [Ballot ballotWithVotes:@[[Vote forPlayer:self.vampire voteCount:3], [Vote forPlayer:self.igor voteCount:2]]];
+    ballot.inquisitionTarget = mystic;
+    
+    // When
+    NSArray *playersOnBallot = [self.testBallot firstRoundResults:ballot];
+    
+    // Then
+    NSArray *expectedPlayers = @[self.vampire, self.igor, mystic];
+    XCTAssertEqualObjects(expectedPlayers, playersOnBallot);
+}
+
+-(void)testThatInquisitorDoesNothingIfPlayerIsAlreadyOnBallot
+{
+    // Given
+    Player *mystic = [[Player alloc] initWithName:@"Mystic" role:Healer];
+    Ballot *ballot = [Ballot ballotWithVotes:@[[Vote forPlayer:self.vampire voteCount:3], [Vote forPlayer:mystic voteCount:2]]];
+    ballot.inquisitionTarget = mystic;
+    
+    // When
+    NSArray *playersOnBallot = [self.testBallot firstRoundResults:ballot];
+    
+    // Then
+    NSArray *expectedPlayers = @[self.vampire, mystic];
+    XCTAssertEqualObjects(expectedPlayers, playersOnBallot);
+}
+
+-(void)testThatShadowsAreNotPutOnTheBallotByTheInquisitor
+{
+    // Given
+    Ballot *ballot = [Ballot ballotWithVotes:@[[Vote forPlayer:self.vampire voteCount:3], [Vote forPlayer:self.igor voteCount:2]]];
+    ballot.inquisitionTarget = self.wolfPup;
+    
+    // When
+    NSArray *playersOnBallot = [self.testBallot firstRoundResults:ballot];
+    
+    // Then
+    NSArray *expectedPlayers = @[self.vampire, self.igor];
+    XCTAssertEqualObjects(expectedPlayers, playersOnBallot);
+}
+
+-(void)testThatVillagersAreNotPutOnTheBallotByTheInquisitor
+{
+    // Given
+    Ballot *ballot = [Ballot ballotWithVotes:@[[Vote forPlayer:self.vampire voteCount:3], [Vote forPlayer:self.igor voteCount:2]]];
+    ballot.inquisitionTarget = self.seducer;
+    
+    // When
+    NSArray *playersOnBallot = [self.testBallot firstRoundResults:ballot];
+    
+    // Then
+    NSArray *expectedPlayers = @[self.vampire, self.igor];
+    XCTAssertEqualObjects(expectedPlayers, playersOnBallot);
+}
+
+-(void)testThatMysticsAreKilledByTheExecutioner
+{
+    // Given
+    Player *mystic = [[Player alloc] initWithName:@"Mystic" role:Healer];
+    Ballot *ballot = [Ballot ballotWithVotes:@[[Vote forPlayer:self.igor voteCount:2], [Vote forPlayer:mystic voteCount:1]]];
+    ballot.inquisitionTarget = mystic;
+    
+    // When
+    Player *burnedPlayer = [self.testBallot secondRoundResults:ballot];
+    
+    // Then
+    XCTAssertEqual(mystic, burnedPlayer);
+}
+
+-(void)testThatShadowsAreKilledByTheExecutioner
+{
+    // Given
+    Ballot *ballot = [Ballot ballotWithVotes:@[[Vote forPlayer:self.igor voteCount:2], [Vote forPlayer:self.wolfPup voteCount:1]]];
+    ballot.inquisitionTarget = self.wolfPup;
+    
+    // When
+    Player *burnedPlayer = [self.testBallot secondRoundResults:ballot];
+    
+    // Then
+    XCTAssertEqual(self.wolfPup, burnedPlayer);
+}
+
+-(void)testThatExecutionerDoesNotKillIfPlayerGotNoVotes
+{
+    // Given
+    Ballot *ballot = [Ballot ballotWithVotes:@[[Vote forPlayer:self.igor voteCount:2]]];
+    ballot.inquisitionTarget = self.wolfPup;
+    
+    // When
+    Player *burnedPlayer = [self.testBallot secondRoundResults:ballot];
+    
+    // Then
+    XCTAssertNil(burnedPlayer);
+
+}
+
+-(void)testThatVillagersAreNotKilledByTheExecutioner
+{
+    // Given
+    Ballot *ballot = [Ballot ballotWithVotes:@[[Vote forPlayer:self.igor voteCount:2]]];
+    ballot.inquisitionTarget = self.seducer;
+    
+    // When
+    Player *burnedPlayer = [self.testBallot secondRoundResults:ballot];
+    
+    // Then
+    XCTAssertEqual(self.igor, burnedPlayer);
+}
+
 @end
