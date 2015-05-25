@@ -1057,6 +1057,77 @@
     [self.testGame transitionToMorning];
 }
 
+-(void)testThatCountdownRemainsUnchangedIfNotStarted
+{
+    //Expect:
+    [[self.mockGameState reject] setCountdownClock:OCMOCK_ANY];
+    
+    //When:
+    [self.testGame transitionToMorning];
+}
+
+-(void)testThatCountdownTicksEachMorningIfStarted
+{
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@4] countdownClock];
+    [[self.mockGameState expect] setCountdownClock:@3];
+    
+    //When:
+    [self.testGame transitionToMorning];
+}
+
+-(void)testThatCountdownStartsIfInquisitorDiesWithTemplarAndMysticsInPlay
+{
+    // Given:
+    Player *mystic = [[Player alloc] initWithName:@"Mystic" role:Clairvoyant];
+    Player *templar = [[Player alloc] initWithName:@"Templar" role:Templar];
+    Player *inquisitor = [[Player alloc] initWithName:@"Inquisitor" role:Inquisitor];
+    BOOL templarInPlay = YES;
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[mystic, inquisitor, templar]] playersAlive];
+    [[[self.mockGameState stub] andReturn:@[inquisitor]] destinedToDie];
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(templarInPlay)] roleIsAlive:Templar];
+    [[self.mockGameState expect] setCountdownClock:@1];
+    
+    // When:
+    [self.testGame transitionToMorning];
+}
+
+-(void)testThatCountdownDoesNotStartIfInquisitorDiesWithNoMysticsInPlay
+{
+    // Given:
+    Player *templar = [[Player alloc] initWithName:@"Templar" role:Templar];
+    Player *inquisitor = [[Player alloc] initWithName:@"Inquisitor" role:Inquisitor];
+    BOOL templarInPlay = YES;
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[inquisitor, templar]] playersAlive];
+    [[[self.mockGameState stub] andReturn:@[inquisitor]] destinedToDie];
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(templarInPlay)] roleIsAlive:Templar];
+    [[self.mockGameState reject] setCountdownClock:OCMOCK_ANY];
+    
+    // When:
+    [self.testGame transitionToMorning];
+}
+
+-(void)testThatCountdownDoesNotStartIfInquisitorDiesWithNoTemplarInPlay
+{
+    // Given:
+    Player *mystic = [[Player alloc] initWithName:@"Mystic" role:Clairvoyant];
+    Player *inquisitor = [[Player alloc] initWithName:@"Inquisitor" role:Inquisitor];
+    BOOL templarInPlay = NO;
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[mystic, inquisitor]] playersAlive];
+    [[[self.mockGameState stub] andReturn:@[inquisitor]] destinedToDie];
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(templarInPlay)] roleIsAlive:Templar];
+    [[self.mockGameState reject] setCountdownClock:OCMOCK_ANY];
+    
+    // When:
+    [self.testGame transitionToMorning];
+}
+
 #pragma mark - Game Over
 
 -(void)testThatGameIsNotOverWhenMultipleFactionsInPlay
@@ -1169,7 +1240,8 @@
     
     //Expect:
     [[[self.mockGameState stub] andReturn:@[alpha, pack, pup, defector]] playersAlive];
-    
+    [[[self.mockGameState stub] andReturn:@[]] winningFactions];
+
     //Then:
     NSSet *expectedFactions = [NSSet setWithObject:@(WolvesFaction)];
     XCTAssertEqualObjects(expectedFactions, [self.testGame factionsWhichWon]);
@@ -1184,7 +1256,8 @@
     
     //Expect:
     [[[self.mockGameState stub] andReturn:@[vampire, igor, minion]] playersAlive];
-    
+    [[[self.mockGameState stub] andReturn:@[]] winningFactions];
+
     //Then:
     NSSet *expectedFactions = [NSSet setWithObject:@(VampireFaction)];
     XCTAssertEqualObjects(expectedFactions, [self.testGame factionsWhichWon]);
@@ -1197,7 +1270,8 @@
     
     //Expect:
     [[[self.mockGameState stub] andReturn:@[villager]] playersAlive];
-    
+    [[[self.mockGameState stub] andReturn:@[]] winningFactions];
+
     //Then:
     NSSet *expectedFactions = [NSSet setWithObject:@(VillageFaction)];
     XCTAssertEqualObjects(expectedFactions, [self.testGame factionsWhichWon]);
@@ -1212,7 +1286,8 @@
     
     //Expect:
     [[[self.mockGameState stub] andReturn:@[madman, jester, farmer]] playersAlive];
-    
+    [[[self.mockGameState stub] andReturn:@[]] winningFactions];
+
     //Then:
     NSSet *expectedFactions = [NSSet setWithArray:@[@(VillageFaction)]];
     XCTAssertEqualObjects(expectedFactions, [self.testGame factionsWhichWon]);
@@ -1241,6 +1316,7 @@
     [[[self.mockGameState stub] andReturn:romeo] romeoPlayer];
     [[[self.mockGameState stub] andReturnValue:@YES] roleIsAlive:Juliet];
     [[[self.mockGameState stub] andReturn:@[villager, romeo]] playersAlive];
+    [[[self.mockGameState stub] andReturn:@[]] winningFactions];
 
     
     //Then:
@@ -1313,6 +1389,84 @@
     
     // Then
     XCTAssertFalse([self.testGame gameIsOver]);
+}
+
+-(void)testThatGameIsNotOverWhenCountdownNotStarted
+{
+    //Given:
+    Player *wolf = [[Player alloc] initWithName:@"Wolf" role:AlphaWolf];
+    Player *villager = [[Player alloc] initWithName:@"Villager" role:Farmer];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@4] countdownClock];
+    [[[self.mockGameState stub] andReturn:@[wolf, villager]] playersAlive];
+    
+    //Then:
+    XCTAssertFalse([self.testGame gameIsOver]);
+}
+
+-(void)testThatGameIsNotOverWhenCountdownTicking
+{
+    //Given:
+    Player *wolf = [[Player alloc] initWithName:@"Wolf" role:AlphaWolf];
+    Player *villager = [[Player alloc] initWithName:@"Villager" role:Farmer];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@4] countdownClock];
+    [[[self.mockGameState stub] andReturn:@[wolf, villager]] playersAlive];
+    
+    //Then:
+    XCTAssertFalse([self.testGame gameIsOver]);
+}
+
+-(void)testThatGameIsOverWhenCountdownReachesZero
+{
+    //Given:
+    Player *wolf = [[Player alloc] initWithName:@"Wolf" role:AlphaWolf];
+    Player *villager = [[Player alloc] initWithName:@"Villager" role:Farmer];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@0] countdownClock];
+    [[[self.mockGameState stub] andReturn:@[wolf, villager]] playersAlive];
+    
+    //Then:
+    XCTAssertTrue([self.testGame gameIsOver]);
+}
+
+-(void)testThatNobodyAliveWinsWhenCountdownReachesZero
+{
+    //Given:
+    Player *wolf = [[Player alloc] initWithName:@"Wolf" role:AlphaWolf];
+    Player *villager = [[Player alloc] initWithName:@"Villager" role:Farmer];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@0] countdownClock];
+    [[[self.mockGameState stub] andReturn:@[wolf, villager]] playersAlive];
+    
+    //When:
+    NSSet *winningFactions = [self.testGame factionsWhichWon];
+    
+    //Then:
+    XCTAssertEqualObjects([NSSet set], winningFactions);
+}
+
+-(void)testThatPreviousWinnersStillWinWhenCountdownReachesZero
+{
+    //Given:
+    Player *wolf = [[Player alloc] initWithName:@"Wolf" role:AlphaWolf];
+    Player *villager = [[Player alloc] initWithName:@"Villager" role:Farmer];
+    NSArray *factionsWon = @[@(JesterFaction), @(MadmanFaction)];
+    
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@0] countdownClock];
+    [[[self.mockGameState stub] andReturn:@[wolf, villager]] playersAlive];
+    [[[self.mockGameState stub] andReturn:factionsWon] winningFactions];
+    
+    //When:
+    NSSet *winningFactions = [self.testGame factionsWhichWon];
+    
+    //Then:
+    XCTAssertEqualObjects([NSSet setWithArray:factionsWon], winningFactions);
 }
 
 @end

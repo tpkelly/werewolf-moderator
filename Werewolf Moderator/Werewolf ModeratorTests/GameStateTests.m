@@ -84,6 +84,10 @@
     XCTAssertEqualObjects([NSArray array], self.gameState.winningFactions);
 }
 
+-(void)testThatGameStartsWithNoCountdown {
+    XCTAssertNil(self.gameState.countdownClock);
+}
+
 #pragma mark - Add Player
 
 -(void)testThatAddingPlayerAddsToLiveList

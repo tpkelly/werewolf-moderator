@@ -42,6 +42,7 @@
         player.isCursed = NO;
         player.alive = NO;
         [self checkLiftCurses:player state:state];
+        [self checkInquisitorDied:player state:state];
     }
     // Kill later
     else
@@ -54,15 +55,29 @@
     return player;
 }
 
++(void)checkInquisitorDied:(Player*)player state:(GameState*)state
+{
+    if (player.role.roleType != Inquisitor)
+        return;
+    
+    if (![state roleIsAlive:Templar])
+        return;
+    
+    NSArray *aliveMystics = [state.playersAlive filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"role.isMystic == YES"]];
+    
+    if (aliveMystics.count > 0)
+        state.countdownClock = @(aliveMystics.count);
+}
+
 +(void)checkLiftCurses:(Player*)player state:(GameState*)state
 {
+    if (player.role.roleType != Hag)
+        return;
+    
     // Killing the hag lifts all curses
-    if (player.role.roleType == Hag)
+    for (Player *player in state.playersAlive)
     {
-        for (Player *player in state.playersAlive)
-        {
-            player.isCursed = NO;
-        }
+        player.isCursed = NO;
     }
 }
 

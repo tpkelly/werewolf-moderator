@@ -19,6 +19,7 @@
 @property (nonatomic, copy) NSArray *playersDead;
 @property (nonatomic, copy) NSArray *destinedToDie;
 @property (nonatomic, copy) NSCountedSet *unassignedRoles;
+@property (nonatomic, strong) NSNumber *countdownClock;
 
 @property (nonatomic, copy) NSArray *winningFactions;
 

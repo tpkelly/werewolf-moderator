@@ -189,6 +189,11 @@
 
 -(MorningNews *)transitionToMorning
 {
+    if (self.state.countdownClock)
+    {
+        self.state.countdownClock = @([self.state.countdownClock intValue] - 1);
+    }
+    
     Player *madmanDestinedToDie = [_state playerWithRole:Madman inPlayerSet:_state.destinedToDie];
     if (madmanDestinedToDie)
     {
@@ -223,7 +228,7 @@
     return news;
 }
 
--(NSArray*)factionlessPlayers
+-(NSArray*)playersWithFactions
 {
     NSPredicate *factionless = [NSPredicate predicateWithBlock:^BOOL(Player *player, NSDictionary *bindings) {
         return player.role.faction != Factionless;
@@ -233,8 +238,10 @@
 
 -(BOOL)gameIsOver
 {
-
-    NSArray *factionsInPlay = [[self factionlessPlayers] valueForKeyPath:@"role.faction"];
+    if ([_state.countdownClock isEqualToNumber:@0])
+        return YES;
+    
+    NSArray *factionsInPlay = [[self playersWithFactions] valueForKeyPath:@"role.faction"];
     NSSet *factionSet = [NSSet setWithArray:factionsInPlay];
     
     //Wolf win
@@ -264,7 +271,7 @@
     NSPredicate *shadowFilter = [NSPredicate predicateWithBlock:^BOOL(Player *player, NSDictionary *bindings) {
         return player.role.isShadow || player.isCursed;
     }];
-    NSArray *shadowsInPlay = [[self factionlessPlayers] filteredArrayUsingPredicate:shadowFilter];
+    NSArray *shadowsInPlay = [[self playersWithFactions] filteredArrayUsingPredicate:shadowFilter];
     
     return shadowsInPlay.count > 0;
 }
@@ -276,27 +283,30 @@
         return [NSSet set];
     }
     
-    NSArray *winningFactions;
-   
+    //Include dead madman/jester
+    NSMutableArray *winningFactions = [_state.winningFactions mutableCopy];
     
+    if ([_state.countdownClock isEqualToNumber:@0])
+    {
+        return [NSSet setWithArray:winningFactions];
+    }
+   
     //Include village if no shadows in play (and not already included)
     if (![self shadowsInPlay])
     {
-        winningFactions = @[@(VillageFaction)];
+        [winningFactions addObject:@(VillageFaction)];
     }
     else
     {
-        winningFactions = [[self factionlessPlayers] valueForKeyPath:@"role.faction"];
+        NSArray *aliveFactions = [[self playersWithFactions] valueForKeyPath:@"role.faction"];
+        [winningFactions addObjectsFromArray:aliveFactions];
     }
-    
-    //Include dead madman/jester
-    winningFactions = [winningFactions arrayByAddingObjectsFromArray:_state.winningFactions];
     
     //Include lovers
     if (([_state roleIsAlive:Juliet] && [_state.romeoPlayer alive])
         || ([_state roleIsAlive:GuardianAngel] && [_state.guardedPlayer alive]))
     {
-        winningFactions = [winningFactions arrayByAddingObject:@(LoverFaction)];
+        [winningFactions addObject:@(LoverFaction)];
     }
     
     //Remove duplicates and ignore ordering

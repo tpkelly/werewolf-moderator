@@ -549,4 +549,65 @@
     XCTAssertEqual(self.igor, burnedPlayer);
 }
 
+-(void)testThatCountdownStartsIfInquisitorBurnedWithTemplarAndMysticsInPlay
+{
+    // Given:
+    self.mockGameState = [OCMockObject niceMockForClass:[GameState class]];
+    self.testBallot = [[BallotManager alloc] initWithState:self.mockGameState];
+    
+    Player *mystic = [[Player alloc] initWithName:@"Mystic" role:Clairvoyant];
+    Player *templar = [[Player alloc] initWithName:@"Templar" role:Templar];
+    Player *inquisitor = [[Player alloc] initWithName:@"Inquisitor" role:Inquisitor];
+    Ballot *ballot = [Ballot ballotWithVotes:@[[Vote forPlayer:inquisitor voteCount:2]]];
+    BOOL templarAlive = YES;
+
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[mystic, inquisitor, templar]] playersAlive];
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(templarAlive)] roleIsAlive:Templar];
+    [[self.mockGameState expect] setCountdownClock:@1];
+    
+    // When:
+    [self.testBallot secondRoundResults:ballot];
+}
+
+-(void)testThatCountdownDoesNotStartIfInquisitorBurnedWithNoMysticsInPlay
+{
+    // Given:
+    self.mockGameState = [OCMockObject niceMockForClass:[GameState class]];
+    self.testBallot = [[BallotManager alloc] initWithState:self.mockGameState];
+    
+    Player *templar = [[Player alloc] initWithName:@"Templar" role:Templar];
+    Player *inquisitor = [[Player alloc] initWithName:@"Inquisitor" role:Inquisitor];
+    Ballot *ballot = [Ballot ballotWithVotes:@[[Vote forPlayer:inquisitor voteCount:2]]];
+    BOOL templarAlive = YES;
+
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[inquisitor, templar]] playersAlive];
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(templarAlive)] roleIsAlive:Templar];
+    [[self.mockGameState reject] setCountdownClock:OCMOCK_ANY];
+    
+    // When:
+    [self.testBallot secondRoundResults:ballot];
+}
+
+-(void)testThatCountdownDoesNotStartIfInquisitorBurnedWithNoTemplarInPlay
+{
+    // Given:
+    self.mockGameState = [OCMockObject niceMockForClass:[GameState class]];
+    self.testBallot = [[BallotManager alloc] initWithState:self.mockGameState];
+    
+    Player *mystic = [[Player alloc] initWithName:@"Mystic" role:Clairvoyant];
+    Player *inquisitor = [[Player alloc] initWithName:@"Inquisitor" role:Inquisitor];
+    Ballot *ballot = [Ballot ballotWithVotes:@[[Vote forPlayer:inquisitor voteCount:2]]];
+    BOOL templarAlive = NO;
+
+    //Expect:
+    [[[self.mockGameState stub] andReturn:@[mystic, inquisitor]] playersAlive];
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(templarAlive)] roleIsAlive:Templar];
+    [[self.mockGameState reject] setCountdownClock:OCMOCK_ANY];
+    
+    // When:
+    [self.testBallot secondRoundResults:ballot];
+}
+
 @end
