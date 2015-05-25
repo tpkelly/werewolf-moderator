@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4724B55F1B08F3D400F1D0F6 /* AttackUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4724B55E1B08F3D400F1D0F6 /* AttackUtility.m */; };
 		4724B5631B112B9600F1D0F6 /* Ballot.m in Sources */ = {isa = PBXBuildFile; fileRef = 4724B5621B112B9600F1D0F6 /* Ballot.m */; };
+		4724B5661B135F2C00F1D0F6 /* InquisitorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4724B5651B135F2C00F1D0F6 /* InquisitorViewController.m */; };
 		4725B7721A7EA7B7001B76BD /* MinionRole.m in Sources */ = {isa = PBXBuildFile; fileRef = 4725B7711A7EA7B7001B76BD /* MinionRole.m */; };
 		4725B7761A7EAAFA001B76BD /* RomeoRole.m in Sources */ = {isa = PBXBuildFile; fileRef = 4725B7751A7EAAFA001B76BD /* RomeoRole.m */; };
 		4725B7791A7EAB6F001B76BD /* GuardedRole.m in Sources */ = {isa = PBXBuildFile; fileRef = 4725B7781A7EAB6F001B76BD /* GuardedRole.m */; };
@@ -84,6 +85,8 @@
 		4724B5601B090A9F00F1D0F6 /* KillReason.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KillReason.h; sourceTree = "<group>"; };
 		4724B5611B112B9600F1D0F6 /* Ballot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ballot.h; sourceTree = "<group>"; };
 		4724B5621B112B9600F1D0F6 /* Ballot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ballot.m; sourceTree = "<group>"; };
+		4724B5641B135F2C00F1D0F6 /* InquisitorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InquisitorViewController.h; sourceTree = "<group>"; };
+		4724B5651B135F2C00F1D0F6 /* InquisitorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InquisitorViewController.m; sourceTree = "<group>"; };
 		4725B7701A7EA7B7001B76BD /* MinionRole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinionRole.h; sourceTree = "<group>"; };
 		4725B7711A7EA7B7001B76BD /* MinionRole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MinionRole.m; sourceTree = "<group>"; };
 		4725B7741A7EAAFA001B76BD /* RomeoRole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RomeoRole.h; sourceTree = "<group>"; };
@@ -377,6 +380,8 @@
 				47FD6B7C1A25203700F445D0 /* VampirePrepViewController.m */,
 				47FED0D91A2CE6240084C43C /* AngelViewController.h */,
 				47FED0DA1A2CE6240084C43C /* AngelViewController.m */,
+				4724B5641B135F2C00F1D0F6 /* InquisitorViewController.h */,
+				4724B5651B135F2C00F1D0F6 /* InquisitorViewController.m */,
 			);
 			name = "First Night only";
 			path = "First Night Only";
@@ -541,6 +546,7 @@
 				47FED0CD1A2BC2B30084C43C /* WitchViewController.m in Sources */,
 				47FED0D81A2C90A80084C43C /* HealerViewController.m in Sources */,
 				47FED0DB1A2CE6240084C43C /* AngelViewController.m in Sources */,
+				4724B5661B135F2C00F1D0F6 /* InquisitorViewController.m in Sources */,
 				47FD6B771A250B3F00F445D0 /* JulietViewController.m in Sources */,
 				47FED0D51A2C8C9C0084C43C /* VampireAttackViewController.m in Sources */,
 				47B4C1241A13E2ED00D30338 /* Role.m in Sources */,

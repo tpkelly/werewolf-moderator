@@ -498,7 +498,7 @@ Tap line in table to select player
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAQ-Y7-1fF">
-                                <rect key="frame" x="87" y="293" width="145" height="38"/>
+                                <rect key="frame" x="87" y="385" width="145" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="3Nf-OR-RrS"/>
@@ -529,7 +529,7 @@ Tap line in table to select player
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doJ-fy-ssh">
-                                <rect key="frame" x="24" y="122" width="272" height="162"/>
+                                <rect key="frame" x="24" y="121" width="272" height="162"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTc-MM-fbl">
                                 <rect key="frame" x="102" y="8" width="116" height="57"/>
@@ -546,10 +546,9 @@ Tap line in table to select player
                             <constraint firstItem="gY3-JH-uEr" firstAttribute="leading" secondItem="WAD-6B-wfn" secondAttribute="leadingMargin" constant="8" id="YBf-aR-u9q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gY3-JH-uEr" secondAttribute="trailing" constant="8" id="hWZ-5X-eGc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="doJ-fy-ssh" secondAttribute="trailing" constant="8" id="l2y-uW-kF1"/>
-                            <constraint firstItem="GCi-Fj-4DN" firstAttribute="top" secondItem="MAQ-Y7-1fF" secondAttribute="bottom" constant="100" id="lQu-Gd-FUx"/>
+                            <constraint firstItem="GCi-Fj-4DN" firstAttribute="top" secondItem="MAQ-Y7-1fF" secondAttribute="bottom" constant="8" id="l2z-Wg-O1A"/>
                             <constraint firstAttribute="centerX" secondItem="PTc-MM-fbl" secondAttribute="centerX" id="sop-Dj-FL1"/>
                             <constraint firstAttribute="centerX" secondItem="MAQ-Y7-1fF" secondAttribute="centerX" id="vdD-sU-oWD"/>
-                            <constraint firstItem="MAQ-Y7-1fF" firstAttribute="top" secondItem="doJ-fy-ssh" secondAttribute="bottom" constant="8" id="zYK-O0-jcD"/>
                             <constraint firstItem="gY3-JH-uEr" firstAttribute="top" secondItem="PTc-MM-fbl" secondAttribute="bottom" constant="8" id="zux-My-54H"/>
                         </constraints>
                     </view>
@@ -562,7 +561,93 @@ Tap line in table to select player
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmb-ZZ-zG8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1560" y="1736"/>
+            <point key="canvasLocation" x="1345" y="1731"/>
+        </scene>
+        <!--Inquisitor View Controller-->
+        <scene sceneID="tUF-UX-lAf">
+            <objects>
+                <viewController id="sfT-6b-sZa" customClass="InquisitorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r4X-1t-jVN"/>
+                        <viewControllerLayoutGuide type="bottom" id="cYz-R0-yWr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D1g-7Q-Lar">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX4-hQ-bH9">
+                                <rect key="frame" x="24" y="76" width="272" height="150"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="tTb-iB-UbU"/>
+                                </constraints>
+                                <string key="text">"Will the Inquisitor please wake up. Without opening their eyes, will the Executioner and the Templar please raise their hands.I will now tell you how many Mystics are in Play"</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inquisitor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24X-Mn-xvr">
+                                <rect key="frame" x="67" y="8" width="187" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Mtr-56-mAB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdY-vj-6Fh">
+                                <rect key="frame" x="73" y="385" width="175" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="mvk-Ww-H1V"/>
+                                    <constraint firstAttribute="height" constant="38" id="vhK-0l-kuw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Close your eyes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continuing:" destination="sfT-6b-sZa" eventType="touchUpInside" id="YF9-YB-xog"/>
+                                    <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="sLc-yc-dcJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1l-zE-isJ">
+                                <rect key="frame" x="118" y="276" width="84" height="39"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="24X-Mn-xvr" secondAttribute="centerX" id="19s-1I-PLT"/>
+                            <constraint firstAttribute="centerX" secondItem="cdY-vj-6Fh" secondAttribute="centerX" id="5wb-iq-7WU"/>
+                            <constraint firstItem="k1l-zE-isJ" firstAttribute="top" secondItem="KX4-hQ-bH9" secondAttribute="bottom" constant="50" id="NsR-Vn-Z20"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KX4-hQ-bH9" secondAttribute="trailing" constant="8" id="Zak-tT-x0h"/>
+                            <constraint firstItem="KX4-hQ-bH9" firstAttribute="leading" secondItem="D1g-7Q-Lar" secondAttribute="leadingMargin" constant="8" id="cPE-Wr-6g0"/>
+                            <constraint firstAttribute="centerX" secondItem="k1l-zE-isJ" secondAttribute="centerX" id="hAU-vx-6fp"/>
+                            <constraint firstItem="cYz-R0-yWr" firstAttribute="top" secondItem="cdY-vj-6Fh" secondAttribute="bottom" constant="8" id="lSZ-M8-3N6"/>
+                            <constraint firstItem="24X-Mn-xvr" firstAttribute="top" secondItem="D1g-7Q-Lar" secondAttribute="topMargin" constant="8" id="ot8-w1-Hut"/>
+                            <constraint firstItem="KX4-hQ-bH9" firstAttribute="top" secondItem="24X-Mn-xvr" secondAttribute="bottom" constant="8" id="qZI-If-KXH"/>
+                            <constraint firstAttribute="centerX" secondItem="KX4-hQ-bH9" secondAttribute="centerX" id="xnq-Pc-qwP"/>
+                        </constraints>
+                    </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="mysticCountLabel" destination="k1l-zE-isJ" id="qjp-vp-eMY"/>
+                        <segue destination="bxA-gA-2oC" kind="show" identifier="MonkPrep" id="Q5a-Kc-3An"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ptv-sv-N7b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1765" y="1736"/>
         </scene>
         <!--Wizard View Controller-->
         <scene sceneID="uY2-ok-WVD">
@@ -684,8 +769,8 @@ Tap line in table to select player
                     <connections>
                         <outlet property="alivePlayersTable" destination="fUL-ag-VqB" id="kFQ-xd-JAE"/>
                         <outlet property="mysticImage" destination="IDp-ek-W3k" id="3P7-ey-j5U"/>
-                        <segue destination="bxA-gA-2oC" kind="show" identifier="MonkPrep" id="Qzv-1G-Syf"/>
                         <segue destination="etn-hz-aJy" kind="show" identifier="Witch" id="G2T-cP-ciP"/>
+                        <segue destination="sfT-6b-sZa" kind="show" identifier="Inquisitor" id="42M-jN-qm4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ck4-Cn-6CR" userLabel="First Responder" sceneMemberID="firstResponder"/>
