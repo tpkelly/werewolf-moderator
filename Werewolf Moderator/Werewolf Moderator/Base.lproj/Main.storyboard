@@ -405,10 +405,10 @@ Tap line in table to select player
                         <viewControllerLayoutGuide type="bottom" id="6NL-RD-KNw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZKf-Jh-3hR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQv-Oo-xyK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQv-Oo-xyK">
                                 <rect key="frame" x="72" y="385" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -429,7 +429,7 @@ Tap line in table to select player
                                     <action selector="continuing:" destination="bcl-dk-nBX" eventType="touchUpInside" id="zRG-bn-mtL"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="&quot;Will the Monk please wake up. I will now show you two roles which are not in play&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhG-xC-qRc">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;Will the Monk please wake up. I will now show you two roles which are not in play&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhG-xC-qRc">
                                 <rect key="frame" x="24" y="73" width="272" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -439,19 +439,19 @@ Tap line in table to select player
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSJ-K9-inE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSJ-K9-inE">
                                 <rect key="frame" x="118" y="183" width="84" height="39"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwA-oF-ubD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwA-oF-ubD">
                                 <rect key="frame" x="118" y="272" width="84" height="39"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Monk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPJ-GI-IBX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPJ-GI-IBX">
                                 <rect key="frame" x="102" y="8" width="116" height="57"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -473,6 +473,8 @@ Tap line in table to select player
                             <constraint firstItem="SSJ-K9-inE" firstAttribute="top" secondItem="QhG-xC-qRc" secondAttribute="bottom" constant="50" id="iLj-LM-f3k"/>
                         </constraints>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="firstUnassignedRole" destination="SSJ-K9-inE" id="nrY-Qd-1zJ"/>
                         <outlet property="secondUnassignedRole" destination="kwA-oF-ubD" id="eOH-je-UdU"/>
@@ -1675,7 +1677,9 @@ Tap line in table to select player
                                 </constraints>
                                 <string key="text">"Will the Defector keep their eyes closed but raise their hand.
 
-Will the other Wolves please wake up, acknowledge each other, and identify the Defector.Will the Hag please keep their eyes closed and raise their hand"</string>
+Will the other Wolves please wake up, acknowledge each other, and identify the Defector.
+
+Will the Hag please keep their eyes closed and raise their hand"</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1760,7 +1764,9 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="HII-XL-7OY"/>
                                 </constraints>
-                                <string key="text">"Will Igor and the Vampire please wake up. Please acknowledge eachotherWill the Hag please keep their eyes closed and raise their hand"</string>
+                                <string key="text">"Will Igor and the Vampire please wake up. Please acknowledge eachother
+
+Will the Hag please keep their eyes closed and raise their hand"</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1991,12 +1997,34 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGQ-Pl-M8z">
+                                <rect key="frame" x="85" y="339" width="150" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="29c-RO-s55"/>
+                                    <constraint firstAttribute="height" constant="38" id="Kxc-7X-kUs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Inquisitor">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="inquisitionPower:" destination="glr-Kf-2ET" eventType="touchUpInside" id="hPp-9D-FQw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="1Oa-e8-Gco" secondAttribute="centerX" id="7cc-l4-2z7"/>
                             <constraint firstAttribute="centerX" secondItem="E6p-ZJ-Rev" secondAttribute="centerX" id="DKq-5s-dGP"/>
                             <constraint firstItem="Qmv-OB-BEy" firstAttribute="top" secondItem="gEI-0C-XhJ" secondAttribute="topMargin" constant="8" id="DtN-2O-ROw"/>
+                            <constraint firstAttribute="centerX" secondItem="NGQ-Pl-M8z" secondAttribute="centerX" id="Gb3-Ly-csG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dqA-2n-VmB" secondAttribute="trailing" constant="8" id="MyC-yA-MOR"/>
                             <constraint firstItem="sVE-tU-fwb" firstAttribute="top" secondItem="IIA-ZP-gJ4" secondAttribute="bottom" constant="8" id="Rh4-M4-1fj"/>
                             <constraint firstAttribute="centerX" secondItem="IIA-ZP-gJ4" secondAttribute="centerX" id="Udk-QL-n7I"/>
@@ -2005,12 +2033,14 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                             <constraint firstItem="E6p-ZJ-Rev" firstAttribute="top" secondItem="dqA-2n-VmB" secondAttribute="bottom" constant="8" id="h0u-gZ-QIU"/>
                             <constraint firstItem="dqA-2n-VmB" firstAttribute="leading" secondItem="gEI-0C-XhJ" secondAttribute="leadingMargin" constant="8" id="kCJ-PR-n8y"/>
                             <constraint firstItem="dqA-2n-VmB" firstAttribute="top" secondItem="Qmv-OB-BEy" secondAttribute="bottom" constant="100" id="r1a-Rd-Mph"/>
+                            <constraint firstItem="IIA-ZP-gJ4" firstAttribute="top" secondItem="NGQ-Pl-M8z" secondAttribute="bottom" constant="8" id="zov-sI-k7e"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5Wa-BO-PUi"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="inquisitionButton" destination="NGQ-Pl-M8z" id="Bnw-ah-wQx"/>
                         <outlet property="playerVoteLabel" destination="dqA-2n-VmB" id="aZb-Mj-mkB"/>
                         <outlet property="voteCountLabel" destination="E6p-ZJ-Rev" id="ECr-ag-JQY"/>
                         <outlet property="voteStepper" destination="1Oa-e8-Gco" id="Lte-KI-vS8"/>
@@ -2030,14 +2060,14 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                         <viewControllerLayoutGuide type="bottom" id="DDb-7H-dQc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NJA-7O-lo6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eJP-E6-N5w">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eJP-E6-N5w">
                                 <rect key="frame" x="46" y="144" width="228" height="259"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Game Over" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVa-p1-eRU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVa-p1-eRU">
                                 <rect key="frame" x="42" y="8" width="237" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="ISr-G2-iLl"/>
@@ -2046,7 +2076,7 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Winning Factions:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6u-5R-eOT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winning Factions:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6u-5R-eOT">
                                 <rect key="frame" x="24" y="115" width="272" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -2066,6 +2096,8 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                             <constraint firstItem="qVa-p1-eRU" firstAttribute="top" secondItem="NJA-7O-lo6" secondAttribute="topMargin" constant="8" id="xIi-6O-yth"/>
                         </constraints>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="factionTable" destination="eJP-E6-N5w" id="jeS-7O-ydH"/>
                     </connections>
@@ -2204,10 +2236,10 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                         <viewControllerLayoutGuide type="bottom" id="dsB-oY-zYI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qJB-vK-laX">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTN-dC-ctw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTN-dC-ctw">
                                 <rect key="frame" x="121" y="197" width="79" height="38"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -2243,7 +2275,7 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1x-Jy-PtR">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1x-Jy-PtR">
                                 <rect key="frame" x="85" y="385" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2264,7 +2296,7 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                                     <action selector="continuing:" destination="6QH-fy-0OB" eventType="touchUpInside" id="blp-ZG-eYY"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Final Ballot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDL-x1-9zp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Ballot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDL-x1-9zp">
                                 <rect key="frame" x="48" y="8" width="224" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="ghe-zb-IRP"/>
@@ -2273,7 +2305,7 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQE-mw-oHI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQE-mw-oHI">
                                 <rect key="frame" x="85" y="339" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2317,6 +2349,8 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                             <constraint firstItem="u6J-fD-2o7" firstAttribute="leading" secondItem="qJB-vK-laX" secondAttribute="leadingMargin" constant="8" id="pfe-E7-hg5"/>
                         </constraints>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="actualVotes" destination="KHW-sF-2QF" id="w5K-so-Etx"/>
                         <outlet property="ballotResult" destination="GTN-dC-ctw" id="xsU-oE-ZMX"/>
@@ -2339,10 +2373,10 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                         <viewControllerLayoutGuide type="bottom" id="I3k-0c-A6E"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="X5b-59-tVw">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejk-Is-VnB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejk-Is-VnB">
                                 <rect key="frame" x="85" y="385" width="150" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2363,7 +2397,7 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                                     <action selector="submitVotes" destination="MVs-Jt-WB6" eventType="touchUpInside" id="BfD-L3-6Nk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Votes for Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBq-PN-Woy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votes for Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBq-PN-Woy">
                                 <rect key="frame" x="62" y="163" width="197" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="dKN-3Q-qN4"/>
@@ -2372,19 +2406,19 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="4o2-ak-yHU">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="4o2-ak-yHU">
                                 <rect key="frame" x="113" y="266" width="94" height="29"/>
                                 <connections>
                                     <action selector="voteStep" destination="MVs-Jt-WB6" eventType="valueChanged" id="RgC-oZ-Lvt"/>
                                 </connections>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3U-LE-lSs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3U-LE-lSs">
                                 <rect key="frame" x="147" y="201" width="27" height="57"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Final Ballot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ID-iz-IU6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Ballot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ID-iz-IU6">
                                 <rect key="frame" x="48" y="8" width="224" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="zMl-us-wki"/>
@@ -2393,12 +2427,35 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncC-5v-qx3">
+                                <rect key="frame" x="85" y="339" width="150" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="7Bf-j0-yt4"/>
+                                    <constraint firstAttribute="width" constant="150" id="ueQ-IM-V3B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Executioner">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="inquisitionPower:" destination="MVs-Jt-WB6" eventType="touchUpInside" id="6ia-3r-RGd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aBq-PN-Woy" firstAttribute="top" secondItem="4ID-iz-IU6" secondAttribute="bottom" constant="100" id="0F2-FT-xcu"/>
                             <constraint firstAttribute="centerX" secondItem="4o2-ak-yHU" secondAttribute="centerX" id="14X-YP-pmk"/>
+                            <constraint firstAttribute="centerX" secondItem="ncC-5v-qx3" secondAttribute="centerX" id="316-Cu-d8u"/>
                             <constraint firstItem="4ID-iz-IU6" firstAttribute="top" secondItem="X5b-59-tVw" secondAttribute="topMargin" constant="8" id="34N-Fl-OBJ"/>
+                            <constraint firstItem="Ejk-Is-VnB" firstAttribute="top" secondItem="ncC-5v-qx3" secondAttribute="bottom" constant="8" id="5ut-KI-pTm"/>
                             <constraint firstAttribute="centerX" secondItem="Ejk-Is-VnB" secondAttribute="centerX" id="HbW-Gt-iyX"/>
                             <constraint firstItem="aBq-PN-Woy" firstAttribute="top" secondItem="4ID-iz-IU6" secondAttribute="bottom" constant="100" id="K5R-MP-Euk"/>
                             <constraint firstAttribute="centerX" secondItem="aBq-PN-Woy" secondAttribute="centerX" id="WdE-2F-INH"/>
@@ -2409,7 +2466,10 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                             <constraint firstAttribute="centerX" secondItem="4ID-iz-IU6" secondAttribute="centerX" id="wjt-za-p1Y"/>
                         </constraints>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="inquisitionButton" destination="ncC-5v-qx3" id="5fh-y1-f1T"/>
                         <outlet property="playerVoteLabel" destination="aBq-PN-Woy" id="9TJ-N9-4es"/>
                         <outlet property="voteCountLabel" destination="k3U-LE-lSs" id="8ss-oO-0Af"/>
                         <outlet property="voteStepper" destination="4o2-ak-yHU" id="UO5-3m-vma"/>
@@ -2569,10 +2629,10 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                         <viewControllerLayoutGuide type="bottom" id="LC7-2U-zsh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iWW-F1-odg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyW-im-UPe">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyW-im-UPe">
                                 <rect key="frame" x="72" y="385" width="175" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2593,13 +2653,13 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                                     <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="EhZ-WV-wS2"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oT0-aG-EyF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oT0-aG-EyF">
                                 <rect key="frame" x="93" y="201" width="134" height="134"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oT0-aG-EyF" secondAttribute="height" multiplier="1:1" id="a8L-47-RoV"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="&quot;Will the vampire hunter please wake up. I will now tell you if the Vampire is in play&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBb-x8-TpF">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;Will the vampire hunter please wake up. I will now tell you if the Vampire is in play&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBb-x8-TpF">
                                 <rect key="frame" x="24" y="66" width="272" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -2609,7 +2669,7 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Vampire Hunter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zm9-Mo-cCv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vampire Hunter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zm9-Mo-cCv">
                                 <rect key="frame" x="0.0" y="8" width="320" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="der-on-QbG"/>
@@ -2633,6 +2693,8 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
                             <constraint firstAttribute="centerX" secondItem="oT0-aG-EyF" secondAttribute="centerX" id="uiD-pu-Egt"/>
                         </constraints>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="vampireInPlayImage" destination="oT0-aG-EyF" id="kZv-iL-Dj3"/>
                         <segue destination="35d-x7-cfY" kind="show" identifier="Priest" id="R9w-OR-c4b"/>
@@ -2647,12 +2709,12 @@ Will the other Wolves please wake up, acknowledge each other, and identify the D
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="b0m-5q-YvP"/>
+        <segue reference="x91-Gc-kFo"/>
         <segue reference="cQS-uw-swt"/>
         <segue reference="fAe-9z-o6S"/>
         <segue reference="enR-50-5Xl"/>
-        <segue reference="x91-Gc-kFo"/>
         <segue reference="iU4-zQ-jWI"/>
         <segue reference="COg-eH-uaz"/>
-        <segue reference="b0m-5q-YvP"/>
     </inferredMetricsTieBreakers>
 </document>

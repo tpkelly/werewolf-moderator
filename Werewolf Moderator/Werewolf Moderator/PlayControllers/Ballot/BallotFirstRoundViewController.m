@@ -34,6 +34,8 @@
     self.playersWithoutVotes = [[SingleGame state].playersAlive mutableCopy];
     self.ballot = [Ballot new];
     
+    self.inquisitionButton.hidden = ![[SingleGame state] roleIsAlive:Inquisitor];
+    
     self.formatter = [NSNumberFormatter new];
     [self.formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     
@@ -62,9 +64,25 @@
     self.playerOnVote = [self.playersWithoutVotes firstObject];
     [self.playersWithoutVotes removeObject:self.playerOnVote];
     
+    if (self.ballot.inquisitionTarget)
+        self.inquisitionButton.hidden = YES;
+    
     self.playerVoteLabel.text = [NSString stringWithFormat:@"Votes for %@", self.playerOnVote.name];
     self.voteStepper.value = 0;
     [self voteStep];
+}
+
+- (IBAction)inquisitionPower:(UIButton*)button {
+    if (self.ballot.inquisitionTarget)
+    {
+        self.ballot.inquisitionTarget = nil;
+        button.alpha = 0.5;
+    }
+    else
+    {
+        self.ballot.inquisitionTarget = self.playerOnVote;
+        button.alpha = 1.0;
+    }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

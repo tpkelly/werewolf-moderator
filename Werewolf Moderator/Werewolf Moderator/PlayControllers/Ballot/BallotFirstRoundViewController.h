@@ -13,8 +13,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *playerVoteLabel;
 @property (strong, nonatomic) IBOutlet UILabel *voteCountLabel;
 @property (strong, nonatomic) IBOutlet UIStepper *voteStepper;
+@property (strong, nonatomic) IBOutlet UIButton *inquisitionButton;
 
 - (IBAction)voteStep;
 - (IBAction)submitVotes;
+- (IBAction)inquisitionPower:(UIButton*)sender;
 
 @end

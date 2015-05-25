@@ -10,6 +10,16 @@
 
 @implementation Ballot
 
+-(instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.votes = @[];
+    }
+    return self;
+}
+
 +(instancetype)ballotWithVotes:(NSArray*)votes;
 {
     Ballot *ballot = [Ballot new];

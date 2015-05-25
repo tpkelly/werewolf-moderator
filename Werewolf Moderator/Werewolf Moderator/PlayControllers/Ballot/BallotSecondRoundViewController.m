@@ -9,12 +9,15 @@
 #import "BallotSecondRoundViewController.h"
 #import "Player.h"
 #import "Vote.h"
+#import "Ballot.h"
+#import "SingleGame.h"
+#import "GameState.h"
 #import "BallotSecondRoundResultsViewController.h"
 
 @interface BallotSecondRoundViewController ()
 
 @property (nonatomic, strong) NSMutableArray *playersWithoutVotes;
-@property (nonatomic, strong) NSMutableArray *votesForPlayers;
+@property (nonatomic, strong) Ballot *ballot;
 @property (nonatomic, strong) NSNumberFormatter *formatter;
 @property (nonatomic, strong) Player *playerOnVote;
 
@@ -28,7 +31,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.playersWithoutVotes = [self.playersOnBallot mutableCopy];
-    self.votesForPlayers = [NSMutableArray array];
+    self.ballot = [Ballot new];
+    
+    self.inquisitionButton.hidden = ![[SingleGame state] roleIsAlive:Executioner]
+        || [[SingleGame state] playerWithRole:Executioner inPlayerSet:self.playersOnBallot];
     
     self.formatter = [NSNumberFormatter new];
     [self.formatter setNumberStyle:NSNumberFormatterDecimalStyle];
@@ -46,7 +52,7 @@
     if (self.playerOnVote)
     {
         Vote *vote = [Vote forPlayer:self.playerOnVote voteCount:self.currentVoteCount];
-        [self.votesForPlayers addObject:vote];
+        self.ballot.votes = [self.ballot.votes arrayByAddingObject:vote];
     }
     
     if (self.playersWithoutVotes.count == 0)
@@ -58,9 +64,25 @@
     self.playerOnVote = [self.playersWithoutVotes firstObject];
     [self.playersWithoutVotes removeObject:self.playerOnVote];
     
+    if (self.ballot.inquisitionTarget)
+        self.inquisitionButton.hidden = YES;
+    
     self.playerVoteLabel.text = [NSString stringWithFormat:@"Votes for %@", self.playerOnVote.name];
     self.voteStepper.value = 0;
     [self voteStep];
+}
+
+- (IBAction)inquisitionPower:(UIButton*)button {
+    if (self.ballot.inquisitionTarget)
+    {
+        self.ballot.inquisitionTarget = nil;
+        button.alpha = 0.5;
+    }
+    else
+    {
+        self.ballot.inquisitionTarget = self.playerOnVote;
+        button.alpha = 1.0;
+    }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -68,7 +90,7 @@
     if ([segue.identifier isEqualToString:@"Results"])
     {
         BallotSecondRoundResultsViewController *nextViewController = segue.destinationViewController;
-        nextViewController.voteResults = [self.votesForPlayers copy];
+        nextViewController.voteResults = self.ballot;
     }
 }
 
