@@ -581,7 +581,7 @@ Tap line in table to select player
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="tTb-iB-UbU"/>
                                 </constraints>
-                                <string key="text">"Will the Inquisitor please wake up. Without opening their eyes, will the Executioner and the Templar please raise their hands.I will now tell you how many Mystics are in Play"</string>
+                                <string key="text">"Will the Inquisitor please wake up. Without opening their eyes, will the Executioner and the Templar please raise their hands.I will now tell you how many Mystics are in play"</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -649,6 +649,93 @@ Tap line in table to select player
             </objects>
             <point key="canvasLocation" x="1765" y="1736"/>
         </scene>
+        <!--Wizard Prep View Controller-->
+        <scene sceneID="7Xp-gp-pZb">
+            <objects>
+                <viewController id="kHp-TS-q7a" customClass="WizardPrepViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mzd-MO-ZZk"/>
+                        <viewControllerLayoutGuide type="bottom" id="maQ-fS-XNJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Or-BV-M5e">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQS-6E-slV">
+                                <rect key="frame" x="72" y="385" width="175" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Y9L-mJ-z1c"/>
+                                    <constraint firstAttribute="width" constant="175" id="gp9-zK-yI6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Close your eyes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continuing:" destination="S1H-7z-jbC" eventType="touchUpInside" id="UQX-hk-eDL"/>
+                                    <action selector="continuing:" destination="kHp-TS-q7a" eventType="touchUpInside" id="h5o-1S-9Vc"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4cn-ks-dEp">
+                                <rect key="frame" x="93" y="201" width="134" height="134"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4cn-ks-dEp" secondAttribute="height" multiplier="1:1" id="H3q-8h-IRN"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="&quot;I will now tell you if the inquisition is in play&quot;" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiv-ei-iYk">
+                                <rect key="frame" x="24" y="66" width="272" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="TzP-5M-b4g"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wizard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lh9-3a-vLn">
+                                <rect key="frame" x="89" y="8" width="143" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="iLr-u8-hT4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lh9-3a-vLn" firstAttribute="top" secondItem="7Or-BV-M5e" secondAttribute="topMargin" constant="8" id="1D5-zB-tyi"/>
+                            <constraint firstAttribute="centerX" secondItem="WQS-6E-slV" secondAttribute="centerX" id="Oho-J3-M6v"/>
+                            <constraint firstItem="qiv-ei-iYk" firstAttribute="top" secondItem="Lh9-3a-vLn" secondAttribute="bottom" constant="8" id="djJ-5s-U9z"/>
+                            <constraint firstItem="4cn-ks-dEp" firstAttribute="width" secondItem="4cn-ks-dEp" secondAttribute="height" multiplier="1:1" id="fXx-qQ-mmp"/>
+                            <constraint firstAttribute="centerX" secondItem="4cn-ks-dEp" secondAttribute="centerX" id="hZc-Sg-5rr"/>
+                            <constraint firstItem="qiv-ei-iYk" firstAttribute="leading" secondItem="7Or-BV-M5e" secondAttribute="leadingMargin" constant="8" id="iRl-94-ibE"/>
+                            <constraint firstItem="maQ-fS-XNJ" firstAttribute="top" secondItem="WQS-6E-slV" secondAttribute="bottom" constant="8" id="iUY-M5-kxA"/>
+                            <constraint firstAttribute="centerX" secondItem="Lh9-3a-vLn" secondAttribute="centerX" id="iy9-tP-IpN"/>
+                            <constraint firstAttribute="centerX" secondItem="qiv-ei-iYk" secondAttribute="centerX" id="jUY-MI-XVf"/>
+                            <constraint firstItem="WQS-6E-slV" firstAttribute="top" secondItem="4cn-ks-dEp" secondAttribute="bottom" constant="50" id="kik-Wh-YKg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qiv-ei-iYk" secondAttribute="trailing" constant="8" id="q4u-UR-xJd"/>
+                            <constraint firstItem="4cn-ks-dEp" firstAttribute="top" secondItem="qiv-ei-iYk" secondAttribute="bottom" constant="75" id="v1N-Ss-uK9"/>
+                        </constraints>
+                    </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="inquisitionIsInPlayImage" destination="4cn-ks-dEp" id="9Su-Pk-DyY"/>
+                        <segue destination="sfT-6b-sZa" kind="show" identifier="Inquisitor" id="7oF-dB-BLi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cUo-yt-XBW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2107" y="1752"/>
+        </scene>
         <!--Wizard View Controller-->
         <scene sceneID="uY2-ok-WVD">
             <objects>
@@ -702,7 +789,7 @@ Tap line in table to select player
                                             <constraint firstAttribute="height" constant="38" id="bmB-R9-DYA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                        <state key="normal" title="Close your eyes">
+                                        <state key="normal" title="Keep eyes open">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -770,12 +857,12 @@ Tap line in table to select player
                         <outlet property="alivePlayersTable" destination="fUL-ag-VqB" id="kFQ-xd-JAE"/>
                         <outlet property="mysticImage" destination="IDp-ek-W3k" id="3P7-ey-j5U"/>
                         <segue destination="etn-hz-aJy" kind="show" identifier="Witch" id="G2T-cP-ciP"/>
-                        <segue destination="sfT-6b-sZa" kind="show" identifier="Inquisitor" id="42M-jN-qm4"/>
+                        <segue destination="kHp-TS-q7a" kind="show" identifier="WizardPrep" id="Jaf-Wu-u1l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ck4-Cn-6CR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2184" y="1764"/>
+            <point key="canvasLocation" x="2452" y="1736"/>
         </scene>
         <!--Wolf Double Attack View Controller-->
         <scene sceneID="dJs-1g-Cvl">

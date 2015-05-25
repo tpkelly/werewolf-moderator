@@ -37,7 +37,7 @@
 {
     if ([SingleGame state].isFirstNight)
     {
-        [self performSegueWithIdentifier:@"Inquisitor" sender:self];
+        [self performSegueWithIdentifier:@"WizardPrep" sender:self];
     }
     else
     {
