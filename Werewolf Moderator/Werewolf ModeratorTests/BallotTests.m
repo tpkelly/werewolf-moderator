@@ -128,6 +128,31 @@
     XCTAssertNil(burnedPlayer);
 }
 
+-(void)testThatVotesOfZeroDoNotGoOntoTheBallot
+{
+    // Given
+    NSArray *votes = @[[Vote forPlayer:self.wolfPup voteCount:3],
+                       [Vote forPlayer:self.angel voteCount:0]];
+    
+    // When
+    NSArray *playersOnBallot = [self.testBallot firstRoundResults:[Ballot ballotWithVotes:votes]];
+    
+    // Then
+    XCTAssertEqualObjects(@[self.wolfPup], playersOnBallot);
+}
+
+-(void)testThatVotesOfZeroDoNotBurnPlayers
+{
+    // Given
+    NSArray *votes = @[[Vote forPlayer:self.wolfPup voteCount:0]];
+    
+    // When
+    Player *burnedPlayer = [self.testBallot secondRoundResults:[Ballot ballotWithVotes:votes]];
+    
+    // Then
+    XCTAssertNil(burnedPlayer);
+}
+
 #pragma mark - Jester tests
 
 - (void)testThatBallotIsCancelledIfJesterWasBurned {

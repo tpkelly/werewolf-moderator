@@ -117,6 +117,8 @@
 
 -(NSArray*)votesWithSeducerVotes:(NSArray*)votes
 {
+    votes = [votes filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"voteCount > 0"]];
+
     NSMutableArray *mutableVotes = [votes mutableCopy];
     
     NSUInteger seducerIndex = [mutableVotes indexOfObjectPassingTest:^BOOL(Vote *vote, NSUInteger idx, BOOL *stop) {
