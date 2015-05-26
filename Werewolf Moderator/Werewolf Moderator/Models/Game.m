@@ -113,6 +113,11 @@
 
 -(AttackResult)wolfAttackPlayer:(Player *)player
 {
+    if (player.role.roleType == Defector)
+    {
+        return TargetInformed;
+    }
+    
     // Madman blocks attacks
     if (_state.madmanMauledLastNight)
     {
@@ -123,11 +128,6 @@
     if (player.temporaryProtection || player.permanentProtection)
     {
         return TargetImmune;
-    }
-    
-    if (player.role.roleType == Defector)
-    {
-        return TargetInformed;
     }
     
     [AttackUtility killPlayer:player reason:EatenByWolves state:_state];

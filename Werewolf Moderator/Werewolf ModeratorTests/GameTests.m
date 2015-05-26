@@ -829,6 +829,22 @@
     XCTAssertEqual(TargetInformed, result);
 }
 
+-(void)testThatWolfAttackOnDefectorAfterMauledMadmanInformsDefector
+{
+    // Given
+    Player *defector = [[Player alloc] initWithName:@"Defector" role:Defector];
+    BOOL madmanMauled = YES;
+    
+    // Expect
+    [[[self.mockGameState stub] andReturnValue:OCMOCK_VALUE(madmanMauled)] madmanMauledLastNight];
+    
+    // When
+    AttackResult result = [self.testGame wolfAttackPlayer:defector];
+    
+    // Then
+    XCTAssertEqual(TargetInformed, result);
+}
+
 #pragma mark - First night actions
 
 -(void)testThatRomeoIsProtectedFromShadows
