@@ -10,6 +10,7 @@
 #import "SingleGame.h"
 #import "GameState.h"
 #import "Game.h"
+#import "Role.h"
 #import "Player.h"
 
 @interface WizardViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -78,7 +79,11 @@
     Player *playerAtIndex = [[SingleGame state].playersAlive objectAtIndex:indexPath.row];
     self.alivePlayersTable.hidden = YES;
     
-    if ([[SingleGame game] wizardChecksPlayer:playerAtIndex])
+    if (playerAtIndex.role.roleType == Inquisitor)
+    {
+        [self.mysticImage setImage:[UIImage imageNamed:@"alertInquisitor.png"]];
+    }
+    else if ([[SingleGame game] wizardChecksPlayer:playerAtIndex])
     {
         [self.mysticImage setImage:[UIImage imageNamed:@"mystic.png"]];
     }

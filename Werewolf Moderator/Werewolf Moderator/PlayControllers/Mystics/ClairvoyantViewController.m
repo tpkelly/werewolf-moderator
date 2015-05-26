@@ -10,6 +10,7 @@
 #import "SingleGame.h"
 #import "GameState.h"
 #import "Game.h"
+#import "Role.h"
 #import "Player.h"
 
 @interface ClairvoyantViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -78,7 +79,11 @@
     Player *playerAtIndex = [[SingleGame state].playersAlive objectAtIndex:indexPath.row];
     self.alivePlayersTable.hidden = YES;
     
-    if ([[SingleGame game] clairvoyantChecksPlayer:playerAtIndex])
+    if (playerAtIndex.role.roleType == Inquisitor)
+    {
+        [self.corruptImage setImage:[UIImage imageNamed:@"alertInquisitor.png"]];
+    }
+    else if ([[SingleGame game] clairvoyantChecksPlayer:playerAtIndex])
     {
         [self.corruptImage setImage:[UIImage imageNamed:@"corrupt.png"]];
     }
