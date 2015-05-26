@@ -978,6 +978,22 @@
     [self.testGame transitionToMorning];
 }
 
+-(void)testThatTransitionToMorningResetsProtection
+{
+    // Given:
+    Player *protected = [[Player alloc] initWithName:@"Protected" role:Farmer];
+    protected.temporaryProtection = YES;
+    
+    // Expect:
+    [[[self.mockGameState stub] andReturn:@[protected]] playersAlive];
+    
+    // When:
+    [self.testGame transitionToMorning];
+    
+    // Then:
+    XCTAssertFalse(protected.temporaryProtection);
+}
+
 -(void)testThatNoNewsFromTheInnIfCorruptFoundButInnkeeperIsDead
 {
     //Given:

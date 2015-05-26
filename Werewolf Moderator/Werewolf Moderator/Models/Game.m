@@ -214,6 +214,11 @@
     }
     _state.destinedToDie = @[];
     
+    for (Player *player in _state.playersAlive)
+    {
+        player.temporaryProtection = NO;
+    }
+    
     // Find news from the inn
     news.news = _state.newsFromTheInn;
     _state.newsFromTheInn = NoNews;
