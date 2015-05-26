@@ -17,7 +17,7 @@
     // Do any additional setup after loading the view.
     
     NSArray *mystics = [[[SingleGame state] playersAlive] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"role.isMystic == YES"]];
-    self.mysticCountLabel.text = [NSString stringWithFormat:@"%d Mystic(s)", mystics.count];
+    self.mysticCountLabel.text = [NSString stringWithFormat:@"%lu Mystic(s)", (long unsigned)mystics.count];
 }
 
 - (IBAction)continuing:(id)sender
