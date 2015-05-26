@@ -82,6 +82,19 @@
     self.playerTable.hidden = YES;
     
     [[SingleGame game] witchProtectPlayer:playerAtIndex];
+    
+    if (playerAtIndex.role.roleType == Inquisitor)
+    {
+        [self.witchInPlayImage setImage:[UIImage imageNamed:@"alertInquisitor.png"]];
+    }
+    else if (playerAtIndex.isCursed)
+    {
+        [self.witchInPlayImage setImage:[UIImage imageNamed:@"cursed.png"]];
+    }
+    else
+    {
+        [self.witchInPlayImage setImage:[UIImage imageNamed:@"notCursed.png"]];
+    }
 }
 
 -(NSArray*)allProtectablePlayers

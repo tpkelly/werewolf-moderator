@@ -581,7 +581,9 @@ Tap line in table to select player
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="tTb-iB-UbU"/>
                                 </constraints>
-                                <string key="text">"Will the Inquisitor please wake up. Without opening their eyes, will the Executioner and the Templar please raise their hands.I will now tell you how many Mystics are in play"</string>
+                                <string key="text">"Will the Inquisitor please wake up. Without opening their eyes, will the Executioner and the Templar please raise their hands.
+
+I will now tell you how many Mystics are in play"</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1087,7 +1089,7 @@ Signal that two attacks are possible.Tap line in table to select player
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="8L4-8u-U7h"/>
                                 </constraints>
-                                <string key="text">"Will the Witch please wake up. Please select a player to protect from shadow attacks tonight."
+                                <string key="text">"Will the Witch please wake up. Please select a player to check for curses and protect from shadow attacks tonight."
 
 Tap line in table to select player
 </string>

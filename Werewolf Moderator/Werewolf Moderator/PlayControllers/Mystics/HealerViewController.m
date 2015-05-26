@@ -9,6 +9,7 @@
 #import "HealerViewController.h"
 #import "SingleGame.h"
 #import "GameState.h"
+#import "Role.h"
 #import "Game.h"
 #import "Player.h"
 
@@ -73,6 +74,12 @@
 {
     Player *playerAtIndex = [[SingleGame state].destinedToDie objectAtIndex:indexPath.row];
     [[SingleGame game] healerSavesPlayer:playerAtIndex];
+    
+    if (playerAtIndex.role.roleType == Inquisitor)
+    {
+        [self.healerInPlayImage setImage:[UIImage imageNamed:@"alertInquisitor.png"]];
+    }
+    
     [self continuing:nil];
 }
 
